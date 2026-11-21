@@ -1082,6 +1082,403 @@
     .speech-btn.primary:hover {
       background: #79b8ff;
     }
+
+    /* ========================================================
+       ULTIMATE FEATURES: SIMULATOR, CAL FACTS, TECH QA, ETIQUETTE & RUBRIC
+       ======================================================== */
+
+    /* Simulator Styles */
+    .sim-card {
+      background: radial-gradient(circle at 10% 10%, rgba(88, 166, 255, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 90% 90%, rgba(63, 185, 80, 0.08) 0%, transparent 50%),
+                  var(--surface);
+      border: 1px solid rgba(88, 166, 255, 0.4);
+      border-radius: var(--card-radius);
+      padding: 26px;
+      margin-top: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .sim-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sim-mode-tag {
+      background: rgba(88, 166, 255, 0.15);
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 5px 14px;
+      border-radius: var(--badge-radius);
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .sim-stats {
+      font-size: 13px;
+      color: var(--text-sub);
+    }
+    .sim-interviewer {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .interviewer-avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #238636 0%, #1f6feb 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+      border: 2px solid rgba(255,255,255,0.2);
+    }
+    .interviewer-bubble {
+      background: #1c2128;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 22px;
+      flex-grow: 1;
+      position: relative;
+    }
+    .interviewer-bubble::before {
+      content: '';
+      position: absolute;
+      top: 18px;
+      left: -8px;
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-right: 8px solid #1c2128;
+    }
+    .sim-q-jp {
+      font-family: var(--font-jp);
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .sim-q-uz {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.4;
+    }
+
+    /* Timer section */
+    .sim-timer-box {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .timer-display {
+      font-family: 'Fira Code', monospace;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--green);
+      letter-spacing: 0.05em;
+    }
+    .timer-display.warning { color: var(--yellow); }
+    .timer-display.danger { color: var(--red); animation: pulse 0.8s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    .timer-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sim-controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .sim-btn {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .sim-btn:hover {
+      background: var(--surface-hover);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+    .sim-btn.primary {
+      background: var(--primary);
+      color: #0d1117;
+      border-color: var(--primary);
+    }
+    .sim-btn.primary:hover {
+      background: #79b8ff;
+    }
+    .sim-btn.success {
+      background: var(--green);
+      color: #0d1117;
+      border-color: var(--green);
+    }
+
+    .sim-answer-box {
+      margin-top: 20px;
+      background: #161b22;
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      display: none;
+    }
+    .sim-ans-jp {
+      font-family: var(--font-jp);
+      font-size: 15px;
+      color: #f0f6fc;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .sim-ans-uz {
+      font-size: 13.5px;
+      color: #8b949e;
+      line-height: 1.5;
+    }
+
+    /* CAL Facts Grid */
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .fact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      transition: all 0.2s;
+    }
+    .fact-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+    .fact-icon {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .fact-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .fact-value {
+      font-size: 17px;
+      font-weight: 800;
+      color: #fff;
+      margin-top: 4px;
+    }
+    .fact-desc {
+      font-size: 12px;
+      color: var(--text-sub);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* Tech QA Grid */
+    .tech-qa-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
+    @media (max-width: 600px) {
+      .tech-qa-grid { grid-template-columns: 1fr; }
+    }
+    .tech-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 22px;
+      transition: all 0.2s;
+    }
+    .tech-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+    }
+    .tech-tag {
+      background: rgba(88, 166, 255, 0.12);
+      border: 1px solid rgba(88, 166, 255, 0.3);
+      color: var(--primary);
+      padding: 3px 10px;
+      border-radius: var(--badge-radius);
+      font-size: 11px;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .tech-q-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      font-family: var(--font-jp);
+      margin-bottom: 10px;
+      line-height: 1.45;
+    }
+    .tech-q-uz {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-bottom: 14px;
+      border-left: 2px solid var(--primary);
+      padding-left: 10px;
+    }
+    .tech-answer-jp {
+      font-family: var(--font-jp);
+      font-size: 14px;
+      color: #c9d1d9;
+      line-height: 1.7;
+      background: var(--surface-card);
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin-bottom: 10px;
+    }
+    .tech-answer-uz {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Etiquette Checklist */
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .check-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .check-item:hover {
+      background: var(--surface-hover);
+    }
+    .check-item.done {
+      border-color: var(--green);
+      background: rgba(63, 185, 80, 0.05);
+    }
+    .check-box {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: transparent;
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: all 0.2s;
+    }
+    .check-item.done .check-box {
+      background: var(--green);
+      border-color: var(--green);
+      color: #0d1117;
+      font-weight: 800;
+    }
+    .check-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+    .check-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* HR Evaluation Rubric */
+    .rubric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .rubric-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      position: relative;
+    }
+    .rubric-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: var(--badge-radius);
+      margin-bottom: 8px;
+    }
+    .rubric-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .rubric-weight {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .rubric-points {
+      list-style: none;
+      font-size: 12.5px;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+    .rubric-points li {
+      margin-bottom: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .rubric-points li::before {
+      content: '✔';
+      color: var(--green);
+      font-weight: 700;
+    }
   </style>
 </head>
 <body>
@@ -1148,6 +1545,11 @@
     <!-- Category Nav Tabs -->
     <div class="nav-tabs">
       <button class="tab-btn active" onclick="filterCategory('all', this)">Barchasi</button>
+      <button class="tab-btn highlight" onclick="filterCategory('simulator', this)">🎮 Intervyu Simulyatori (Mashq)</button>
+      <button class="tab-btn highlight" onclick="filterCategory('cal-facts', this)">🏢 CAL Kompaniyasi Dosyesi</button>
+      <button class="tab-btn highlight" onclick="filterCategory('tech-qa', this)">💻 IT Texnik Savol-Javoblar</button>
+      <button class="tab-btn highlight" onclick="filterCategory('web-etiquette', this)">📹 Web-Suhbat Odobi & Checklist</button>
+      <button class="tab-btn highlight" onclick="filterCategory('hr-rubric', this)">📋 HR Baholash Varakasi</button>
       <button class="tab-btn highlight" onclick="filterCategory('vocab-table', this)">📊 So'zlar Jadvali (N1-N3)</button>
       <button class="tab-btn highlight" onclick="filterCategory('grammar', this)">📝 Intervyu Grammatikasi & Keigo</button>
       <button class="tab-btn highlight" onclick="filterCategory('speech', this)">🗣️ Tayyor Nutq Namunalarim</button>
@@ -1167,6 +1569,410 @@
       <button class="tab-btn" onclick="filterCategory('gyaku', this)">❓ 逆質問 (HR'ga savollar)</button>
     </div>
 
+
+
+    <!-- ========================================================
+         ULTIMATE SECTION 1: INTERACTIVE MOCK INTERVIEW SIMULATOR
+         ======================================================== -->
+    <section class="category-section" data-cat="simulator">
+      <div class="section-title">
+        <span>🎮 Interaktiv Suhbat Trenajyori (AI Mock Interview)</span>
+        <span class="count">Haqiqiy intervyu simulyatsiyasi • Ovozli savollar & 60 soniyalik taymer</span>
+      </div>
+
+      <div class="sim-card">
+        <div class="sim-top-bar">
+          <div class="sim-mode-tag">
+            <span>🎙️</span>
+            <span>HR Savol-Javob Mashqi</span>
+          </div>
+          <div class="sim-stats" id="simStats">
+            Savol <strong id="simCurrentNum">1</strong> / <span id="simTotalNum">12</span> • Bajarilgan: <strong id="simDoneCount" style="color:var(--green);">0</strong> ta
+          </div>
+        </div>
+
+        <div class="sim-interviewer">
+          <div class="interviewer-avatar">👔</div>
+          <div class="interviewer-bubble">
+            <div class="sim-q-jp" id="simQuestionJp">「はじめに、1分程度で簡単な自己紹介をお願いいたします。」</div>
+            <div class="sim-q-uz" id="simQuestionUz">"Boshlanishiga, taxminan 1 daqiqa ichida qisqacha o'zingizni tanishtirib bersangiz."</div>
+          </div>
+        </div>
+
+        <div class="sim-timer-box">
+          <div>
+            <div class="timer-label">PREP Javob Taymeri (Maksimal 60 soniya)</div>
+            <div class="timer-display" id="simTimerDisplay">01:00</div>
+          </div>
+          <div class="sim-controls">
+            <button class="sim-btn" onclick="playSimVoice()">🔊 Savolni Eshitish</button>
+            <button class="sim-btn primary" id="btnSimTimer" onclick="toggleSimTimer()">⏱️ Taymerni Boshlash</button>
+            <button class="sim-btn" onclick="toggleSimAnswer()">💡 Namuna / Ko'rsatma</button>
+            <button class="sim-btn success" onclick="markSimDone()">✅ O'zlashtirildi</button>
+            <button class="sim-btn" onclick="nextSimQuestion()">⏭️ Keyingi Savol</button>
+            <button class="sim-btn" onclick="randomSimQuestion()">🎲 Tasodifiy</button>
+          </div>
+        </div>
+
+        <div class="sim-answer-box" id="simAnswerBox">
+          <div style="font-size:12px; font-weight:700; color:var(--primary); margin-bottom:6px; text-transform:uppercase;">Tavsiya etilgan Yaponcha Javob Andozasi:</div>
+          <div class="sim-ans-jp" id="simAnsJp"></div>
+          <div style="font-size:12px; font-weight:700; color:var(--text-muted); margin-bottom:4px; text-transform:uppercase;">O'zbekcha Maslahat & Ma'no:</div>
+          <div class="sim-ans-uz" id="simAnsUz"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         ULTIMATE SECTION 2: CAL CO., LTD. CORPORATE DOSSIER
+         ======================================================== -->
+    <section class="category-section" data-cat="cal-facts">
+      <div class="section-title">
+        <span>🏢 株式会社CAL (CAL Co., Ltd.) — Rasmiy Korporativ Dosyesi</span>
+        <span class="count">Intervyuda aytilsa 100% hayratda qoldiruvchi rasmiy faktlar</span>
+      </div>
+
+      <div class="facts-grid">
+        <div class="fact-card">
+          <div class="fact-icon">🏢</div>
+          <div class="fact-label">Rasmiy Nomi</div>
+          <div class="fact-value">キャル株式会社</div>
+          <div class="fact-desc">Inglizcha: CAL CO., LTD. (Yaponiyaning yetakchi IT & Muhandislik korporatsiyasi)</div>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon">👑</div>
+          <div class="fact-label">Prezident & Boshqaruv</div>
+          <div class="fact-value">代表取締役社長 前田 明</div>
+          <div class="fact-desc">Akira Maeda boshchiligida tez sur'atda o'sib kelayotgan boshqaruv jamoasi.</div>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon">👥</div>
+          <div class="fact-label">Xodimlar Soni</div>
+          <div class="fact-value" style="color:var(--green);">3,280 nafar</div>
+          <div class="fact-desc">2026-yil sentabr holatiga ko'ra yirik IT korporatsiya miqyosida.</div>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon">💰</div>
+          <div class="fact-label">Ustav Kapitali</div>
+          <div class="fact-value" style="color:var(--yellow);">100,000,000 円</div>
+          <div class="fact-desc">1 oku yen (100 million yen) lik mustahkam moliyaviy barqarorlik.</div>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon">📍</div>
+          <div class="fact-label">2 Bosh Ofis (Tokio & Osaka)</div>
+          <div class="fact-value">秋葉原 ＆ 心斎橋</div>
+          <div class="fact-desc">Tokio: Akihabara Fukoku Seimei 5F | Osaka: Shinsaibashi Toda Building 12F.</div>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon">🗾</div>
+          <div class="fact-label">Yaponiya Bo'ylab Filiallar</div>
+          <div class="fact-value">全国 18 拠点</div>
+          <div class="fact-desc">Tokio, Osaka, Fukuoka, Nagoya, Sapporo, Sendai, Yokohama, Kyoto, Kobe, Hiroshima va b.</div>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon">🚀</div>
+          <div class="fact-label">Asosiy Faoliyat Turlari</div>
+          <div class="fact-value">IT・Web・SES・組み込み</div>
+          <div class="fact-desc">Web tizimlar, buyurtma dasturlar, avtomobil va elektronika dasturlari, SES xizmati.</div>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-icon">🔥</div>
+          <div class="fact-label">Korporativ Shior (Motto)</div>
+          <div class="fact-value" style="color:var(--primary);">Challenge And Lead</div>
+          <div class="fact-desc">CAL STYLE: <strong>Passion (情熱)</strong> • <strong>Challenge (挑戦)</strong> • <strong>Grow Up (成長)</strong>.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px; background:rgba(88,166,255,0.06); border:1px solid rgba(88,166,255,0.25); border-radius:12px; padding:16px;">
+        <h4 style="font-size:14px; font-weight:700; color:var(--primary); margin-bottom:6px;">💡 HR Suhbatida Bu Faktlarni Qanday Ishlatish Kerak?</h4>
+        <p style="font-size:13px; color:var(--text-sub); line-height:1.6;">
+          Agar intervyuer: <em>"CAL haqida nimalarni bilasiz yoki nega bizni tanladingiz?"</em> desa, shunday javob bering:<br>
+          <strong style="color:#fff;">「貴社が全国18拠点、3,280名規模のエンジニアを擁し、Web開発から先進的な組み込み・ソリューションまで幅広く社会を支えていらっしゃる点に深く感銘を受けました。『Challenge And Lead』というスローガンの通り、挑戦する人を後押しする環境で自分自身を成長させたいです。」</strong><br>
+          <em>(Kompaniyangiz 18 ta filial va 3,280 nafar muhandis bilan jamiyatni texnologik ta'minlayotgani va 'Challenge And Lead' shioriga sodiqligi meni ilhomlantirdi...)</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         ULTIMATE SECTION 3: TECHNICAL IT ARCHITECTURE Q&A
+         ======================================================== -->
+    <section class="category-section" data-cat="tech-qa">
+      <div class="section-title">
+        <span>💻 Yapon IT Muhandislik & Texnik Savollar (Tech Check)</span>
+        <span class="count">N+1, REST vs GraphQL, React, Xavfsizlik va Git arxitekturasi</span>
+      </div>
+
+      <div class="tech-qa-grid">
+
+        <!-- Tech Q1 -->
+        <div class="tech-card">
+          <span class="tech-tag">Database & Performance</span>
+          <div class="tech-q-title">Q1: 「N+1問題」とは何ですか？実務ではどうやって対策しますか？</div>
+          <div class="tech-q-uz">N+1 muammosi nima va u amaliyotda qanday hal qilinadi?</div>
+          <div class="tech-answer-jp">
+            <strong>【回答例】</strong><br>
+            「N+1問題とは、親レコードを1回取得した後、関連する子レコードを取得するためにループ内でN回の追加SQLクエリが発行され、データベースに過度な負荷がかかる現象です。<br>
+            <strong>【対策】</strong>：ORM（PrismaやTypeORMなど）において<strong>Eager Loading</strong>（preload、include）やJOINを活用し、クエリを分割せず1〜2回のクエリで一括取得することで解決いたします。」
+          </div>
+          <div class="tech-answer-uz">
+            💡 <strong>O'zbekcha:</strong> Bitta asosiy ro'yxatni olgach, har bir qatordagi bog'langan ma'lumot uchun bazaga N marta qayta so'rov yuborilib tizim sekinlashishi. Yechimi: Eager Loading (birlashtirilgan bitta SQL so'rov) orqali birdaniga tortib olish.
+          </div>
+          <div style="display:flex; justify-content:flex-end; margin-top:10px;">
+            <button class="mini-speak-btn" onclick="speakText('N+1問題とはループ内でN回のクエリが発行される現象です。Eager LoadingやJOINを活用して解決いたします。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- Tech Q2 -->
+        <div class="tech-card">
+          <span class="tech-tag">API Design</span>
+          <div class="tech-q-title">Q2: REST APIとGraphQLの違いと、それぞれのメリット・デメリットは？</div>
+          <div class="tech-q-uz">REST API va GraphQL farqlari, ularning afzallik va kamchiliklari nimalardan iborat?</div>
+          <div class="tech-answer-jp">
+            <strong>【回答例】</strong><br>
+            「RESTはリソースごとにURLが固定されており、HTTPメソッドとキャッシュ設計がシンプルで導入しやすい反面、不要なデータ取得（Over-fetching）や複数回リクエスト（Under-fetching）が発生しやすいです。<br>
+            一方GraphQLは単一エンドポイントでクライアントが必要なフィールドのみを指定して取得できるため、通信量を最小化できますが、キャッシュ設計やクエリの複雑化対策が必要です。」
+          </div>
+          <div class="tech-answer-uz">
+            💡 <strong>O'zbekcha:</strong> REST sodda va standart, lekin ortiqcha yoki yetishmovchi ma'lumot muammosi bor. GraphQL bitta so'rovda faqat kerakli maydonlarni tortadi, mobil tarmoqlarda juda yengil, lekin kesh qilish nisbatan murakkabroq.
+          </div>
+          <div style="display:flex; justify-content:flex-end; margin-top:10px;">
+            <button class="mini-speak-btn" onclick="speakText('RESTはシンプルでキャッシュしやすい一方、GraphQLは必要なフィールドのみを取得して通信量を最小化できます。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- Tech Q3 -->
+        <div class="tech-card">
+          <span class="tech-tag">Frontend & React</span>
+          <div class="tech-q-title">Q3: ReactのuseMemoとuseCallbackの使い分けについて教えてください。</div>
+          <div class="tech-q-uz">React'da useMemo va useCallback xuklari qanday mezon bilan farqlanadi va ishlatiladi?</div>
+          <div class="tech-answer-jp">
+            <strong>【回答例】</strong><br>
+            「<strong>useMemo</strong>は『計算結果の値』をキャッシュ（メモ化）し、依存配列が変わらない限り重い計算処理の再実行を防ぎます。<br>
+            一方<strong>useCallback</strong>は『関数そのものの参照』をメモ化し、親コンポーネントが再レンダリングされても新しい関数インスタンスが生成されるのを防ぐことで、子コンポーネントの不要な再描画を抑止します。」
+          </div>
+          <div class="tech-answer-uz">
+            💡 <strong>O'zbekcha:</strong> useMemo — og'ir hisob-kitoblar natijasini keshlaydi. useCallback — funksiya havolasini saqlab, child komponentlarning qayta render bo'lishini to'xtatadi.
+          </div>
+          <div style="display:flex; justify-content:flex-end; margin-top:10px;">
+            <button class="mini-speak-btn" onclick="speakText('useMemoは計算結果をメモ化し、useCallbackは関数の参照をメモ化して不要な再描画を防ぎます。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- Tech Q4 -->
+        <div class="tech-card">
+          <span class="tech-tag">Web Security</span>
+          <div class="tech-q-title">Q4: SQLインジェクション、XSS、CSRFの対策は具体的にどう行いますか？</div>
+          <div class="tech-q-uz">SQL Injection, XSS va CSRF xurujlariga qarshi qanday xavfsizlik choralari ko'riladi?</div>
+          <div class="tech-answer-jp">
+            <strong>【回答例】</strong><br>
+            「1. <strong>SQLインジェクション</strong>：文字列連結を避け、プレースホルダ（Prepared Statements）を用います。<br>
+            2. <strong>XSS</strong>：入力値のエスケープ処理とReactのJSX自動エスケープ、およびCSPヘッダーを設定します。<br>
+            3. <strong>CSRF</strong>：ワンタイムのCSRFトークン検証と、CookieのSameSite属性をStrictまたはLaxに設定します。」
+          </div>
+          <div class="tech-answer-uz">
+            💡 <strong>O'zbekcha:</strong> SQLi — Prepared Statements (parametrlashtirilgan so'rovlar). XSS — HTML belgilarni tozalash (escaping) va CSP. CSRF — SameSite cookie va himoya tokenlari.
+          </div>
+          <div style="display:flex; justify-content:flex-end; margin-top:10px;">
+            <button class="mini-speak-btn" onclick="speakText('SQLインジェクションはプレースホルダ、XSSはエスケープ処理、CSRFはトークン検証とSameSite属性で対策します。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- Tech Q5 -->
+        <div class="tech-card">
+          <span class="tech-tag">Git & Team Workflow</span>
+          <div class="tech-q-title">Q5: GitのRebaseとMergeの違い、チーム開発でのベストプラクティスは？</div>
+          <div class="tech-q-uz">Git rebase va merge farqi nima va jamoada qaysi biri qachon ishlatiladi?</div>
+          <div class="tech-answer-jp">
+            <strong>【回答例】</strong><br>
+            「<strong>Merge</strong>は分岐と統合の履歴をすべて残すため安全ですが、コミットグラフが複雑になります。<br>
+            <strong>Rebase</strong>はコミット履歴を1本の直線（リニア）に整えるため履歴が綺麗になりますが、公開ブランチでのForce Pushは危険です。<br>
+            実務では、自分の作業ブランチをmainに追従させる時はRebaseを行い、PRをmainへマージする際はSquash & MergeまたはMerge Commitを活用します。」
+          </div>
+          <div class="tech-answer-uz">
+            💡 <strong>O'zbekcha:</strong> O'z tarmog'ingizda ishlayotganda rebase bilan toza ushlash, asosiy tarmoqqa (main) qo'shayotganda esa PR orqali merge qilish eng to'g'ri yapon standartidir.
+          </div>
+          <div style="display:flex; justify-content:flex-end; margin-top:10px;">
+            <button class="mini-speak-btn" onclick="speakText('作業ブランチではRebaseで履歴を綺麗に保ち、mainへの反映はPull RequestによるMergeを活用します。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- Tech Q6 -->
+        <div class="tech-card">
+          <span class="tech-tag">Architecture</span>
+          <div class="tech-q-title">Q6: モノリスとマイクロサービスのトレードオフはどう考えますか？</div>
+          <div class="tech-q-uz">Monolit va Mikroxizmatlar arxitekturasi o'rtasidagi tanlov va balansga qanday qaraysiz?</div>
+          <div class="tech-answer-jp">
+            <strong>【回答例】</strong><br>
+            「開発初期や小規模フェーズでは、デプロイやテストが容易なモノリスが最も迅速です。<br>
+            一方で、開発組織が拡大し機能ごとのスケーラビリティや障害の局所化が求められる段階では、マイクロサービスが適しています。銀の弾丸はないため、プロジェクトのフェーズとチーム規模に応じて最適な設計を選択することが重要だと考えております。」
+          </div>
+          <div class="tech-answer-uz">
+            💡 <strong>O'zbekcha:</strong> Kichik loyihada monolit tez va oson. Jamoa va tizim juda kattalashganda esa mikroxizmatlar foydali. Eng muhimi: loyiha bosqichiga qarab to'g'ri arxitektura tanlash.
+          </div>
+          <div style="display:flex; justify-content:flex-end; margin-top:10px;">
+            <button class="mini-speak-btn" onclick="speakText('開発初期はモノリスで素早く開発し、規模拡大に応じてマイクロサービスへ移行するなど、フェーズに適した設計を選択します。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         ULTIMATE SECTION 4: WEB INTERVIEW ETIQUETTE & CHECKLIST
+         ======================================================== -->
+    <section class="category-section" data-cat="web-etiquette">
+      <div class="section-title">
+        <span>📹 Web-Suhbat (Online 面接) Qat'iy Odoblari & Checklist</span>
+        <span class="count">Intervyudan 1 soat oldin tekshirish lozim bo'lgan muhim amallar</span>
+      </div>
+
+      <div class="checklist-grid">
+        <div class="check-item" onclick="toggleCheckItem(this)">
+          <div class="check-box">✓</div>
+          <div>
+            <div class="check-title">1. Kamera ko'z balandligida (Eye Level)</div>
+            <div class="check-desc">Noutbuk ostiga kitob yoki stend qo'yib kamerani to'g'ri ko'z ro'parasiga keltiring. Pastdan yuqoriga qarash man etiladi.</div>
+          </div>
+        </div>
+
+        <div class="check-item" onclick="toggleCheckItem(this)">
+          <div class="check-box">✓</div>
+          <div>
+            <div class="check-title">2. Yuzga to'g'ri yorug'lik tushishi (Front Light)</div>
+            <div class="check-desc">Orqangizda oyna yoki qattiq chiroq bo'lmasin. Yorug'lik yuzingizga tushib, mimika va tabassum aniq ko'rinishi shart.</div>
+          </div>
+        </div>
+
+        <div class="check-item" onclick="toggleCheckItem(this)">
+          <div class="check-box">✓</div>
+          <div>
+            <div class="check-title">3. Rasmiy Kiyinish (スーツ - To'liq Kostyum)</div>
+            <div class="check-desc">Oq ko'ylak, qora yoki to'q ko'k kostyum va galstuk. Soch-soqol sarishta, yuz ochiq bo'lishi kerak.</div>
+          </div>
+        </div>
+
+        <div class="check-item" onclick="toggleCheckItem(this)">
+          <div class="check-box">✓</div>
+          <div>
+            <div class="check-title">4. Sifatli Quloqchin (Mikrofon Testi)</div>
+            <div class="check-desc">Aks-sado (echo) va xirillash bo'lmasligi uchun naushnik taqing. Zoom ovozini oldindan test qilib oling.</div>
+          </div>
+        </div>
+
+        <div class="check-item" onclick="toggleCheckItem(this)">
+          <div class="check-box">✓</div>
+          <div>
+            <div class="check-title">5. Kameraga Qarash (Ko'z Aloqasi)</div>
+            <div class="check-desc">Ekranga yoki shpargalkaga emas, bevosita veb-kameraning ko'ziga qarang. Bu suhbatdoshning ko'ziga qarayotgandek ko'rinadi.</div>
+          </div>
+        </div>
+
+        <div class="check-item" onclick="toggleCheckItem(this)">
+          <div class="check-box">✓</div>
+          <div>
+            <div class="check-title">6. 10 Daqiqa Oldin Kirish (Waiting Room)</div>
+            <div class="check-desc">Aynan belgilangan vaqtda emas, 10 daqiqa oldin havolani ochib kutish zalida tayyor turish intizom belgisidir.</div>
+          </div>
+        </div>
+
+        <div class="check-item" onclick="toggleCheckItem(this)">
+          <div class="check-box">✓</div>
+          <div>
+            <div class="check-title">7. Bildirishnomalarni O'chirish (Silent Mode)</div>
+            <div class="check-desc">Telegram, WhatsApp, telefon va barcha ilovalar ovozini o'chiring. Ekranda ortiqcha oynalar ochiq qolmasin.</div>
+          </div>
+        </div>
+
+        <div class="check-item" onclick="toggleCheckItem(this)">
+          <div class="check-box">✓</div>
+          <div>
+            <div class="check-title">8. Yakuniy O'tirgan Holatdagi Ta'zim (座礼)</div>
+            <div class="check-desc">Suhbat tugagach, «本日は誠にありがとうございました。失礼いたします» deb boshni 30-45 gradus egib ta'zim qiling va intervyuer aloqani uzishini kuting.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         ULTIMATE SECTION 5: HR EVALUATION RUBRIC (SCORECARD)
+         ======================================================== -->
+    <section class="category-section" data-cat="hr-rubric">
+      <div class="section-title">
+        <span>📋 Yapon HR Baholash Varakasi (Recruiter Scorecard)</span>
+        <span class="count">Intervyuer sizga qaysi 5 ta mezon bo'yicha ball qo'yishi va baholashi</span>
+      </div>
+
+      <div class="rubric-grid">
+
+        <div class="rubric-card" style="border-top:4px solid #bc8cff;">
+          <span class="rubric-badge" style="background:rgba(188,140,255,0.15);color:#d2a8ff;">1-Mezon</span>
+          <div class="rubric-title">Yapon Tili Muloqoti</div>
+          <div class="rubric-weight">25% Vazn</div>
+          <ul class="rubric-points">
+            <li>Savolni to'g'ri va bir urinishda tushunish</li>
+            <li>PREP usulida: xulosani 1-jumlada aytish</li>
+            <li>Ortiqcha cho'zmasdan 1 daqiqada javob berish</li>
+            <li>Tegishli Keigo (Kenjougo/Teineigo) ishlatish</li>
+          </ul>
+        </div>
+
+        <div class="rubric-card" style="border-top:4px solid #58a6ff;">
+          <span class="rubric-badge" style="background:rgba(88,166,255,0.15);color:#58a6ff;">2-Mezon</span>
+          <div class="rubric-title">Xarakter & CAL Fit</div>
+          <div class="rubric-weight">25% Vazn</div>
+          <ul class="rubric-points">
+            <li>CAL STYLE: Passion, Challenge, Grow Up ruhi</li>
+            <li>Tabassum, samimiylik va ijobiy energiya</li>
+            <li>O'rganishga ochiqlik va kamtarlik (素直さ)</li>
+            <li>Mijoz va jamoa bilan tez kelisha olish</li>
+          </ul>
+        </div>
+
+        <div class="rubric-card" style="border-top:4px solid #3fb950;">
+          <span class="rubric-badge" style="background:rgba(63,185,80,0.15);color:#3fb950;">3-Mezon</span>
+          <div class="rubric-title">Texnik Baza & Amaliyot</div>
+          <div class="rubric-weight">20% Vazn</div>
+          <ul class="rubric-points">
+            <li>Bionexstar va Web loyihalarini chuqur tushuntirish</li>
+            <li>Xatolikni loglar va data orqali yechganlik (PREP)</li>
+            <li>CS fundamental bilimlari (DB, API, xavfsizlik)</li>
+            <li>Yangi texnologiyani 1 haftada o'rgana olishi</li>
+          </ul>
+        </div>
+
+        <div class="rubric-card" style="border-top:4px solid #d29922;">
+          <span class="rubric-badge" style="background:rgba(210,153,34,0.15);color:#d29922;">4-Mezon</span>
+          <div class="rubric-title">Hou-Ren-So & Moslashuv</div>
+          <div class="rubric-weight">15% Vazn</div>
+          <ul class="rubric-points">
+            <li>Muammo bo'lganda 30 daqiqada maslahat solish</li>
+            <li>O'zboshimchalik bilan ish qilmaslik odobi</li>
+            <li>客先常駐 (SES) muhitiga ijobiy va tayyor qarash</li>
+            <li>Fikrlar to'qnashganda jamoa qarorini hurmat qilish</li>
+          </ul>
+        </div>
+
+        <div class="rubric-card" style="border-top:4px solid #f85149;">
+          <span class="rubric-badge" style="background:rgba(248,81,73,0.15);color:#ff7b72;">5-Mezon</span>
+          <div class="rubric-title">Barqarorlik & Karyera</div>
+          <div class="rubric-weight">15% Vazn</div>
+          <ul class="rubric-points">
+            <li>Yaponiyada kamida 3-5 yil barqaror ishlash niyati</li>
+            <li>Tashlab ketish yoki viza o'zgartirish xavfi yo'qligi</li>
+            <li>5 yillik aniq o'sish rejasiga egalik</li>
+            <li>Oilasi uning Yaponiyada ishlashini qo'llab-quvvatlashi</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
 
     <!-- ========================================================
          SECTION 1: VOCABULARY TABLE (DARAJALAR BO'YICHA JADVAL)
@@ -5485,6 +6291,197 @@ Ha, albatta 3 ta savolim bor edi:
         uzBlocks.forEach(el => el.style.display = 'block');
       }
     }
+
+    // ========================================================
+    // INTERACTIVE MOCK INTERVIEW SIMULATOR ENGINE
+    // ========================================================
+    const simQuestions = [
+      {
+        qJp: "はじめに、1分程度で簡単な自己紹介をお願いいたします。",
+        qUz: "Boshlanishiga, taxminan 1 daqiqa ichida qisqacha o'zingizni tanishtirib bersangiz.",
+        ansJp: "改めまして、ファルホドと申します。現在、JDU（日本デジタル大学）でコンピューターサイエンスを専攻しており、2027年卒業予定です。大学ではWebアプリケーション開発を専攻し、React、Node.js、TypeScriptを用いたフルスタック開発に注力してまいりました。特に、病気早期スクリーニングシステムである『Bionexstar』の開発では、フロントエンドからバックエンドAPI、データベース設計まで一貫して手掛けました。また、日本語能力試験N2を取得しております。本日はよろしくお願いいたします。",
+        ansUz: "Ism, universitet (JDU IT 2027), texnologiyalar (React, Node, TS), asosiy loyiha (Bionexstar) va N2 sertifikatini 60 soniyada lo'nda ayting."
+      },
+      {
+        qJp: "数あるIT企業の中で、なぜ当社（CAL）を志望されたのですか？",
+        qUz: "Nega ko'plab IT kompaniyalar orasida aynan CAL'ni tanladingiz?",
+        ansJp: "私が貴社を志望した理由は、貴社の『Challenge And Lead』という理念、そして『情熱・挑戦・成長』というCAL STYLEに強く共感したからです。貴社は全国18拠点を展開し、多種多様な業界の大規模開発を手掛けられており、若手のうちから様々な現場で技術力とコミュニケーション力を磨ける環境があります。客先常駐を含め、現場でお客様の課題を技術で解決できる自立したエンジニアになりたいと考え、強く志望いたしました。",
+        ansUz: "CAL'ning 'Challenge And Lead' shiori, 18 ta filiali, xilma-xil loyihalari va SES/mijoz ofisida tez o'sish imkoniyati borligini ta'kidlang."
+      },
+      {
+        qJp: "客先常駐（SES）やプロジェクト先での勤務に不安や抵抗はありませんか？",
+        qUz: "Mijoz ofislarida (SES formati) ishlashga qanday qaraysiz? Moslashishda xavotir yo'qmi?",
+        ansJp: "全く問題ございません。むしろ、客先常駐という環境を前向きに捉えております。理由は、多様なクライアントの現場を経験することで、様々な業界知識と最先端の技術スタックを短期間で吸収でき、高い適応力とビジネスコミュニケーション力を磨けるからです。大学時代にも多国籍なチーム開発を経験しており、柔軟に馴染む自信がございます。",
+        ansUz: "Hech qanday muammo yo'qligini, aksincha turli loyihalarda tezroq o'sish uchun eng yaxshi maydon deb hisoblashingizni ayting."
+      },
+      {
+        qJp: "あなたの最大の強み（自己PR）は何ですか？",
+        qUz: "Maksimal kuchli tomoningiz nima?",
+        ansJp: "私の最大の強みは、『粘り強い課題解決能力』と『自律的なキャッチアップ力』です。未知のエラーに直面した際、まず公式ドキュメントやログを徹底的に分析し、仮説を立てて検証します。同時に、独りで抱え込まず、30分自力で調査して道筋が見えない場合は先輩に相談する『報連相』を徹底しています。この粘り強さと確実なコミュニケーションで貴社に貢献いたします。",
+        ansUz: "Qat'iyatli muammo yechish va 30 daqiqa mustaqil qidirib, so'ngra Hou-Ren-So qilish odatingizni ayting."
+      },
+      {
+        qJp: "これまで開発で最も苦労したことやトラブルと、その解決方法を教えてください。",
+        qUz: "Shu paytgacha eng ko'p qiyinchilik tug'dirgan muammo va uning yechimi qanday bo'lgan?",
+        ansJp: "『Bionexstar』プロジェクトにおける大量データ通信時のAPIレスポンス遅延です。ログを分析したところ、不要な再描画とDBインデックス不足によるスロークエリが原因でした。そこでReactのuseMemoによるコンポーネント最適化と、複合インデックスの追加を行いました。その結果、応答速度を約40％短縮することに成功しました。この経験から論理的にボトルネックを特定する重要性を学びました。",
+        ansUz: "Bionexstar loyihasidagi API sekinlashuvini useMemo va SQL indekslari bilan 40% tezlashtirganingizni PREP usulida ayting."
+      },
+      {
+        qJp: "実務で未経験の技術を任された場合、どうキャッチアップしますか？",
+        qUz: "Tajribangizda bo'lmagan yangi texnologiya topshirilsa qanday o'rganasiz?",
+        ansJp: "3つのステップで迅速にキャッチアップいたします。第1に公式ドキュメントで設計思想と文法を体系的に理解し、第2に個人環境で小さなプロトタイプを自作して動作検証を行います。第3に現場のルールに合致しているか先輩に確認・相談（報連相）を行い、理解のズレを防ぎます。基礎CS知識があるため、1〜2週間で実務レベルに立ち上げられます。",
+        ansUz: "1) Rasmiy doc o'rganish, 2) Kichik prototip yasash, 3) Hou-Ren-So bilan jamoaga moslashish."
+      },
+      {
+        qJp: "開発方針や仕様でチームメンバーと意見が対立した時、どう対処しますか？",
+        qUz: "Fikrlar to'qnashganda qanday murosaga kelasiz?",
+        ansJp: "自分の意見に固執せず、『プロダクトの価値と顧客にとって何が最善か』を共通の軸に対話します。まず相手の背景や意図を傾聴し、その上で工数や保守性などの客観的なデータを示して説明します。チームとしての決定が下された後は、決定方針を尊重し全力を尽くします。",
+        ansUz: "O'z fikrida turib olmasdan, mijoz va mahsulot manfaatini o'ylab, raqamlar bilan gaplashish va jamoa qarorini hurmat qilish."
+      },
+      {
+        qJp: "なぜ母国や欧米ではなく、日本で働きたいのですか？",
+        qUz: "Nega aynan Yaponiya?",
+        ansJp: "日本の高いものづくり精神、品質への徹底したこだわり、そしてチーム全員で一つのプロダクトを作り上げる開発文化に深く共感しているからです。また、日本デジタル大学で学んだ知識を活かし、日本社会に技術で貢献し、長く日本でエンジニアとして定住しキャリアを築きたいと考えております。",
+        ansUz: "Yaponiyaning sifat va Monodukuri madaniyati, JDU'da olingan bilimlar va uzoq muddat yashab ishlash niyati."
+      },
+      {
+        qJp: "CALの行動指針である『Passion・Challenge・Grow Up』についてどう考えますか？",
+        qUz: "CAL STYLE haqida qanday fikrdasiz?",
+        ansJp: "私のこれまでの歩みそのものだと感じております。ITで社会に貢献したいという『情熱（Passion）』、Bionexstarなど未経験領域へ果敢に挑んだ『挑戦（Challenge）』、そして日本語N2を取得し知見を蓄積してきた『成長（Grow Up）』です。貴社に入社後もこの精神で仲間と共に成長していきたいです。",
+        ansUz: "Dasturlashga bo'lgan ishtiyoq, Bionexstar chaqirig'i va N2 darajasigacha o'sish misolida ko'rsating."
+      },
+      {
+        qJp: "5年後、日本でどのようなエンジニアになっていたいですか？",
+        qUz: "5 yildan so'ng qanday mutaxassis bo'lishni rejalashtiryapsiz?",
+        ansJp: "入社後3年間は現場でフルスタック開発の技術力と要件定義などの上流工程の経験を積み、現場から最も信頼されるテックリードを目指します。そして5年後には、多国籍なエンジニアチームを束ね、日本と世界を技術で繋ぐブリッジエンジニアとして、貴社の自社開発やグローバル展開を牽引したいです。",
+        ansUz: "3 yilda texnik yetakchi bo'lish, 5 yilda esa ko'prik-muhandis (Bridge Engineer) darajasiga chiqish."
+      },
+      {
+        qJp: "繁忙期に残業が発生する場合がありますが、健康管理を含め対応可能ですか？",
+        qUz: "Zangyou (ortiqcha ish) va sog'liqni saqlashga qanday qaraysiz?",
+        ansJp: "はい、納期遵守とプロジェクト成功のための残業であれば全力で対応いたします。もちろん無駄な残業を防ぐため日頃からスケジュール管理を徹底しております。健康管理については規則正しい生活とランニング、十分な睡眠を心掛けており、病気で休んだことは一度もございません。心身ともに健康です。",
+        ansUz: "Zangyouga to'liq tayyormisiz, sport bilan shug'ullanishingiz va doimiy sog'lom ekaningizni ta'kidlang."
+      },
+      {
+        qJp: "最後に、面接官に何か質問（逆質問）はありますか？",
+        qUz: "Oxirida bizga biror savolingiz bormi?",
+        ansJp: "質問の機会をいただきありがとうございます。貴社で現場や顧客から高く評価され、早期に活躍されているエンジニアの方々に共通する特徴やマインドセットがあればぜひ教えていただけますでしょうか。",
+        ansUz: "Muvaffaqiyatli muhandislarning asosiy xislatlari haqida beriladigan eng zo'r teskari savol."
+      }
+    ];
+
+    let currentSimIndex = 0;
+    let simTimer = null;
+    let simSecondsLeft = 60;
+    let simTimerRunning = false;
+    let simDoneSet = new Set();
+
+    function renderSimQuestion(idx) {
+      currentSimIndex = (idx + simQuestions.length) % simQuestions.length;
+      const q = simQuestions[currentSimIndex];
+
+      document.getElementById('simCurrentNum').innerText = currentSimIndex + 1;
+      document.getElementById('simTotalNum').innerText = simQuestions.length;
+      document.getElementById('simQuestionJp').innerText = '「' + q.qJp + '」';
+      document.getElementById('simQuestionUz').innerText = '"' + q.qUz + '"';
+
+      document.getElementById('simAnsJp').innerText = q.ansJp;
+      document.getElementById('simAnsUz').innerText = q.ansUz;
+      document.getElementById('simAnswerBox').style.display = 'none';
+
+      resetSimTimer();
+    }
+
+    function playSimVoice() {
+      const q = simQuestions[currentSimIndex];
+      speakText(q.qJp);
+    }
+
+    function toggleSimTimer() {
+      if (simTimerRunning) {
+        clearInterval(simTimer);
+        simTimerRunning = false;
+        document.getElementById('btnSimTimer').innerText = '⏱️ Davom ettirish';
+      } else {
+        simTimerRunning = true;
+        document.getElementById('btnSimTimer').innerText = '⏸️ Toxtatish';
+        simTimer = setInterval(() => {
+          simSecondsLeft--;
+          updateSimTimerDisplay();
+          if (simSecondsLeft <= 0) {
+            clearInterval(simTimer);
+            simTimerRunning = false;
+            document.getElementById('btnSimTimer').innerText = '⏱️ Qayta Boshlash';
+            showToast("⏰ 60 soniya tugadi! Javobni yakunlang.");
+          }
+        }, 1000);
+      }
+    }
+
+    function resetSimTimer() {
+      if (simTimer) clearInterval(simTimer);
+      simTimerRunning = false;
+      simSecondsLeft = 60;
+      updateSimTimerDisplay();
+      const btn = document.getElementById('btnSimTimer');
+      if (btn) btn.innerText = '⏱️ Taymerni Boshlash';
+    }
+
+    function updateSimTimerDisplay() {
+      const disp = document.getElementById('simTimerDisplay');
+      if (!disp) return;
+      const m = Math.floor(simSecondsLeft / 60);
+      const s = simSecondsLeft % 60;
+      disp.innerText = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+
+      disp.classList.remove('warning', 'danger');
+      if (simSecondsLeft <= 10) {
+        disp.classList.add('danger');
+      } else if (simSecondsLeft <= 25) {
+        disp.classList.add('warning');
+      }
+    }
+
+    function toggleSimAnswer() {
+      const box = document.getElementById('simAnswerBox');
+      if (box.style.display === 'block') {
+        box.style.display = 'none';
+      } else {
+        box.style.display = 'block';
+      }
+    }
+
+    function markSimDone() {
+      simDoneSet.add(currentSimIndex);
+      document.getElementById('simDoneCount').innerText = simDoneSet.size;
+      showToast("🎉 Ushbu savol o'zlashtirildi deb belgilandi!");
+      nextSimQuestion();
+    }
+
+    function nextSimQuestion() {
+      renderSimQuestion(currentSimIndex + 1);
+    }
+
+    function randomSimQuestion() {
+      const rand = Math.floor(Math.random() * simQuestions.length);
+      renderSimQuestion(rand);
+    }
+
+    function toggleCheckItem(el) {
+      el.classList.toggle('done');
+      const isDone = el.classList.contains('done');
+      if (isDone) {
+        showToast("✓ Amal bajarildi deb belgilandi!");
+      }
+    }
+
+    // Initialize Simulator on load
+    setTimeout(() => {
+      if (document.getElementById('simQuestionJp')) {
+        renderSimQuestion(0);
+      }
+    }, 200);
+
 
     let recallActive = false;
     function toggleRecallMode() {
