@@ -825,6 +825,84 @@
     .badge-n2 { background: rgba(88, 166, 255, 0.15); color: #58a6ff; border: 1px solid rgba(88, 166, 255, 0.3); }
     .badge-n3 { background: rgba(63, 185, 80, 0.15); color: #3fb950; border: 1px solid rgba(63, 185, 80, 0.3); }
     .badge-ses { background: rgba(210, 153, 34, 0.15); color: #d29922; border: 1px solid rgba(210, 153, 34, 0.3); }
+    .badge-kaiwa { background: rgba(56, 139, 253, 0.15); color: #79c0ff; border: 1px solid rgba(56, 139, 253, 0.35); }
+    
+    /* Kaiwa Word Grid Styles */
+    .kaiwa-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .kaiwa-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s;
+    }
+    .kaiwa-card:hover {
+      border-color: rgba(88, 166, 255, 0.4);
+      background: var(--surface-hover);
+      transform: translateY(-2px);
+    }
+    .kw-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+    .kw-kanji {
+      font-family: var(--font-jp);
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .kw-kana {
+      font-size: 12px;
+      color: var(--primary);
+      margin-top: 1px;
+    }
+    .kw-romaji {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .kw-mean {
+      font-size: 13px;
+      color: #c9d1d9;
+      margin-bottom: 10px;
+      line-height: 1.45;
+    }
+    .kw-ex-box {
+      background: rgba(0,0,0,0.25);
+      border-left: 3px solid var(--primary);
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    .kw-ex-ja {
+      font-family: var(--font-jp);
+      color: #f0f6fc;
+      margin-bottom: 3px;
+      line-height: 1.45;
+    }
+    .kw-ex-uz {
+      color: var(--text-muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+    .kw-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 8px;
+      border-top: 1px solid rgba(48, 54, 61, 0.5);
+    }
 
     /* Grammar Section Cards */
     .grammar-grid {
@@ -1479,6 +1557,83 @@
       color: var(--green);
       font-weight: 700;
     }
+  
+    /* CHEAT SHEET MODAL STYLES */
+    .cheat-modal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .cheat-modal.hidden { display: none !important; }
+    .cheat-modal-content {
+      background: #111827;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 800px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      overflow: hidden;
+    }
+    .cheat-modal-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid #1f2937;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #162032;
+    }
+    .cheat-modal-body {
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .cheat-card {
+      background: #1a2333;
+      border: 1px solid #283548;
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .cheat-card.highlight {
+      background: rgba(239, 68, 68, 0.1);
+      border-color: rgba(239, 68, 68, 0.4);
+    }
+    .cheat-card-title {
+      font-weight: 700;
+      font-size: 13px;
+      color: #f59e0b;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .cheat-card.highlight .cheat-card-title {
+      color: #ef4444;
+    }
+    .cheat-card-text {
+      font-size: 12px;
+      line-height: 1.6;
+      color: #e2e8f0;
+    }
+    @media print {
+      body * { visibility: hidden; }
+      #cheatSheetModal, #cheatSheetModal * { visibility: visible; }
+      #cheatSheetModal { position: absolute; left: 0; top: 0; width: 100%; background: #fff !important; color: #000 !important; }
+      .cheat-modal-content { background: #fff !important; color: #000 !important; border: none !important; box-shadow: none !important; }
+      .cheat-card { background: #f8fafc !important; color: #000 !important; border: 1px solid #cbd5e1 !important; page-break-inside: avoid; }
+      .cheat-card-text { color: #000 !important; }
+    }
+
   </style>
 </head>
 <body>
@@ -1508,8 +1663,8 @@
           <span class="stat-lbl">CAL & SES HR savol-javoblari</span>
         </div>
         <div class="stat-pill">
-          <span class="stat-num">50+ So'zlar Jadvali</span>
-          <span class="stat-lbl">N1, N2, N3 & IT intervyu lug'ati</span>
+          <span class="stat-num">95+ Lug'at & So'zlar</span>
+          <span class="stat-lbl">N1-N3, SES & Kaiwa muloqot lug'ati</span>
         </div>
         <div class="stat-pill">
           <span class="stat-num">10+ Keigo Grammatika</span>
@@ -1535,6 +1690,7 @@
         <button class="btn-toggle active" id="btnLangAll" onclick="setLangView('all')">🌐 Ikki tilda</button>
         <button class="btn-toggle" id="btnLangJp" onclick="setLangView('jp')">🇯🇵 Yaponcha</button>
         <button class="btn-toggle" id="btnLangUz" onclick="setLangView('uz')">🇺🇿 O'zbekcha</button>
+        <button class="btn-toggle" id="btnCheatSheet" onclick="toggleCheatSheet()" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; font-weight: 700; border: none; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);">⚡ Suhbatdan 15 Daqiqa Oldin</button>
         <button class="btn-toggle" id="btnRecall" onclick="toggleRecallMode()">🧠 Yodlash rejimi</button>
       </div>
     </div>
@@ -1550,7 +1706,8 @@
       <button class="tab-btn highlight" onclick="filterCategory('tech-qa', this)">💻 IT Texnik Savol-Javoblar</button>
       <button class="tab-btn highlight" onclick="filterCategory('web-etiquette', this)">📹 Web-Suhbat Odobi & Checklist</button>
       <button class="tab-btn highlight" onclick="filterCategory('hr-rubric', this)">📋 HR Baholash Varakasi</button>
-      <button class="tab-btn highlight" onclick="filterCategory('vocab-table', this)">📊 So'zlar Jadvali (N1-N3)</button>
+      <button class="tab-btn highlight" onclick="filterCategory('kaiwa-words', this)">🗣️ Kaiwa Muloqot So'zlari (46)</button>
+      <button class="tab-btn highlight" onclick="filterCategory('vocab-table', this)">📊 So'zlar Jadvali (98)</button>
       <button class="tab-btn highlight" onclick="filterCategory('grammar', this)">📝 Intervyu Grammatikasi & Keigo</button>
       <button class="tab-btn highlight" onclick="filterCategory('speech', this)">🗣️ Tayyor Nutq Namunalarim</button>
       <button class="tab-btn highlight" onclick="filterCategory('cal-hr-new', this)">🎯 CAL & SES Yangi HR Savollar</button>
@@ -1587,7 +1744,7 @@
             <span>HR Savol-Javob Mashqi</span>
           </div>
           <div class="sim-stats" id="simStats">
-            Savol <strong id="simCurrentNum">1</strong> / <span id="simTotalNum">12</span> • Bajarilgan: <strong id="simDoneCount" style="color:var(--green);">0</strong> ta
+            Savol <strong id="simCurrentNum">1</strong> / <span id="simTotalNum">16</span> • Bajarilgan: <strong id="simDoneCount" style="color:var(--green);">0</strong> ta
           </div>
         </div>
 
@@ -1975,12 +2132,991 @@
     </section>
 
     <!-- ========================================================
+         DEDICATED SECTION: KAIWA.LIVE CONVERSATION VOCABULARY
+         ======================================================== -->
+    <section class="category-section" data-cat="kaiwa-words">
+      <div class="section-title">
+        <span>🗣️ Kaiwa.live Suhbat Lug'ati (Erkin Muloqotda To'plangan 46 Ta So'z)</span>
+        <span class="count">46 ta so'z • Audio talaffuzi, intervyu konteksti va o'zbekcha sharhi bilan</span>
+      </div>
+
+      <div class="kaiwa-grid">
+        <div class="kaiwa-card" data-keywords="話題 わだい wadai mavzu, suhbat mavzusi (topic of conversation)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">話題</div>
+                <div class="kw-kana">わだい</div>
+                <div class="kw-romaji">Wadai</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Mavzu, suhbat mavzusi (Topic of conversation)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「面接では、これまでの開発実績や志望動機が主な話題となります。」</div>
+              <div class="kw-ex-uz">Suhbatda asosan dasturlash natijalari va topshirish sababi asosiy mavzu bo'ladi.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('わだい。面接では、これまでの開発実績や志望動機が主な話題となります。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="話す はなす hanasu gapirish, so'zlash (to speak)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">話す</div>
+                <div class="kw-kana">はなす</div>
+                <div class="kw-romaji">Hanasu</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Gapirish, so'zlash (To speak)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「緊張せず、落ち着いて自分の強みを面接官に話すよう心掛けています。」</div>
+              <div class="kw-ex-uz">Hayajonlanmasdan, xotirjamlik bilan o'z kuchli tomonlarimni intervyuerga aytishga intilaman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('はなす。緊張せず、落ち着いて自分の強みを面接官に話すよう心掛けています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="勉強 べんきょう benkyō o'qish, o'rganish (studying)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">勉強</div>
+                <div class="kw-kana">べんきょう</div>
+                <div class="kw-romaji">Benkyō</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> O'qish, o'rganish (Studying)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「最新のWeb技術や日本の商習慣についての勉強を毎日続けています。」</div>
+              <div class="kw-ex-uz">Eng so'nggi Web texnologiyalari va Yaponiya biznes madaniyatini har kuni o'rganib kelmoqdaman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('べんきょう。最新のWeb技術や日本の商習慣についての勉強を毎日続けています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="返事 へんじ henji javob berish, munosabat (reply, response)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">返事</div>
+                <div class="kw-kana">へんじ</div>
+                <div class="kw-romaji">Henji</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Javob berish, munosabat (Reply, response)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「面接官の質問に対して、ハキハキと明るく元気な返事を心掛けています。」</div>
+              <div class="kw-ex-uz">Intervyuerning savollariga ravshan, ochiq va tetik ohangda javob berishga amal qilaman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('へんじ。面接官の質問に対して、ハキハキと明るく元気な返事を心掛けています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="言葉 ことば kotoba so'z, til, ibora (words, language)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">言葉</div>
+                <div class="kw-kana">ことば</div>
+                <div class="kw-romaji">Kotoba</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> So'z, til, ibora (Words, language)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「ビジネスシーンにふさわしい丁寧な言葉遣いを選ぶことが大切です。」</div>
+              <div class="kw-ex-uz">Biznes muhitiga munosib xushmuomala so'zlar va iboralarni tanlash juda muhim.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('ことば。ビジネスシーンにふさわしい丁寧な言葉遣いを選ぶことが大切です。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="特に とくに toku ni ayniqsa, maxsus, xususan (especially, in particular)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">特に</div>
+                <div class="kw-kana">とくに</div>
+                <div class="kw-romaji">Toku ni</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Ayniqsa, maxsus, xususan (Especially, in particular)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「フロントエンド開発、特にReactとNext.jsを用いたUI設計が得意です。」</div>
+              <div class="kw-ex-uz">Frontend ishlab chiqish, ayniqsa React va Next.js yordamidagi UI dizayni mening kuchli tomonim.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('とくに。フロントエンド開発、特にReactとNext.jsを用いたUI設計が得意です。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="文化 ぶんか bunka madaniyat, ish odobi (culture)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">文化</div>
+                <div class="kw-kana">ぶんか</div>
+                <div class="kw-romaji">Bunka</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Madaniyat, ish odobi (Culture)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「日本のチーム開発における『報連相』の文化に深く共感しています。」</div>
+              <div class="kw-ex-uz">Yaponiyaning jamoaviy dasturlashidagi 'Hou-Ren-So' madaniyatini chin dildan qo'llab-quvvatlayman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('ぶんか。日本のチーム開発における『報連相』の文化に深く共感しています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="歴史 れきし rekishi tarix (history)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">歴史</div>
+                <div class="kw-kana">れきし</div>
+                <div class="kw-romaji">Rekishi</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Tarix (History)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「日本のものづくりと技術革新の歴史を学び、その品質の高さに感銘を受けました。」</div>
+              <div class="kw-ex-uz">Yaponiyaning mahsulot yaratish va texnologik yangilanishlar tarixini o'rganib, uning yuqori sifatiga qoyil qoldim.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('れきし。日本のものづくりと技術革新の歴史を学び、その品質の高さに感銘を受けました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="表現 ひょうげん hyōgen ifoda, ifodalash (expression)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">表現</div>
+                <div class="kw-kana">ひょうげん</div>
+                <div class="kw-romaji">Hyōgen</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Ifoda, ifodalash (Expression)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「自分の考えや技術的な提案を、分かりやすい日本語で表現するよう努めています。」</div>
+              <div class="kw-ex-uz">O'z fikrim va texnik takliflarimni tushunarli yapon tilida ifodalashga astoydil harakat qilaman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('ひょうげん。自分の考えや技術的な提案を、分かりやすい日本語で表現するよう努めています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="具体的 ぐたいてき gutaiteki aniq, aniqroq, dalilli (specific, concrete)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">具体的</div>
+                <div class="kw-kana">ぐたいてき</div>
+                <div class="kw-romaji">Gutaiteki</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Aniq, aniqroq, dalilli (Specific, concrete)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「成果をアピールする際は、数字を用いて具体的に説明いたします。」</div>
+              <div class="kw-ex-uz">Erishilgan natijalarni ko'rsatishda aniq raqamlardan foydalanib tushuntirib beraman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('ぐたいてき。成果をアピールする際は、数字を用いて具体的に説明いたします。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="分かりにくい わかりにくい wakarinikui tushunishi qiyin, noaniq (hard to understand)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">分かりにくい</div>
+                <div class="kw-kana">わかりにくい</div>
+                <div class="kw-romaji">Wakarinikui</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Tushunishi qiyin, noaniq (Hard to understand)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「分かりにくい説明にならないよう、PREP法を意識して結論から話します。」</div>
+              <div class="kw-ex-uz">Tushunishi qiyin bo'lib qolmasligi uchun PREP usulida avval xulosadan boshlab gapiraman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('わかりにくい。分かりにくい説明にならないよう、PREP法を意識して結論から話します。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="意味 いみ imi ma'no, mohiyat (meaning)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">意味</div>
+                <div class="kw-kana">いみ</div>
+                <div class="kw-romaji">Imi</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Ma'no, mohiyat (Meaning)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「コード1行1行の意味をしっかりと理解した上で実装を行っています。」</div>
+              <div class="kw-ex-uz">Koddagi har bir qatorning ma'nosini chuqur tushungan holda dasturlashni amalga oshiraman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('いみ。コード1行1行の意味をしっかりと理解した上で実装を行っています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="質問 しつもん shitsumon savol (question)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">質問</div>
+                <div class="kw-kana">しつもん</div>
+                <div class="kw-romaji">Shitsumon</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Savol (Question)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「分からない点があれば独断で進めず、先輩に確認の質問をいたします。」</div>
+              <div class="kw-ex-uz">Tushunarsiz nuqtalar bo'lsa o'zboshimchalik qilmay, ustozlarga aniqlashtiruvchi savol beraman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('しつもん。分からない点があれば独断で進めず、先輩に確認の質問をいたします。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="面接 めんせつ mensetsu suhbat, intervyu (job interview)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">面接</div>
+                <div class="kw-kana">めんせつ</div>
+                <div class="kw-romaji">Mensetsu</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Suhbat, intervyu (Job interview)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「本日の面接の機会をいただき、心より感謝申し上げます。」</div>
+              <div class="kw-ex-uz">Bugungi suhbat imkoniyatini taqdim etganingiz uchun chin dildan minnatdorchilik bildiraman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('めんせつ。本日の面接の機会をいただき、心より感謝申し上げます。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="緊張 きんちょう kinchō hayajon, tortilish, asabiylik (nervousness)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">緊張</div>
+                <div class="kw-kana">きんちょう</div>
+                <div class="kw-romaji">Kinchō</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Hayajon, tortilish, asabiylik (Nervousness)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「多少の緊張はございますが、笑顔を忘れずに誠意を持ってお答えします。」</div>
+              <div class="kw-ex-uz">Bir oz hayajon bor, lekin tabassumni yo'qotmay, sidqidildan javob beraman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('きんちょう。多少の緊張はございますが、笑顔を忘れずに誠意を持ってお答えします。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="年齢 ねんれい nenrei yosh (age)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">年齢</div>
+                <div class="kw-kana">ねんれい</div>
+                <div class="kw-romaji">Nenrei</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Yosh (Age)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「若い年齢のうちから様々なプロジェクトに挑戦し、急速に成長したいです。」</div>
+              <div class="kw-ex-uz">Yoshlik davrimdanoq xilma-xil loyihalarga qo'l urib, tez sur'atda o'sishni istayman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('ねんれい。若い年齢のうちから様々なプロジェクトに挑戦し、急速に成長したいです。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="準備 じゅんび junbi tayyorgarlik, hozirlik (preparation)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">準備</div>
+                <div class="kw-kana">じゅんび</div>
+                <div class="kw-romaji">Junbi</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Tayyorgarlik, hozirlik (Preparation)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「面接に向け、企業研究と想定質問の回答の準備を万全にしてまいりました。」</div>
+              <div class="kw-ex-uz">Suhbat uchun kompaniyani o'rganish va kutiladigan savollar tayyorgarligini to'liq qilib keldim.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('じゅんび。面接に向け、企業研究と想定質問の回答の準備を万全にしてまいりました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="選ぶ えらぶ erabu tanlamoq, saralamoq (to choose, select)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">選ぶ</div>
+                <div class="kw-kana">えらぶ</div>
+                <div class="kw-romaji">Erabu</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Tanlamoq, saralamoq (To choose, select)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「数ある企業の中で、成長機会と挑戦を重んじる貴社を選びました。」</div>
+              <div class="kw-ex-uz">Ko'plab kompaniyalar orasida aynan o'sish va chaqiriqlarga imkon beruvchi kompaniyangizni tanladim.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('えらぶ。数ある企業の中で、成長機会と挑戦を重んじる貴社を選びました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="伝える つたえる tsutaeru yetkazmoq, ifoda etmoq (to convey, communicate)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">伝える</div>
+                <div class="kw-kana">つたえる</div>
+                <div class="kw-romaji">Tsutaeru</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Yetkazmoq, ifoda etmoq (To convey, communicate)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「クライアントの要求を的確に汲み取り、開発チームへ正確に伝えます。」</div>
+              <div class="kw-ex-uz">Mijozning talablarini to'g'ri anglab, dasturchilar jamoasiga aniq yetkazib beraman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('つたえる。クライアントの要求を的確に汲み取り、開発チームへ正確に伝えます。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="象徴 しょうちょう shōchō ramziy belgi, timsol (symbol)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">象徴</div>
+                <div class="kw-kana">しょうちょう</div>
+                <div class="kw-romaji">Shōchō</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Ramziy belgi, timsol (Symbol)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「CALの『Challenge And Lead』は、挑戦するエンジニアの象徴であると感じます。」</div>
+              <div class="kw-ex-uz">CAL kompaniyasining 'Challenge And Lead' shiori doim yangilikka intiluvchi muhandislar timsolidir.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('しょうちょう。CALの『Challenge And Lead』は、挑戦するエンジニアの象徴であると感じます。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="進む すすむ susumu oldinga borish, rivojlanish, siljish (to advance, develop)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">進む</div>
+                <div class="kw-kana">すすむ</div>
+                <div class="kw-romaji">Susumu</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Oldinga borish, rivojlanish, siljish (To advance, develop)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「どのような技術的障害があっても諦めず、常に前へ進む姿勢を保ちます。」</div>
+              <div class="kw-ex-uz">Qanday texnik to'siq bo'lmasin taslim bo'lmay, doimo olg'a siljish ruhini saqlayman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('すすむ。どのような技術的障害があっても諦めず、常に前へ進む姿勢を保ちます。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="一緒に いっしょに issho ni birga, hamkorlikda (together, with)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">一緒に</div>
+                <div class="kw-kana">いっしょに</div>
+                <div class="kw-romaji">Issho ni</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Birga, hamkorlikda (Together, with)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「優秀な先輩エンジニアの皆様と一緒に、価値あるシステムを開発したいです。」</div>
+              <div class="kw-ex-uz">Tajribali yetakchi muhandislar bilan birgalikda jamiyatga foydali tizimlar yaratishni xohlayman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('いっしょに。優秀な先輩エンジニアの皆様と一緒に、価値あるシステムを開発したいです。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="難しい むずかしい muzukashii qiyin, murakkab (difficult)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">難しい</div>
+                <div class="kw-kana">むずかしい</div>
+                <div class="kw-romaji">Muzukashii</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Qiyin, murakkab (Difficult)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「難しい課題であっても、細かくタスクを分解して粘り強く解決いたします。」</div>
+              <div class="kw-ex-uz">Murakkab vazifa bo'lsa ham, kichik qismlarga bo'lib, qat'iyat bilan hal qilaman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('むずかしい。難しい課題であっても、細かくタスクを分解して粘り強く解決いたします。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="富士山 ふじさん fujisan fuji tog'i (mount fuji)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">富士山</div>
+                <div class="kw-kana">ふじさん</div>
+                <div class="kw-romaji">Fujisan</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Fuji tog'i (Mount Fuji)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「富士山のように高く確固たる目標を持ち、日本でトップエンジニアを目指します。」</div>
+              <div class="kw-ex-uz">Fuji tog'idek baland va mustahkam maqsad qo'yib, Yaponiyada yetakchi dasturchi bo'lishga intilaman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('ふじさん。富士山のように高く確固たる目標を持ち、日本でトップエンジニアを目指します。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="普段 ふだん fudan odatiy hayot, kundalik odat (usual daily life)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">普段</div>
+                <div class="kw-kana">ふだん</div>
+                <div class="kw-romaji">Fudan</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Odatiy hayot, kundalik odat (Usual daily life)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「普段から技術ブログを読み、新技術のキャッチアップを怠りません。」</div>
+              <div class="kw-ex-uz">Kundalik hayotimda ham texnik bloglarni o'qib, yangiliklarni o'rganishni kanda qilmayman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('ふだん。普段から技術ブログを読み、新技術のキャッチアップを怠りません。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="趣味 しゅみ shumi qiziqish, xobbi, sevimli mashg'ulot (hobby)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">趣味</div>
+                <div class="kw-kana">しゅみ</div>
+                <div class="kw-romaji">Shumi</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Qiziqish, xobbi, sevimli mashg'ulot (Hobby)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「趣味は個人開発とランニングで、健康管理と技術向上を両立しています。」</div>
+              <div class="kw-ex-uz">Xobbiyim mustaqil loyihalar yaratish va yugurish bo'lib, salomatlik va bilimni barobar oshiraman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('しゅみ。趣味は個人開発とランニングで、健康管理と技術向上を両立しています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="調べる しらべる shiraberu tekshirish, o'rganish, qidirish (to investigate, search)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">調べる</div>
+                <div class="kw-kana">しらべる</div>
+                <div class="kw-romaji">Shiraberu</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Tekshirish, o'rganish, qidirish (To investigate, search)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「エラーが起きた際は、まず自力で30分間公式ドキュメントを調べます。」</div>
+              <div class="kw-ex-uz">Xatolik yuz berganda avval 30 daqiqa mustaqil ravishda rasmiy hujjatlarni qidirib o'rganaman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('しらべる。エラーが起きた際は、まず自力で30分間公式ドキュメントを調べます。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="会社 かいしゃ kaisha kompaniya, korxona (company, firm)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">会社</div>
+                <div class="kw-kana">かいしゃ</div>
+                <div class="kw-romaji">Kaisha</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Kompaniya, korxona (Company, firm)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「会社とクライアントの双方に貢献できる信頼性の高いエンジニアを目指します。」</div>
+              <div class="kw-ex-uz">Ham o'z kompaniyamga, ham buyurtmachi mijozga birdek foyda keltiradigan ishonchli muhandis bo'laman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('かいしゃ。会社とクライアントの双方に貢献できる信頼性の高いエンジニアを目指します。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="環境 かんきょう kankyō muhit, atrof-muhit, ish sharoiti (environment)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">環境</div>
+                <div class="kw-kana">かんきょう</div>
+                <div class="kw-romaji">Kankyō</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Muhit, atrof-muhit, ish sharoiti (Environment)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「どのような新しい常駐先の開発環境であっても、迅速に適応できます。」</div>
+              <div class="kw-ex-uz">Mijoz ofisidagi yangi ish muhiti va sharoitiga tez fursatda moslasha olaman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('かんきょう。どのような新しい常駐先の開発環境であっても、迅速に適応できます。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="技術 ぎじゅつ gijutsu texnologiya, mahorat, texnik ko'nikma (technology, skill)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">技術</div>
+                <div class="kw-kana">ぎじゅつ</div>
+                <div class="kw-romaji">Gijutsu</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Texnologiya, mahorat, texnik ko'nikma (Technology, skill)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「プログラミング技術だけでなく、顧客の課題を解決する対話力を磨いています。」</div>
+              <div class="kw-ex-uz">Faqat dasturlash texnologiyasi emas, mijozning muammosini hal qiluvchi muloqot mahoratimni oshirmoqdaman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('ぎじゅつ。プログラミング技術だけでなく、顧客の課題を解決する対話力を磨いています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="元気 げんき genki salomatlik, tetiklik, energiya (health, vigor)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">元気</div>
+                <div class="kw-kana">げんき</div>
+                <div class="kw-romaji">Genki</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Salomatlik, tetiklik, energiya (Health, vigor)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「常に明るく元気な挨拶を行い、チームの雰囲気を前向きにいたします。」</div>
+              <div class="kw-ex-uz">Har doim ochiq yuz va tetik salomlashib, jamoada ijobiy muhit yarataman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('げんき。常に明るく元気な挨拶を行い、チームの雰囲気を前向きにいたします。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="先生 せんせい sensei ustoz, o'qituvchi (teacher, mentor)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">先生</div>
+                <div class="kw-kana">せんせい</div>
+                <div class="kw-romaji">Sensei</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Ustoz, o'qituvchi (Teacher, mentor)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「大学の先生や現場の先輩方からの教えを素直に吸収し、成長につなげます。」</div>
+              <div class="kw-ex-uz">Universitetdagi ustozlar va loyihadagi kattalarning o'gitlarini sidqidildan o'rganaman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('せんせい。大学の先生や現場の先輩方からの教えを素直に吸収し、成長につなげます。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="自由 じゆう jiyū erkinlik, mustaqillik (freedom)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">自由</div>
+                <div class="kw-kana">じゆう</div>
+                <div class="kw-romaji">Jiyū</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Erkinlik, mustaqillik (Freedom)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「裁量を持った自由な発想で、プロダクトの改善案を積極的に提案します。」</div>
+              <div class="kw-ex-uz">Keng erkin fikrlash bilan mahsulotni yaxshilash bo'yicha tashabbuskor takliflar kiritaman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('じゆう。裁量を持った自由な発想で、プロダクトの改善案を積極的に提案します。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="テーマ てーま tēma mavzu, bosh g'oya (theme)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">テーマ</div>
+                <div class="kw-kana">てーま</div>
+                <div class="kw-romaji">Tēma</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Mavzu, bosh g'oya (Theme)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「私のキャリアのテーマは『技術を通じて人々の生活を豊かにすること』です。」</div>
+              <div class="kw-ex-uz">Karyeramning bosh mavzusi va maqsadi — 'Texnologiyalar orqali insonlar hayotini yengillashtirish'dir.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('てーま。私のキャリアのテーマは『技術を通じて人々の生活を豊かにすること』です。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="気になる きになる ki ni naru qiziqtirmoq, e'tiborni tortmoq (to be interested in)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">気になる</div>
+                <div class="kw-kana">きになる</div>
+                <div class="kw-romaji">Ki ni naru</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Qiziqtirmoq, e'tiborni tortmoq (To be interested in)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「貴社の最新のAIソリューション事業が非常に気になっております。」</div>
+              <div class="kw-ex-uz">Kompaniyangizning eng so'nggi sun'iy intellekt loyihalari meni juda qiziqtirmoqda.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('きになる。貴社の最新のAIソリューション事業が非常に気になっております。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="挑戦 ちょうせん chōsen yangi narsaga qo'l urish, sinov (challenge)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">挑戦</div>
+                <div class="kw-kana">ちょうせん</div>
+                <div class="kw-romaji">Chōsen</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Yangi narsaga qo'l urish, sinov (Challenge)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「未知の領域を恐れず、常に高い目標に挑戦し続けることが私の信条です。」</div>
+              <div class="kw-ex-uz">Noma'lum sohalardan qo'rqmay, doimo yuksak marralarga chaqiriq bilan intilish mening shiorimdir.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('ちょうせん。未知の領域を恐れず、常に高い目標に挑戦し続けることが私の信条です。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="調整 ちょうせい chōsei muvofiqlashtirish, tartibga solish (coordination, adjustment)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">調整</div>
+                <div class="kw-kana">ちょうせい</div>
+                <div class="kw-romaji">Chōsei</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Muvofiqlashtirish, tartibga solish (Coordination, adjustment)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「メンバー間の進捗の遅れを早期に発見し、タスクの再調整を行いました。」</div>
+              <div class="kw-ex-uz">A'zolar o'rtasidagi kechikishlarni erta aniqlab, vazifalarni qayta tartibga soldim.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('ちょうせい。メンバー間の進捗の遅れを早期に発見し、タスクの再調整を行いました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="予定 よてい yotei reja, belgilangan ish (schedule, plan)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">予定</div>
+                <div class="kw-kana">よてい</div>
+                <div class="kw-romaji">Yotei</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Reja, belgilangan ish (Schedule, plan)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「2027年の大学卒業予定であり、内定後は入社に向けて万全の準備を進めます。」</div>
+              <div class="kw-ex-uz">2027 yilda universitetni bitirish rejam bor va ishga qabul qilingach bor kuchim bilan tayyorlanaman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('よてい。2027年の大学卒業予定であり、内定後は入社に向けて万全の準備を進めます。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="事業 じぎょう jigyō biznes, loyiha, korxona faoliyati (business, enterprise)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">事業</div>
+                <div class="kw-kana">じぎょう</div>
+                <div class="kw-romaji">Jigyō</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Biznes, loyiha, korxona faoliyati (Business, enterprise)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「貴社が展開されている多様なITソリューション事業に即戦力として貢献したいです。」</div>
+              <div class="kw-ex-uz">Kompaniyangiz olib borayotgan turli axborot texnologiyalari biznesiga tayanch mutaxassis sifatida hissa qo'shmoqchiman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('じぎょう。貴社が展開されている多様なITソリューション事業に即戦力として貢献したいです。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="勉強する べんきょうする benkyō suru o'rganmoq, o'qimoq (to study)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">勉強する</div>
+                <div class="kw-kana">べんきょうする</div>
+                <div class="kw-romaji">Benkyō suru</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> O'rganmoq, o'qimoq (To study)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「実務に必要なクラウドやセキュリティの知識を継続して勉強しています。」</div>
+              <div class="kw-ex-uz">Amaliyotda kerak bo'ladigan bulutli texnologiyalar va kiberxavfsizlikni muntazam o'rganmoqdaman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('べんきょうする。実務に必要なクラウドやセキュリティの知識を継続して勉強しています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="興味 きょうみ kyōmi qiziqish, mayl (interest)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">興味</div>
+                <div class="kw-kana">きょうみ</div>
+                <div class="kw-romaji">Kyōmi</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Qiziqish, mayl (Interest)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「幼い頃からプログラミングに強い興味を持ち、独学で開発を始めました。」</div>
+              <div class="kw-ex-uz">Yoshligimdan dasturlashga juda katta qiziqishim bo'lgani sababli mustaqil kod yozishni boshlaganman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('きょうみ。幼い頃からプログラミングに強い興味を持ち、独学で開発を始めました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="分野 ぶんや bunya soha, tarmoq, yo'nalish (field, domain)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">分野</div>
+                <div class="kw-kana">ぶんや</div>
+                <div class="kw-romaji">Bunya</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Soha, tarmoq, yo'nalish (Field, domain)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「Web開発分野だけでなく、医療や教育など社会課題を解決する分野に関心があります。」</div>
+              <div class="kw-ex-uz">Faqat Web sohasida emas, tibbiyot va ta'lim kabi ijtimoiy sohalarni raqamlashtirishga qiziqaman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('ぶんや。Web開発分野だけでなく、医療や教育など社会課題を解決する分野に関心があります。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="開発 かいはつ kaihatsu dasturlash, ishlab chiqish (development)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">開発</div>
+                <div class="kw-kana">かいはつ</div>
+                <div class="kw-romaji">Kaihatsu</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Dasturlash, ishlab chiqish (Development)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「病気早期発見システム『Bionexstar』のフルスタック開発を担当いたしました。」</div>
+              <div class="kw-ex-uz">Kasalliklarni erta aniqlash 'Bionexstar' tizimining to'liq full-stack ishlab chiqishiga mas'ul bo'ldim.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('かいはつ。病気早期発見システム『Bionexstar』のフルスタック開発を担当いたしました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="プラットフォーム ぷらっとふぉーむ purattofōmu platforma (platform)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">プラットフォーム</div>
+                <div class="kw-kana">ぷらっとふぉーむ</div>
+                <div class="kw-romaji">Purattofōmu</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Platforma (Platform)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「スケーラブルで安全性に優れたWebプラットフォームの構築を得意としています。」</div>
+              <div class="kw-ex-uz">Kengaytiriluvchan (scalable) va xavfsiz Web platformalarni yaratishga mohirman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('ぷらっとふぉーむ。スケーラブルで安全性に優れたWebプラットフォームの構築を得意としています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="便利 べんり benri qulay, foydali (useful, convenient)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">便利</div>
+                <div class="kw-kana">べんり</div>
+                <div class="kw-romaji">Benri</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Qulay, foydali (Useful, convenient)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「使う人にとって直感的で便利だと感じてもらえるUI設計を最優先にしています。」</div>
+              <div class="kw-ex-uz">Foydalanuvchilar uchun intuitiv va qulay bo'lgan interfeys loyihalashni birinchi o'ringa qo'yaman.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('べんり。使う人にとって直感的で便利だと感じてもらえるUI設計を最優先にしています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+        <div class="kaiwa-card" data-keywords="成果 せいか seika natija, muvaffaqiyat, yutuq (result, achievement)">
+          <div>
+            <div class="kw-top">
+              <div>
+                <div class="kw-kanji">成果</div>
+                <div class="kw-kana">せいか</div>
+                <div class="kw-romaji">Seika</div>
+              </div>
+              <span class="badge-tbl badge-kaiwa">Kaiwa</span>
+            </div>
+            <div class="kw-mean"><strong>Ma'nosi:</strong> Natija, muvaffaqiyat, yutuq (Result, achievement)</div>
+            <div class="kw-ex-box">
+              <div class="kw-ex-ja">「パフォーマンス改善により読み込み速度を40％短縮するという大きな成果を出しました。」</div>
+              <div class="kw-ex-uz">Tizimni optimallashtirish orqali sahifa yuklanishini 40% tezlashtirishdek katta natijaga erishdim.</div>
+            </div>
+          </div>
+          <div class="kw-bottom">
+            <span style="font-size:11px; color:var(--text-muted);">Erkin Muloqot</span>
+            <button class="mini-speak-btn" onclick="speakText('せいか。パフォーマンス改善により読み込み速度を40％短縮するという大きな成果を出しました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
          SECTION 1: VOCABULARY TABLE (DARAJALAR BO'YICHA JADVAL)
          ======================================================== -->
     <section class="category-section" data-cat="vocab-table">
       <div class="section-title">
         <span>📊 Suhbat Lug'ati Jadvali — JLPT N1, N2, N3 & IT/SES Atamalari</span>
-        <span class="count">52 ta muhim atama • Qidiruv va darajalar bo'yicha saralash</span>
+        <span class="count">98 ta muhim atama (N1-N3, SES & Kaiwa) • Qidiruv va darajalar bo'yicha saralash</span>
       </div>
 
       <div class="table-container">
@@ -1991,6 +3127,7 @@
             <button class="tbl-btn" onclick="filterTableLevel('N2', this)">🔵 JLPT N2 (13)</button>
             <button class="tbl-btn" onclick="filterTableLevel('N3', this)">🟢 JLPT N3 (13)</button>
             <button class="tbl-btn" onclick="filterTableLevel('SES', this)">💻 CAL & SES (13)</button>
+            <button class="tbl-btn" onclick="filterTableLevel('KAIWA', this)">🗣️ Kaiwa Muloqot (46)</button>
           </div>
           <input type="text" class="table-search-input" id="tableSearchInput" oninput="searchTableWords(this.value)" placeholder="🔍 Jadvaldan atama yoki so'z qidiring...">
         </div>
@@ -2845,6 +3982,741 @@
                 </td>
               </tr>
 
+              <tr data-level="KAIWA" data-keywords="話題 わだい wadai mavzu, suhbat mavzusi (topic of conversation)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">話題</div><div class="t-kana">わだい</div></td>
+                <td><div class="t-romaji">Wadai</div></td>
+                <td>Mavzu, suhbat mavzusi (Topic of conversation)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「面接では、これまでの開発実績や志望動機が主な話題となります。」</div>
+                    <div class="t-example-uz">Suhbatda asosan dasturlash natijalari va topshirish sababi asosiy mavzu bo'ladi.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('わだい。面接では、これまでの開発実績や志望動機が主な話題となります。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="話す はなす hanasu gapirish, so'zlash (to speak)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">話す</div><div class="t-kana">はなす</div></td>
+                <td><div class="t-romaji">Hanasu</div></td>
+                <td>Gapirish, so'zlash (To speak)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「緊張せず、落ち着いて自分の強みを面接官に話すよう心掛けています。」</div>
+                    <div class="t-example-uz">Hayajonlanmasdan, xotirjamlik bilan o'z kuchli tomonlarimni intervyuerga aytishga intilaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('はなす。緊張せず、落ち着いて自分の強みを面接官に話すよう心掛けています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="勉強 べんきょう benkyō o'qish, o'rganish (studying)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">勉強</div><div class="t-kana">べんきょう</div></td>
+                <td><div class="t-romaji">Benkyō</div></td>
+                <td>O'qish, o'rganish (Studying)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「最新のWeb技術や日本の商習慣についての勉強を毎日続けています。」</div>
+                    <div class="t-example-uz">Eng so'nggi Web texnologiyalari va Yaponiya biznes madaniyatini har kuni o'rganib kelmoqdaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('べんきょう。最新のWeb技術や日本の商習慣についての勉強を毎日続けています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="返事 へんじ henji javob berish, munosabat (reply, response)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">返事</div><div class="t-kana">へんじ</div></td>
+                <td><div class="t-romaji">Henji</div></td>
+                <td>Javob berish, munosabat (Reply, response)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「面接官の質問に対して、ハキハキと明るく元気な返事を心掛けています。」</div>
+                    <div class="t-example-uz">Intervyuerning savollariga ravshan, ochiq va tetik ohangda javob berishga amal qilaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('へんじ。面接官の質問に対して、ハキハキと明るく元気な返事を心掛けています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="言葉 ことば kotoba so'z, til, ibora (words, language)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">言葉</div><div class="t-kana">ことば</div></td>
+                <td><div class="t-romaji">Kotoba</div></td>
+                <td>So'z, til, ibora (Words, language)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「ビジネスシーンにふさわしい丁寧な言葉遣いを選ぶことが大切です。」</div>
+                    <div class="t-example-uz">Biznes muhitiga munosib xushmuomala so'zlar va iboralarni tanlash juda muhim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ことば。ビジネスシーンにふさわしい丁寧な言葉遣いを選ぶことが大切です。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="特に とくに toku ni ayniqsa, maxsus, xususan (especially, in particular)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">特に</div><div class="t-kana">とくに</div></td>
+                <td><div class="t-romaji">Toku ni</div></td>
+                <td>Ayniqsa, maxsus, xususan (Especially, in particular)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「フロントエンド開発、特にReactとNext.jsを用いたUI設計が得意です。」</div>
+                    <div class="t-example-uz">Frontend ishlab chiqish, ayniqsa React va Next.js yordamidagi UI dizayni mening kuchli tomonim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('とくに。フロントエンド開発、特にReactとNext.jsを用いたUI設計が得意です。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="文化 ぶんか bunka madaniyat, ish odobi (culture)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">文化</div><div class="t-kana">ぶんか</div></td>
+                <td><div class="t-romaji">Bunka</div></td>
+                <td>Madaniyat, ish odobi (Culture)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「日本のチーム開発における『報連相』の文化に深く共感しています。」</div>
+                    <div class="t-example-uz">Yaponiyaning jamoaviy dasturlashidagi 'Hou-Ren-So' madaniyatini chin dildan qo'llab-quvvatlayman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ぶんか。日本のチーム開発における『報連相』の文化に深く共感しています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="歴史 れきし rekishi tarix (history)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">歴史</div><div class="t-kana">れきし</div></td>
+                <td><div class="t-romaji">Rekishi</div></td>
+                <td>Tarix (History)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「日本のものづくりと技術革新の歴史を学び、その品質の高さに感銘を受けました。」</div>
+                    <div class="t-example-uz">Yaponiyaning mahsulot yaratish va texnologik yangilanishlar tarixini o'rganib, uning yuqori sifatiga qoyil qoldim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('れきし。日本のものづくりと技術革新の歴史を学び、その品質の高さに感銘を受けました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="表現 ひょうげん hyōgen ifoda, ifodalash (expression)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">表現</div><div class="t-kana">ひょうげん</div></td>
+                <td><div class="t-romaji">Hyōgen</div></td>
+                <td>Ifoda, ifodalash (Expression)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「自分の考えや技術的な提案を、分かりやすい日本語で表現するよう努めています。」</div>
+                    <div class="t-example-uz">O'z fikrim va texnik takliflarimni tushunarli yapon tilida ifodalashga astoydil harakat qilaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ひょうげん。自分の考えや技術的な提案を、分かりやすい日本語で表現するよう努めています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="具体的 ぐたいてき gutaiteki aniq, aniqroq, dalilli (specific, concrete)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">具体的</div><div class="t-kana">ぐたいてき</div></td>
+                <td><div class="t-romaji">Gutaiteki</div></td>
+                <td>Aniq, aniqroq, dalilli (Specific, concrete)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「成果をアピールする際は、数字を用いて具体的に説明いたします。」</div>
+                    <div class="t-example-uz">Erishilgan natijalarni ko'rsatishda aniq raqamlardan foydalanib tushuntirib beraman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ぐたいてき。成果をアピールする際は、数字を用いて具体的に説明いたします。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="分かりにくい わかりにくい wakarinikui tushunishi qiyin, noaniq (hard to understand)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">分かりにくい</div><div class="t-kana">わかりにくい</div></td>
+                <td><div class="t-romaji">Wakarinikui</div></td>
+                <td>Tushunishi qiyin, noaniq (Hard to understand)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「分かりにくい説明にならないよう、PREP法を意識して結論から話します。」</div>
+                    <div class="t-example-uz">Tushunishi qiyin bo'lib qolmasligi uchun PREP usulida avval xulosadan boshlab gapiraman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('わかりにくい。分かりにくい説明にならないよう、PREP法を意識して結論から話します。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="意味 いみ imi ma'no, mohiyat (meaning)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">意味</div><div class="t-kana">いみ</div></td>
+                <td><div class="t-romaji">Imi</div></td>
+                <td>Ma'no, mohiyat (Meaning)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「コード1行1行の意味をしっかりと理解した上で実装を行っています。」</div>
+                    <div class="t-example-uz">Koddagi har bir qatorning ma'nosini chuqur tushungan holda dasturlashni amalga oshiraman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('いみ。コード1行1行の意味をしっかりと理解した上で実装を行っています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="質問 しつもん shitsumon savol (question)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">質問</div><div class="t-kana">しつもん</div></td>
+                <td><div class="t-romaji">Shitsumon</div></td>
+                <td>Savol (Question)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「分からない点があれば独断で進めず、先輩に確認の質問をいたします。」</div>
+                    <div class="t-example-uz">Tushunarsiz nuqtalar bo'lsa o'zboshimchalik qilmay, ustozlarga aniqlashtiruvchi savol beraman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('しつもん。分からない点があれば独断で進めず、先輩に確認の質問をいたします。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="面接 めんせつ mensetsu suhbat, intervyu (job interview)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">面接</div><div class="t-kana">めんせつ</div></td>
+                <td><div class="t-romaji">Mensetsu</div></td>
+                <td>Suhbat, intervyu (Job interview)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「本日の面接の機会をいただき、心より感謝申し上げます。」</div>
+                    <div class="t-example-uz">Bugungi suhbat imkoniyatini taqdim etganingiz uchun chin dildan minnatdorchilik bildiraman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('めんせつ。本日の面接の機会をいただき、心より感謝申し上げます。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="緊張 きんちょう kinchō hayajon, tortilish, asabiylik (nervousness)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">緊張</div><div class="t-kana">きんちょう</div></td>
+                <td><div class="t-romaji">Kinchō</div></td>
+                <td>Hayajon, tortilish, asabiylik (Nervousness)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「多少の緊張はございますが、笑顔を忘れずに誠意を持ってお答えします。」</div>
+                    <div class="t-example-uz">Bir oz hayajon bor, lekin tabassumni yo'qotmay, sidqidildan javob beraman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('きんちょう。多少の緊張はございますが、笑顔を忘れずに誠意を持ってお答えします。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="年齢 ねんれい nenrei yosh (age)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">年齢</div><div class="t-kana">ねんれい</div></td>
+                <td><div class="t-romaji">Nenrei</div></td>
+                <td>Yosh (Age)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「若い年齢のうちから様々なプロジェクトに挑戦し、急速に成長したいです。」</div>
+                    <div class="t-example-uz">Yoshlik davrimdanoq xilma-xil loyihalarga qo'l urib, tez sur'atda o'sishni istayman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ねんれい。若い年齢のうちから様々なプロジェクトに挑戦し、急速に成長したいです。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="準備 じゅんび junbi tayyorgarlik, hozirlik (preparation)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">準備</div><div class="t-kana">じゅんび</div></td>
+                <td><div class="t-romaji">Junbi</div></td>
+                <td>Tayyorgarlik, hozirlik (Preparation)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「面接に向け、企業研究と想定質問の回答の準備を万全にしてまいりました。」</div>
+                    <div class="t-example-uz">Suhbat uchun kompaniyani o'rganish va kutiladigan savollar tayyorgarligini to'liq qilib keldim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('じゅんび。面接に向け、企業研究と想定質問の回答の準備を万全にしてまいりました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="選ぶ えらぶ erabu tanlamoq, saralamoq (to choose, select)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">選ぶ</div><div class="t-kana">えらぶ</div></td>
+                <td><div class="t-romaji">Erabu</div></td>
+                <td>Tanlamoq, saralamoq (To choose, select)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「数ある企業の中で、成長機会と挑戦を重んじる貴社を選びました。」</div>
+                    <div class="t-example-uz">Ko'plab kompaniyalar orasida aynan o'sish va chaqiriqlarga imkon beruvchi kompaniyangizni tanladim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('えらぶ。数ある企業の中で、成長機会と挑戦を重んじる貴社を選びました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="伝える つたえる tsutaeru yetkazmoq, ifoda etmoq (to convey, communicate)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">伝える</div><div class="t-kana">つたえる</div></td>
+                <td><div class="t-romaji">Tsutaeru</div></td>
+                <td>Yetkazmoq, ifoda etmoq (To convey, communicate)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「クライアントの要求を的確に汲み取り、開発チームへ正確に伝えます。」</div>
+                    <div class="t-example-uz">Mijozning talablarini to'g'ri anglab, dasturchilar jamoasiga aniq yetkazib beraman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('つたえる。クライアントの要求を的確に汲み取り、開発チームへ正確に伝えます。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="象徴 しょうちょう shōchō ramziy belgi, timsol (symbol)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">象徴</div><div class="t-kana">しょうちょう</div></td>
+                <td><div class="t-romaji">Shōchō</div></td>
+                <td>Ramziy belgi, timsol (Symbol)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「CALの『Challenge And Lead』は、挑戦するエンジニアの象徴であると感じます。」</div>
+                    <div class="t-example-uz">CAL kompaniyasining 'Challenge And Lead' shiori doim yangilikka intiluvchi muhandislar timsolidir.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('しょうちょう。CALの『Challenge And Lead』は、挑戦するエンジニアの象徴であると感じます。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="進む すすむ susumu oldinga borish, rivojlanish, siljish (to advance, develop)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">進む</div><div class="t-kana">すすむ</div></td>
+                <td><div class="t-romaji">Susumu</div></td>
+                <td>Oldinga borish, rivojlanish, siljish (To advance, develop)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「どのような技術的障害があっても諦めず、常に前へ進む姿勢を保ちます。」</div>
+                    <div class="t-example-uz">Qanday texnik to'siq bo'lmasin taslim bo'lmay, doimo olg'a siljish ruhini saqlayman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('すすむ。どのような技術的障害があっても諦めず、常に前へ進む姿勢を保ちます。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="一緒に いっしょに issho ni birga, hamkorlikda (together, with)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">一緒に</div><div class="t-kana">いっしょに</div></td>
+                <td><div class="t-romaji">Issho ni</div></td>
+                <td>Birga, hamkorlikda (Together, with)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「優秀な先輩エンジニアの皆様と一緒に、価値あるシステムを開発したいです。」</div>
+                    <div class="t-example-uz">Tajribali yetakchi muhandislar bilan birgalikda jamiyatga foydali tizimlar yaratishni xohlayman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('いっしょに。優秀な先輩エンジニアの皆様と一緒に、価値あるシステムを開発したいです。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="難しい むずかしい muzukashii qiyin, murakkab (difficult)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">難しい</div><div class="t-kana">むずかしい</div></td>
+                <td><div class="t-romaji">Muzukashii</div></td>
+                <td>Qiyin, murakkab (Difficult)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「難しい課題であっても、細かくタスクを分解して粘り強く解決いたします。」</div>
+                    <div class="t-example-uz">Murakkab vazifa bo'lsa ham, kichik qismlarga bo'lib, qat'iyat bilan hal qilaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('むずかしい。難しい課題であっても、細かくタスクを分解して粘り強く解決いたします。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="富士山 ふじさん fujisan fuji tog'i (mount fuji)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">富士山</div><div class="t-kana">ふじさん</div></td>
+                <td><div class="t-romaji">Fujisan</div></td>
+                <td>Fuji tog'i (Mount Fuji)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「富士山のように高く確固たる目標を持ち、日本でトップエンジニアを目指します。」</div>
+                    <div class="t-example-uz">Fuji tog'idek baland va mustahkam maqsad qo'yib, Yaponiyada yetakchi dasturchi bo'lishga intilaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ふじさん。富士山のように高く確固たる目標を持ち、日本でトップエンジニアを目指します。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="普段 ふだん fudan odatiy hayot, kundalik odat (usual daily life)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">普段</div><div class="t-kana">ふだん</div></td>
+                <td><div class="t-romaji">Fudan</div></td>
+                <td>Odatiy hayot, kundalik odat (Usual daily life)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「普段から技術ブログを読み、新技術のキャッチアップを怠りません。」</div>
+                    <div class="t-example-uz">Kundalik hayotimda ham texnik bloglarni o'qib, yangiliklarni o'rganishni kanda qilmayman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ふだん。普段から技術ブログを読み、新技術のキャッチアップを怠りません。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="趣味 しゅみ shumi qiziqish, xobbi, sevimli mashg'ulot (hobby)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">趣味</div><div class="t-kana">しゅみ</div></td>
+                <td><div class="t-romaji">Shumi</div></td>
+                <td>Qiziqish, xobbi, sevimli mashg'ulot (Hobby)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「趣味は個人開発とランニングで、健康管理と技術向上を両立しています。」</div>
+                    <div class="t-example-uz">Xobbiyim mustaqil loyihalar yaratish va yugurish bo'lib, salomatlik va bilimni barobar oshiraman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('しゅみ。趣味は個人開発とランニングで、健康管理と技術向上を両立しています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="調べる しらべる shiraberu tekshirish, o'rganish, qidirish (to investigate, search)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">調べる</div><div class="t-kana">しらべる</div></td>
+                <td><div class="t-romaji">Shiraberu</div></td>
+                <td>Tekshirish, o'rganish, qidirish (To investigate, search)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「エラーが起きた際は、まず自力で30分間公式ドキュメントを調べます。」</div>
+                    <div class="t-example-uz">Xatolik yuz berganda avval 30 daqiqa mustaqil ravishda rasmiy hujjatlarni qidirib o'rganaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('しらべる。エラーが起きた際は、まず自力で30分間公式ドキュメントを調べます。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="会社 かいしゃ kaisha kompaniya, korxona (company, firm)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">会社</div><div class="t-kana">かいしゃ</div></td>
+                <td><div class="t-romaji">Kaisha</div></td>
+                <td>Kompaniya, korxona (Company, firm)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「会社とクライアントの双方に貢献できる信頼性の高いエンジニアを目指します。」</div>
+                    <div class="t-example-uz">Ham o'z kompaniyamga, ham buyurtmachi mijozga birdek foyda keltiradigan ishonchli muhandis bo'laman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('かいしゃ。会社とクライアントの双方に貢献できる信頼性の高いエンジニアを目指します。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="環境 かんきょう kankyō muhit, atrof-muhit, ish sharoiti (environment)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">環境</div><div class="t-kana">かんきょう</div></td>
+                <td><div class="t-romaji">Kankyō</div></td>
+                <td>Muhit, atrof-muhit, ish sharoiti (Environment)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「どのような新しい常駐先の開発環境であっても、迅速に適応できます。」</div>
+                    <div class="t-example-uz">Mijoz ofisidagi yangi ish muhiti va sharoitiga tez fursatda moslasha olaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('かんきょう。どのような新しい常駐先の開発環境であっても、迅速に適応できます。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="技術 ぎじゅつ gijutsu texnologiya, mahorat, texnik ko'nikma (technology, skill)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">技術</div><div class="t-kana">ぎじゅつ</div></td>
+                <td><div class="t-romaji">Gijutsu</div></td>
+                <td>Texnologiya, mahorat, texnik ko'nikma (Technology, skill)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「プログラミング技術だけでなく、顧客の課題を解決する対話力を磨いています。」</div>
+                    <div class="t-example-uz">Faqat dasturlash texnologiyasi emas, mijozning muammosini hal qiluvchi muloqot mahoratimni oshirmoqdaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ぎじゅつ。プログラミング技術だけでなく、顧客の課題を解決する対話力を磨いています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="元気 げんき genki salomatlik, tetiklik, energiya (health, vigor)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">元気</div><div class="t-kana">げんき</div></td>
+                <td><div class="t-romaji">Genki</div></td>
+                <td>Salomatlik, tetiklik, energiya (Health, vigor)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「常に明るく元気な挨拶を行い、チームの雰囲気を前向きにいたします。」</div>
+                    <div class="t-example-uz">Har doim ochiq yuz va tetik salomlashib, jamoada ijobiy muhit yarataman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('げんき。常に明るく元気な挨拶を行い、チームの雰囲気を前向きにいたします。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="先生 せんせい sensei ustoz, o'qituvchi (teacher, mentor)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">先生</div><div class="t-kana">せんせい</div></td>
+                <td><div class="t-romaji">Sensei</div></td>
+                <td>Ustoz, o'qituvchi (Teacher, mentor)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「大学の先生や現場の先輩方からの教えを素直に吸収し、成長につなげます。」</div>
+                    <div class="t-example-uz">Universitetdagi ustozlar va loyihadagi kattalarning o'gitlarini sidqidildan o'rganaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('せんせい。大学の先生や現場の先輩方からの教えを素直に吸収し、成長につなげます。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="自由 じゆう jiyū erkinlik, mustaqillik (freedom)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">自由</div><div class="t-kana">じゆう</div></td>
+                <td><div class="t-romaji">Jiyū</div></td>
+                <td>Erkinlik, mustaqillik (Freedom)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「裁量を持った自由な発想で、プロダクトの改善案を積極的に提案します。」</div>
+                    <div class="t-example-uz">Keng erkin fikrlash bilan mahsulotni yaxshilash bo'yicha tashabbuskor takliflar kiritaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('じゆう。裁量を持った自由な発想で、プロダクトの改善案を積極的に提案します。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="テーマ てーま tēma mavzu, bosh g'oya (theme)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">テーマ</div><div class="t-kana">てーま</div></td>
+                <td><div class="t-romaji">Tēma</div></td>
+                <td>Mavzu, bosh g'oya (Theme)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「私のキャリアのテーマは『技術を通じて人々の生活を豊かにすること』です。」</div>
+                    <div class="t-example-uz">Karyeramning bosh mavzusi va maqsadi — 'Texnologiyalar orqali insonlar hayotini yengillashtirish'dir.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('てーま。私のキャリアのテーマは『技術を通じて人々の生活を豊かにすること』です。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="気になる きになる ki ni naru qiziqtirmoq, e'tiborni tortmoq (to be interested in)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">気になる</div><div class="t-kana">きになる</div></td>
+                <td><div class="t-romaji">Ki ni naru</div></td>
+                <td>Qiziqtirmoq, e'tiborni tortmoq (To be interested in)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「貴社の最新のAIソリューション事業が非常に気になっております。」</div>
+                    <div class="t-example-uz">Kompaniyangizning eng so'nggi sun'iy intellekt loyihalari meni juda qiziqtirmoqda.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('きになる。貴社の最新のAIソリューション事業が非常に気になっております。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="挑戦 ちょうせん chōsen yangi narsaga qo'l urish, sinov (challenge)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">挑戦</div><div class="t-kana">ちょうせん</div></td>
+                <td><div class="t-romaji">Chōsen</div></td>
+                <td>Yangi narsaga qo'l urish, sinov (Challenge)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「未知の領域を恐れず、常に高い目標に挑戦し続けることが私の信条です。」</div>
+                    <div class="t-example-uz">Noma'lum sohalardan qo'rqmay, doimo yuksak marralarga chaqiriq bilan intilish mening shiorimdir.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ちょうせん。未知の領域を恐れず、常に高い目標に挑戦し続けることが私の信条です。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="調整 ちょうせい chōsei muvofiqlashtirish, tartibga solish (coordination, adjustment)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">調整</div><div class="t-kana">ちょうせい</div></td>
+                <td><div class="t-romaji">Chōsei</div></td>
+                <td>Muvofiqlashtirish, tartibga solish (Coordination, adjustment)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「メンバー間の進捗の遅れを早期に発見し、タスクの再調整を行いました。」</div>
+                    <div class="t-example-uz">A'zolar o'rtasidagi kechikishlarni erta aniqlab, vazifalarni qayta tartibga soldim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ちょうせい。メンバー間の進捗の遅れを早期に発見し、タスクの再調整を行いました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="予定 よてい yotei reja, belgilangan ish (schedule, plan)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">予定</div><div class="t-kana">よてい</div></td>
+                <td><div class="t-romaji">Yotei</div></td>
+                <td>Reja, belgilangan ish (Schedule, plan)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「2027年の大学卒業予定であり、内定後は入社に向けて万全の準備を進めます。」</div>
+                    <div class="t-example-uz">2027 yilda universitetni bitirish rejam bor va ishga qabul qilingach bor kuchim bilan tayyorlanaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('よてい。2027年の大学卒業予定であり、内定後は入社に向けて万全の準備を進めます。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="事業 じぎょう jigyō biznes, loyiha, korxona faoliyati (business, enterprise)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">事業</div><div class="t-kana">じぎょう</div></td>
+                <td><div class="t-romaji">Jigyō</div></td>
+                <td>Biznes, loyiha, korxona faoliyati (Business, enterprise)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「貴社が展開されている多様なITソリューション事業に即戦力として貢献したいです。」</div>
+                    <div class="t-example-uz">Kompaniyangiz olib borayotgan turli axborot texnologiyalari biznesiga tayanch mutaxassis sifatida hissa qo'shmoqchiman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('じぎょう。貴社が展開されている多様なITソリューション事業に即戦力として貢献したいです。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="勉強する べんきょうする benkyō suru o'rganmoq, o'qimoq (to study)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">勉強する</div><div class="t-kana">べんきょうする</div></td>
+                <td><div class="t-romaji">Benkyō suru</div></td>
+                <td>O'rganmoq, o'qimoq (To study)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「実務に必要なクラウドやセキュリティの知識を継続して勉強しています。」</div>
+                    <div class="t-example-uz">Amaliyotda kerak bo'ladigan bulutli texnologiyalar va kiberxavfsizlikni muntazam o'rganmoqdaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('べんきょうする。実務に必要なクラウドやセキュリティの知識を継続して勉強しています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="興味 きょうみ kyōmi qiziqish, mayl (interest)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">興味</div><div class="t-kana">きょうみ</div></td>
+                <td><div class="t-romaji">Kyōmi</div></td>
+                <td>Qiziqish, mayl (Interest)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「幼い頃からプログラミングに強い興味を持ち、独学で開発を始めました。」</div>
+                    <div class="t-example-uz">Yoshligimdan dasturlashga juda katta qiziqishim bo'lgani sababli mustaqil kod yozishni boshlaganman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('きょうみ。幼い頃からプログラミングに強い興味を持ち、独学で開発を始めました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="分野 ぶんや bunya soha, tarmoq, yo'nalish (field, domain)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">分野</div><div class="t-kana">ぶんや</div></td>
+                <td><div class="t-romaji">Bunya</div></td>
+                <td>Soha, tarmoq, yo'nalish (Field, domain)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「Web開発分野だけでなく、医療や教育など社会課題を解決する分野に関心があります。」</div>
+                    <div class="t-example-uz">Faqat Web sohasida emas, tibbiyot va ta'lim kabi ijtimoiy sohalarni raqamlashtirishga qiziqaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ぶんや。Web開発分野だけでなく、医療や教育など社会課題を解決する分野に関心があります。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="開発 かいはつ kaihatsu dasturlash, ishlab chiqish (development)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">開発</div><div class="t-kana">かいはつ</div></td>
+                <td><div class="t-romaji">Kaihatsu</div></td>
+                <td>Dasturlash, ishlab chiqish (Development)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「病気早期発見システム『Bionexstar』のフルスタック開発を担当いたしました。」</div>
+                    <div class="t-example-uz">Kasalliklarni erta aniqlash 'Bionexstar' tizimining to'liq full-stack ishlab chiqishiga mas'ul bo'ldim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('かいはつ。病気早期発見システム『Bionexstar』のフルスタック開発を担当いたしました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="プラットフォーム ぷらっとふぉーむ purattofōmu platforma (platform)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">プラットフォーム</div><div class="t-kana">ぷらっとふぉーむ</div></td>
+                <td><div class="t-romaji">Purattofōmu</div></td>
+                <td>Platforma (Platform)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「スケーラブルで安全性に優れたWebプラットフォームの構築を得意としています。」</div>
+                    <div class="t-example-uz">Kengaytiriluvchan (scalable) va xavfsiz Web platformalarni yaratishga mohirman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ぷらっとふぉーむ。スケーラブルで安全性に優れたWebプラットフォームの構築を得意としています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="便利 べんり benri qulay, foydali (useful, convenient)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">便利</div><div class="t-kana">べんり</div></td>
+                <td><div class="t-romaji">Benri</div></td>
+                <td>Qulay, foydali (Useful, convenient)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「使う人にとって直感的で便利だと感じてもらえるUI設計を最優先にしています。」</div>
+                    <div class="t-example-uz">Foydalanuvchilar uchun intuitiv va qulay bo'lgan interfeys loyihalashni birinchi o'ringa qo'yaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('べんり。使う人にとって直感的で便利だと感じてもらえるUI設計を最優先にしています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="KAIWA" data-keywords="成果 せいか seika natija, muvaffaqiyat, yutuq (result, achievement)">
+                <td><span class="badge-tbl badge-kaiwa">Kaiwa</span></td>
+                <td><div class="t-kanji">成果</div><div class="t-kana">せいか</div></td>
+                <td><div class="t-romaji">Seika</div></td>
+                <td>Natija, muvaffaqiyat, yutuq (Result, achievement)</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「パフォーマンス改善により読み込み速度を40％短縮するという大きな成果を出しました。」</div>
+                    <div class="t-example-uz">Tizimni optimallashtirish orqali sahifa yuklanishini 40% tezlashtirishdek katta natijaga erishdim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('せいか。パフォーマンス改善により読み込み速度を40％短縮するという大きな成果を出しました。')">🔊</button>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -3638,6 +5510,90 @@ Shu paytgacha tobi qochib o'qish yoki loyihani qoldirgan emasman, eng qiyin va m
       <div class="vocab-grid" id="vocabGrid">
 
         <!-- N1 VOCABULARY -->
+        <!-- 技術選定 (ぎじゅつせんてい - Gijutsu Sentei) -->
+        <div class="vocab-card" data-vlevel="N1" data-keywords="技術選定 ぎじゅつせんてい gijutsu sentei texnologiya tanlovi paiza stack">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">技術選定</div>
+                <div class="v-kana">ぎじゅつせんてい</div>
+                <div class="v-romaji">Gijutsu Sentei</div>
+              </div>
+              <span class="v-badge vb-n1">JLPT N1 / IT Muhandislik</span>
+            </div>
+            <div class="v-mean-uz">
+              <strong>Ma'nosi:</strong> Loyihaning maqsadi va talablariga qarab to'g'ri dasturlash tillari, freymvork va ma'lumotlar bazasini mantiqiy tanlash (Technology Stack Selection).
+            </div>
+            <div class="v-note">
+              💡 <em>Paiza Point 4:</em> "Nega bu texnologiyani tanladingiz?" degan savolga "shunchaki bilganim uchun" deb emas, aynan <strong>技術選定の理由</strong> (afzallik va kamchiligini qiyoslab) javob berish kerak.
+            </div>
+            <div class="v-example">
+              <div class="v-ex-ja">「整合性とトランザクションを重視し、今回のプロジェクトではPostgreSQLを<strong>技術選定</strong>しました。」</div>
+              <div class="v-ex-uz"><em>"Tranzaksiyalarning qat'iy aniqligini inobatga olib, ushbu loyihada PostgreSQL'ni asosiy texnologiya qilib tanladim."</em></div>
+            </div>
+          </div>
+          <button class="v-speak-btn" onclick="speakText('ぎじゅつせんてい。整合性とトランザクションを重視し、今回のプロジェクトではPostgreSQLを技術選定しました。')">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+            Tinglash
+          </button>
+        </div>
+
+        <!-- 仮説検証 (かせつけんしょう - Kasetsu Kenshou) -->
+        <div class="vocab-card" data-vlevel="N1" data-keywords="仮説検証 かせつけんしょう kasetsu kenshou gipoteza tekshirish paiza troubleshooting">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">仮説検証</div>
+                <div class="v-kana">かせつけんしょう</div>
+                <div class="v-romaji">Kasetsu Kenshō</div>
+              </div>
+              <span class="v-badge vb-n1">JLPT N1 / Muammo Yechish</span>
+            </div>
+            <div class="v-mean-uz">
+              <strong>Ma'nosi:</strong> Muammoning taxminiy sababi bo'yicha ilmiy gipoteza qo'yish va uni ma'lumotlar/loglar orqali tekshirish (Hypothesis Testing & Troubleshooting).
+            </div>
+            <div class="v-note">
+              💡 <em>Paiza Point 5:</em> Tizim nosozligida paypaslanib ko'r-ko'rona kod o'zgartirmasdan, muhandisdek gipoteza qo'yish qobiliyati.
+            </div>
+            <div class="v-example">
+              <div class="v-ex-ja">「原因を推測するだけでなく、ログから<strong>仮説検証</strong>を重ねてボトルネックを特定しました。」</div>
+              <div class="v-ex-uz"><em>"Shunchaki taxmin qilib o'tirmasdan, loglar orqali gipotezalarni tekshirib, asosiy to'siq nuqtasini aniqladim."</em></div>
+            </div>
+          </div>
+          <button class="v-speak-btn" onclick="speakText('かせつけんしょう。原因を推測するだけでなく、ログから仮説検証を重ねてボトルネックを特定しました。')">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+            Tinglash
+          </button>
+        </div>
+
+        <!-- キャッチアップ (Kyatchi-appu - Catch-up) -->
+        <div class="vocab-card" data-vlevel="N2" data-keywords="キャッチアップ catchup tez o'rganish yangi texnologiya paiza">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">キャッチアップ</div>
+                <div class="v-kana">きゃっちあっぷ</div>
+                <div class="v-romaji">Kyatchi-appu</div>
+              </div>
+              <span class="v-badge vb-n2">Biznes IT Katakana</span>
+            </div>
+            <div class="v-mean-uz">
+              <strong>Ma'nosi:</strong> Yangi yoki notanish texnologiya, vosita yoki loyiha qoidalarini qisqa vaqt ichida mustaqil o'rganib olish (Catch up / Fast learning).
+            </div>
+            <div class="v-note">
+              💡 CAL kompaniyasi SES/autsorsing bo'lgani sababli, har xil loyihalarga yangi texnologiyalar bilan kirganda xodimning <strong>キャッチアップ力</strong> (tez o'rganish kuchi) hal qiluvchi mezon hisoblanadi.
+            </div>
+            <div class="v-example">
+              <div class="v-ex-ja">「未経験の言語やフレームワークであっても、公式ドキュメントを読み解き迅速に<strong>キャッチアップ</strong>できます。」</div>
+              <div class="v-ex-uz"><em>"Tajribam bo'lmagan dasturlash tili yoki freymvork bo'lsa ham, rasmiy hujjatlarni o'rganib, uni tez fursatda o'zlashtira olaman."</em></div>
+            </div>
+          </div>
+          <button class="v-speak-btn" onclick="speakText('きゃっちあっぷ。未経験の言語やフレームワークであっても、公式ドキュメントを読み解き迅速にキャッチアップできます。')">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+            Tinglash
+          </button>
+        </div>
+
         <!-- 課題解決能力 (かだいかいけつのうりょく - Kadai Kaiketsu Nōryoku) -->
         <div class="vocab-card" data-vlevel="N1" data-keywords="課題解決能力 かだいかいけつのうりょく kadai kaiketsu nouryoku muammo vazifa yechish qobiliyati problem solving">
           <div>
@@ -3856,6 +5812,62 @@ Shu paytgacha tobi qochib o'qish yoki loyihani qoldirgan emasman, eng qiyin va m
         </div>
 
         <!-- N2 VOCABULARY -->
+        <!-- 自己分析 (じこぶんせき - Jiko Bunseki) -->
+        <div class="vocab-card" data-vlevel="N2" data-keywords="自己分析 じこぶんせき jiko bunseki o'zini tahlil qilish self analysis mynavi">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">自己分析</div>
+                <div class="v-kana">じこぶんせき</div>
+                <div class="v-romaji">Jiko Bunseki</div>
+              </div>
+              <span class="v-badge vb-n2">JLPT N2 / Shuukatsu</span>
+            </div>
+            <div class="v-mean-uz">
+              <strong>Ma'nosi:</strong> O'zini chuqur tahlil qilish (Self-analysis). O'z qadriyatlari, kuchli/zaif tomonlari va nega aynan shu sohani tanlaganini xolisona o'rganish.
+            </div>
+            <div class="v-note">
+              💡 <em>Mynavi katta tajribasidan:</em> Suhbatda kutilmagan savollarga sarosimasiz javob berishning birdan-bir siri — o'zini chuqur tahlil qilgan (自己分析) bo'lishidir.
+            </div>
+            <div class="v-example">
+              <div class="v-ex-ja">「徹底した<strong>自己分析</strong>を通じて、自分が困難な時ほど自走して成長できる人間だと再確認しました。」</div>
+              <div class="v-ex-uz"><em>"O'zimni chuqur tahlil qilish orqali qiyin vaziyatlarda yanada mustaqil harakat qilib o'sa oladigan inson ekanligimni yana bir bor angladim."</em></div>
+            </div>
+          </div>
+          <button class="v-speak-btn" onclick="speakText('じこぶんせき。徹底した自己分析を通じて、自分が困難な時ほど自走して成長できる人間だと再確認しました。')">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+            Tinglash
+          </button>
+        </div>
+
+        <!-- 深掘り (ふかぼり - Fukabori) -->
+        <div class="vocab-card" data-vlevel="N1" data-keywords="深掘り ふかぼり fukabori chuqur savol tagiga yetish drill down mynavi">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">深掘り</div>
+                <div class="v-kana">ふかぼり</div>
+                <div class="v-romaji">Fukabori</div>
+              </div>
+              <span class="v-badge vb-n1">JLPT N1 / Mensetsu</span>
+            </div>
+            <div class="v-mean-uz">
+              <strong>Ma'nosi:</strong> Masalaning tagiga yetish, savolni chuqurlashtirish (Drill down). HR nomzodning bitta javobi ortidan: "Nega? Qanday qildingiz? Nima o'rgandingiz?" deb qazib so'rashi.
+            </div>
+            <div class="v-note">
+              💡 Yapon HR'lari nomzod yolg'on gapirmayotganini tekshirish uchun aynan <strong>深掘り質問</strong> (chuqur qazish savollari) uslubidan foydalanadi.
+            </div>
+            <div class="v-example">
+              <div class="v-ex-ja">「面接官からのプロジェクトに関する<strong>深掘り</strong>の質問にも、意図を捉えて的確に回答できました。」</div>
+              <div class="v-ex-uz"><em>"Intervyuerning loyiha bo'yicha bergan chuqur qazish savollariga ham maqsadini to'g'ri tushunib, aniq javob bera oldim."</em></div>
+            </div>
+          </div>
+          <button class="v-speak-btn" onclick="speakText('ふかぼり。面接官からのプロジェクトに関する深掘りの質問にも、意図を捉えて的確に回答できました。')">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+            Tinglash
+          </button>
+        </div>
+
         <!-- 課題 (かだい - Kadai) -->
         <div class="vocab-card" data-vlevel="N2" data-keywords="課題 かだい kadai vazifa muammo masala challenge o'sish nuqtasi">
           <div>
@@ -5169,6 +7181,89 @@ Talabalikda eng berilib qilgan ishim — real jamiyat muammolarini hal qiluvchi 
         </div>
       </div>
 
+      <!-- #S7: Vatanga borib kelish chastotasi (Yapon HR'larining yashirin xavotiri) -->
+      <div class="q-card warning" data-keywords="vatanga borish ta'til obon yangi yil qancha vaqt ketish ichijikikoku sadoqat">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#S7</span>
+              <span class="badge badge-warning">Nozik Shaxsiy Savol</span>
+              <span class="badge badge-cat">Ta'tillar va Sadoqat</span>
+            </div>
+            <div class="q-jp">母国（ウズベキスタン）への一時帰国は、年に何回くらいを予定していますか？</div>
+            <div class="q-uz">Vataningizga (O'zbekistonga) yiliga necha marta borib kelishni rejalashtiryapsiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('業務とプロジェクトの納期を最優先とし、現場に一切の支障を出さないスケジュールを徹底いたします。帰国については、年末年始や夏季休暇など会社の公式な連休を利用し、多くても年に1回あるかないか程度を考えております。家族ともオンラインで日常的に連絡が取れますので、日本での仕事と成長に100パーセント専念いたします。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+プロジェクトの進行とお客様への納期遵守を最優先に考えております。
+
+そのため、突発的な長期休暇をいただくことはございません。帰国する場合は、年末年始やお盆などの会社の公休期間を利用し、事前に現場や上司と調整（報連相）の上で、年に1回程度を想定しております。
+家族とはビデオ通話で常に顔を合わせておりますので、まずは日本で一人前のエンジニアとして信頼を勝ち取ることに全力を注ぎます。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Loyiha muddati va mijoz oldidagi mas'uliyat men uchun eng birinchi o'rinda turadi.<br>
+Hech qachon loyihaning muhim pallasida to'satdan ruxsat so'rab ketib qolmayman. Agar borsam ham, faqat Yaponiyaning rasmiy umumiy ta'tillari (Yangi yil yoki Obon) davomida, jamoa bilan oldindan maslahatlashib, yiliga ko'pi bilan 1 marta borishim mumkin. Oila bilan internet orqali doim gaplashib turamiz, bor diqqatim Yaponiyada tezroq ishonchli mutaxassis bo'lishga qaratiladi.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- #S8: Yaponcha murakkab topshiriq olganda tushunmovchilikni oldini olish (Muloqot xavfsizligi) -->
+      <div class="q-card danger" data-keywords="yaponcha tushunish topshiriq xato memo qayta takrorlash fukushou sogo">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#S8</span>
+              <span class="badge badge-danger">Muloqot Xavfsizligi</span>
+              <span class="badge badge-cat">Muloqot Texnikasi</span>
+            </div>
+            <div class="q-jp">日本語で複雑な技術指示や仕様変更を受けた際、誤解（認識の齟齬）を防ぐためにどんな工夫をしますか？</div>
+            <div class="q-uz">Yapon tilida murakkab texnik topshiriq yoki o'zgarishlar aytilganda, xatolik va tushunmovchilik (齟齬) bo'lmasligi uchun nima qilasiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('認識の齟齬をゼロにするため、3つのルールを徹底しています。第1に指示を受ける際は必ずメモを取ること。第2に理解した内容をその場で自分の言葉で復唱確認し、相手の意図と合致しているか擦り合わせること。第3に仕様書やタスクチケットのテキストベースで記録を残し、曖昧な点があれば作業着手前に相談することです。勝手な思い込みで進めることは絶対にいたしません。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+思い込みによる手戻りを防ぐため、**「3段階の確認プロセス」**を徹底します。
+
+1. **傾聴とリアルタイムメモ:** 指導や指示を受ける際は、要点・納期・優先度を必ずメモに残します。
+2. **その場での復唱確認（パラフレーズ）:** 「今のご指示は、◯◯の処理を△△に変更し、××までにテスト完了させるという理解でよろしいでしょうか？」と復唱し、認識のズレをその場で解消します。
+3. **テキスト化と事前相談:** Slackやチケット管理ツールに要約を文章で残し、実装前に「この認識で着手します」と共有します。不明点は30分以上抱え込まず、事前に確認します。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+O'zimcha taxmin qilib xato qilmaslik uchun 3 bosqichli qoidaga qat'iy rioya qilaman:<br>
+1. <strong>Doimiy konspekt (Yozib olish):</strong> Vazifa aytilayotganda muddat va asosiy talablarni darhol yozib olaman.<br>
+2. <strong>Joyida qayta takrorlab tasdiqlash (復唱確認 - Fukushou kakunin):</strong> "Siz aytgan topshiriq X funksiyasini Y ga o'zgartirib, soat Z gacha tugatish kerak, to'g'ri tushundimmi?" deb o'z so'zlarim bilan qayta tasdiqlayman.<br>
+3. <strong>Yozma qoldirish (Slack/Jira):</strong> Matn ko'rinishida yozib, ishni boshlashdan oldin ruxsat olaman. Hech qachon o'zimcha taxmin bilan kod yozmayman.
+            </p>
+          </div>
+        </div>
+      </div>
+
     </section>
 
 <!-- SECTION: 5 TA ASOSIY LOYIHA VA 6 TA SAVOLLI TAHLIL -->
@@ -5761,6 +7856,143 @@ Ha, jamoada ishlash tajribam bor (Maydonuz'da 5 kishi, AI Receipt Splitter'da 3 
           </div>
         </div>
       </div>
+
+      <!-- #11A: Texnologiya tanlash sababi (Paiza Point 4: 技術選定の理由) -->
+      <div class="q-card danger" data-keywords="texnologiya tanlash gijutsu sentei fastapi nextjs postgresql redis arxitektura paiza">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#11A</span>
+              <span class="badge badge-danger">⚡ Paiza Muhandislik Savoli</span>
+              <span class="badge badge-cat">Texnologiya Tanlovi (技術選定)</span>
+            </div>
+            <div class="q-jp">ポートフォリオ開発において、なぜその技術スタックを選定したのですか？他技術との比較を含めて教えてください。</div>
+            <div class="q-uz">Loyihalaringizda nega aynan shu texnologiyalarni (FastAPI, Next.js, PostgreSQL, Redis) tanlagansiz? Boshqa variantlar bilan solishtirib tushuntiring.</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('プロダクトの要件と特性に合わせて論理的に技術選定を行いました。例えばBionexstarでは、薬局の正確な在庫管理とトランザクション整合性を保証するため、NoSQLではなくACID特性を持つPostgreSQLを採用しました。またバックエンドにはDjangoではなくFastAPIを選定しました。非同期処理による高スループットとPydanticによる自動バリデーションにより、開発速度と型安全性を両立できるからです。さらに頻繁に検索される薬品名データにはRedisキャッシュを導入し、DB負荷を分散させてレスポンスを2.7倍向上させました。単に流行りの技術を使うのではなく、目的と費用対効果に最適なアーキテクチャを選定することを常に意識しています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語 (Paiza Mezonlari Asosida Aniq Mantiqiy Javob)</div>
+            <p class="jp-text">
+プロダクトの特性と要件（整合性、速度、保守性）に基づいて技術を選定いたしました。
+
+1. **データベース（PostgreSQL vs MongoDB）:** 薬局システム「Bionexstar」では、在庫数や売上の厳密なトランザクションが求められるため、スキーマレスなNoSQLではなく、ACID特性とリレーショナル整合性に優れたPostgreSQLを採用しました。
+2. **バックエンド（FastAPI vs Django）:** 処方箋や在庫APIの同時リクエストに対応するため、非同期I/O（async/await）に強く軽量なFastAPIを選定しました。Pydanticによる型定義とOpenAPIの自動生成により、保守性と開発効率が飛躍的に高まりました。
+3. **キャッシュ（Redis）:** 毎回DBフルスキャンを行うと高負荷になるため、薬品検索のホットデータにTTL付きRedisキャッシュを導入し、レスポンス速度を2.7倍（35%向上）に高速化しました。
+4. **フロントエンド（Next.js / TypeScript）:** 医療関係者が使うUIとして、TypeScriptによる堅牢性と、SSR/SSGによる初期レンダリングの快適さを重視してNext.jsを採用しました。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi (Mantiq va Asos)</div>
+            <p class="uz-text">
+Texnologiyalarni shunchaki ommabop bo'lgani uchun emas, loyiha talablaridan (aniqlik, tezlik, xavfsizlik) kelib chiqib tanlaganman:<br><br>
+1. <strong>PostgreSQL (MongoDB o'rniga):</strong> Dorixona hisob-kitoblarida xatolikka yo'l qo'ymaslik uchun ACID tranzaksiya talab etiladi, shuning uchun relational model (PostgreSQL) tanlandi.<br>
+2. <strong>FastAPI (Django o'rniga):</strong> Katta hajmdagi ortiqcha modullarsiz, asinxron I/O va Pydantic orqali avtomatik tiplashtirish bilan yuqori tezlik va xavfsizlik bergani uchun tanlandi.<br>
+3. <strong>Redis Keshlash:</strong> Har bir qidiruv bazani qiynamasligi uchun ko'p so'raladigan dorilarni xotirada saqlash yo'lga qo'yildi va qidiruv 2.7 baravar tezlashdi.<br>
+4. <strong>Next.js & TypeScript:</strong> Tip xatolarini oldini olish va sahifaning bir zumda ochilishini (SSR) ta'minlash uchun tanlandi.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- #11B: Troubleshooting & Simulyatsiya (Paiza Point 5: 課題解決力・障害対応) -->
+      <div class="q-card danger" data-keywords="muammo xatolik tekshirish latency sekinlashuv loglar slow query gipoteza paiza simulation">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#11B</span>
+              <span class="badge badge-danger">⚡ Paiza Simulyatsiya Savoli</span>
+              <span class="badge badge-cat">Muammo Tekshirish (仮説検証)</span>
+            </div>
+            <div class="q-jp">本番環境でサービスのレスポンスが突然遅くなった場合、エンジニアとしてどう原因を調査し解決しますか？</div>
+            <div class="q-uz">Jonli tizimda (Production) sahifalar to'satdan juda sekin ochila boshlasa, sababini qanday qidirasiz va qanday yechasiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('勘ではなく、仮説を立ててレイヤーごとに論理的に切り分けを行います。まずサーバーのエラーログやAPM監視ツールを確認し、500番台エラーやスパイクの有無を把握します。次にデータベースのSlow Queryログを確認し、N+1問題やインデックスが効いていない重いクエリがないかを調査します。さらにサーバーのCPUやメモリ使用率、コネクションプール枯渇の可能性も検証します。原因を特定した後は、一時的なキャッシュ追加やクエリ最適化などの応急処置を優先度順に実施し、事後には再発防止策としてインデックスの再構築やモニタリングアラートを設定します。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語 (Muhandislik Gipotezasi & Troubleshooting Qatlamlari)</div>
+            <p class="jp-text">
+勘に頼らず、**「仮説検証」**のアプローチで4つのレイヤーに切り分けて調査します。
+
+1. **第1層：サーバーログとメトリクス確認**  
+   サーバーエラー（5xx）やトラフィック急増の有無をログから確認し、CPU/メモリ使用率やネットワーク帯域が上限に達していないかを把握します。
+2. **第2層：データベースのボトルネック調査**  
+   Slow Queryログを解析し、インデックスが外れているフルテーブルスキャンや、ORMによる「N+1問題」が発生していないかを`EXPLAIN ANALYZE`で検証します。
+3. **第3層：外部APIや非同期処理の詰まり**  
+   サードパーティ製APIのタイムアウトや、キュー（Celery/Redis）の処理遅延が原因でないかを確認します。
+4. **対策と再発防止**  
+   急を要する場合はRedisキャッシュの追加やコネクションプール拡張で即時復旧させ、根本原因に対してはインデックス最適化やクエリ改善、監視アラートの強化を実施します。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi (Bosqichma-bosqich Yechim)</div>
+            <p class="uz-text">
+Taxminlarga emas, <strong>gipoteza va qatlamli tekshiruv (仮説検証)</strong> tamoyiliga tayangan holda 4 bosqichda tahlil qilaman:<br><br>
+<strong>1. Server loglari va resurslar:</strong> CPU, RAM to'lib qolmaganmi, trafik keskin oshib ketmadimi (DDoS yoki bot) — loglarni tekshirish.<br>
+<strong>2. Ma'lumotlar bazasi (Slow Query & N+1):</strong> Indekslar ishlamay qolib, butun jadval skaner qilinmayaptimi? `EXPLAIN ANALYZE` orqali eng sekin so'rovlarni aniqlash.<br>
+<strong>3. Tashqi API va asinxron navbatlar:</strong> Integratsiya qilingan tashqi xizmatlar javob bermay kutdirib qo'ymayaptimi?<br>
+<strong>4. Tezkor tiklash va oldini olish:</strong> Avval Redis kesh bilan tizimni tezda jonlantirish, so'ngra indeks va so'rovlarni optimallashtirib, monitoring signallarini (Alert) qo'yish.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- #11C: Informatika asoslari va toza kod (Paiza Point 2 & 3: 情報工学とコーディング) -->
+      <div class="q-card normal" data-keywords="informatika algoritmlar binary search toza kod naming convention oop paiza">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#11C</span>
+              <span class="badge badge-normal">Paiza Asoslari</span>
+              <span class="badge badge-cat">Informatika & Toza Kod</span>
+            </div>
+            <div class="q-jp">情報工学の基礎（アルゴリズムや計算量、オブジェクト指向設計）において、普段の開発で何を意識していますか？</div>
+            <div class="q-uz">Informatika asoslari (algoritm murakkabligi O(N), ikkilik qidiruv, OOP, toza kod) bo'yicha amaliyotda nimalarga e'tibor berasiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('単に動くだけでなく、計算量と可読性・保守性を常に意識しています。例えば検索処理では、線形探索のO(N)ではなくソート済みデータに対する二分探索やハッシュテーブルによるO(1)アクセスを意識してデータ構造を選択します。またコーディングにおいては、後から他のエンジニアが読んでも一目で意図がわかる明確な命名規則を徹底し、関数の単一責任の原則やオブジェクト指向のカプセル化を守ることを心がけています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+主に「計算量（パフォーマンス）」と「可読性（チーム開発の保守性）」の2点を徹底しています。
+
+1. **アルゴリズムと計算量:** データ量が増加しても破綻しないよう、ループのネスト（$O(N^2)$）を避け、ハッシュマップや二分探索（$O(\log N)$）を活用した最適なデータ構造を選択します。
+2. **自己文書化されたコード（命名規則）:** 変数名やメソッド名は誰が見ても役割が自明であるように命名し（単なる`data`や`flag`ではなく`activeUserList`など）、関数の責任を1つに限定（単一責任の原則）します。
+3. **オブジェクト指向とモジュール化:** 再利用性を高めるため、共通処理を適切にクラス化・カプセル化し、テスト容易性を担保しています。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Asosan 2 narsaga qat'iy amal qilaman:<br>
+1. <strong>Hisoblash murakkabligi (Time Complexity):</strong> Ma'lumot ko'payganda tizim sekinlashib qolmasligi uchun $O(N^2)$ li ichma-ich sikllardan qochib, Hash table va ikkilik qidiruv ($O(\log N)$) kabi maqbul tuzilmalarni tanlayman.<br>
+2. <strong>O'qilishi oson kod (Toza kod):</strong> O'zgaruvchilar nomini boshqalar darhol tushunadigan qilib yozish (shunchaki `temp` emas, `isPrescriptionVerified`), funksiyalar faqat 1 ta vazifani bajarishi va OOP tamoyillariga bo'ysunishi.
+            </p>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <!-- SECTION: YAPONIYA VA MOSLASHUV -->
@@ -5894,6 +8126,50 @@ Ha, qat'iy qaror qilganman. 2-3 yilda qaytish emas, 10 yildan ortiq muddatga Yap
       <div class="section-title">
         <span>🏢 CAL Kompaniyasi Haqida Bilimlar</span>
         <span class="count">Kompaniya faktlari va qanday foyda keltirishingiz</span>
+      </div>
+
+      <!-- #15A: 就活の軸 (Shuukatsu no Jiku - CAL Intervyusining #1 Savoli) -->
+      <div class="q-card danger" data-keywords="shuukatsu no jiku 就活の軸 ish tanlash mezoni nega cal qadriyat">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#15A</span>
+              <span class="badge badge-danger">🔥 CAL Sevimli Savoli</span>
+              <span class="badge badge-cat">Shuukatsu no Jiku</span>
+            </div>
+            <div class="q-jp">企業選びで最も大切にしている「就活の軸」は何ですか？なぜ当社がそれに合致しますか？</div>
+            <div class="q-uz">Kompaniya tanlashda siz uchun eng muhim bo'lgan "ish tanlash mezoni (就活の軸)" nima? Nega aynan CAL bunga mos keladi?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('私の就活の軸は2つあります。1つ目は、若手のうちから多様なプロジェクトで技術と業務知識を吸収し、自律的に挑戦できる環境であること。2つ目は、単なる開発作業だけでなく、顧客の真の課題に向き合える環境であることです。CALはChallenge And Leadの精神のもと、全国18拠点で多業種の案件を手掛け、客先常駐を含め上流から下流まで一貫して携われる機会があります。この環境こそが、私の軸に100パーセント合致しております。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+私の就活の軸は、明確に**「2つの柱」**がございます。
+
+1. **若手から自走して挑戦できる成長環境（Challenge & Lead）：** マニュアル通りの作業だけでなく、新しい技術や上流工程に自発的に手を挙げられる環境を重視しています。
+2. **顧客のビジネス課題に直接伴走できる開発形態：** 画面の向こう側のユーザーやクライアントの業務課題を肌で感じ、チームで解決策を具現化できる現場を求めています。
+
+CALは全国18拠点のネットワークを持ち、製造・流通・金融など幅広いプライム級の案件で客先常駐や受託開発を展開されています。若手の意欲を尊重し、現場で技術力とコミュニケーション力を磨けるCALの風土こそが、私の軸に完璧に合致します。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Mening ish tanlashdagi asosiy 2 ta mezonim (就活の軸) bor:<br>
+1. <strong>Yosh mutaxassisga ishonch bildirib, yangi chaqiriqlarga yo'l ochadigan muhit:</strong> Shunchaki qolipdagi buyruqni bajaruvchi emas, balki yangi texnologiyalar va tizim loyihalashda mustaqil o'sish mumkin bo'lgan kompaniya.<br>
+2. <strong>Mijozning muammosini bevosita ko'rib yechish (SES / Jonli loyihalar):</strong> Faqat kod yozish bilan cheklanmay, mijoz biznesini tushunib yechim berish.<br>
+CAL o'zining "Challenge And Lead" shiori va 18 ta filiali orqali aynan mana shu imkoniyatni beradi.
+            </p>
+          </div>
+        </div>
       </div>
 
       <!-- Kompaniya haqida nima bilasiz -->
@@ -6077,7 +8353,51 @@ Kompaniyaga 3 ta yo'nalishda hissa qo'shaman:
           </div>
         </div>
       </div>
-    </section>
+    
+      <!-- #19: Nega aynan chet ellik bo'lgan sizni olishimiz kerak (Mynavi Asosiy Savoli) -->
+      <div class="q-card danger" data-keywords="nega yapon emas chet ellik why foreigner gaikokujin saiyou mynavi ustunlik qiymat baitariti">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#19</span>
+              <span class="badge badge-danger">🔥 Mynavi Oltin Savoli</span>
+              <span class="badge badge-cat">Xorijiy Kadr Qiymati</span>
+            </div>
+            <div class="q-jp">なぜ日本人学生ではなく、外国人であるあなたを採用すべきなのですか？</div>
+            <div class="q-uz">Nega aynan yapon talabasi emas, chet ellik bo'lgan sizni ishga qabul qilishimiz kerak?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('結論から申し上げますと、日本人学生にはない未知の環境を自ら切り拓く圧倒的な行動力とバイタリティ、そして多様な視点から課題を解決する力を御社に提供できるからです。第一に、私は異国の言語である日本語とIT技術をゼロから日本デジタル大学で同時に学び、短期間でJLPT N2を取得しながら、5つの実践的なWebおよびAIプロダクトを一人で開発し切りました。この何もない環境から自走して成果を出す力は、変化の激しいIT業界で誰よりも強い推進力になると自負しております。第二に、将来的にCALがグローバル案件や多様な人材を活用される際、技術と文化の架け橋として貢献できます。文化の違いを理由に妥協せず、誰よりも粘り強く学び続ける熱量において、私は決して誰にも負けません。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語 (Mynavi & HR Tahlili Asosida Mukammal Javob)</div>
+            <p class="jp-text">
+結論から申し上げますと、日本人学生にはない<strong>「未知の環境を自ら切り拓く圧倒的な行動力とバイタリティ」</strong>、そして<strong>「多様な視点から課題を解決する力」</strong>を御社に提供できるからです。
+
+第一に、私は異国の言語である日本語とIT技術をゼロから日本デジタル大学（JDU）で同時に学び、短期間でJLPT N2を取得しながら、5つの実践的なWeb・AIプロダクトを一人で開発し切りました。この「何もない環境から自走して成果を出す力」は、変化の激しいIT業界で誰よりも強い推進力になると自負しております。
+
+第二に、将来的にCALが海外展開や多様なグローバル人材の活用を推進される際、技術と文化の両面を理解する「架け橋（ブリッジエンジニア）」として機能できます。
+文化の違いを理由に妥協せず、誰よりも粘り強く学び続ける熱量において、私は決して他の誰にも負けません。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi (Mantiq va Strategiya)</div>
+            <p class="uz-text">
+Xulosadan aytadigan bo'lsam, yapon talabalarida kam uchraydigan <strong>"noma'lum muhitda o'z yo'lini mustaqil ocha oladigan favqulodda harakat kuchi va chidamlilik (vitality)"</strong> hamda <strong>"vazifalarni xilma-xil global rakursdan hal qilish qobiliyatini"</strong> kompaniyaga bera olaman.<br><br>
+<strong>1. Bo'shliqdan natija yaratish kuchi (自走力):</strong> Begona til bo'lgan yapon tili va IT sohasini JDU'da 0 dan bir vaqtda o'rganib, N2 darajani olish bilan birga 5 ta to'liq loyihani ishga tushirdim. Hech qanday tayyor sharoitsiz natijaga erishish ko'nikmam o'zgaruvchan loyihalarda kompaniyaga katta sur'at bag'ishlaydi.<br>
+<strong>2. Xalqaro ko'prik (架け橋):</strong> Kelgusida CAL xalqaro loyihalarni amalga oshirganda yoki xorijiy muhandislar jamoasini shakllantirganda, texnik va madaniy ko'prik (Bridge SE) bo'lib xizmat qila olaman.<br>
+Begona davlatga kelganimni bahona qilmay, yaponlardan ko'ra ko'proq ter to'kishga va o'rganishga tayyorman.
+            </p>
+          </div>
+        </div>
+      </div>
+</section>
 
     <!-- SECTION: GYAKU SHITSUMON -->
     <section class="category-section" data-cat="gyaku">
@@ -6367,6 +8687,30 @@ Ha, albatta 3 ta savolim bor edi:
         qUz: "Oxirida bizga biror savolingiz bormi?",
         ansJp: "質問の機会をいただきありがとうございます。貴社で現場や顧客から高く評価され、早期に活躍されているエンジニアの方々に共通する特徴やマインドセットがあればぜひ教えていただけますでしょうか。",
         ansUz: "Muvaffaqiyatli muhandislarning asosiy xislatlari haqida beriladigan eng zo'r teskari savol."
+      },
+      {
+        qJp: "なぜ日本人学生ではなく、外国人であるあなたを採用すべきなのですか？",
+        qUz: "Nega aynan yapon talabasi emas, chet ellik bo'lgan sizni ishga qabul qilishimiz kerak?",
+        ansJp: "日本人学生にはない『未知の環境を切り拓く圧倒的な行動力とバイタリティ』、そして『多様な視点から課題を解決する力』を提供できるからです。JDUで日本語とITをゼロから同時に学び、N2と5つのプロダクトを一人で完遂させた自走力があります。将来CALが海外案件を展開される際も、技術と文化の架け橋（ブリッジSE）として貢献できます。",
+        ansUz: "Yapon talabalarida kam uchraydigan hayotiy harakat kuchi (vitality), bo'shliqdan boshlab natija qilish (jisouryoku) va kelajakdagi xalqaro ko'prik bo'lish imkoniyati."
+      },
+      {
+        qJp: "ポートフォリオ開発において、なぜその技術スタック（FastAPI, Next.js, PostgreSQL, Redis）を選定したのですか？",
+        qUz: "Loyihalaringizda nega aynan shu texnologiyalarni tanlagansiz? Boshqa variantlar bilan solishtirib tushuntiring.",
+        ansJp: "要件と特性に合わせて論理的に選定しました。例えばBionexstarでは厳密なトランザクション整合性が必要なためNoSQLではなくACID特性を持つPostgreSQLを採用し、APIの非同期処理と型安全性のためにDjangoではなくFastAPIを選定しました。また頻繁に検索されるデータにRedisキャッシュを導入し、レスポンス速度を2.7倍に向上させました。",
+        ansUz: "Texnologiyani shunchaki emas, ACID tranzaksiya (PostgreSQL), asinxron tezlik (FastAPI) va kesh (Redis) kabi aniq mezonlar bilan solishtirib tanlaganingizni ayting."
+      },
+      {
+        qJp: "本番環境でサービスのレスポンスが突然遅くなった場合、エンジニアとしてどう原因を調査し解決しますか？",
+        qUz: "Jonli tizimda sahifalar birdaniga juda sekin ochila boshlasa, sababini qanday qidirasiz va qanday yechasiz?",
+        ansJp: "勘ではなく『仮説検証』で4つのレイヤーに切り分けて調査します。第1にサーバーのエラーログとCPU/メモリ使用率を確認し、第2にデータベースのSlow QueryログやN+1問題を解析します。第3に外部APIや非同期キューの遅延を検証します。原因特定後は応急処置としてキャッシュ追加やクエリ最適化を実施し、再発防止策としてモニタリングを強化します。",
+        ansUz: "Taxmin bilan emas, 4 qatlamli tekshiruv (Server log -> DB Slow query / N+1 -> Tashqi API/Kesh -> Profilaktika) ketma-ketligini PREP usulida ayting."
+      },
+      {
+        qJp: "エンジニアとしての現在のあなたの『課題』は何ですか？またどう取り組んでいますか？",
+        qUz: "Dasturchi sifatida hozirgi asosiy vazifangiz (kamchiligingiz/o'sish nuqtangiz) nima va buning ustida qanday ishlayapsiz?",
+        ansJp: "私の現在の課題は、システムの設計段階における『要件定義力』と『ビジネス視点でのアーキテクチャ設計』です。これまで実装力を磨いてきましたが、顧客の課題を上流から解決する力が不可欠だと感じています。この課題を克服するため、現在はJDUの授業や個人開発で要件定義書やER図の作成を徹底し、オープンソースの大規模設計パターンを研究しています。",
+        ansUz: "Kod yozishdan tashqari yuqori bosqich (要件定義 va arxitektura)ni o'rganayotganingizni va JDU'da hujjatlar tuzib o'z ustingizda ishlayotganingizni ayting."
       }
     ];
 
@@ -6517,6 +8861,96 @@ Ha, albatta 3 ta savolim bor edi:
         document.querySelectorAll('.category-section').forEach(s => s.style.display = 'block');
       }
     });
+  
+    function toggleCheatSheet() {
+      const modal = document.getElementById('cheatSheetModal');
+      if (modal) {
+        modal.classList.toggle('hidden');
+      }
+    }
+
   </script>
+
+  <!-- ========================================================
+       CHEAT SHEET MODAL (直前確認シート - 15 DAQIQALIK ESLATMA)
+       ======================================================== -->
+  <div id="cheatSheetModal" class="cheat-modal hidden" onclick="if(event.target===this) toggleCheatSheet()">
+    <div class="cheat-modal-content">
+      <div class="cheat-modal-header">
+        <div class="flex items-center gap-2">
+          <span style="font-size: 24px;">⚡</span>
+          <div>
+            <h2 style="font-size: 18px; font-weight: 800; color: #fff; margin: 0;">Suhbatdan 15 Daqiqa Oldingi Cheat Sheet (直前確認シート)</h2>
+            <p style="font-size: 12px; color: var(--muted-foreground); margin: 2px 0 0;">Zoom/Google Meet qo'ng'irog'i oldidan eng kritik nuqtalar</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="window.print()" class="btn-icon" style="background: var(--surface-hover); color: #fff; padding: 6px 12px; border-radius: 8px;">🖨️ Chop etish / PDF</button>
+          <button onclick="toggleCheatSheet()" class="btn-icon" style="font-size: 18px; padding: 4px 10px; border-radius: 8px;">✕</button>
+        </div>
+      </div>
+
+      <div class="cheat-modal-body">
+        <!-- 1. JIKOSHOUKAI KALIT SO'ZLARI -->
+        <div class="cheat-card">
+          <div class="cheat-card-title">🌟 1 Daqiqalik Jikoshoukai (Kalit Nuqtalar)</div>
+          <div class="cheat-card-text">
+            <strong>1. Ism:</strong> ファルホド・ソイロフ (Farhod Soyilov).<br>
+            <strong>2. Universitet:</strong> 日本デジタル大学 (JDU emas, to'liq ayting!), IT yo'nalishi (2027 bitiruv).<br>
+            <strong>3. Asosiy stak:</strong> TypeScript, React, Next.js, FastAPI, PostgreSQL, Redis.<br>
+            <strong>4. Bosh loyiha:</strong> Bionexstar (dorixona tizimi, 2.7x kesh tezlashuvi, 1000+ user).<br>
+            <strong>5. Sertifikat:</strong> JLPT N2.<br>
+            <strong>6. Shior:</strong> CAL kompaniyasining <em>Challenge And Lead</em> va <em>Passion・Challenge・Grow Up</em> ruhida qat'iy xizmat qilish.
+          </div>
+        </div>
+
+        <!-- 2. 4 XAVFLI SAVOLNING 1 JUMLALIK XULOSALARI -->
+        <div class="cheat-card">
+          <div class="cheat-card-title">⚠️ 4 Xavfli Savol — Ketsuron Faasuto (結論ファースト)</div>
+          <div class="cheat-card-text">
+            <strong>❶ Nega Yaponiya?</strong><br>
+            → <em>«日本の高いものづくり精神と品質・堅牢性への徹底したこだわりに共感し、JDUで培った基盤を元に10年以上長期的に定住してキャリアを築く覚悟があるからです。»</em><br>
+            <strong>❷ Nega aynan CAL?</strong><br>
+            → <em>«全国18拠点で若手育成に力を入れ、多様な現場で客先常駐を含め上流から下流まで挑戦できる『Challenge And Lead』の環境に強く共感したからです。»</em><br>
+            <strong>❸ Nega yapon talabasi emas, chet ellik siz? (Mynavi)</strong><br>
+            → <em>«未知の環境をゼロから切り拓く圧倒的な行動力（バイタリティ）と自走力、そして将来グローバル展開の架け橋（ブリッジSE）となれる強みがあるからです。»</em><br>
+            <strong>❹ Nega IT sohasini tanlagansiz?</strong><br>
+            → <em>«自ら書いたコードが薬局の業務ミスをゼロにし、人々の時間を生み出す瞬間に強い社会的価値と情熱を感じたからです。»</em>
+          </div>
+        </div>
+
+        <!-- 3. FAVQULODDA IBORALAR (SENSEI QOIDASI) -->
+        <div class="cheat-card highlight">
+          <div class="cheat-card-title">🆘 Savolni Tushunmay Qolganda (Hech qachon taxmin qilmang!)</div>
+          <div class="cheat-card-text" style="font-size: 13px;">
+            <strong>To'g'ri ibora:</strong><br>
+            <span style="color: #60a5fa; font-weight: 700;">「申し訳ございません。もう一度おっしゃっていただけますでしょうか？」</span><br>
+            <em>(Kechirasiz, yana bir bor qaytara olasizmi?)</em><br><br>
+            <strong>O'ylash uchun vaqt so'rash:</strong><br>
+            <span style="color: #60a5fa; font-weight: 700;">「少々お時間をいただいてもよろしいでしょうか？」</span>
+          </div>
+        </div>
+
+        <!-- 4. TESKARI SAVOLLAR (GYAKU-SHITSUMON) -->
+        <div class="cheat-card">
+          <div class="cheat-card-title">❓ HR'ga Beriladigan 2 Ta Eng Zo'r Savol</div>
+          <div class="cheat-card-text">
+            <strong>1-savol:</strong> <em>«御社で早期に現場で活躍し、顧客から高く評価されているエンジニアに共通するマインドセットを教えていただけますか？»</em><br>
+            <strong>2-savol:</strong> <em>«入社日までに、技術面や日本語面で特に準備・習得しておくべきことがあればご教示いただけますでしょうか？»</em>
+          </div>
+        </div>
+
+        <!-- 5. SHAXSIY VA DINIY EHTIYOJLAR (NAMOZ, HALOL) -->
+        <div class="cheat-card">
+          <div class="cheat-card-title">🕌 Diniy & Hayotiy Savollarga Sokin Javob</div>
+          <div class="cheat-card-text">
+            <strong>Namoz:</strong> <em>«お昼休みなどの休憩時間に、5〜10分程度静かなスペースをお借りしてお祈りを行っております。業務時間やチームの進行には一切影響を与えません。»</em><br>
+            <strong>Halol taom:</strong> <em>«食事制限（ハラール）については、自炊を中心に行っておりますので、現場で特別な配慮をお願いすることはございません。»</em>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
