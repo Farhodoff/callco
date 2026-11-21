@@ -689,6 +689,399 @@
       pointer-events: none;
     }
     .toast.show { transform: translateX(-50%) translateY(0); }
+
+    /* ========================================================
+       NEW SECTIONS: VOCAB TABLE, GRAMMAR, SPEECH & CAL HR
+       ======================================================== */
+    
+    /* Vocabulary Table Styles */
+    .table-container {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 20px;
+      margin-top: 16px;
+      overflow: hidden;
+    }
+    .table-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .table-filter-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tbl-btn {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: var(--badge-radius);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tbl-btn:hover {
+      color: var(--text);
+      background: var(--surface-hover);
+    }
+    .tbl-btn.active {
+      background: var(--primary);
+      color: #0d1117;
+      border-color: var(--primary);
+    }
+    .table-search-input {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 7px 14px;
+      border-radius: var(--badge-radius);
+      font-size: 13px;
+      width: 260px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .table-search-input:focus {
+      border-color: var(--primary);
+    }
+    .responsive-table-wrap {
+      overflow-x: auto;
+      max-height: 750px;
+      scrollbar-width: thin;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .v-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13px;
+    }
+    .v-table thead th {
+      background: #1c2128;
+      color: var(--primary);
+      padding: 12px 14px;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      white-space: nowrap;
+    }
+    .v-table tbody tr {
+      border-bottom: 1px solid rgba(48, 54, 61, 0.6);
+      transition: background 0.15s;
+    }
+    .v-table tbody tr:hover {
+      background: var(--surface-hover);
+    }
+    .v-table td {
+      padding: 12px 14px;
+      vertical-align: middle;
+    }
+    .v-table .t-kanji {
+      font-family: var(--font-jp);
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .v-table .t-kana {
+      font-size: 12px;
+      color: var(--primary);
+    }
+    .v-table .t-romaji {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .v-table .t-example {
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+    .v-table .t-example-jp {
+      font-family: var(--font-jp);
+      color: #c9d1d9;
+      margin-bottom: 3px;
+    }
+    .v-table .t-example-uz {
+      color: var(--text-muted);
+      font-size: 11.5px;
+    }
+    .badge-tbl {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: var(--badge-radius);
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .badge-n1 { background: rgba(188, 140, 255, 0.15); color: #d2a8ff; border: 1px solid rgba(188, 140, 255, 0.3); }
+    .badge-n2 { background: rgba(88, 166, 255, 0.15); color: #58a6ff; border: 1px solid rgba(88, 166, 255, 0.3); }
+    .badge-n3 { background: rgba(63, 185, 80, 0.15); color: #3fb950; border: 1px solid rgba(63, 185, 80, 0.3); }
+    .badge-ses { background: rgba(210, 153, 34, 0.15); color: #d29922; border: 1px solid rgba(210, 153, 34, 0.3); }
+
+    /* Grammar Section Cards */
+    .grammar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
+    @media (max-width: 600px) {
+      .grammar-grid { grid-template-columns: 1fr; }
+    }
+    .grammar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 20px;
+      transition: all 0.2s;
+      position: relative;
+    }
+    .grammar-card:hover {
+      border-color: rgba(88, 166, 255, 0.4);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+    }
+    .g-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      gap: 8px;
+    }
+    .g-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #fff;
+      font-family: var(--font-jp);
+    }
+    .g-type {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: var(--badge-radius);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .g-type.kenjougo { background: rgba(188, 140, 255, 0.15); color: #d2a8ff; border: 1px solid rgba(188, 140, 255, 0.3); }
+    .g-type.sonkeigo { background: rgba(248, 81, 73, 0.15); color: #ff7b72; border: 1px solid rgba(248, 81, 73, 0.3); }
+    .g-type.teinei { background: rgba(88, 166, 255, 0.15); color: #58a6ff; border: 1px solid rgba(88, 166, 255, 0.3); }
+    .g-type.prep { background: rgba(63, 185, 80, 0.15); color: #3fb950; border: 1px solid rgba(63, 185, 80, 0.3); }
+
+    .g-meaning {
+      font-size: 13.5px;
+      color: var(--text-sub);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .g-hr-tip {
+      background: rgba(210, 153, 34, 0.08);
+      border-left: 3px solid var(--yellow);
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 12.5px;
+      color: #e3b341;
+      margin-bottom: 12px;
+      line-height: 1.45;
+    }
+    .g-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      background: rgba(0,0,0,0.25);
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      font-size: 12px;
+    }
+    @media (max-width: 500px) {
+      .g-compare { grid-template-columns: 1fr; }
+    }
+    .g-bad { color: #f85149; }
+    .g-good { color: #3fb950; font-weight: 600; }
+    .g-example-box {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 10px;
+    }
+    .g-ex-jp {
+      font-family: var(--font-jp);
+      font-size: 13.5px;
+      color: #fff;
+      margin-bottom: 5px;
+      line-height: 1.5;
+    }
+    .g-ex-uz {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .g-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .mini-speak-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-sub);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .mini-speak-btn:hover {
+      background: var(--primary-glow);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* Candidate Speech Scripts Styles */
+    .speech-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      margin-top: 18px;
+    }
+    .speech-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 24px;
+      position: relative;
+      border-left: 4px solid var(--primary);
+      transition: all 0.2s;
+    }
+    .speech-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+    }
+    .speech-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .speech-tag {
+      background: rgba(88, 166, 255, 0.1);
+      border: 1px solid rgba(88, 166, 255, 0.25);
+      color: var(--primary);
+      padding: 4px 12px;
+      border-radius: var(--badge-radius);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .speech-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .speech-situation {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-bottom: 14px;
+      background: rgba(255,255,255,0.03);
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px dashed var(--border);
+      line-height: 1.5;
+    }
+    .speech-bubble {
+      background: #1c2128;
+      border: 1px solid rgba(88, 166, 255, 0.3);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .speech-jp {
+      font-family: var(--font-jp);
+      font-size: 15.5px;
+      line-height: 1.8;
+      color: #f0f6fc;
+      margin-bottom: 12px;
+      white-space: pre-line;
+    }
+    .speech-jp strong {
+      color: #58a6ff;
+    }
+    .speech-romaji {
+      font-size: 12.5px;
+      color: #8b949e;
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 12px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(48, 54, 61, 0.5);
+      white-space: pre-line;
+    }
+    .speech-uz {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #c9d1d9;
+      background: rgba(0,0,0,0.2);
+      padding: 12px;
+      border-radius: 8px;
+      border-left: 3px solid var(--green);
+      white-space: pre-line;
+    }
+    .speech-delivery-tip {
+      margin-top: 12px;
+      font-size: 12.5px;
+      color: #d29922;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .speech-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .speech-btn {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .speech-btn:hover {
+      background: var(--surface-hover);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .speech-btn.primary {
+      background: var(--primary);
+      color: #0d1117;
+      border-color: var(--primary);
+    }
+    .speech-btn.primary:hover {
+      background: #79b8ff;
+    }
   </style>
 </head>
 <body>
@@ -709,25 +1102,25 @@
 
       <h1 class="title">CAL HR Intervyusi — Savollar, Javoblar & N1/N2/N3 Lug'at</h1>
       <p class="subtitle">
-        Ushbu maxsus platforma Farhod Soyilovning rezyumesi (<a href="file:///Users/farhod/Desktop/kitob/Rezyumelar/CAL履歴書.docx" style="color:var(--primary);text-decoration:none;">CAL履歴書.docx</a>), 4+1 ta amaliy loyihasi hamda Desktop'dagi audio yozuvlarda ta'kidlangan ustoz ko'rsatmalari asosida tayyorlandi. Endi unda intervyuda ishlatiladigan 30 dan ortiq <strong>JLPT N1/N2/N3 biznes atamalari lug'ati</strong> ham bor.
+        Ushbu platforma Farhod Soyilovning rezyumesi (<a href="file:///Users/farhod/Desktop/kitob/Rezyumelar/CAL履歴書.docx" style="color:var(--primary);text-decoration:none;">CAL履歴書.docx</a>), 4+1 ta amaliy loyihasi, internetdagi eng so'nggi <strong>株式会社CAL va IT SES HR</strong> intervyu talablari asosida boyitildi. Unda <strong>darajalar bo'yicha so'zlar jadvali (N1, N2, N3, SES)</strong>, <strong>intervyu grammatikasi va Keigo qoliplari</strong> hamda <strong>nomzod aytishi kerak bo'lgan tayyor nutq namunalari (speech scripts)</strong> to'liq jamlangan.
       </p>
 
       <div class="hero-stats">
         <div class="stat-pill">
-          <span class="stat-num">24+ Savollar</span>
-          <span class="stat-lbl">Kutilayotgan barcha savollar</span>
+          <span class="stat-num">30+ Savollar</span>
+          <span class="stat-lbl">CAL & SES HR savol-javoblari</span>
         </div>
         <div class="stat-pill">
-          <span class="stat-num">4 Xavfli Nuqta</span>
-          <span class="stat-lbl">Nega Yaponiya / CAL / IT / Loyiha</span>
+          <span class="stat-num">50+ So'zlar Jadvali</span>
+          <span class="stat-lbl">N1, N2, N3 & IT intervyu lug'ati</span>
         </div>
         <div class="stat-pill">
-          <span class="stat-num">5 Loyiha Tahlili</span>
-          <span class="stat-lbl">Har biriga 6 tadan chuqur savol</span>
+          <span class="stat-num">10+ Keigo Grammatika</span>
+          <span class="stat-lbl">Suhbatda ball beruvchi qoliplar</span>
         </div>
         <div class="stat-pill">
-          <span class="stat-num">30+ Atamalar Lug'ati</span>
-          <span class="stat-lbl">N1, N2, N3 va Biznes Yaponiya atamalari</span>
+          <span class="stat-num">8 Tayyor Nutq</span>
+          <span class="stat-lbl">Nomzod aytishi kerak bo'lgan matnlar</span>
         </div>
       </div>
     </div>
@@ -755,7 +1148,11 @@
     <!-- Category Nav Tabs -->
     <div class="nav-tabs">
       <button class="tab-btn active" onclick="filterCategory('all', this)">Barchasi</button>
-      <button class="tab-btn highlight" onclick="filterCategory('vocab', this)">📖 N1/N2/N3 Lug'at (Atamalar)</button>
+      <button class="tab-btn highlight" onclick="filterCategory('vocab-table', this)">📊 So'zlar Jadvali (N1-N3)</button>
+      <button class="tab-btn highlight" onclick="filterCategory('grammar', this)">📝 Intervyu Grammatikasi & Keigo</button>
+      <button class="tab-btn highlight" onclick="filterCategory('speech', this)">🗣️ Tayyor Nutq Namunalarim</button>
+      <button class="tab-btn highlight" onclick="filterCategory('cal-hr-new', this)">🎯 CAL & SES Yangi HR Savollar</button>
+      <button class="tab-btn" onclick="filterCategory('vocab', this)">📖 Lug'at Kartochkalari</button>
       <button class="tab-btn" onclick="filterCategory('emergency', this)">🆘 Favqulodda Iboralar</button>
       <button class="tab-btn" onclick="filterCategory('jikoshoukai', this)">🌟 Jikoshoukai (1 daqiqa)</button>
       <button class="tab-btn" onclick="filterCategory('danger', this)">⚠️ Eng Xavfli 4 Savol</button>
@@ -769,6 +1166,1654 @@
       <button class="tab-btn" onclick="filterCategory('career', this)">🎯 Karyera & 5 Yillik Reja</button>
       <button class="tab-btn" onclick="filterCategory('gyaku', this)">❓ 逆質問 (HR'ga savollar)</button>
     </div>
+
+
+    <!-- ========================================================
+         SECTION 1: VOCABULARY TABLE (DARAJALAR BO'YICHA JADVAL)
+         ======================================================== -->
+    <section class="category-section" data-cat="vocab-table">
+      <div class="section-title">
+        <span>📊 Suhbat Lug'ati Jadvali — JLPT N1, N2, N3 & IT/SES Atamalari</span>
+        <span class="count">52 ta muhim atama • Qidiruv va darajalar bo'yicha saralash</span>
+      </div>
+
+      <div class="table-container">
+        <div class="table-controls">
+          <div class="table-filter-group">
+            <button class="tbl-btn active" onclick="filterTableLevel('all', this)">Barchasi (52)</button>
+            <button class="tbl-btn" onclick="filterTableLevel('N1', this)">🟣 JLPT N1 (13)</button>
+            <button class="tbl-btn" onclick="filterTableLevel('N2', this)">🔵 JLPT N2 (13)</button>
+            <button class="tbl-btn" onclick="filterTableLevel('N3', this)">🟢 JLPT N3 (13)</button>
+            <button class="tbl-btn" onclick="filterTableLevel('SES', this)">💻 CAL & SES (13)</button>
+          </div>
+          <input type="text" class="table-search-input" id="tableSearchInput" oninput="searchTableWords(this.value)" placeholder="🔍 Jadvaldan atama yoki so'z qidiring...">
+        </div>
+
+        <div class="responsive-table-wrap">
+          <table class="v-table">
+            <thead>
+              <tr>
+                <th style="width: 75px;">Daraja</th>
+                <th style="width: 170px;">Yaponcha (Kanji & Furigana)</th>
+                <th style="width: 130px;">Romaji</th>
+                <th style="width: 250px;">O'zbekcha Ma'nosi</th>
+                <th>Suhbatda Ishlatish Namunasi (Misol Gap)</th>
+                <th style="width: 70px; text-align: center;">Audio</th>
+              </tr>
+            </thead>
+            <tbody id="vocabTableBody">
+
+              <!-- ================= N1 VOCABULARY ================= -->
+              <tr data-level="N1" data-keywords="課題解決能力 かだいかいけつのうりょく kadai kaiketsu nouryoku muammo yechish">
+                <td><span class="badge-tbl badge-n1">N1 Biznes</span></td>
+                <td><div class="t-kanji">課題解決能力</div><div class="t-kana">かだいかいけつのうりょく</div></td>
+                <td><div class="t-romaji">Kadai Kaiketsu Nōryoku</div></td>
+                <td>Muammo va to'siqlarni chuqur tahlil qilib, konstruktiv yechim topish qobiliyati. Yapon IT suhbatida 1-raqamli ko'nikma.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「自らボトルネックを発見し、技術を用いて迅速に解決する<strong>課題解決能力</strong>を強みとしています。」</div>
+                    <div class="t-example-uz">Mustaqil ravishda muammoni aniqlab, texnologiya bilan yechadigan vazifalarni hal qilish qobiliyatimni kuchli tomonim deb bilaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('かだいかいけつのうりょく。自らボトルネックを発見し、技術を用いて迅速に解決する課題解決能力を強みとしています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N1" data-keywords="報連相 ほうれんそう hourenso hisobot aloqa maslahat">
+                <td><span class="badge-tbl badge-n1">N1 Biznes</span></td>
+                <td><div class="t-kanji">報連相</div><div class="t-kana">ほうれんそう</div></td>
+                <td><div class="t-romaji">Hō-Ren-Sō</div></td>
+                <td>Hisobot (報告), Aloqa (連絡) va Maslahat (相談). Yapon jamoaviy madaniyatining poydevori.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「手遅れや認識のズレを防ぐため、日頃から小さな進捗でも<strong>報連相</strong>を徹底しています。」</div>
+                    <div class="t-example-uz">Kechikish va tushunmovchiliklarning oldini olish uchun har doim kichik yutuqlarda ham Hou-Ren-So qoidasiga qat'iy amal qilaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ほうれんそう。手遅れや認識のズレを防ぐため、日頃から小さな進捗でも報連相を徹底しています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N1" data-keywords="自己研鑽 じこけんさん jiko kensan o'z ustida ishlash">
+                <td><span class="badge-tbl badge-n1">N1 Biznes</span></td>
+                <td><div class="t-kanji">自己研鑽</div><div class="t-kana">じこけんさん</div></td>
+                <td><div class="t-romaji">Jiko Kensan</div></td>
+                <td>O'z ustida mustaqil tinimsiz ishlash, malaka oshirish va yangi bilimlarni mustaqil o'zlashtirish.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「変化の激しいIT業界に対応するため、休日も新技術のキャッチアップと<strong>自己研鑽</strong>に励んでいます。」</div>
+                    <div class="t-example-uz">Tez o'zgaruvchan IT sohasiga moslashish uchun dam olish kunlari ham yangi texnologiyalarni o'rganib, o'z ustimda ishlayman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('じこけんさん。変化の激しいIT業界に対応するため、休日も新技術のキャッチアップと自己研鑽に励んでいます。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N1" data-keywords="誠心誠意 せいしんせいい seishin seii sidqidildan masuliyat">
+                <td><span class="badge-tbl badge-n1">N1 Biznes</span></td>
+                <td><div class="t-kanji">誠心誠意</div><div class="t-kana">せいしんせいい</div></td>
+                <td><div class="t-romaji">Seishin Seii</div></td>
+                <td>Chin ko'ngildan, sidqidildan, yuksak mas'uliyat va halollik bilan yondashish.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「クライアントの期待に応えられるよう、どのようなプロジェクトでも<strong>誠心誠意</strong>努めてまいります。」</div>
+                    <div class="t-example-uz">Mijozning ishonchini oqlash uchun qanday loyiha bo'lmasin, sidqidildan va bor kuchim bilan harakat qilaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('せいしんせいい。クライアントの期待に応えられるよう、どのようなプロジェクトでも誠心誠意努めてまいります。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N1" data-keywords="臨機応変 りんきおうへん rinki ouhen moslashuvchan vaziyatga qarab">
+                <td><span class="badge-tbl badge-n1">N1 Biznes</span></td>
+                <td><div class="t-kanji">臨機応変</div><div class="t-kana">りんきおうへん</div></td>
+                <td><div class="t-romaji">Rinki Ōhen</div></td>
+                <td>Vaziyatga qarab tezkor va egiluvchan (flexible) to'g'ri qaror qabul qilish.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「仕様変更やトラブルが発生した際も焦らず、優先順位を定めて<strong>臨機応変</strong>に対応いたします。」</div>
+                    <div class="t-example-uz">Talablar o'zgarganda yoki nosozlik ro'y berganda ham sarosimaga tushmay, ustuvorlikni belgilab vaziyatga qarab tezkor harakat qilaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('りんきおうへん。仕様変更やトラブルが発生した際も焦らず、優先順位を定めて臨機応変に対応いたします。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N1" data-keywords="試行錯誤 しこうさくご shikou sakugo sinov va xatolar trial and error">
+                <td><span class="badge-tbl badge-n1">N1 Biznes</span></td>
+                <td><div class="t-kanji">試行錯誤</div><div class="t-kana">しこうさくご</div></td>
+                <td><div class="t-romaji">Shikō Sakugo</div></td>
+                <td>Tinimsiz sinab ko'rish, xatolardan to'g'ri dars olib eng maqbul yo'lni topish (Trial and Error).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「難解なパフォーマンス改善でも<strong>試行錯誤</strong>を重ね、最終的に処理速度を40％短縮させました。」</div>
+                    <div class="t-example-uz">Murakkab tezlikni yaxshilashda ham tinimsiz sinab ko'rib, yakunda ishlash tezligini 40% qisqartirishga erishdim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('しこうさくご。難解なパフォーマンス改善でも試行錯誤を重ね、最終的に処理速度を40％短縮させました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N1" data-keywords="尽力 じんりょく jinryoku bor kuchini sarflash hissa qo'shish">
+                <td><span class="badge-tbl badge-n1">N1 Biznes</span></td>
+                <td><div class="t-kanji">尽力</div><div class="t-kana">じんりょく</div></td>
+                <td><div class="t-romaji">Jinryoku</div></td>
+                <td>Bor kuch-g'ayratni bag'ishlash, butun vujudi bilan hissa qo'shish (尽力してまいります).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「一日も早く貴社の戦力となれるよう、開発と日本語力の向上に<strong>尽力</strong>してまいります。」</div>
+                    <div class="t-example-uz">Iloji boricha tezroq kompaniyangizning yetakchi kadriga aylanish uchun dasturlash va yapon tilini rivojlantirishga bor kuchimni sarflayman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('じんりょく。一日も早く貴社の戦力となれるよう、開発と日本語力の向上に尽力してまいります。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N1" data-keywords="協調性 きょうちょうせい kyouchousei jamoaviy hamjihatlik team player">
+                <td><span class="badge-tbl badge-n1">N1 Biznes</span></td>
+                <td><div class="t-kanji">協調性</div><div class="t-kana">きょうちょうせい</div></td>
+                <td><div class="t-romaji">Kyōchōsei</div></td>
+                <td>Jamoada kelishib, hamkasblarni hurmat qilib uyg'un ishlay olish qobiliyati (Team player).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「多国籍なチーム開発では互いの意見を尊重し、<strong>協調性</strong>を持って円滑にプロジェクトを進めました。」</div>
+                    <div class="t-example-uz">Ko'p millatli jamoaviy loyihada bir-birimizning fikrini hurmat qilib, hamjihatlik bilan loyihani muvaffaqiyatli yetkazdik.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('きょうちょうせい。多国籍なチーム開発では互いの意見を尊重し、協調性を持って円滑にプロジェクトを進めました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N1" data-keywords="当事者意識 とうじしゃいしき toujisha ishiki egalik hissi ownership">
+                <td><span class="badge-tbl badge-n1">N1 Biznes</span></td>
+                <td><div class="t-kanji">当事者意識</div><div class="t-kana">とうじしゃいしき</div></td>
+                <td><div class="t-romaji">Tōjisha Ishiki</div></td>
+                <td>Egalik hissi (Ownership mindset). Ishga "bu birovning ishi" deb emas, "bu mening mas'uliyatim" deb qarash.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「与えられたタスクをこなすだけでなく、<strong>当事者意識</strong>を持ってプロダクト全体の品質向上を意識しています。」</div>
+                    <div class="t-example-uz">Faqat berilgan topshiriqni bajarish bilan cheklanmay, egalik hissi bilan butun mahsulot sifatini yaxshilashga intilaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('とうじしゃいしき。与えられたタスクをこなすだけでなく、当事者意識を持ってプロダクト全体の品質向上を意識しています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N1" data-keywords="納期遵守 のうきじゅんしゅ nouki junshu muddatga amal qilish deadline">
+                <td><span class="badge-tbl badge-n1">N1 Biznes</span></td>
+                <td><div class="t-kanji">納期遵守</div><div class="t-kana">のうきじゅんしゅ</div></td>
+                <td><div class="t-romaji">Nōki Junshu</div></td>
+                <td>Topshirish muddati (Deadline) ga qat'iy va so'zsiz rioya qilish. Yapon muhandislik ishonchining kaliti.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「工数を逆算してスケジュールを管理し、これまで全てのプロジェクトで<strong>納期遵守</strong>を徹底してきました。」</div>
+                    <div class="t-example-uz">Ish hajmini oldindan hisoblab grafik tuzgan holda, shu paytgacha barcha loyihalarda muddatga qat'iy rioya qilganman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('のうきじゅんしゅ。工数を逆算してスケジュールを管理し、これまで全てのプロジェクトで納期遵守を徹底してきました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N1" data-keywords="一気通貫 いっきつうかん ikkitsuukan boshidan oxirigacha end to end">
+                <td><span class="badge-tbl badge-n1">N1 Biznes</span></td>
+                <td><div class="t-kanji">一気通貫</div><div class="t-kana">いっきつうかん</div></td>
+                <td><div class="t-romaji">Ikki Tsūkan</div></td>
+                <td>Boshidan oxirigacha uzluksiz to'liq amalga oshirish (End-to-End: talablarni belgilashdan to deploygacha).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「要件定義から設計、実装、テスト、デプロイまで<strong>一気通貫</strong>で手掛けた実績がございます。」</div>
+                    <div class="t-example-uz">Talablarni aniqlashdan tortib arxitektura, kodlash, testlash va deploygacha boshidan oxirigacha bajargan amaliy tajribam bor.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('いっきつうかん。要件定義から設計、実装、テスト、デプロイまで一気通貫で手掛けた実績がございます。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N1" data-keywords="優先順位 ゆうせんじゅんい yuusen juni ustuvorlik priority">
+                <td><span class="badge-tbl badge-n1">N1 Biznes</span></td>
+                <td><div class="t-kanji">優先順位</div><div class="t-kana">ゆうせんじゅんい</div></td>
+                <td><div class="t-romaji">Yūsen Jun'i</div></td>
+                <td>Muhimlik darajasi (Priority). Vazifalarni ahamiyati va shoshilinchligiga qarab saralash.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「業務が重なった際は、影響度と緊急度を考慮して<strong>優先順位</strong>を明確にし、効率的に着手します。」</div>
+                    <div class="t-example-uz">Vazifalar ko'payganda, ta'sir doirasi va shoshilinchligiga qarab ustuvorlikni belgilab, samarali kirishaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ゆうせんじゅんい。業務が重なった際は、影響度と緊急度を考慮して優先順位を明確にし、効率的に着手します。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N1" data-keywords="推進力 すいしんりょく suishinryoku harakatlantiruvchi kuch olg'a surish">
+                <td><span class="badge-tbl badge-n1">N1 Biznes</span></td>
+                <td><div class="t-kanji">推進力</div><div class="t-kana">すいしんりょく</div></td>
+                <td><div class="t-romaji">Suishinryoku</div></td>
+                <td>Loyihani to'xtatib qo'ymasdan olg'a surish, harakatlantiruvchi kuch va yetakchilik.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「困難な課題に直面してもチームを鼓舞し、最後までプロジェクトを完遂させる<strong>推進力</strong>があります。」</div>
+                    <div class="t-example-uz">Qiyin vaziyatlarda ham jamoani ruhlantirib, loyihani oxiriga yetkazuvchi olg'a siljitish kuchiga egaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('すいしんりょく。困難な課題に直面してもチームを鼓舞し、最後までプロジェクトを完遂させる推進力があります。')">🔊</button>
+                </td>
+              </tr>
+
+              <!-- ================= N2 VOCABULARY ================= -->
+              <tr data-level="N2" data-keywords="要件定義 ようけんていぎ youken teigi talablarni belgilash requirements">
+                <td><span class="badge-tbl badge-n2">N2 IT Loyiha</span></td>
+                <td><div class="t-kanji">要件定義</div><div class="t-kana">ようけんていぎ</div></td>
+                <td><div class="t-romaji">Yōken Teigi</div></td>
+                <td>Mijozning ehtiyojlari va tizimning nimalar qilishi kerakligini aniqlash bosqichi (Requirements Definition).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「開発に入る前に、クライアントが真に求める目的を明確にするため<strong>要件定義</strong>を綿密に行いました。」</div>
+                    <div class="t-example-uz">Dasturlashga kirishishdan oldin mijozning asl maqsadini aniqlashtirish uchun talablarni chuqur belgilab oldik.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ようけんていぎ。開発に入る前に、クライアントが真に求める目的を明確にするため要件定義を綿密に行いました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N2" data-keywords="基本設計 詳細設計 きほんせっけい しょうさいせっけい arxitektura dizayn">
+                <td><span class="badge-tbl badge-n2">N2 IT Loyiha</span></td>
+                <td><div class="t-kanji">基本設計 / 詳細設計</div><div class="t-kana">きほんせっけい / しょうさいせっけい</div></td>
+                <td><div class="t-romaji">Kihon / Shōsai Sekkei</div></td>
+                <td>Asosiy arxitektura dizayni (UI, ma'lumotlar oqimi) va batafsil modullar, API, DB jadvallari dizayni.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「<strong>基本設計</strong>で画面遷移を固め、<strong>詳細設計</strong>にてAPI仕様とテーブル定義書を作成しました。」</div>
+                    <div class="t-example-uz">Asosiy loyihada sahifalar o'tishini belgilab, batafsil loyihada API xususiyatlari va ma'lumotlar bazasi jadvallarini tuzdik.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('きほんせっけい、しょうさいせっけい。基本設計で画面遷移を固め、詳細設計にてAPI仕様とテーブル定義書を作成しました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N2" data-keywords="単体テスト 結合テスト たんたいてすと けつごうてすと unit integration test">
+                <td><span class="badge-tbl badge-n2">N2 IT Loyiha</span></td>
+                <td><div class="t-kanji">単体テスト / 結合テスト</div><div class="t-kana">たんたいてすと / けつごうてすと</div></td>
+                <td><div class="t-romaji">Tantai / Ketsugō Test</div></td>
+                <td>Unit test (alohida funksiyalarni tekshirish) va Integration test (modullarning birgalikda ishlashini tekshirish).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「バグの早期発見のため、<strong>単体テスト</strong>を自動化し、その後システム全体の<strong>結合テスト</strong>を実施しました。」</div>
+                    <div class="t-example-uz">Xatolarni erta aniqlash uchun unit testlarni avtomatlashtirib, so'ngra tizimning integratsion testini o'tkazdik.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('たんたいてすと、けつごうてすと。バグの早期発見のため、単体テストを自動化し、その後システム全体の結合テストを実施しました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N2" data-keywords="進捗管理 しんちょくかんり shinchoku kanri progress grafigi">
+                <td><span class="badge-tbl badge-n2">N2 IT Loyiha</span></td>
+                <td><div class="t-kanji">進捗管理</div><div class="t-kana">しんちょくかんり</div></td>
+                <td><div class="t-romaji">Shinchoku Kanri</div></td>
+                <td>Ish jarayoni, vazifalar bajarilishi va loyiha grafigini nazorat qilib borish.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「TrelloやGitHub Projectsを用いてタスクを可視化し、毎朝の朝会で<strong>進捗管理</strong>を行いました。」</div>
+                    <div class="t-example-uz">Trello va GitHub Projects orqali vazifalarni ko'rgazmali qilib, har kuni ertalabki yig'ilishda ish unumdorligini nazorat qildik.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('しんちょくかんり。タスクを可視化し、毎朝の朝会で進捗管理を行いました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N2" data-keywords="ボトルネック ぼとるねっく bottleneck to'siq sekinlashtiruvchi">
+                <td><span class="badge-tbl badge-n2">N2 IT Loyiha</span></td>
+                <td><div class="t-kanji">ボトルネック</div><div class="t-kana">ぼとるねっく</div></td>
+                <td><div class="t-romaji">Bottleneck</div></td>
+                <td>Tizim yoki jarayonda umumiy tezlik va samaradorlikni pasaytirayotgan asosiy zaif nuqta.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「パフォーマンス低下の原因となっていたDBクエリの<strong>ボトルネック</strong>を特定し、インデックスを追加しました。」</div>
+                    <div class="t-example-uz">Tezlik pasayishiga sabab bo'layotgan baza so'rovlaridagi to'siqni aniqlab, indekslar qo'shdim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ボトルネック。パフォーマンス低下の原因となっていたボトルネックを特定し、インデックスを追加しました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N2" data-keywords="キャッチアップ きゃっちあっぷ catchup o'rganib olish o'zlashtirish">
+                <td><span class="badge-tbl badge-n2">N2 IT Loyiha</span></td>
+                <td><div class="t-kanji">キャッチアップ</div><div class="t-kana">きゃっちあっぷ</div></td>
+                <td><div class="t-romaji">Catch-up</div></td>
+                <td>Yangi texnologiya, dasturlash tili yoki soha bilimlarini tezlikda o'zlashtirib amalda qo'llash.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「未経験のフレームワークであっても、公式ドキュメントを読み解き短期間で<strong>キャッチアップ</strong>できます。」</div>
+                    <div class="t-example-uz">Ilgari ishlatmagan freymvork bo'lsa ham, rasmiy hujjatlarni o'rganib qisqa muddatda tez o'zlashtirib ola bilaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('キャッチアップ。未経験のフレームワークであっても、公式ドキュメントを読み解き短期間でキャッチアップできます。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N2" data-keywords="トラブルシューティング とらぶるしゅーてぃんぐ nosozlik tuzatish troubleshooting">
+                <td><span class="badge-tbl badge-n2">N2 IT Loyiha</span></td>
+                <td><div class="t-kanji">トラブルシューティング</div><div class="t-kana">とらぶるしゅーてぃんぐ</div></td>
+                <td><div class="t-romaji">Troubleshooting</div></td>
+                <td>Xatolik va nosozliklarning asl sababini qidirib topish, tahlil qilish va bartaraf etish.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「ログの分析と仮説検証を論理的に繰り返し、冷静に<strong>トラブルシューティング</strong>を行いました。」</div>
+                    <div class="t-example-uz">Server loglarini tahlil qilish va gipotezalarni mantiqiy tekshirib, xatolikni xotirjamlik bilan bartaraf etdim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('トラブルシューティング。ログの分析と仮説検証を論理的に繰り返し、冷静にトラブルシューティングを行いました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N2" data-keywords="工数 こうすう kousuu inson soat ish hajmi man hours">
+                <td><span class="badge-tbl badge-n2">N2 IT Loyiha</span></td>
+                <td><div class="t-kanji">工数</div><div class="t-kana">こうすう</div></td>
+                <td><div class="t-romaji">Kōsū</div></td>
+                <td>Ish hajmi va unga sarflanadigan inson-soat / inson-kun resursi (Man-hours).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「機能追加に伴う<strong>工数</strong>を正確に見積もり、スケジュールに遅延が出ないよう調整しました。」</div>
+                    <div class="t-example-uz">Yangi funksiya qo'shish uchun ketadigan ish hajmini aniq baholab, jadval kechikmasligi uchun rejalashtirdim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('こうすう。機能追加に伴う工数を正確に見積もり、スケジュールに遅延が出ないよう調整しました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N2" data-keywords="仕様変更 しようへんこう shiyou henkou talablar o'zgarishi specification change">
+                <td><span class="badge-tbl badge-n2">N2 IT Loyiha</span></td>
+                <td><div class="t-kanji">仕様変更</div><div class="t-kana">しようへんこう</div></td>
+                <td><div class="t-romaji">Shiyō Henkō</div></td>
+                <td>Mijoz yoki loyiha rahbari tomonidan dastur talablari va tuzilishining o'zgartirilishi.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「開発途中の急な<strong>仕様変更</strong>にも柔軟に対応し、コードのリファクタリングを実施しました。」</div>
+                    <div class="t-example-uz">Ishlab chiqish o'rtasida to'satdan talablar o'zgarganda ham moslashuvchanlik ko'rsatib, kodni qayta tartibga soldim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('しようへんこう。開発途中の急な仕様変更にも柔軟に対応し、コードのリファクタリングを実施しました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N2" data-keywords="保守運用 ほしゅうんよう hoshu unyou server saqlash maintenance">
+                <td><span class="badge-tbl badge-n2">N2 IT Loyiha</span></td>
+                <td><div class="t-kanji">保守・運用</div><div class="t-kana">ほしゅ・うんよう</div></td>
+                <td><div class="t-romaji">Hoshu / Un'yō</div></td>
+                <td>Dasturiy tizimni serverda barqaror yurgizish, xavfsizlikni tekshirish va texnik qo'llab-quvvatlash.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「リリース後もシステムの安定稼働を維持するため、定期的な監視と<strong>保守・運用</strong>を担当しました。」</div>
+                    <div class="t-example-uz">Deploydan keyin ham tizim barqaror ishlashini ta'minlash uchun doimiy monitoring va texnik qo'llab-quvvatlashni bajardim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ほしゅ、うんよう。システムの安定稼働を維持するため、定期的な監視と保守・運用を担当しました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N2" data-keywords="負荷軽減 ふかけいげん fuka keigen yuklamani kamaytirish optimize">
+                <td><span class="badge-tbl badge-n2">N2 IT Loyiha</span></td>
+                <td><div class="t-kanji">負荷軽減</div><div class="t-kana">ふかけいげん</div></td>
+                <td><div class="t-romaji">Fuka Keigen</div></td>
+                <td>Server, ma'lumotlar bazasi yoki brauzer yuklamasini kesh va optimallashtirish orqali yengillashtirish.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「Redisによるキャッシュを導入し、アクセス集中時におけるデータベースの<strong>負荷軽減</strong>を実現しました。」</div>
+                    <div class="t-example-uz">Redis orqali kesh kiritib, foydalanuvchilar ko'paygan vaqtda ma'lumotlar bazasi yuklamasini sezilarli yengillashtirdim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ふかけいげん。キャッシュを導入し、データベースの負荷軽減を実現しました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N2" data-keywords="知見共有 ちけんきょうゆう chiken kyouyuu bilim ulashish knowledge share">
+                <td><span class="badge-tbl badge-n2">N2 IT Loyiha</span></td>
+                <td><div class="t-kanji">ナレッジ共有 / 知見共有</div><div class="t-kana">なれっじきょうゆう / ちけんきょうゆう</div></td>
+                <td><div class="t-romaji">Knowledge / Chiken Kyōyū</div></td>
+                <td>Topilgan texnik yechimlar va xatoliklar tajribasini hujjatlashtirib jamoa bilan bo'lishish.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「同じバグで他のメンバーがつまずかないよう、解決手順をNotionにまとめ<strong>ナレッジ共有</strong>を行いました。」</div>
+                    <div class="t-example-uz">Xuddi shu xatolikda boshqalar vaqt yo'qotmasligi uchun yechim ketma-ketligini Notion'da yozib, jamoa bilan ulashdim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ナレッジ共有。同じバグで他のメンバーがつまずかないよう、解決手順をまとめナレッジ共有を行いました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N2" data-keywords="自発的 じはつてき jihatsuteki tashabbuskor mustaqil proactive">
+                <td><span class="badge-tbl badge-n2">N2 IT Loyiha</span></td>
+                <td><div class="t-kanji">自発的</div><div class="t-kana">じはつてき</div></td>
+                <td><div class="t-romaji">Jihatsuteki</div></td>
+                <td>Buyruq kutib o'tirmay, o'z tashabbusi bilan harakat qiluvchi (Proactive mindset).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「指示を待つだけでなく、自ら課題を見つけて<strong>自発的</strong>に改善提案を行うよう心掛けています。」</div>
+                    <div class="t-example-uz">Faqat buyruq kutmasdan, muammolarni o'zim aniqlab, tashabbus bilan yaxshilash takliflarini berishga intilaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('じはつてき。指示を待つだけでなく、自ら課題を見つけて自発的に改善提案を行うよう心掛けています。')">🔊</button>
+                </td>
+              </tr>
+
+              <!-- ================= N3 VOCABULARY ================= -->
+              <tr data-level="N3" data-keywords="自己PR じこぴーあーる jiko pr kuchli tomonlarini tanitish">
+                <td><span class="badge-tbl badge-n3">N3 Muloqot</span></td>
+                <td><div class="t-kanji">自己PR</div><div class="t-kana">じこぴーあーる</div></td>
+                <td><div class="t-romaji">Jiko PR</div></td>
+                <td>O'zining kuchli xarakteri, professional qobiliyatlari va kompaniyaga keltiradigan foydasini ko'rsatib berish.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「私の<strong>自己PR</strong>は、どんな逆境でも最後まで粘り強くやり抜く継続力と探究心です。」</div>
+                    <div class="t-example-uz">Mening kuchli tomonim — har qanday qiyinchilikda ham oxirigacha intiluvchi qat'iyat va izlanuvchanligimdir.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('じこぴーあーる。私の自己PRは、どんな逆境でも最後まで粘り強くやり抜く継続力です。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N3" data-keywords="志望動機 しぼうどうき shibou douki topshirish sababi motivation">
+                <td><span class="badge-tbl badge-n3">N3 Muloqot</span></td>
+                <td><div class="t-kanji">志望動機</div><div class="t-kana">しぼうどうき</div></td>
+                <td><div class="t-romaji">Shibō Dōki</div></td>
+                <td>Nima sababdan aynan shu kompaniya (CAL) va shu lavozimda ishlashni xohlayotganlik asosi (Motivation).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「貴社の『Challenge And Lead』という理念に共感したことが、最大の<strong>志望動機</strong>でございます。」</div>
+                    <div class="t-example-uz">Kompaniyangizning 'Challenge And Lead' falsafasini chin yurakdan qo'llab-quvvatlaganim eng asosiy tanlov sababimdir.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('しぼうどうき。貴社の理念に共感したことが、最大の志望動機でございます。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N3" data-keywords="長所 短所 ちょうしょ たんしょ chousho tansho kuchli zaif tomonlar">
+                <td><span class="badge-tbl badge-n3">N3 Muloqot</span></td>
+                <td><div class="t-kanji">長所 / 短所</div><div class="t-kana">ちょうしょ / たんしょ</div></td>
+                <td><div class="t-romaji">Chōsho / Tansho</div></td>
+                <td>Kuchli tomon (plyus) va zaif tomon (minus). Muhimi: zaif tomonni qanday tuzatayotganini aytish lozim.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「私の<strong>長所</strong>は集中力で、<strong>短所</strong>は完璧を求めすぎることですが、納期を最優先に意識しています。」</div>
+                    <div class="t-example-uz">Kuchli tomonim diqqatni jamlay olish, zaif tomonim esa haddan ortiq mukammallikka intilish, lekin hozir muddatni 1-o'ringa qo'yyapman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ちょうしょ、たんしょ。私の長所は集中力で、短所は完璧を求めすぎることです。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N3" data-keywords="役割 やくわり yakuwari rol vazifa role">
+                <td><span class="badge-tbl badge-n3">N3 Muloqot</span></td>
+                <td><div class="t-kanji">役割</div><div class="t-kana">やくわり</div></td>
+                <td><div class="t-romaji">Yakuwari</div></td>
+                <td>Jamoada yoki loyihada bajargan aniq vazifasi, egallagan o'rni va mas'uliyat doirasi (Role).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「チーム内で私はフルスタックエンジニアとしての<strong>役割</strong>を担い、API開発を主導しました。」</div>
+                    <div class="t-example-uz">Jamoada men full-stack dasturchi rolini bajarib, API ishlab chiqishga boshchilik qildim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('やくわり。チーム内で私はフルスタックエンジニアとしての役割を担いました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N3" data-keywords="担当 たんとう tantou masul bo'lish in charge">
+                <td><span class="badge-tbl badge-n3">N3 Muloqot</span></td>
+                <td><div class="t-kanji">担当</div><div class="t-kana">たんとう</div></td>
+                <td><div class="t-romaji">Tantō</div></td>
+                <td>Biror modul, sahifa yoki texnik qism uchun shaxsan javobgar bo'lish (In charge of).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「認証機能の実装とPostgreSQLデータベースのテーブル設計を主に<strong>担当</strong>いたしました。」</div>
+                    <div class="t-example-uz">Asosan avtorizatsiya funksiyasini yozish va PostgreSQL ma'lumotlar bazasi jadvallarini loyihalashga mas'ul bo'ldim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('たんとう。認証機能の実装とデータベース設計を主に担当いたしました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N3" data-keywords="工夫 くふう kufuu qulaylashtirish ixtiro smart solution">
+                <td><span class="badge-tbl badge-n3">N3 Muloqot</span></td>
+                <td><div class="t-kanji">工夫</div><div class="t-kana">くふう</div></td>
+                <td><div class="t-romaji">Kufū</div></td>
+                <td>Ishni tezroq, osonroq va xatosiz bajarish uchun o'ylab topilgan amaliy qulaylik va aqlli yechim.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「ユーザーが迷わず直感的に操作できるよう、UIコンポーネントの配置に<strong>工夫</strong>を凝らしました。」</div>
+                    <div class="t-example-uz">Foydalanuvchi adashmasdan intuitiv foydalanishi uchun UI elementlarining joylashuvida aqlli yechim qo'lladim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('くふう。ユーザーが迷わず直感的に操作できるよう、UIの配置に工夫を凝らしました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N3" data-keywords="共有 きょうゆう kyouyuu ulashish bo'lishish share">
+                <td><span class="badge-tbl badge-n3">N3 Muloqot</span></td>
+                <td><div class="t-kanji">共有</div><div class="t-kana">きょうゆう</div></td>
+                <td><div class="t-romaji">Kyōyū</div></td>
+                <td>Ma'lumot, hujjat yoki dastur kodini jamoadoshlar bilan o'rtoqlashish (Share).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「作業で気づいた変更点はすぐにSlackでチーム全体に<strong>共有</strong>するようにしています。」</div>
+                    <div class="t-example-uz">Ish jarayonida sezilgan o'zgarishlarni darhol Slack orqali butun jamoa bilan ulashib boraman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('きょうゆう。作業で気づいた変更点はすぐにチーム全体に共有するようにしています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N3" data-keywords="確認 かくにん kakunin tekshirish aniqlashtirish confirm">
+                <td><span class="badge-tbl badge-n3">N3 Muloqot</span></td>
+                <td><div class="t-kanji">確認</div><div class="t-kana">かくにん</div></td>
+                <td><div class="t-romaji">Kakunin</div></td>
+                <td>Qayta tekshirib ko'rish, xato yo'qligiga ishonch hosil qilish (Confirm).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「認識のズレを防ぐため、作業に着手する前に必ず相手の意図を<strong>確認</strong>します。」</div>
+                    <div class="t-example-uz">Tushunmovchilik bo'lmasligi uchun vazifaga kirishishdan avval har doim buyurtmachi niyatini aniqlashtirib olaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('かくにん。認識のズレを防ぐため、作業に着手する前に必ず相手の意図を確認します。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N3" data-keywords="相談 そうだん soudan maslahatlashish fikr olish consult">
+                <td><span class="badge-tbl badge-n3">N3 Muloqot</span></td>
+                <td><div class="t-kanji">相談</div><div class="t-kana">そうだん</div></td>
+                <td><div class="t-romaji">Sōdan</div></td>
+                <td>Qiyin vaziyatda yolg'iz bosh qotirmay, tajribali hamkasb yoki rahbar bilan maslahatlashish.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「自分一人で抱え込まず、30分調べて解決しない時は先輩に<strong>相談</strong>するルールを徹底しています。」</div>
+                    <div class="t-example-uz">Yolg'iz qolib ketmasdan, 30 daqiqa qidirib yechilmasa ustozlarga maslahat solish qoidasiga amal qilaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('そうだん。自分一人で抱え込まず、30分調べて解決しない時は先輩に相談しています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N3" data-keywords="連絡 れんらく renraku xabardor qilish aloqa">
+                <td><span class="badge-tbl badge-n3">N3 Muloqot</span></td>
+                <td><div class="t-kanji">連絡</div><div class="t-kana">れんらく</div></td>
+                <td><div class="t-romaji">Renraku</div></td>
+                <td>Kechikish, o'zgarish yoki yangilik haqida oldindan tezkor xabar yetkazish.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「遅延の恐れが少しでもある場合は、事前に早めの<strong>連絡</strong>を徹底しております。」</div>
+                    <div class="t-example-uz">Kechikish ehtimoli paydo bo'lishi bilanoq, oldindan erta xabar berishga qat'iy rioya qilaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('れんらく。遅延の恐れが少しでもある場合は、事前に早めの連絡を徹底しております。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N3" data-keywords="報告 ほうこく houkoku hisobot natija ma'lumoti report">
+                <td><span class="badge-tbl badge-n3">N3 Muloqot</span></td>
+                <td><div class="t-kanji">報告</div><div class="t-kana">ほうこく</div></td>
+                <td><div class="t-romaji">Hōkoku</div></td>
+                <td>Tugallangan ish natijasi va holati haqida rahbariyatga to'liq ma'lumot berish.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「タスクが完了した際や障害が起きた際は、事実に基づき迅速に<strong>報告</strong>を行います。」</div>
+                    <div class="t-example-uz">Vazifa tugaganda yoki muammo chiqqanda faktlarga tayangan holda tezkor hisobot beraman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ほうこく。タスクが完了した際や障害が起きた際は、事実に基づき迅速に報告を行います。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N3" data-keywords="挑戦 ちょうせん chousen chaqiriq qiyin ishga qol urish challenge">
+                <td><span class="badge-tbl badge-n3">N3 Muloqot</span></td>
+                <td><div class="t-kanji">挑戦</div><div class="t-kana">ちょうせん</div></td>
+                <td><div class="t-romaji">Chōsen</div></td>
+                <td>Yangi, murakkab va o'sishga xizmat qiladigan narsalarga qo'rqmay qo'l urish (CAL'ning eng sevimli so'zi!).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「失敗を恐れず、常に未知の領域や高度な技術課題に<strong>挑戦</strong>し続けたいと考えております。」</div>
+                    <div class="t-example-uz">Xatolikdan qo'rqmasdan, doimo yangi sohalar va yuqori darajadagi texnik chaqiriqlarga qo'l urishni istayman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('ちょうせん。失敗を恐れず、常に未知の領域や高度な技術課題に挑戦し続けたいと考えております。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="N3" data-keywords="継続性 けいぞくせい keizokusei sabr bardosh davomiylik">
+                <td><span class="badge-tbl badge-n3">N3 Muloqot</span></td>
+                <td><div class="t-kanji">継続力</div><div class="t-kana">けいぞくりょく</div></td>
+                <td><div class="t-romaji">Keizokuryoku</div></td>
+                <td>Boshlagan ishni tashlab ketmay, sabr va intizom bilan har kuni davom ettirish kuchi.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「毎日のコーディングと日本語学習を欠かさず続けてきた<strong>継続力</strong>には自信があります。」</div>
+                    <div class="t-example-uz">Har kuni dasturlash va yapon tilini qoldirmasdan o'rganib kelgan tirishqoqlik va bardoshimga ishonchim komil.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('けいぞくりょく。毎日のコーディングと日本語学習を続けてきた継続力には自信があります。')">🔊</button>
+                </td>
+              </tr>
+
+              <!-- ================= SES & CAL VOCABULARY ================= -->
+              <tr data-level="SES" data-keywords="客先常駐 きゃくさきじょうちゅう kyakusaki jouchuu mijoz ofisida ishlash dispatch">
+                <td><span class="badge-tbl badge-ses">CAL & SES</span></td>
+                <td><div class="t-kanji">客先常駐</div><div class="t-kana">きゃくさきじょうちゅう</div></td>
+                <td><div class="t-romaji">Kyakusaki Jōchū</div></td>
+                <td>Buyurtmachi mijozning ofisida yoki belgilangan korxona jamoasida bevosita birga ishlash formati.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「<strong>客先常駐</strong>では自社だけでなくクライアントの文化を尊重し、高い信頼関係を築くことが大切だと認識しています。」</div>
+                    <div class="t-example-uz">Mijoz ofisida ishlaganda faqat o'z kompaniyam emas, mijozning madaniyatini ham hurmat qilib mustahkam ishonch o'rnatish zarurligini bilaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('きゃくさきじょうちゅう。客先常駐ではクライアントの文化を尊重し、高い信頼関係を築くことが大切だと認識しています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="SES" data-keywords="SES えすいーえす system engineering service muhandislik xizmati">
+                <td><span class="badge-tbl badge-ses">CAL & SES</span></td>
+                <td><div class="t-kanji">SES (システムエンジニアリングサービス)</div><div class="t-kana">えすいーえす</div></td>
+                <td><div class="t-romaji">SES</div></td>
+                <td>Muhandislik xizmatlarini ko'rsatish shartnomasi asosida mijoz loyihasiga IT mutaxassis taqdim etish biznes modeli.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「<strong>SES</strong>を通じて多種多様な業界の大規模開発に携わり、幅広い技術スタックを身につけたいです。」</div>
+                    <div class="t-example-uz">SES orqali turli sohalardagi yirik loyihalarda qatnashib, keng ko'lamli texnologiyalarni o'rganishni maqsad qilganman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('えすいーえす。SESを通じて多種多様な業界の開発に携わり、幅広い技術スタックを身につけたいです。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="SES" data-keywords="受託開発 じゅたくかいはつ jutaku kaihatsu buyurtma dastur">
+                <td><span class="badge-tbl badge-ses">CAL & SES</span></td>
+                <td><div class="t-kanji">受託開発</div><div class="t-kana">じゅたくかいはつ</div></td>
+                <td><div class="t-romaji">Jutaku Kaihatsu</div></td>
+                <td>Buyurtmachi shartnomasi asosida loyihani talablardan boshlab noldan yaratib topshirish (Contract development).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「<strong>受託開発</strong>においては、納期の厳守と顧客の要求を超える品質の担保を常に意識しております。」</div>
+                    <div class="t-example-uz">Buyurtma asosida ishlaganda muddatga qat'iy rioya qilish va mijoz kutganidan a'lo sifat taqdim etishga intilaman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('じゅたくかいはつ。受託開発においては、納期の厳守と高品質の担保を常に意識しております。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="SES" data-keywords="自社開発 じしゃかいはつ jisha kaihatsu o'z mahsuloti in-house">
+                <td><span class="badge-tbl badge-ses">CAL & SES</span></td>
+                <td><div class="t-kanji">自社開発</div><div class="t-kana">じしゃかいはつ</div></td>
+                <td><div class="t-romaji">Jisha Kaihatsu</div></td>
+                <td>Kompaniyaning o'ziga tegishli mustaqil mahsulot yoki servisini ishlab chiqish (In-house product development).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「将来はSES現場で培った知見を結集し、貴社の<strong>自社開発</strong>プロダクトの成長にも貢献したいです。」</div>
+                    <div class="t-example-uz">Kelgusida turli mijoz loyihalarida to'plagan tajribamni jamlab, kompaniyangizning o'z mahsulotlarini rivojlantirishga ham hissa qo'shmoqchiman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('じしゃかいはつ。将来は貴社の自社開発プロダクトの成長にも貢献したいです。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="SES" data-keywords="アジャイル開発 スクラム あじゃいるかいはつ すくらむ agile scrum">
+                <td><span class="badge-tbl badge-ses">CAL & SES</span></td>
+                <td><div class="t-kanji">アジャイル開発 / スクラム</div><div class="t-kana">あじゃいるかいはつ / すくらむ</div></td>
+                <td><div class="t-romaji">Agile / Scrum</div></td>
+                <td>1-2 haftalik qisqa sprintlar bilan bosqichma-bosqich ishlab chiqish va tezkor o'zgarishlarga moslashish metodologiyasi.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「2週間のスプリントによる<strong>アジャイル開発</strong>を経験しており、素早いフィードバック反映が得意です。」</div>
+                    <div class="t-example-uz">2 haftalik sprintlar bilan Agile metodologiyasida ishlab tajriba orttirganman va tezkor takliflarni joriy etishga mohirman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('アジャイル開発。2週間のスプリントによるアジャイル開発を経験しております。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="SES" data-keywords="コードレビュー そーすこーどれびゅー code review kod tekshirish">
+                <td><span class="badge-tbl badge-ses">CAL & SES</span></td>
+                <td><div class="t-kanji">コードレビュー</div><div class="t-kana">こーどれびゅー</div></td>
+                <td><div class="t-romaji">Code Review</div></td>
+                <td>Dasturchilar bir-birlarining yozgan kodini xavfsizlik, tozalik va me'yorlar bo'yicha ko'rib chiqishi.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「GitHubのプルリクエストを通じた<strong>コードレビュー</strong>を積極的に行い、チーム全体のコード品質を高めました。」</div>
+                    <div class="t-example-uz">GitHub'dagi Pull Request'lar orqali kod tekshiruvida faol qatnashib, jamoaning umumiy kod sifatini oshirdim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('コードレビュー。プルリクエストを通じたコードレビューを積極的に行いました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="SES" data-keywords="障害対応 しょうがいたいおう shougai taiou nosozlik tizim halokati incident">
+                <td><span class="badge-tbl badge-ses">CAL & SES</span></td>
+                <td><div class="t-kanji">障害対応</div><div class="t-kana">しょうがいたいおう</div></td>
+                <td><div class="t-romaji">Shōgai Taiō</div></td>
+                <td>Tizimda to'satdan yuzaga kelgan nosozlik, server qulashi yoki xatolikni favqulodda bartaraf etish.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「緊急の<strong>障害対応</strong>でもパニックにならず、原因調査と一次切り分けを冷静に実施いたします。」</div>
+                    <div class="t-example-uz">Favqulodda nosozlik paytida ham vahimaga tushmasdan, sababni aniqlash va xavfni to'xtatishni bosiqlik bilan bajaraman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('しょうがいたいおう。緊急の障害対応でもパニックにならず、冷静に実施いたします。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="SES" data-keywords="リリース りりーす production deploy jonli server">
+                <td><span class="badge-tbl badge-ses">CAL & SES</span></td>
+                <td><div class="t-kanji">リリース / デプロイ</div><div class="t-kana">りりーす / でぷろい</div></td>
+                <td><div class="t-romaji">Release / Deploy</div></td>
+                <td>Tayyor bo'lgan dasturni foydalanuvchilar kirishi uchun jonli ishlab turgan serverga (production) chiqarish.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「CI/CDパイプラインを構築し、安全かつダウンタイムのない本番<strong>リリース</strong>を成功させました。」</div>
+                    <div class="t-example-uz">CI/CD quvurini yo'lga qo'yib, xavfsiz va server to'xtab qolmaydigan jonli deployni muvaffaqiyatli amalga oshirdim.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('リリース。CI/CDパイプラインを構築し、安全な本番リリースを成功させました。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="SES" data-keywords="フルスタック ふるすたっく fullstack front back database">
+                <td><span class="badge-tbl badge-ses">CAL & SES</span></td>
+                <td><div class="t-kanji">フルスタック</div><div class="t-kana">ふるすたっく</div></td>
+                <td><div class="t-romaji">Full-stack</div></td>
+                <td>Frontend (foydalanuvchi interfeysi), Backend (server mantiqi) va Ma'lumotlar bazasini yaxlit qamrab oluvchi muhandis.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「フロントエンドからバックエンド、インフラまで見通せる<strong>フルスタック</strong>な視野を持って開発しています。」</div>
+                    <div class="t-example-uz">Frontend'dan tortib backend va server infrastrukturasigacha yaxlit ko'ra oladigan keng qamrovli nigoh bilan ishlayman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('フルスタック。フロントエンドからバックエンドまで見通せるフルスタックな視野を持っています。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="SES" data-keywords="CAL STYLE きゃるすたいる passion challenge grow up">
+                <td><span class="badge-tbl badge-ses">CAL & SES</span></td>
+                <td><div class="t-kanji">CAL STYLE (行動指針)</div><div class="t-kana">きゃるすたいる</div></td>
+                <td><div class="t-romaji">CAL STYLE</div></td>
+                <td>CAL kompaniyasining 3 oltin tamoyili: 情熱 (Passion), 挑戦 (Challenge), 成長 (Grow Up).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「情熱を持って挑戦し、仲間と共に成長する<strong>CAL STYLE</strong>の精神を日々の業務で体現してまいります。」</div>
+                    <div class="t-example-uz">Ishtiyoq bilan chaqiriqlarga intilish va safdoshlar bilan o'sishni ko'zlovchi CAL STYLE ruhini har kungi faoliyatimda ko'rsataman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('キャルスタイル。情熱を持って挑戦し、仲間と共に成長するCAL STYLEの精神を日々の業務で体現してまいります。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="SES" data-keywords="即戦力 そくせんりょく sokusenryoku darhol natija beruvchi kadr ready to contribute">
+                <td><span class="badge-tbl badge-ses">CAL & SES</span></td>
+                <td><div class="t-kanji">即戦力</div><div class="t-kana">そくせんりょく</div></td>
+                <td><div class="t-romaji">Sokusenryoku</div></td>
+                <td>Ortiqcha o'rgatish talab qilmasdan, ishga kirgan kunidan boshlab bevosita loyihada natija bera oluvchi kuchli mutaxassis.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「これまでのモダンWeb開発の実務経験を活かし、配属後すぐに<strong>即戦力</strong>として貢献いたします。」</div>
+                    <div class="t-example-uz">Zamonaviy Web texnologiyalaridagi amaliy tajribamni ishga solib, loyihaga qo'shilganimdan darhol amaliy foyda keltiraman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('そくせんりょく。これまでの実務経験を活かし、配属後すぐに即戦力として貢献いたします。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="SES" data-keywords="プロパー社員 ぷろぱーしゃいん proper shain mijozning o'z xodimlari">
+                <td><span class="badge-tbl badge-ses">CAL & SES</span></td>
+                <td><div class="t-kanji">プロパー社員</div><div class="t-kana">ぷろぱーしゃいん</div></td>
+                <td><div class="t-romaji">Proper Shain</div></td>
+                <td>Mijoz kompaniyasining o'z doimiy xodimlari (SES muhandislari ular bilan do'stona va hurmat bilan muloqot qilishi shart).</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「常駐先の<strong>プロパー社員</strong>の方々とも積極的にコミュニケーションを取り、良好な信頼関係を構築します。」</div>
+                    <div class="t-example-uz">Xizmat safaridagi mijoz kompaniyasi doimiy xodimlari bilan ham faol aloqa o'rnatib, a'lo darajadagi ishonchli munosabat quraman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('プロパー社員。常駐先のプロパー社員の方々とも積極的にコミュニケーションを取ります。')">🔊</button>
+                </td>
+              </tr>
+
+              <tr data-level="SES" data-keywords="自立自走 じりつじそう jiritsu jisou o'zi mustaqil harakat qiluvchi autonomous">
+                <td><span class="badge-tbl badge-ses">CAL & SES</span></td>
+                <td><div class="t-kanji">自立自走</div><div class="t-kana">じりつじそう</div></td>
+                <td><div class="t-romaji">Jiritsu Jisō</div></td>
+                <td>Boshqalarning turtkisisiz, vazifani o'zi tushunib, mustaqil yo'l topib oxirigacha yetkaza oladigan mutaxassis.</td>
+                <td>
+                  <div class="t-example">
+                    <div class="t-example-jp">「指示を待つだけではなく、自ら調べて行動できる<strong>自立自走</strong>型エンジニアとして現場を支えます。」</div>
+                    <div class="t-example-uz">Faqat topshiriq kutib o'tirmay, o'zi o'rganib harakat qiladigan mustaqil muhandis sifatida jamoaga tayanch bo'laman.</div>
+                  </div>
+                </td>
+                <td style="text-align: center;">
+                  <button class="mini-speak-btn" onclick="speakText('じりつじそう。指示を待つだけではなく、自ら調べて行動できる自立自走型エンジニアとして現場を支えます。')">🔊</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 2: INTERVIEW GRAMMAR & KEIGO PATTERNS
+         ======================================================== -->
+    <section class="category-section" data-cat="grammar">
+      <div class="section-title">
+        <span>📝 Intervyu Grammatikasi & Keigo Qoidalari (Oltin Qoliplar)</span>
+        <span class="count">10 ta eng muhim qolip • HR psixologiyasi va to'g'ri/xato taqqoslari</span>
+      </div>
+
+      <div class="grammar-grid">
+
+        <!-- Pattern 1 -->
+        <div class="grammar-card">
+          <div class="g-header">
+            <div>
+              <div class="g-title">〜てまいりました / 〜に従事してまいりました</div>
+            </div>
+            <span class="g-type kenjougo">Kenjōgo (Kamtarlik)</span>
+          </div>
+          <div class="g-meaning">
+            <strong>Ma'nosi:</strong> "... qilib kelganman / ... sohasida faoliyat yuritib keldim". O'tgan zamondagi barcha tajribalarni xushmuomala ifodalash qolipi.
+          </div>
+          <div class="g-hr-tip">
+            💡 <strong>HR Psixologiyasi:</strong> Oddiy "〜ました" bolalarcha va quruq eshitiladi. "〜てまいりました" esa nomzodning jiddiy biznes etiketi va kamtarlik madaniyatiga egaligini darhol isbotlaydi.
+          </div>
+          <div class="g-compare">
+            <div class="g-bad">❌ Oddiy (Xato):<br>「大学でWebアプリを開発しました。」</div>
+            <div class="g-good">⭕️ Professional:<br>「大学で実践的なWeb開発に努めてまいりました。」</div>
+          </div>
+          <div class="g-example-box">
+            <div class="g-ex-jp">「これまで主にReactとNode.jsを用いたフルスタック開発に<strong>従事してまいりました</strong>。」</div>
+            <div class="g-ex-uz">Shu paytgacha asosan React va Node.js yordamidagi full-stack ishlab chiqish bilan shug'ullanib kelganman.</div>
+          </div>
+          <div class="g-actions">
+            <button class="mini-speak-btn" onclick="speakText('これまで主にReactとNode.jsを用いたフルスタック開発に従事してまいりました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- Pattern 2 -->
+        <div class="grammar-card">
+          <div class="g-header">
+            <div>
+              <div class="g-title">〜させていただきたく存じます</div>
+            </div>
+            <span class="g-type kenjougo">Kenjōgo + Keigo</span>
+          </div>
+          <div class="g-meaning">
+            <strong>Ma'nosi:</strong> "Agar imkoniyat berilsa, ... qilishni chin dildan istardim". Eng yuqori darajadagi xushmuomalalik bilan o'z orzu va maqsadini bildirish.
+          </div>
+          <div class="g-hr-tip">
+            💡 <strong>HR Psixologiyasi:</strong> "〜したいです" (qilishni xohlayman) shaxsiy talabdek yangraydi. "〜させていただきたく存じます" esa jamoaga qo'shilishga ruxsat so'rab minnatdorchilik bilan aytiladi.
+          </div>
+          <div class="g-compare">
+            <div class="g-bad">❌ Oddiy (Xato):<br>「御社に入社したいです。」</div>
+            <div class="g-good">⭕️ Professional:<br>「ぜひ貴社の一員として貢献させていただきたく存じます。」</div>
+          </div>
+          <div class="g-example-box">
+            <div class="g-ex-jp">「これまでの経験を活かし、貴社の多様な開発案件に<strong>挑戦させていただきたく存じます</strong>。」</div>
+            <div class="g-ex-uz">Oldingi tajribamni ishga solib, kompaniyangizning turli xil dasturlash loyihalariga hissa qo'shishni chin dildan istardim.</div>
+          </div>
+          <div class="g-actions">
+            <button class="mini-speak-btn" onclick="speakText('これまでの経験を活かし、貴社の多様な開発案件に挑戦させていただきたく存じます。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- Pattern 3 -->
+        <div class="grammar-card">
+          <div class="g-header">
+            <div>
+              <div class="g-title">〜と考えております / 〜と認識しております</div>
+            </div>
+            <span class="g-type teinei">Teineigo (Qat'iyat)</span>
+          </div>
+          <div class="g-meaning">
+            <strong>Ma'nosi:</strong> "Shunday deb qat'iy hisoblayman / shunday tushunchaga egaman". Noaniq "o'ylaymanki" emas, professional xulosa.
+          </div>
+          <div class="g-hr-tip">
+            💡 <strong>HR Psixologiyasi:</strong> Yapon suhbatida "〜と思います" (menimcha) ko'p ishlatilsa nomzod o'ziga ishonchsizdek ko'rinadi. "〜と考えております" esa qat'iy mantiq va qarorni bildiradi.
+          </div>
+          <div class="g-compare">
+            <div class="g-bad">❌ Noaniq (Xato):<br>「報連相はとても大切だと思います。」</div>
+            <div class="g-good">⭕️ Professional:<br>「チーム開発において報連相は最重要であると考えております。」</div>
+          </div>
+          <div class="g-example-box">
+            <div class="g-ex-jp">「エンジニアの価値はコードを書くことだけでなく、顧客の課題を解決することにあると<strong>認識しております</strong>。」</div>
+            <div class="g-ex-uz">Muhandisning qiymati faqat kod yozishda emas, balki mijoz muammolarini yechishda ekanligini chuqur tushunaman.</div>
+          </div>
+          <div class="g-actions">
+            <button class="mini-speak-btn" onclick="speakText('エンジニアの価値はコードを書くことだけでなく、顧客の課題を解決することにあると認識しております。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- Pattern 4 -->
+        <div class="grammar-card">
+          <div class="g-header">
+            <div>
+              <div class="g-title">〜の経験を活かし、貴社に貢献できると考えております</div>
+            </div>
+            <span class="g-type prep">Oltin Xulosa Qolipi</span>
+          </div>
+          <div class="g-meaning">
+            <strong>Ma'nosi:</strong> "... tajribamni to'liq ishga solib, kompaniyangiz rivojiga munosib hissa qo'sha olaman deb ishonaman".
+          </div>
+          <div class="g-hr-tip">
+            💡 <strong>HR Psixologiyasi:</strong> O'z tajribangizni aytib bo'lgach, uni havoda qoldirmasdan CAL kompaniyasiga qanday foyda keltirishi bilan bog'lash 100% zarur.
+          </div>
+          <div class="g-compare">
+            <div class="g-bad">❌ Havoda qolgan:<br>「私はReactが得意です。」</div>
+            <div class="g-good">⭕️ Kompaniyaga bog'langan:<br>「Reactの実務経験を活かし、即戦力として貢献できると考えております。」</div>
+          </div>
+          <div class="g-example-box">
+            <div class="g-ex-jp">「大学や実践で培った自走力とWeb開発の経験を活かし、<strong>貴社に貢献できると考えております</strong>。」</div>
+            <div class="g-ex-uz">O'quv va amaliyotda to'plagan mustaqil ishlash qobiliyatim hamda Web tajribamni ishga solib, kompaniyangizga hissa qo'sha olaman deb hisoblayman.</div>
+          </div>
+          <div class="g-actions">
+            <button class="mini-speak-btn" onclick="speakText('培った自走力とWeb開発の経験を活かし、貴社に貢献できると考えております。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- Pattern 5 -->
+        <div class="grammar-card">
+          <div class="g-header">
+            <div>
+              <div class="g-title">結論から申し上げますと、〜 (PREP usuli)</div>
+            </div>
+            <span class="g-type prep">PREP Struktura</span>
+          </div>
+          <div class="g-meaning">
+            <strong>Ma'nosi:</strong> "Xulosadan boshlab gapiradigan bo'lsam, ...". Savolga darhol 1-jumlada to'g'ridan-to'g'ri aniq javob berish.
+          </div>
+          <div class="g-hr-tip">
+            💡 <strong>HR Psixologiyasi:</strong> Yaponiyada eng ko'p baholanadigan narsa — mantiqiy va xulosani birinchi aytish (Point ➔ Reason ➔ Example ➔ Point). Uzun kirish so'zlar jiddiy minus beradi.
+          </div>
+          <div class="g-compare">
+            <div class="g-bad">❌ Uzoqdan boshlash:<br>「私は大学に入って色々と勉強してきて...」</div>
+            <div class="g-good">⭕️ PREP bilan boshlash:<br>「結論から申し上げますと、私の最大の強みは課題解決力です。」</div>
+          </div>
+          <div class="g-example-box">
+            <div class="g-ex-jp">「<strong>結論から申し上げますと</strong>、どのようなプロジェクト先でも適応できる柔軟性とコミュニケーション力です。」</div>
+            <div class="g-ex-uz">Xulosadan boshlaydigan bo'lsam, bu qanday loyiha muhiti bo'lmasin tez moslasha oladigan egiluvchanligim va muloqotchanligimdir.</div>
+          </div>
+          <div class="g-actions">
+            <button class="mini-speak-btn" onclick="speakText('結論から申し上げますと、どのようなプロジェクト先でも適応できる柔軟性です。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- Pattern 6 -->
+        <div class="grammar-card">
+          <div class="g-header">
+            <div>
+              <div class="g-title">お/ご〜いたします / お/ご〜申し上げます</div>
+            </div>
+            <span class="g-type kenjougo">Kenjōgo (Kamtarlik)</span>
+          </div>
+          <div class="g-meaning">
+            <strong>Ma'nosi:</strong> O'z harakatini hurmat bilan taqdim etish (ご説明いたします = Tushuntirib beraman, ご案内いたします = Tanishtiraman).
+          </div>
+          <div class="g-hr-tip">
+            💡 <strong>HR Psixologiyasi:</strong> Intervyuer oldida oddiy fel ishlatish o'rniga "ご説明いたします" yoki "感謝申し上げます" deyish professional madaniyatni ko'rsatadi.
+          </div>
+          <div class="g-compare">
+            <div class="g-bad">❌ Oddiy:<br>「詳しく説明します。」</div>
+            <div class="g-good">⭕️ Kenjōgo:<br>「プロジェクトの詳細についてご説明いたします。」</div>
+          </div>
+          <div class="g-example-box">
+            <div class="g-ex-jp">「私の担当したシステム構成について、具体的に<strong>ご説明いたします</strong>。」</div>
+            <div class="g-ex-uz">Men o'zim mas'ul bo'lgan tizim arxitekturasi haqida batafsil tushuntirib beraman.</div>
+          </div>
+          <div class="g-actions">
+            <button class="mini-speak-btn" onclick="speakText('私の担当したシステム構成について、具体的にご説明いたします。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- Pattern 7 -->
+        <div class="grammar-card">
+          <div class="g-header">
+            <div>
+              <div class="g-title">おっしゃる / ご覧になる / なさる (Sonkeigo)</div>
+            </div>
+            <span class="g-type sonkeigo">Sonkeigo (Hurmat)</span>
+          </div>
+          <div class="g-meaning">
+            <strong>Ma'nosi:</strong> Intervyuer yoki mijoz harakatini ulug'lash (おっしゃる = aytmoq, ご覧になる = ko'rmoq, なさる = qilmoq).
+          </div>
+          <div class="g-hr-tip">
+            💡 <strong>HR Psixologiyasi:</strong> 面接官が言いました (Mentsukan aytdi) - juda qo'pol xato! "面接官がおっしゃいましたように" deyish shart.
+          </div>
+          <div class="g-compare">
+            <div class="g-bad">❌ Qo'pol xato:<br>「面接官が言った通り...」</div>
+            <div class="g-good">⭕️ To'g'ri Sonkeigo:<br>「面接官がおっしゃいました通り...」</div>
+          </div>
+          <div class="g-example-box">
+            <div class="g-ex-jp">「面接官が<strong>おっしゃいましたように</strong>、自発的な行動が現場で最も求められると痛感いたしました。」</div>
+            <div class="g-ex-uz">Siz hozir to'g'ri ta'kidlaganingizdek, amaliyotda mustaqil tashabbus eng muhim talab ekanligini chuqur his qildim.</div>
+          </div>
+          <div class="g-actions">
+            <button class="mini-speak-btn" onclick="speakText('面接官がおっしゃいましたように、自発的な行動が最も求められると痛感いたしました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- Pattern 8 -->
+        <div class="grammar-card">
+          <div class="g-header">
+            <div>
+              <div class="g-title">至らない点もございますが、〜</div>
+            </div>
+            <span class="g-type kenjougo">Kamtarlik & O'sish</span>
+          </div>
+          <div class="g-meaning">
+            <strong>Ma'nosi:</strong> "Hali kamchiliklarim, tajribam yetishmagan jihatlarim bo'lsa-da, ...". Yapon madaniyatidagi go'zal kamtarlik iborasi.
+          </div>
+          <div class="g-hr-tip">
+            💡 <strong>HR Psixologiyasi:</strong> Chet ellik nomzodlar ba'zida haddan ziyod o'zini maqtab yuborishadi. Bu ibora orqali siz kamchiliklarni tan oluvchi va o'rganishga ochiq (素直さ) ekaningizni ko'rsatasiz.
+          </div>
+          <div class="g-compare">
+            <div class="g-bad">❌ O'ziga haddan ziyod bino qo'yish:<br>「私は完璧に何でもできます。」</div>
+            <div class="g-good">⭕️ O'rganuvchan va samimiy:<br>「至らない点もございますが、素直に学び全力で努めます。」</div>
+          </div>
+          <div class="g-example-box">
+            <div class="g-ex-jp">「まだまだ<strong>至らない点も多々ございますが</strong>、先輩方のご指導を素直に吸収し、一日も早く貢献いたします。」</div>
+            <div class="g-ex-uz">Hali kamchiliklarim ko'p bo'lsa-da, ustozlarning ko'rsatmalarini chin dildan o'rganib, tez orada jamoaga hissa qo'shaman.</div>
+          </div>
+          <div class="g-actions">
+            <button class="mini-speak-btn" onclick="speakText('まだまだ至らない点も多々ございますが、先輩方のご指導を素直に吸収し、貢献いたします。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- Pattern 9 -->
+        <div class="grammar-card">
+          <div class="g-header">
+            <div>
+              <div class="g-title">恐れ入りますが、〜 / 大変失礼ながら、〜</div>
+            </div>
+            <span class="g-type teinei">Kushon Iboralari</span>
+          </div>
+          <div class="g-meaning">
+            <strong>Ma'nosi:</strong> "Kechirasiz, noqulay bo'lsa-da, ... / Izningiz bilan ...". Suhbatdoshga noqulaylik tug'dirmasdan iltimos qilish yoki qayta so'rash.
+          </div>
+          <div class="g-hr-tip">
+            💡 <strong>HR Psixologiyasi:</strong> Savolni eshitmay qolganda "もう一度言ってください" deyish xunuk eshitiladi. "大変恐れ入りますが..." deb boshlash suhbatdoshni hurmat qilish belgisidir.
+          </div>
+          <div class="g-compare">
+            <div class="g-bad">❌ Qo'pol buyruq:<br>「もう一度質問を言ってください。」</div>
+            <div class="g-good">⭕️ Kushon bilan:<br>「大変恐れ入りますが、もう一度ご質問を伺ってもよろしいでしょうか。」</div>
+          </div>
+          <div class="g-example-box">
+            <div class="g-ex-jp">「<strong>大変恐れ入りますが</strong>、音声が途切れてしまいましたので、もう一度伺ってもよろしいでしょうか。」</div>
+            <div class="g-ex-uz">Kechirasiz, ovoz bir oz uzilib qolgani sababli, savolingizni yana bir bor eshitsam maylimi?</div>
+          </div>
+          <div class="g-actions">
+            <button class="mini-speak-btn" onclick="speakText('大変恐れ入りますが、音声が途切れてしまいましたので、もう一度伺ってもよろしいでしょうか。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- Pattern 10 -->
+        <div class="grammar-card">
+          <div class="g-header">
+            <div>
+              <div class="g-title">〜を通じて、〜の重要性を学びました</div>
+            </div>
+            <span class="g-type prep">Xulosa & Saboq</span>
+          </div>
+          <div class="g-meaning">
+            <strong>Ma'nosi:</strong> "... tajribasi orqali ... ning qanchalik muhim ekanligini chuqur anglab yetdim". Har bir texnik qiyinchilikdan to'g'ri xulosa chiqarish.
+          </div>
+          <div class="g-hr-tip">
+            💡 <strong>HR Psixologiyasi:</strong> HR xatoga tushganingizni emas, xatodan qanday saboq olganingizni bilishni istaydi. Bu jumla hikoyani ajoyib xotima bilan yakunlaydi.
+          </div>
+          <div class="g-compare">
+            <div class="g-bad">❌ Saboqsiz:<br>「バグを直して無事に終わりました。」</div>
+            <div class="g-good">⭕️ Saboq va o'sish bilan:<br>「このトラブルを通じて、事前の負荷テストと報連相の重要性を学びました。」</div>
+          </div>
+          <div class="g-example-box">
+            <div class="g-ex-jp">「仕様変更への対応<strong>を通じて</strong>、密なコミュニケーションと設計書の重要性を深く<strong>学びました</strong>。」</div>
+            <div class="g-ex-uz">Talablar o'zgarishini bartaraf etish orqali doimiy muloqot va loyiha hujjatlarining naqadar muhimligini chuqur o'rgandim.</div>
+          </div>
+          <div class="g-actions">
+            <button class="mini-speak-btn" onclick="speakText('仕様変更への対応を通じて、密なコミュニケーションと設計書の重要性を深く学びました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 3: CANDIDATE READY SPEECH SCRIPTS
+         ======================================================== -->
+    <section class="category-section" data-cat="speech">
+      <div class="section-title">
+        <span>🗣️ Nomzod (Farhod) Aytishi Kerak Bo'lgan Tayyor Nutq Namunalarim</span>
+        <span class="count">8 ta to'liq nutq • Yapon HR intervyusida so'zma-so'z aytish uchun tayyor skriptlar</span>
+      </div>
+
+      <div class="speech-grid">
+
+        <!-- Speech 1: Opening -->
+        <div class="speech-card">
+          <div class="speech-top">
+            <span class="speech-tag">1. Suhbat Boshlanishi</span>
+            <div class="speech-meta">Vaqt: ~25 soniya | Muhit: Zoom / Online Interview</div>
+          </div>
+          <div class="speech-title">Suhbatga Kirish va Onlayn Ochilish Nutqi</div>
+          <div class="speech-situation">
+            📍 <strong>Qachon aytiladi:</strong> Zoom ekrani yoqilib, intervyuer "Salom, eshityapsizmi?" yoki "Boshlaymiz" deganda birinchi bo'lib aytiladigan samimiy va professional kirish so'zlari.
+          </div>
+          <div class="speech-bubble">
+            <div class="speech-jp">「失礼いたします。本日面接のお時間をいただきました、<strong>ファルホド・ソイロフ</strong>と申します。
+本日はお忙しい中、貴重なお時間をいただき誠にありがとうございます。
+画面や音声は問題なく届いておりますでしょうか。
+本日はどうぞよろしくお願いいたします。」</div>
+            <div class="speech-romaji">Shitsurei itashimasu. Honjitsu mensetsu no ojikan o itadakimashita, Farukhodo Soirofu to mōshimasu.
+Honjitsu wa oisogashii naka, kichō na ojikan o itadaki makoto ni arigatō gozaimasu.
+Gamen ya onsei wa mondai naku todoite orimasu deshō ka.
+Honjitsu wa dōzo yoroshiku onegai itashimasu.</div>
+            <div class="speech-uz">"Assalomu alaykum (Kechirasiz). Bugungi suhbat uchun vaqt ajratilgan nomzod — Farhod Soyilovman.
+Bugun band jadvalingiz bo'lishiga qaramay, menga qimmatli vaqtingizni ajratganingiz uchun chin dildan minnatdorman.
+Ekranim va ovozim yaxshi yetib boryaptimi?
+Bugungi suhbat davomida siz bilan samarali muloqot qilishdan mamnunman, marhamat."</div>
+          </div>
+          <div class="speech-delivery-tip">
+            💡 <strong>Talaffuz siri:</strong> To'g'ri qomat bilan kameraga qarab, yuzingizda samimiy tabassum bilan gapiring. "画面や音声は..." deb texnikani tekshirib olishingiz sizning e'tiborli muhandis ekaningizni ko'rsatadi.
+          </div>
+          <div class="speech-actions">
+            <button class="speech-btn" onclick="copySpeech(this)">📋 Nusxa olish</button>
+            <button class="speech-btn primary" onclick="speakText('失礼いたします。本日面接のお時間をいただきました、ファルホド・ソイロフと申します。本日はお忙しい中、貴重なお時間をいただき誠にありがとうございます。画面や音声は問題なく届いておりますでしょうか。本日はどうぞよろしくお願いいたします。')">🔊 Ovoz chiqarib tinglash</button>
+          </div>
+        </div>
+
+        <!-- Speech 2: 1-minute Jiko-shoukai -->
+        <div class="speech-card">
+          <div class="speech-top">
+            <span class="speech-tag">2. Jikoshoukai</span>
+            <div class="speech-meta">Vaqt: ~60 soniya | Muhimlik: 100%</div>
+          </div>
+          <div class="speech-title">1 Daqiqalik O'zini Tanishtirish Nutqi (Jiko-shoukai)</div>
+          <div class="speech-situation">
+            📍 <strong>Qachon aytiladi:</strong> HR: "では、簡単に自己紹介をお願いします" (Endi qisqacha o'zingizni tanishtiring) deganda aytiladi.
+          </div>
+          <div class="speech-bubble">
+            <div class="speech-jp">「改めまして、ファルホドと申します。
+現在、<strong>JDU（日本デジタル大学）</strong>のコンピューターサイエンス学部にて学んでおり、2027年に卒業予定です。
+大学ではWebアプリケーション開発を専攻し、<strong>React、Node.js、TypeScript、Python</strong>を用いたフルスタック開発に注力してまいりました。
+特に、病気早期スクリーニングシステムである『<strong>Bionexstar</strong>』の開発では、フロントエンドからバックエンドAPI、データベース設計まで一貫して手掛けました。
+また、<strong>日本語能力試験N2</strong>を取得しており、技術だけでなく日本の商習慣やチーム開発のコミュニケーションも大切に学んでおります。
+本日は、私が培ってきた技術と熱意が、貴社でどのように貢献できるかをお伝えできればと思います。本日はよろしくお願いいたします。」</div>
+            <div class="speech-romaji">Aratamemashite, Farukhodo to mōshimasu.
+Genzai, JDU (Nihon Dejitaru Daigaku) no konpyūtā saiensu gakubu nite manande ori, 2027-nen ni sotsugyō yotei desu.
+Daigaku dewa Web apurikēshon kaihatsu o senkō shi, React, Node.js, TypeScript, Python o mochiita furusutakku kaihatsu ni chūryoku shite maimashita.
+Toku ni, byōki sōki sukurīningu shisutemu de aru 'Bionexstar' no kaihatsu dewa, furontoendo kara bakkuendo API, dētabēsu sekkei made ikkan shite tegakemashita.
+Mata, Nihongo Nōryoku Shiken N2 o shutoku shite ori, gijutsu dake de naku Nihon no shōshūkan ya chīmu kaihatsu no komyunikēshon mo taisetsu ni manande orimasu.
+Honjitsu wa, watashi ga tsukatte kita gijutsu to netsui ga, kisha de dono yō ni kōken dekiru ka o otsutae dekireba to omoimasu. Honjitsu wa yoroshiku onegai itashimasu.</div>
+            <div class="speech-uz">"Qayta salomlashib o'tsam, ismim Farhod.
+Hozirda JDU (Japan Digital University) ning Kompyuter fanlari fakultetida tahsil olyapman va 2027 yilda bitiraman.
+Universitetda Web ilovalar yaratishni o'rganib, React, Node.js, TypeScript va Python yordamida amaliy full-stack dasturlashga qattiq e'tibor qaratib keldim.
+Xususan, kasalliklarni erta aniqlash tizimi bo'lgan 'Bionexstar' loyihasida frontend'dan tortib backend API va ma'lumotlar bazasi loyihalashgacha boshidan oxirigacha mustaqil bajardim.
+Shuningdek, JLPT N2 darajasiga egaman va faqat texnologiya emas, balki Yaponiyaning biznes odoblari hamda jamoaviy muloqotni ham qunt bilan o'rganib kelmoqdaman.
+Bugungi suhbatda to'plagan bilimim va ishtiyoqim kompaniyangiz rivojiga qanday hissa qo'shishini ko'rsatib bermoqchiman. E'tiboringiz uchun rahmat."</div>
+          </div>
+          <div class="speech-delivery-tip">
+            💡 <strong>Talaffuz siri:</strong> Har bir gap oxiridagi "〜まいりました" va "〜思っております" qismlarini dona-dona va ishonch bilan ayting. 1 daqiqadan oshirmang.
+          </div>
+          <div class="speech-actions">
+            <button class="speech-btn" onclick="copySpeech(this)">📋 Nusxa olish</button>
+            <button class="speech-btn primary" onclick="speakText('改めまして、ファルホドと申します。現在、JDUのコンピューターサイエンス学部にて学んでおり、2027年に卒業予定です。大学ではWebアプリケーション開発を専攻し、フルスタック開発に注力してまいりました。病気早期スクリーニングシステムであるBionexstarの開発では、設計から実装まで一貫して手掛けました。本日はよろしくお願いいたします。')">🔊 Ovoz chiqarib tinglash</button>
+          </div>
+        </div>
+
+        <!-- Speech 3: Shibou-douki -->
+        <div class="speech-card">
+          <div class="speech-top">
+            <span class="speech-tag">3. Shibou-douki</span>
+            <div class="speech-meta">Vaqt: ~70 soniya | Muhimlik: 100%</div>
+          </div>
+          <div class="speech-title">Nega Aynan CAL va Nega Yaponiya? (Shibou-douki Nutqi)</div>
+          <div class="speech-situation">
+            📍 <strong>Qachon aytiladi:</strong> HR: "数あるIT企業の中で、なぜCALを志望されたのですか？" yoki "なぜ日本で働きたいのですか？" deganda aytiladi.
+          </div>
+          <div class="speech-bubble">
+            <div class="speech-jp">「私が貴社を志望した理由は、貴社の『<strong>Challenge And Lead</strong>』という理念、そして『<strong>情熱・挑戦・成長</strong>』というCAL STYLEに強く惹かれたからです。
+貴社は多種多様な業界の大規模なシステム開発を手掛けられており、客先常駐を含め、若手のうちから様々な現場で多様な技術とビジネス課題に触れられる環境があります。
+私は単に指示されたコードを書くだけのプログラマーではなく、現場でお客様の困りごとを直接肌で感じ、技術で解決できるエンジニアを目指しています。
+また、日本を選んだ理由は、世界最高峰の品質と納期への規律、そしてチーム全員で一つのものを作り上げる『ものづくり精神』に深く共感しているためです。
+貴社の挑戦的な環境の中で、変化を恐れず自発的に技術をキャッチアップし、将来的には日本と海外を繋ぐブリッジエンジニアとして貴社に大きく貢献したいと考え、強く志望いたしました。」</div>
+            <div class="speech-romaji">Watashi ga kisha o shibō shita riyū wa, kisha no 'Challenge And Lead' to iu rinen, soshite 'Jōnetsu, Chōsen, Seichō' to iu CAL STYLE ni tsuyoku hikareta kara desu.
+Kisha wa tashitayō na gyōkai no daikibo na shisutemu kaihatsu o tegakerarete ori, kyakusaki jōchū o fukume, wakate no uchi kara samazama na genba de tayō na gijutsu to bijinesu kadai ni furerareru kankyō ga arimasu.
+Watashi wa tan ni shiji sareta kōdo o kaku dake no puroguramā dewa naku, genba de okyakusama no komarigoto o chokusetsu hada de kanji, gijutsu de kaiketsu dekiru enjinia o mezashite imasu.
+Mata, Nihon o eranda riyū wa, sekai saikōhō no hinshitsu to nōki e no kiritsu, soshite chīmu zen'in de hitotsu no mono o tsukuriageru 'monodukuri seishin' ni fukaku kyōkan shite iru tame desu.
+Kisha no chōsenteki na kankyō no naka de, henka o osorezu jihatsuteki ni gijutsu o kyatchiappu shi, shōraitaki ni wa Nihon to kaigai o tsunagu burijji enjinia to shite kisha ni ōkiku kōken shitai to kangae, tsuyoku shibō itashimashita.</div>
+            <div class="speech-uz">"Kompaniyangizni tanlashimning asosiy sababi — sizning 'Challenge And Lead' shioringiz hamda 'Ishtiyoq, Chaqiriq va O'sish' (CAL STYLE) falsafangiz meni juda ilhomlantirganidir.
+Kompaniyangiz turli xil sohalardagi yirik tizimlar yaratish bilan shug'ullanadi va mijoz ofislarida bevosita ishlash orqali yosh mutaxassislarga keng ko'lamli texnologiyalar va haqiqiy biznes muammolari bilan ishlash imkoniyatini beradi.
+Men faqat berilgan buyruq bo'yicha kod yozuvchi oddiy dasturchi emas, balki mijozning ehtiyojlarini bevosita his qilib, texnologiya bilan yechim taklif qiluvchi muhandis bo'lishni xohlayman.
+Yaponiyani tanlaganim sababi esa — bu yerdagi dunyoda tengsiz sifat me'yorlari, muddatga qat'iy intizom va butun jamoa bo'lib mahsulot yaratish (Monodukuri) madaniyatidir.
+CAL kompaniyasining chaqiriqlarga boy muhitida yangiliklarni tez o'zlashtirib, kelajakda Yaponiya va jahonni bog'lovchi yetakchi ko'prik-muhandis sifatida hissa qo'shishni niyat qilganman."</div>
+          </div>
+          <div class="speech-delivery-tip">
+            💡 <strong>Talaffuz siri:</strong> "Challenge And Lead" va "客先常駐を含め" so'zlariga urg'u bering. Bu HR'ga siz kompaniyaning ish modelini va falsafasini juda yaxshi o'rgangangingizni ko'rsatadi.
+          </div>
+          <div class="speech-actions">
+            <button class="speech-btn" onclick="copySpeech(this)">📋 Nusxa olish</button>
+            <button class="speech-btn primary" onclick="speakText('私が貴社を志望した理由は、貴社のChallenge And Leadという理念、そして情熱・挑戦・成長というCAL STYLEに強く惹かれたからです。若手のうちから様々な現場で多様な技術とビジネス課題に触れられる環境があります。現場でお客様の困りごとを技術で解決できるエンジニアを目指しています。')">🔊 Ovoz chiqarib tinglash</button>
+          </div>
+        </div>
+
+        <!-- Speech 4: Jiko-PR -->
+        <div class="speech-card">
+          <div class="speech-top">
+            <span class="speech-tag">4. Jiko-PR</span>
+            <div class="speech-meta">Vaqt: ~60 soniya | Mavzu: Kuchli jihat</div>
+          </div>
+          <div class="speech-title">O'zining IT Sohasi Bo'yicha Kuchli Jihati (Jiko-PR Nutqi)</div>
+          <div class="speech-situation">
+            📍 <strong>Qachon aytiladi:</strong> HR: "あなたの最大の強み（長所）は何ですか？" yoki "自己PRをお願いします" deganda aytiladi.
+          </div>
+          <div class="speech-bubble">
+            <div class="speech-jp">「私の最大の強みは、『<strong>粘り強い課題解決能力</strong>』と『<strong>自律的なキャッチアップ力</strong>』です。
+未知の技術やエラーに直面した際、安易に他人に頼ったり諦めたりするのではなく、まず公式ドキュメントやログを徹底的に分析し、仮説を立てて検証する姿勢を貫いています。
+同時に、独りよがりにならず、30分自力で調査して道筋が見えない場合は、試した手順と仮説を整理した上で先輩やチームに相談する『<strong>報連相</strong>』を徹底しています。
+大学での複数のWeb開発プロジェクトにおいても、この自走力とチーム協調性を発揮し、納期遅延ゼロで高品質な成果物を納品してまいりました。
+この『粘り強さ』と『確実なコミュニケーション』は、多種多様なクライアント先で信頼を勝ち取る上で、必ず貴社の強みになると確信しております。」</div>
+            <div class="speech-romaji">Watashi no saidai no tsuyomi wa, 'Nebarizuyoi Kadai Kaiketsu Nōryoku' to 'Jiritsuteki na Kyatchiappu-ryoku' desu.
+Michi no gijutsu ya erā ni chokumen shita sai, an'i ni tanin ni tayottari akirametari suru no dewa naku, mazu kōshiki dokyumento ya rogu o tetteiteki ni bunseki shi, kasetsu o tatete kenshō suru shisei o tsuranuite imasu.
+Dōji ni, hitoriyogari ni narazu, 30-fun jiriki de chōsa shite michisuji ga mienai baai wa, tameshita tejun to kasetsu o seiri shita ue de senpai ya chīmu ni sōdan suru 'Hō-Ren-Sō' o tettei shite imasu.
+Daigaku de no fukusū no Web kaihatsu purojekuto ni oitemo, kono jisōryoku to chīmu kyōchōsei o hakki shi, nōki chien zero de kōhinshitsu na seikabutsu o nōhin shite maimashita.
+Kono 'nebarizuyosa' to 'kakujitsu na komyunikēshon' wa, tashitayō na kuraianto saki de shinrai o kachitoru ue de, kanarazu kisha no tsuyomi ni naru to kakushin shite orimasu.</div>
+            <div class="speech-uz">"Mening eng katta kuchli tomonim — bu 'Qat'iyatli muammo yechish qobiliyati' va 'Mustaqil tezkor o'rganish kuchi'dir.
+Noma'lum texnologiya yoki kutilmagan xatolikka duch kelganda, darhol birovga suyanib qolmasdan yoki taslim bo'lmasdan, avval rasmiy texnik hujjatlar va loglarni chuqur tahlil qilib, gipoteza tuzib tekshirish odatiga egaman.
+Shu bilan birga, faqat o'zimcha harakat qilmay, 30 daqiqa mustaqil qidirib yechim topilmasa, sinab ko'rgan yo'llarim va farazlarimni tartiblab jamoaga maslahat solish (Hou-Ren-So) qoidasiga qat'iy rioya qilaman.
+Universitetdagi bir qator loyihalarda aynan shu mustaqil harakat va jamoaviy uyg'unlik evaziga barcha ishlarni biror marta kechiktirmasdan yuqori sifatda topshirdim.
+Ushbu qat'iyat va aniq muloqot odobi har qanday mijoz oldida ishonch qozonishda kompaniyangizga katta foyda keltiradi deb ishonaman."</div>
+          </div>
+          <div class="speech-delivery-tip">
+            💡 <strong>Talaffuz siri:</strong> "30分自力で調査して相談する" qismini aniq ayting — bu barcha yapon IT kompaniyalarida ideal xodim standarti hisoblanadi.
+          </div>
+          <div class="speech-actions">
+            <button class="speech-btn" onclick="copySpeech(this)">📋 Nusxa olish</button>
+            <button class="speech-btn primary" onclick="speakText('私の最大の強みは、粘り強い課題解決能力と自律的なキャッチアップ力です。未知のエラーに直面した際、ログを分析し仮説を立てて解決します。30分調べて分からない場合は報連相を徹底します。')">🔊 Ovoz chiqarib tinglash</button>
+          </div>
+        </div>
+
+        <!-- Speech 5: Troubleshooting PREP -->
+        <div class="speech-card">
+          <div class="speech-top">
+            <span class="speech-tag">5. Muammo Yechish (PREP)</span>
+            <div class="speech-meta">Vaqt: ~75 soniya | Loyiha: Bionexstar</div>
+          </div>
+          <div class="speech-title">Texnik Muammoni Hal Qilish Tajribasi (Troubleshooting Nutqi)</div>
+          <div class="speech-situation">
+            📍 <strong>Qachon aytiladi:</strong> HR: "これまでの開発で一番苦労したことやトラブルは何ですか？どう解決しましたか？" deganda aytiladi.
+          </div>
+          <div class="speech-bubble">
+            <div class="speech-jp">「【結論】
+開発において最も苦労したのは、『<strong>Bionexstar</strong>』プロジェクトにおける大量データ通信に伴うAPIのレスポンス遅延でした。
+【理由・原因】
+ユーザー体験を向上させるため原因を追究したところ、フロントエンドにおける不要な再レンダリングと、データベース側でインデックスが不足していたことによるスロークエリがボトルネックであると突き止めました。
+【具体例・解決策】
+そこで2つの対策を実行いたしました。
+まずフロントエンドでは、Reactの<strong>useMemo</strong>や<strong>useCallback</strong>を活用してコンポーネントの再描画を最小限に抑えました。
+次にバックエンドでは、頻出する検索条件に対してデータベースの複合インデックスを追加し、さらにクエリの重複発行を削減いたしました。
+【結果・学び】
+その結果、APIの応答速度を<strong>約40％短縮</strong>し、スムーズなUI表示を実現いたしました。
+この経験を通じて、思い込みで修正するのではなく、ログやプロファイラーを用いてボトルネックを論理的に特定し、チームに共有しながら改善する重要性を学びました。」</div>
+            <div class="speech-romaji">[Ketsuron] Kaihatsu ni oite mottomo kurō shita no wa, 'Bionexstar' purojekuto ni okeru tairyō dēta tsūshin ni tomonau API no responsu chien deshita.
+[Riyū/Gen'in] Yūzā taiken o kōjō saseru tame gen'in o tsuikyū shita tokoro, furontoendo ni okeru fuyō na sai-rendaringu to, dētabēsu gawa de indekkusu ga fusoku shite ita koto ni yoru surō-kueri ga botorunekku de aru to tsukitomemashita.
+[Gutairei/Kaiketsusaku] Soko de futatsu no taisaku o jikkō itashimashita.
+Mazu furontoendo dewa, React no useMemo ya useCallback o katsuyō shite konpōnento no sai-byōga o saishōgen ni osaemashita.
+Tsugi ni bakkuendo dewa, hinshutsu suru kensaku jōken ni taishite dētabēsu no fukugō indekkusu o tsuika shi, sarani kueri no chōfuku hakkō o sakugen itashimashita.
+[Kekka/Manabi] Sono kekka, API no ōtō sokudo o yaku 40-pāsento tanshuku shi, sumūzu na UI hyōji o jitsugen itashimashita.
+Kono keiken o tsūjite, omoikomi de shūsei suru no dewa naku, rogu ya purofairā o mochiite botorunekku o ronriteki ni tokutei shi, chīmu ni kyōyū shinagara kaizen suru jūyōsei o manabimashita.</div>
+            <div class="speech-uz">"[Xulosa]:
+Dasturlashda eng ko'p qiyinchilik tug'dirgan holat — 'Bionexstar' loyihasida katta hajmdagi ma'lumotlar almashinuvi paytida API javob tezligining pasayishi bo'ldi.
+[Sabab]:
+Foydalanuvchi qulayligini saqlash uchun tahlil qilganimda, frontend'da ortiqcha qayta render bo'lishi hamda ma'lumotlar bazasida indekslar yo'qligi sababli sekin so'rovlar (slow queries) asosiy to'siq bo'layotganini aniqladim.
+[Amaliy yechim]:
+Ikkita aniq yechim qo'lladim:
+Birinchidan, frontend qismida React'ning useMemo va useCallback xuklaridan foydalanib komponentlarning keraksiz qayta chizilishini to'xtatdim.
+Ikkinchidan, backend qismida eng ko'p qidiriladigan ustunlar bo'yicha bazaga qo'shma indekslar qo'shib, takroriy SQL so'rovlarni qisqartirdim.
+[Natija va Saboq]:
+Natijada API tezligini qariyb 40% ga qisqartirishga va qotmaydigan yengil interfeysga erishdim.
+Ushbu tajriba menga taxmin bilan emas, balki loglar va tahlil vositalari orqali muammo o'zagini aniq topish hamda jamoa bilan maslahatlashib tuzatish zarurligini o'rgatdi."</div>
+          </div>
+          <div class="speech-delivery-tip">
+            💡 <strong>Talaffuz siri:</strong> "約40％短縮" (yaku yonjuppāsento tanshuku) deb aniq raqam aytishingiz HR uchun eng ishonchli dalildir!
+          </div>
+          <div class="speech-actions">
+            <button class="speech-btn" onclick="copySpeech(this)">📋 Nusxa olish</button>
+            <button class="speech-btn primary" onclick="speakText('開発において最も苦労したのは、BionexstarプロジェクトにおけるAPIのレスポンス遅延でした。ボトルネックを特定し、Reactの最適化とデータベースのインデックス追加を行いました。その結果、応答速度を約40パーセント短縮いたしました。')">🔊 Ovoz chiqarib tinglash</button>
+          </div>
+        </div>
+
+        <!-- Speech 6: Emergency phrases -->
+        <div class="speech-card">
+          <div class="speech-top">
+            <span class="speech-tag">6. Qaltis Vaziyatlar</span>
+            <div class="speech-meta">Vaqt: ~10-15 soniya | Qutqaruvchi jumlalar</div>
+          </div>
+          <div class="speech-title">Kutilmagan Vaziyatlardagi 3 Ta Qutqaruvchi Nutq</div>
+          <div class="speech-situation">
+            📍 <strong>Qachon aytiladi:</strong> Suhbatda savol tushunarsiz bo'lganda, o'ylab olish uchun pauza kerak bo'lganda yoki bilmaydigan texnologiya so'ralganda sarosimaga tushmaslik uchun.
+          </div>
+          <div class="speech-bubble">
+            <div class="speech-jp"><strong>【6A: Savolni eshitmay yoki yaxshi tushunmay qolganda】</strong>
+「大変恐れ入りますが、少々音声が途切れてしまいましたので、もう一度ご質問の趣旨を伺ってもよろしいでしょうか。」
+
+<strong>【6B: O'ylanib to'g'ri javob berish uchun vaqt so'rashda】</strong>
+「的確にお答えしたいため、10秒ほど考えるお時間をいただいてもよろしいでしょうか。」
+（考えた後）➔「お待たせいたしました。私の考えといたしましては〜」
+
+<strong>【6C: Bilmaydigan / Tajribangiz bo'lmagan texnologiya so'ralganda】</strong>
+「申し訳ございません。現時点ではその技術の実務経験はございません。
+しかし、仕組みや基礎概念については理解しておりますので、実務で必要になった際は公式ドキュメントを通じて1週間以内にキャッチアップいたします。」</div>
+            <div class="speech-uz"><strong>【6A: Savolni qayta eshitish uchun】:</strong> "Ming bor uzr, ovoz bir oz uzilib qolganligi sababli, savolingizning mazmunini yana bir bor eshitsam maylimi?"
+<strong>【6B: 10 soniya o'ylab olish uchun】:</strong> "Sizga eng aniq javobni taqdim etish uchun taxminan 10 soniya o'ylab olishimga ruxsat berasizmi?" ➔ (Keyin) "Kuttirganim uchun uzr. Mening fikrimcha esa..."
+<strong>【6C: Noma'lum texnologiya so'ralganda】:</strong> "Kechirasiz. Hozirgi kunda ushbu texnologiyada bevosita amaliy tajribam yo'q. Biroq uning arxitekturasi va asosiy prinsiplarini bilaman. Loyihada kerak bo'lsa, rasmiy manbalar orqali 1 hafta ichida tez o'zlashtirib olaman."</div>
+          </div>
+          <div class="speech-delivery-tip">
+            💡 <strong>Oltin qoida:</strong> Jim qolib ketmang (jimlik = minus). Bilmasangiz ham "Bilmayman" deb qisqa to'xtamang, 6C uslubida "o'rgana olaman" deb yakunlang.
+          </div>
+          <div class="speech-actions">
+            <button class="speech-btn" onclick="copySpeech(this)">📋 Nusxa olish</button>
+            <button class="speech-btn primary" onclick="speakText('大変恐れ入りますが、もう一度ご質問を伺ってもよろしいでしょうか。的確にお答えしたいため、少し考えるお時間をいただいてもよろしいでしょうか。現時点では実務経験はございませんが、迅速にキャッチアップいたします。')">🔊 Ovoz chiqarib tinglash</button>
+          </div>
+        </div>
+
+        <!-- Speech 7: Gyaku-shitsumon -->
+        <div class="speech-card">
+          <div class="speech-top">
+            <span class="speech-tag">7. Teskari Savollar</span>
+            <div class="speech-meta">Vaqt: ~60 soniya | Gyaku-shitsumon</div>
+          </div>
+          <div class="speech-title">Intervyu Oxirida HR'ga Beriladigan 3 Ta Eng Kuchli Teskari Savol</div>
+          <div class="speech-situation">
+            📍 <strong>Qachon aytiladi:</strong> HR: "最後に何か質問はありますか？" (Oxirida biror savolingiz bormi?) deganda aytiladi. "Savolim yo'q" deyish mutlaqo mumkin emas!
+          </div>
+          <div class="speech-bubble">
+            <div class="speech-jp">「質問の機会をいただき、ありがとうございます。ぜひ2点（または3点）伺いたいことがございます。
+
+<strong>【質問1：Muvaffaqiyatli muhandislar haqida】</strong>
+『貴社で現場やクライアントから高く評価され、早期に活躍されているエンジニアの方々に共通する特徴やマインドセットがあればぜひ教えていただけますでしょうか。』
+
+<strong>【質問2：Kirishga tayyorgarlik haqida】</strong>
+『もしご縁をいただき入社できることになった場合、入社日までに学習を進めておくべき技術スタックや、取得が推奨される資格はございますでしょうか。』
+
+<strong>【質問3：CAL madaniyati haqida】</strong>
+『面接官様がCALで働かれる中で、最も「Challenge（挑戦）」を感じた瞬間や、この会社で働いて良かったと感じるやりがいについてお聞かせいただけますでしょうか。』」</div>
+            <div class="speech-uz">"Savol berish imkoniyati uchun katta rahmat. 2 ta (yoki 3 ta) muhim savolim bor edi:
+1. 'Kompaniyangizda mijozlar tomonidan yuqori baholanib, tez fursatda yetakchi bo'lgan muhandislarga xos bo'lgan umumiy xislat va fikrlash tarzi qanday?'
+2. 'Agar omadim chopib kompaniyangizga qabul qilinsam, ish boshlangunga qadar qaysi texnologiyalarni chuqurlashtirib o'rganishim yoki qanday sertifikat olishim tavsiya etiladi?'
+3. 'Siz o'zingiz CAL kompaniyasida faoliyat yuritish davomida eng ko'p "Challenge (Chaqiriq)" his qilgan va jamoada ishlashdan faxrlangan lahzangiz haqida aytib bera olasizmi?'"</div>
+          </div>
+          <div class="speech-delivery-tip">
+            💡 <strong>Psixologiya:</strong> Ushbu 3 ta savol HR ko'zida sizning naqadar yuqori motivatsiya, o'rganish ishtiyoqi va kompaniyaga jiddiy qiziqish bilan kelganingizni 100% tasdiqlaydi.
+          </div>
+          <div class="speech-actions">
+            <button class="speech-btn" onclick="copySpeech(this)">📋 Nusxa olish</button>
+            <button class="speech-btn primary" onclick="speakText('質問の機会をいただきありがとうございます。貴社で早期に活躍されているエンジニアに共通する特徴があれば教えていただけますでしょうか。また、入社日までに準備しておくべき技術があれば伺いたいです。')">🔊 Ovoz chiqarib tinglash</button>
+          </div>
+        </div>
+
+        <!-- Speech 8: Ending Speech -->
+        <div class="speech-card">
+          <div class="speech-top">
+            <span class="speech-tag">8. Yakunlash</span>
+            <div class="speech-meta">Vaqt: ~30 soniya | Oxirgi taassurot</div>
+          </div>
+          <div class="speech-title">Intervyuni Muvaffaqiyatli Yakunlash va Oxirgi Taassurot Nutqi</div>
+          <div class="speech-situation">
+            📍 <strong>Qachon aytiladi:</strong> Barcha savollar tugab, intervyuer "Bugungi suhbatimiz shulardan iborat, natija keyinroq xabar qilinadi" deganda eng so'nggi daqiqada aytiladi.
+          </div>
+          <div class="speech-bubble">
+            <div class="speech-jp">「本日はお忙しい中、私のためにお時間を割いていただき、誠にありがとうございました。
+本日、面接官様から直接お話を伺い、貴社の挑戦を重んじるカルチャーやエンジニアを大切に育てる環境に触れ、ぜひ貴社の一員として働きたいという想いがより一層強くなりました。
+もしご縁をいただけましたら、一日も早く戦力となれるよう、誠心誠意努めてまいります。
+本日は本当にありがとうございました。失礼いたします。」</div>
+            <div class="speech-romaji">Honjitsu wa oisogashii naka, watashi no tame ni ojikan o saite itadaki, makoto ni arigatō gozaimashita.
+Honjitsu, mensetsukan-sama kara chokusetsu ohanashi o ukagai, kisha no chōsen o omonjiru karuchā ya enjinia o taisetsu ni sodateru kankyō ni fure, zehi kisha no ichiin to shite hatarakitai to iu omoi ga yori isso tsuyoku narimashita.
+Moshi goen o itadakemashitara, ichinichi mo hayaku senryoku to nareru yō, seishin seii tsutomete maimasu.
+Honjitsu wa hontō ni arigatō gozaimashita. Shitsurei itashimasu.</div>
+            <div class="speech-uz">"Bugun band bo'lishingizga qaramay, men uchun vaqtingizni ajratganingizdan cheksiz minnatdorman.
+Bugun siz bilan bevosita suhbatlashib, kompaniyangizning doimiy yangiliklarga intiluvchi madaniyati va muhandislarni qadrlovchi muhitini o'z ko'zim bilan his qildim va jamoangizga qo'shilish istagim yanada kuchaydi.
+Agar menga ishonch bildirilsa, imkon qadar tezroq kompaniyaning tayanch mutaxassisiga aylanish uchun bor kuchim bilan sidqidildan mehnat qilaman.
+Bugungi imkoniyat uchun katta rahmat. Omon bo'ling (Shitsurei itashimasu)."</div>
+          </div>
+          <div class="speech-delivery-tip">
+            💡 <strong>Harakat:</strong> Gapni aytib bo'lgach, kameraga qarab 30-45 gradus muloyim ta'zim qiling (Online bo'lsa ham bosh irg'ab egilish juda katta plyus beradi) va intervyuer aloqani uzishini kuting.
+          </div>
+          <div class="speech-actions">
+            <button class="speech-btn" onclick="copySpeech(this)">📋 Nusxa olish</button>
+            <button class="speech-btn primary" onclick="speakText('本日はお忙しい中、私のためにお時間を割いていただき、誠にありがとうございました。貴社の一員として働きたいという想いがより一層強くなりました。もしご縁をいただけましたら誠心誠意努めてまいります。本日は本当にありがとうございました。失礼いたします。')">🔊 Ovoz chiqarib tinglash</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 4: CAL & SES REAL HR QUESTIONS
+         ======================================================== -->
+    <section class="category-section" data-cat="cal-hr-new">
+      <div class="section-title">
+        <span>🎯 CAL & SES Bo'yicha Eng Yangi HR Savol-Javoblari (Chuqur Tahlil)</span>
+        <span class="count">5 ta dolzarb amaliy savol • SES, texnologiya, nizo va ish tartibi</span>
+      </div>
+
+      <div class="q-list">
+
+        <!-- New Q1: SES / 客先常駐 -->
+        <div class="q-card" data-keywords="客先常駐 きゃくさきじょうちゅう ses client site dispatch mijoz ofisi">
+          <div class="q-header">
+            <div class="q-title-row">
+              <span class="q-badge" style="background:rgba(210,153,34,0.15);color:#d29922;border:1px solid rgba(210,153,34,0.3);">SES & Ish Muhiti</span>
+              <h3 class="q-title">客先常駐（SES）やプロジェクト先での勤務に不安や抵抗はありませんか？</h3>
+            </div>
+            <div class="q-subtitle">Mijoz ofislarida (SES formati) ishlashga qanday qaraysiz? Notanish jamoalarga moslashishda qo'rquv yo'qmi?</div>
+          </div>
+          <div class="answer-body">
+            <div class="jp-block">
+              <div class="jp-label">🇯🇵 Yaponcha Professional Javob:</div>
+              <div class="jp-text">「全く問題ございません。むしろ、客先常駐という環境を前向きに捉えております。
+理由は2点ございます。
+1点目は、多様なクライアントの現場を経験することで、金融、製造、医療など様々な業界の業務知識と最先端の技術スタックを短期間で幅広く吸収できるからです。
+2点目は、現場ごとに異なるチームやプロパー社員の方々と協働することで、高い適応力とビジネスコミュニケーション能力を磨けるからです。
+大学時代にも多国籍なチーム開発を経験しており、相手の文化や開発ルールを尊重して柔軟に馴染む自信がございます。現場に早く貢献できるよう誠心誠意努めます。」</div>
+            </div>
+            <div class="uz-block">
+              <div class="uz-label">🇺🇿 O'zbekcha Tushuntirish & Strategiya:</div>
+              <div class="uz-text">"Mutlaqo hech qanday xavotir yo'q, aksincha, mijoz ofislarida ishlashni rivojlanish uchun ajoyib imkoniyat deb bilaman.
+Buning 2 ta asosiy sababi bor:
+1. Turli xil mijoz loyihalarida ishlash orqali bank, ishlab chiqarish, tibbiyot kabi turfa sohalarning biznes mantig'ini va eng zamonaviy texnologiyalarni qisqa fursatda keng o'rganish mumkin.
+2. Har bir loyihadagi yangi jamoa va xodimlar bilan ishlash orqali yuqori moslashuvchanlik va biznes muloqot qobiliyatini yuksaltirish imkoniyati paydo bo'ladi.
+Universitetda ham turli millat vakillari bilan dastur ishlab tajriba orttirganman, shuning uchun boshqalarning madaniyati va qoidalarini hurmat qilgan holda tez do'stona muhit yarata olaman."</div>
+            </div>
+          </div>
+          <div class="q-actions">
+            <button class="action-btn" onclick="copyCardText(this)">📋 Nusxa olish</button>
+            <button class="action-btn speak" onclick="speakText('客先常駐について全く問題ございません。むしろ多様な現場を経験し、高い適応力と技術力を磨ける素晴らしい環境だと前向きに捉えております。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- New Q2: Unexperienced tech catchup -->
+        <div class="q-card" data-keywords="未経験技術 キャッチアップ catchup yangi texnologiya o'rganish unknown tech">
+          <div class="q-header">
+            <div class="q-title-row">
+              <span class="q-badge" style="background:rgba(88,166,255,0.15);color:#58a6ff;border:1px solid rgba(88,166,255,0.3);">O'rganish & Moslashuv</span>
+              <h3 class="q-title">実務で未経験のプログラミング言語やツールを任された場合、どうキャッチアップしますか？</h3>
+            </div>
+            <div class="q-subtitle">Loyihada siz ilgari ishlatmagan yangi dasturlash tili yoki vosita berilsa, qanday yo'l tutasiz?</div>
+          </div>
+          <div class="answer-body">
+            <div class="jp-block">
+              <div class="jp-label">🇯🇵 Yaponcha Professional Javob:</div>
+              <div class="jp-text">「実務で未経験の言語やツールを任された場合、3つのステップで迅速にキャッチアップいたします。
+第1に、公式ドキュメントとベストプラクティスを読み込み、コアとなる設計思想や文法、既存コードのアーキテクチャを体系的に把握します。
+第2に、個人環境で小さなプロトタイプを実際に手を動かして作成し、頻出するエラーの挙動を確認します。
+第3に、独学だけに頼るのではなく、現場のコード規約や知見について、試行した内容をまとめた上で先輩エンジニアに質問・相談（報連相）を行い、理解のズレをなくします。
+私には基礎的なコンピューターサイエンスの土台があるため、言語が変わっても1〜2週間で実務レベルに立ち上げることが可能です。」</div>
+            </div>
+            <div class="uz-block">
+              <div class="uz-label">🇺🇿 O'zbekcha Tushuntirish & Strategiya:</div>
+              <div class="uz-text">"Agar tajribamda bo'lmagan yangi til yoki vosita topshirilsa, 3 bosqichda tezkor o'zlashtiraman:
+1. Rasmiy texnik hujjatlar va andozalarni o'rganib, uning asosiy arxitekturasi va mavjud loyiha kodini tizimli tushunib olaman.
+2. O'z kompyuterimda kichik sinov loyihasi (prototip) qilib, qo'lim bilan kod yozib xatoliklarning qanday ishlashini amalda tekshiraman.
+3. Faqat o'zim o'rganish bilan cheklanmay, sinab ko'rgan xulosalarimni tartiblab, jamoa me'yorlarini to'g'ri tushunayotganimni tekshirish uchun ustozlarga maslahat solaman (Hou-Ren-So).
+Menda kompyuter fanlarining mustahkam fundamental bazasi borligi sababli, dasturlash tili o'zgarsa ham 1-2 hafta ichida amaliy ish darajasiga chiqa olaman."</div>
+            </div>
+          </div>
+          <div class="q-actions">
+            <button class="action-btn" onclick="copyCardText(this)">📋 Nusxa olish</button>
+            <button class="action-btn speak" onclick="speakText('公式ドキュメントで設計思想を理解し、プロトタイプを作って実践します。理解のズレを防ぐため先輩に報連相を行い、短期間でキャッチアップいたします。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- New Q3: Team Conflict -->
+        <div class="q-card" data-keywords="意見対立 チーム開発 team conflict nizo fikrlar to'qnashuvi consensus">
+          <div class="q-header">
+            <div class="q-title-row">
+              <span class="q-badge" style="background:rgba(188,140,255,0.15);color:#d2a8ff;border:1px solid rgba(188,140,255,0.3);">Jamoaviy Hamjihatlik</span>
+              <h3 class="q-title">開発方針や仕様でチームメンバーや上司と意見が対立した時、どう対処しますか？</h3>
+            </div>
+            <div class="q-subtitle">Dasturlash yo'nalishi yoki talablarda jamoa bilan fikringiz to'qnash kelib qolsa, qanday kelishuvga erishasiz?</div>
+          </div>
+          <div class="answer-body">
+            <div class="jp-block">
+              <div class="jp-label">🇯🇵 Yaponcha Professional Javob:</div>
+              <div class="jp-text">「自分の意見に固執するのではなく、『プロダクトの価値とユーザーにとって何が最善か』を共通の判断軸として冷静に対話いたします。
+具体的には、まず相手の提案の背景や意図を最後まで傾聴し、深く理解することに努めます。
+その上で、私の意見についても感情論ではなく、開発工数、保守性、パフォーマンス、納期への影響などの客観的なデータや根拠を示してご説明いたします。
+それでも結論が出ない場合や上司の決定が下された場合は、チームとしての意思決定を尊重し、決定した方針に全力を注いで開発を進めます。組織としての調和と目的達成を何より大切にしております。」</div>
+            </div>
+            <div class="uz-block">
+              <div class="uz-label">🇺🇿 O'zbekcha Tushuntirish & Strategiya:</div>
+              <div class="uz-text">"O'z fikrimda qaysarlik bilan turib olmasdan, 'Mahsulot sifati va foydalanuvchi uchun qaysi biri eng yaxshi?' degan umumiy mezon bilan xotirjam suhbatlashaman.
+Batafsil aytganda:
+Avval suhbatdoshimning taklifi ortidagi sabab va maqsadni oxirigacha diqqat bilan eshitib, to'liq tushunishga harakat qilaman.
+Keyin o'z taklifimni ham his-tuyg'ular bilan emas, balki ish hajmi (工数), kodning keyinchalik saqlanishi, server tezligi va muddatga ta'siri kabi aniq raqam va dalillar bilan tushuntiraman.
+Agar qaror rahbar tomonidan qabul qilinsa, jamoa qarorini to'liq hurmat qilgan holda belgilangan yo'nalishda bor kuchim bilan ishlayman. Jamoaning ahilligi va maqsadga yetishini hamma narsadan ustun qo'yaman."</div>
+            </div>
+          </div>
+          <div class="q-actions">
+            <button class="action-btn" onclick="copyCardText(this)">📋 Nusxa olish</button>
+            <button class="action-btn speak" onclick="speakText('自分の意見に固執せず、プロダクトと顧客にとって何が最善かを基準に対話します。相手の意見を傾聴し、客観的なデータを示して合意形成を図ります。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- New Q4: CAL Style Experience -->
+        <div class="q-card" data-keywords="CAL STYLE 理念 挑戦 情熱 成長 challenge and lead passion grow up">
+          <div class="q-header">
+            <div class="q-title-row">
+              <span class="q-badge" style="background:rgba(63,185,80,0.15);color:#3fb950;border:1px solid rgba(63,185,80,0.3);">CAL Kompaniyasi</span>
+              <h3 class="q-title">CALの「Passion・Challenge・Grow Up」を、ご自身の経験でどう体現してきましたか？</h3>
+            </div>
+            <div class="q-subtitle">CAL'ning 3 ta shiori (Ishtiyoq, Chaqiriq va O'sish) sizning shaxsiy tajribangizda qanday namoyon bo'lgan?</div>
+          </div>
+          <div class="answer-body">
+            <div class="jp-block">
+              <div class="jp-label">🇯🇵 Yaponcha Professional Javob:</div>
+              <div class="jp-text">「私の大学生活そのものが、まさにこの3つの体現であると考えております。
+【Passion（情熱）】：IT技術で人々の生活を便利にしたいという強い情熱から、授業以外にも毎日欠かさず個人開発とコーディングに没頭してまいりました。
+【Challenge（挑戦）】：未経験だった医療・健康領域のシステムである『Bionexstar』の開発に自ら志願し、高度なデータ処理とセキュリティ設計に果敢に挑戦いたしました。
+【Grow Up（成長）】：失敗やエラーを乗り越えるたびにNotionに知見をまとめ、日本語力もゼロからN2まで高めるなど、昨日より今日、今日より明日へと継続的に成長を遂げてまいりました。
+貴社に入社後もこの姿勢を変えず、常に新しい挑戦を続けながら仲間と共に成長していきたいです。」</div>
+            </div>
+            <div class="uz-block">
+              <div class="uz-label">🇺🇿 O'zbekcha Tushuntirish & Strategiya:</div>
+              <div class="uz-text">"Mening talabalik yillarim aynan mana shu 3 ta tamoyilning hayotiy ifodasidir:
+1. Passion (Ishtiyoq): Axborot texnologiyalari orqali odamlar hayotini yengillashtirish ishtiyoqi bilan har kuni darsdan tashqari mustaqil dasturlash va izlanishga o'zimni bag'ishladim.
+2. Challenge (Chaqiriq): Hali tajribam bo'lmagan murakkab tibbiy tizim 'Bionexstar'ni yaratishga qo'rqmasdan kirishdim va xavfsiz ma'lumotlar arxitekturasini noldan tuzdim.
+3. Grow Up (O'sish): Har bir to'siqni yengib, topilgan tajribalarni tizimlashtirdim va yapon tilini noldan JLPT N2 darajasigacha ko'tardim.
+Kompaniyangizga kirgach ham shu ruhda qolib, yangi chaqiriqlarga qo'l urib safdoshlarim bilan birga ulkan o'sishga erishmoqchiman."</div>
+            </div>
+          </div>
+          <div class="q-actions">
+            <button class="action-btn" onclick="copyCardText(this)">📋 Nusxa olish</button>
+            <button class="action-btn speak" onclick="speakText('毎日コーディングに没頭する情熱、Bionexstar開発への挑戦、そして日本語N2取得まで諦めず続けた成長で体現してまいりました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- New Q5: Overtime & Health -->
+        <div class="q-card" data-keywords="残業 繁忙期 健康管理 zangyou overtime stress management ortiqcha ish">
+          <div class="q-header">
+            <div class="q-title-row">
+              <span class="q-badge" style="background:rgba(248,81,73,0.15);color:#f85149;border:1px solid rgba(248,81,73,0.3);">Mas'uliyat & Rejim</span>
+              <h3 class="q-title">納期直前や繁忙期に残業が発生する場合がありますが、対応可能ですか？健康管理はどうしていますか？</h3>
+            </div>
+            <div class="q-subtitle">Loyiha topshirilishi oldidan yoki qizg'in pallada ortiqcha ish (Zangyou) bo'lsa ishlay olasizmi? Sog'lig'ingizni qanday asraysiz?</div>
+          </div>
+          <div class="answer-body">
+            <div class="jp-block">
+              <div class="jp-label">🇯🇵 Yaponcha Professional Javob:</div>
+              <div class="jp-text">「はい、納期遵守とプロジェクトの成功のために必要な残業であれば、責任を持って全力で対応いたします。
+もちろん、日頃から工数を逆算してスケジュールを管理し、無駄な残業が発生しないよう高効率な作業を心掛けております。
+健康管理に関しましては、規則正しい生活リズムを維持し、日頃からランニングや十分な睡眠を取ることで、高い集中力と体力を常に維持しております。
+これまで病気で開発や学業を休んだことは一度もなく、プレッシャーのかかる繁忙期でも最後まで安定したパフォーマンスを発揮できる健康な心身を備えております。」</div>
+            </div>
+            <div class="uz-block">
+              <div class="uz-label">🇺🇿 O'zbekcha Tushuntirish & Strategiya:</div>
+              <div class="uz-text">"Ha, loyiha muvaffaqiyati va muddatga ulgurish uchun zarur bo'lgan har qanday ortiqcha ishga mas'uliyat bilan tayyorman.
+Albatta, odatdagi paytda ish hajmini oldindan to'g'ri rejalashtirib, behuda kech qolib ketmaslik uchun yuqori unumdorlik bilan ishlashga harakat qilaman.
+Sog'liqni saqlash bo'yicha esa: muntazam sog'lom turmush tarziga amal qilaman, yugurish bilan shug'ullanaman va yetarli uxlab yuqori immunitet va chidamlilikni saqlayman.
+Shu paytgacha tobi qochib o'qish yoki loyihani qoldirgan emasman, eng qiyin va mas'uliyatli davrlarda ham barqaror ish unumini bera olaman."</div>
+            </div>
+          </div>
+          <div class="q-actions">
+            <button class="action-btn" onclick="copyCardText(this)">📋 Nusxa olish</button>
+            <button class="action-btn speak" onclick="speakText('納期遵守とプロジェクト成功のための残業であれば全力で対応いたします。日頃から運動と睡眠で自己管理を徹底しており、心身ともに健康です。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <!-- NEW SECTION: JLPT N1/N2/N3 VOCABULARY & BUSINESS IDIOMS -->
     <section class="category-section" data-cat="vocab">
@@ -3379,6 +5424,48 @@ Ha, albatta 3 ta savolim bor edi:
       });
     }
 
+    function filterTableLevel(level, btn) {
+      document.querySelectorAll('.tbl-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const rows = document.querySelectorAll('#vocabTableBody tr');
+      rows.forEach(row => {
+        const rowLevel = row.getAttribute('data-level');
+        if (level === 'all' || rowLevel === level) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    function searchTableWords(query) {
+      const q = query.toLowerCase().trim();
+      const rows = document.querySelectorAll('#vocabTableBody tr');
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        const kw = row.getAttribute('data-keywords') || '';
+        if (text.includes(q) || kw.includes(q)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    function copySpeech(btn) {
+      const card = btn.closest('.speech-card');
+      const jp = card.querySelector('.speech-jp')?.innerText || '';
+      const uz = card.querySelector('.speech-uz')?.innerText || '';
+      const full = `【日本語スピーチ】\n${jp}\n\n【O'zbekcha】\n${uz}`;
+
+      navigator.clipboard.writeText(full).then(() => {
+        showToast("✅ Tayyor nutq nusxalandi!");
+      }).catch(() => {
+        showToast("Nusxalashda xatolik yuz berdi");
+      });
+    }
+
     function setLangView(mode) {
       document.getElementById('btnLangAll').classList.toggle('active', mode === 'all');
       document.getElementById('btnLangJp').classList.toggle('active', mode === 'jp');
@@ -3417,7 +5504,7 @@ Ha, albatta 3 ta savolim bor edi:
 
     document.getElementById('searchInput').addEventListener('input', function(e) {
       const q = e.target.value.toLowerCase().trim();
-      const cards = document.querySelectorAll('.q-card, .project-card, .vocab-card');
+      const cards = document.querySelectorAll('.q-card, .project-card, .vocab-card, .grammar-card, .speech-card, #vocabTableBody tr');
 
       cards.forEach(card => {
         const text = card.innerText.toLowerCase();
