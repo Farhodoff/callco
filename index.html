@@ -1,0 +1,3438 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAL Yapon HR Intervyusi — Savol-Javoblar & N1/N2/N3 Lug'at</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-hover: #1f242c;
+      --surface-card: #1c2128;
+      --border: #30363d;
+      --border-accent: #388bfd33;
+      --text: #f0f6fc;
+      --text-muted: #8b949e;
+      --text-sub: #c9d1d9;
+      --primary: #58a6ff;
+      --primary-glow: rgba(88, 166, 255, 0.15);
+      --red: #f85149;
+      --red-bg: rgba(248, 81, 73, 0.12);
+      --yellow: #d29922;
+      --yellow-bg: rgba(210, 153, 34, 0.12);
+      --green: #3fb950;
+      --green-bg: rgba(63, 185, 80, 0.12);
+      --purple: #bc8cff;
+      --purple-bg: rgba(188, 140, 255, 0.12);
+      --badge-radius: 9999px;
+      --card-radius: 16px;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-jp: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 90px;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Banner */
+    header.hero {
+      background: radial-gradient(circle at 80% 20%, rgba(88, 166, 255, 0.15) 0%, transparent 60%),
+                  radial-gradient(circle at 10% 80%, rgba(248, 81, 73, 0.12) 0%, transparent 50%),
+                  #161b22;
+      border-bottom: 1px solid var(--border);
+      padding: 44px 0 28px;
+      margin-bottom: 24px;
+    }
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(88, 166, 255, 0.1);
+      border: 1px solid rgba(88, 166, 255, 0.3);
+      color: var(--primary);
+      padding: 5px 14px;
+      border-radius: var(--badge-radius);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .candidate-info {
+      font-size: 13px;
+      color: var(--text-muted);
+      background: var(--surface);
+      padding: 6px 14px;
+      border-radius: var(--badge-radius);
+      border: 1px solid var(--border);
+    }
+    .candidate-info strong { color: var(--text); }
+    h1.title {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      line-height: 1.25;
+      background: linear-gradient(135deg, #ffffff 40%, #8b949e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p.subtitle {
+      color: var(--text-sub);
+      font-size: 14.5px;
+      max-width: 860px;
+      line-height: 1.6;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .stat-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-num {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .stat-lbl {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* Controls Bar */
+    .controls-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 17, 23, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+      margin-bottom: 20px;
+    }
+    .controls-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .search-box {
+      flex: 1;
+      min-width: 250px;
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 14px;
+      padding: 9px 16px 9px 38px;
+      border-radius: 10px;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-glow);
+    }
+    .search-box svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+    .view-toggles {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn-toggle {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-sub);
+      padding: 7px 13px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-toggle:hover {
+      background: var(--surface-hover);
+      color: #fff;
+    }
+    .btn-toggle.active {
+      background: var(--primary);
+      color: #0d1117;
+      border-color: var(--primary);
+    }
+
+    /* Category Navigation */
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 24px;
+      scrollbar-width: thin;
+    }
+    .tab-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 15px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover {
+      color: var(--text);
+      background: var(--surface-hover);
+    }
+    .tab-btn.active {
+      background: var(--primary-glow);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+    .tab-btn.highlight {
+      border-color: var(--purple);
+      color: var(--purple);
+    }
+    .tab-btn.highlight.active {
+      background: var(--purple-bg);
+      color: #d2a8ff;
+    }
+
+    /* Section Headers */
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 32px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title .count {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: normal;
+    }
+
+    /* Cards */
+    .q-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 20px 22px;
+      margin-bottom: 18px;
+      transition: border-color 0.2s;
+      position: relative;
+    }
+    .q-card:hover { border-color: #484f58; }
+    .q-card.danger { border-left: 4px solid var(--red); }
+    .q-card.warning { border-left: 4px solid var(--yellow); }
+    .q-card.normal { border-left: 4px solid var(--green); }
+
+    .q-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .q-title-group { flex: 1; }
+    .q-badge-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .q-index {
+      font-family: 'Fira Code', monospace;
+      font-size: 12px;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge-danger { background: var(--red-bg); color: var(--red); border: 1px solid rgba(248, 81, 73, 0.4); }
+    .badge-warning { background: var(--yellow-bg); color: var(--yellow); border: 1px solid rgba(210, 153, 34, 0.4); }
+    .badge-normal { background: var(--green-bg); color: var(--green); border: 1px solid rgba(63, 185, 80, 0.4); }
+    .badge-n1 { background: var(--purple-bg); color: #d2a8ff; border: 1px solid rgba(188, 140, 255, 0.4); }
+    .badge-n2 { background: var(--primary-glow); color: #58a6ff; border: 1px solid rgba(88, 166, 255, 0.4); }
+    .badge-n3 { background: var(--green-bg); color: #3fb950; border: 1px solid rgba(63, 185, 80, 0.4); }
+    .badge-cat { background: rgba(255, 255, 255, 0.06); color: var(--text-sub); }
+
+    .q-jp {
+      font-family: var(--font-jp);
+      font-size: 18.5px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+    .q-uz {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .card-actions { display: flex; gap: 6px; }
+    .btn-icon {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: var(--text-sub);
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s;
+    }
+    .btn-icon:hover {
+      background: var(--surface-hover);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .answer-body {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .jp-block {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 15px 18px;
+      margin-bottom: 12px;
+    }
+    .jp-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .jp-text {
+      font-family: var(--font-jp);
+      font-size: 15.5px;
+      line-height: 1.8;
+      color: #e6edf3;
+      white-space: pre-line;
+    }
+    .uz-block {
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 10px;
+      padding: 13px 16px;
+      margin-bottom: 12px;
+    }
+    .uz-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+    .uz-text {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: var(--text-sub);
+      white-space: pre-line;
+    }
+
+    .meta-box {
+      margin-top: 12px;
+      display: grid;
+      gap: 10px;
+    }
+    .tip-box {
+      background: rgba(88, 166, 255, 0.05);
+      border: 1px dashed rgba(88, 166, 255, 0.3);
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-size: 13px;
+      color: #9ecbff;
+      line-height: 1.55;
+    }
+    .tip-box strong { color: #58a6ff; }
+
+    .followup-box {
+      background: rgba(210, 153, 34, 0.07);
+      border: 1px solid rgba(210, 153, 34, 0.25);
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-size: 13px;
+      color: #e3b341;
+      line-height: 1.55;
+    }
+    .followup-box strong { color: #f2cc60; display: block; margin-bottom: 4px; }
+    .followup-box .f-q { color: #ffffff; font-weight: 600; margin: 4px 0 2px; }
+    .followup-box .f-a { color: #c9d1d9; font-size: 12.5px; }
+
+    /* Projects Grid */
+    .project-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .project-card-header {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .p-title {
+      font-size: 17.5px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .p-role {
+      font-size: 12px;
+      background: var(--purple-bg);
+      color: #d2a8ff;
+      border: 1px solid rgba(188, 140, 255, 0.3);
+      padding: 3px 10px;
+      border-radius: var(--badge-radius);
+      font-weight: 600;
+    }
+    .p-stack {
+      font-family: 'Fira Code', monospace;
+      font-size: 12px;
+      color: var(--primary);
+      margin-top: 3px;
+    }
+    .p-body { padding: 18px 20px; }
+    .six-questions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    .sq-item {
+      border-left: 2px solid var(--border);
+      padding-left: 14px;
+    }
+    .sq-q {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .sq-jp {
+      font-family: var(--font-jp);
+      font-size: 14.5px;
+      color: #e6edf3;
+      margin-bottom: 3px;
+    }
+    .sq-uz { font-size: 13.5px; color: var(--text-sub); }
+
+    /* Flashcard mode */
+    .recall-mode .answer-body { display: none; }
+    .recall-mode .reveal-btn { display: inline-flex !important; }
+    .reveal-btn {
+      display: none;
+      margin-top: 14px;
+      background: rgba(88, 166, 255, 0.1);
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Emergency phrases box */
+    .emergency-panel {
+      background: linear-gradient(180deg, rgba(248, 81, 73, 0.08) 0%, rgba(22, 27, 34, 0.8) 100%);
+      border: 1px solid rgba(248, 81, 73, 0.3);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 24px;
+    }
+    .emergency-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .emergency-card {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 13px 15px;
+      border-radius: 12px;
+    }
+    .em-scenario {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .em-jp {
+      font-family: var(--font-jp);
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .em-romaji { font-size: 12px; color: var(--text-muted); font-style: italic; }
+    .em-uz { font-size: 13px; color: var(--text-sub); margin-top: 4px; }
+
+    /* VOCABULARY SECTION (LUG'AT) */
+    .vocab-filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .vocab-filter-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .vocab-filter-btn:hover { color: var(--text); }
+    .vocab-filter-btn.active {
+      background: var(--purple-bg);
+      color: #d2a8ff;
+      border-color: rgba(188, 140, 255, 0.4);
+    }
+
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 14px;
+    }
+    .vocab-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s;
+    }
+    .vocab-card:hover {
+      border-color: #58a6ff66;
+      transform: translateY(-2px);
+    }
+    .v-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+    .v-kanji {
+      font-family: var(--font-jp);
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+    .v-kana {
+      font-family: var(--font-jp);
+      font-size: 13px;
+      color: var(--primary);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+    .v-romaji {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .v-meaning {
+      font-size: 14px;
+      font-weight: 600;
+      color: #e6edf3;
+      margin: 8px 0;
+      padding: 6px 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 6px;
+      border-left: 3px solid var(--primary);
+    }
+    .v-example {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.08);
+    }
+    .v-ex-jp {
+      font-family: var(--font-jp);
+      font-size: 13.5px;
+      color: #c9d1d9;
+      line-height: 1.5;
+    }
+    .v-ex-uz {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.45;
+    }
+    .v-action {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+
+    .btn-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+      transition: all 0.2s;
+    }
+    .btn-top:hover {
+      background: var(--primary);
+      color: #0d1117;
+      transform: translateY(-2px);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #238636;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      z-index: 1000;
+      pointer-events: none;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Header -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-top">
+        <div class="brand-tag">
+          <span>株式会社CAL (CAL Co., Ltd.)</span>
+          <span>•</span>
+          <span>HR Suhbatiga Tayyorgarlik</span>
+        </div>
+        <div class="candidate-info">
+          Nomzod: <strong>Farhod Soyilov</strong> | JDU IT (2027) | <strong>JLPT N2</strong> | <a href="https://farkhod.dev" target="_blank" style="color:var(--primary);text-decoration:none;">farkhod.dev</a>
+        </div>
+      </div>
+
+      <h1 class="title">CAL HR Intervyusi — Savollar, Javoblar & N1/N2/N3 Lug'at</h1>
+      <p class="subtitle">
+        Ushbu maxsus platforma Farhod Soyilovning rezyumesi (<a href="file:///Users/farhod/Desktop/kitob/Rezyumelar/CAL履歴書.docx" style="color:var(--primary);text-decoration:none;">CAL履歴書.docx</a>), 4+1 ta amaliy loyihasi hamda Desktop'dagi audio yozuvlarda ta'kidlangan ustoz ko'rsatmalari asosida tayyorlandi. Endi unda intervyuda ishlatiladigan 30 dan ortiq <strong>JLPT N1/N2/N3 biznes atamalari lug'ati</strong> ham bor.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-pill">
+          <span class="stat-num">24+ Savollar</span>
+          <span class="stat-lbl">Kutilayotgan barcha savollar</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">4 Xavfli Nuqta</span>
+          <span class="stat-lbl">Nega Yaponiya / CAL / IT / Loyiha</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">5 Loyiha Tahlili</span>
+          <span class="stat-lbl">Har biriga 6 tadan chuqur savol</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">30+ Atamalar Lug'ati</span>
+          <span class="stat-lbl">N1, N2, N3 va Biznes Yaponiya atamalari</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Controls Bar -->
+  <div class="controls-bar">
+    <div class="container controls-inner">
+      <div class="search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="searchInput" placeholder="Savol, texnologiya, atama yoki so'z qidiring (masalan: 報連相, Bionexstar, Nega CAL)...">
+      </div>
+
+      <div class="view-toggles">
+        <button class="btn-toggle active" id="btnLangAll" onclick="setLangView('all')">🌐 Ikki tilda</button>
+        <button class="btn-toggle" id="btnLangJp" onclick="setLangView('jp')">🇯🇵 Yaponcha</button>
+        <button class="btn-toggle" id="btnLangUz" onclick="setLangView('uz')">🇺🇿 O'zbekcha</button>
+        <button class="btn-toggle" id="btnRecall" onclick="toggleRecallMode()">🧠 Yodlash rejimi</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Category Nav Tabs -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="filterCategory('all', this)">Barchasi</button>
+      <button class="tab-btn highlight" onclick="filterCategory('vocab', this)">📖 N1/N2/N3 Lug'at (Atamalar)</button>
+      <button class="tab-btn" onclick="filterCategory('emergency', this)">🆘 Favqulodda Iboralar</button>
+      <button class="tab-btn" onclick="filterCategory('jikoshoukai', this)">🌟 Jikoshoukai (1 daqiqa)</button>
+      <button class="tab-btn" onclick="filterCategory('danger', this)">⚠️ Eng Xavfli 4 Savol</button>
+      <button class="tab-btn" onclick="filterCategory('behavioral', this)">🧠 Kuchli/Zaif Tomonlar & Xarakter</button>
+      <button class="tab-btn" onclick="filterCategory('situational', this)">📍 Nozik & Vaziyatli Savollar</button>
+      <button class="tab-btn" onclick="filterCategory('projects', this)">🚀 5 Loyiha (6 savolli tahlil)</button>
+      <button class="tab-btn" onclick="filterCategory('self', this)">👤 Shaxsiy va Oila</button>
+      <button class="tab-btn" onclick="filterCategory('it', this)">💻 IT & Texnologiyalar</button>
+      <button class="tab-btn" onclick="filterCategory('japan', this)">🇯🇵 Yaponiya & Moslashuv</button>
+      <button class="tab-btn" onclick="filterCategory('cal', this)">🏢 CAL Kompaniyasi</button>
+      <button class="tab-btn" onclick="filterCategory('career', this)">🎯 Karyera & 5 Yillik Reja</button>
+      <button class="tab-btn" onclick="filterCategory('gyaku', this)">❓ 逆質問 (HR'ga savollar)</button>
+    </div>
+
+    <!-- NEW SECTION: JLPT N1/N2/N3 VOCABULARY & BUSINESS IDIOMS -->
+    <section class="category-section" data-cat="vocab">
+      <div class="section-title">
+        <span>📖 Suhbat Lug'ati — JLPT N1, N2, N3 & Biznes IT Atamalari</span>
+        <span class="count">Tarjimasi, kontekstual misol gapi va audio talaffuzi bilan</span>
+      </div>
+
+      <div class="vocab-filter-bar">
+        <button class="vocab-filter-btn active" onclick="filterVocabLevel('all', this)">Barchasi (30+)</button>
+        <button class="vocab-filter-btn" onclick="filterVocabLevel('N1', this)">🟣 JLPT N1</button>
+        <button class="vocab-filter-btn" onclick="filterVocabLevel('N2', this)">🔵 JLPT N2</button>
+        <button class="vocab-filter-btn" onclick="filterVocabLevel('N3', this)">🟢 JLPT N3 & Biznes</button>
+      </div>
+
+      <div class="vocab-grid" id="vocabGrid">
+
+        <!-- N1 VOCABULARY -->
+        <!-- 課題解決能力 (かだいかいけつのうりょく - Kadai Kaiketsu Nōryoku) -->
+        <div class="vocab-card" data-vlevel="N1" data-keywords="課題解決能力 かだいかいけつのうりょく kadai kaiketsu nouryoku muammo vazifa yechish qobiliyati problem solving">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">課題解決能力</div>
+                <div class="v-kana">かだいかいけつのうりょく</div>
+                <div class="v-romaji">Kadai Kaiketsu Nōryoku</div>
+              </div>
+              <span class="v-badge vb-n1">JLPT N1 / Biznes IT</span>
+            </div>
+            <div class="v-mean-uz">
+              <strong>Ma'nosi:</strong> Muammo va vazifalarni tahlil qilib, amaliy va konstruktiv yechim topish qobiliyati (Problem-solving ability).
+            </div>
+            <div class="v-note">
+              💡 Yapon IT kompaniyalari suhbatida chet ellik muhandislarda eng ko'p baholanadigan 1-raqamli ko'nikma. Dasturchi faqat berilgan buyruqni bajaruvchi emas, balki mijozning biznes muammosini texnologiya bilan yechuvchi shaxs bo'lishi kerak.
+            </div>
+            <div class="v-example">
+              <div class="v-ex-ja">「自らボトルネックを発見し、技術を用いて迅速に解決する<strong>課題解決能力</strong>を強みとしています。」</div>
+              <div class="v-ex-uz"><em>"Mustaqil ravishda muammo (bottleneck) ni aniqlab, texnologiya yordamida tezkor bartaraf etadigan vazifalarni hal qilish qobiliyatimni kuchli tomonim deb bilaman."</em></div>
+            </div>
+          </div>
+          <button class="v-speak-btn" onclick="speakText('かだいかいけつのうりょく。自らボトルネックを発見し、技術を用いて迅速に解決する課題解決能力を強みとしています。')">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+            Tinglash
+          </button>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N1" data-keywords="報連相 ほうれんそう hou-ren-so hisobot aloqa maslahat">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">報連相</div>
+                <div class="v-kana">ほうれんそう</div>
+                <div class="v-romaji">Hō-Ren-Sō</div>
+              </div>
+              <span class="badge badge-n1">N1 / Biznes</span>
+            </div>
+            <div class="v-meaning">Hisobot, aloqa va maslahatlashish (Yapon ish madaniyatining poydevori).</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「チーム開発では手遅れを防ぐため、日頃から小さなことでも報連相を徹底しています。」</div>
+              <div class="v-ex-uz">Jamoada kechikish bo'lmasligi uchun har doim mayda masalalarda ham hisobot va maslahatga qat'iy amal qilaman.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('ほうれんそう。チーム開発では手遅れを防ぐため、日頃から小さなことでも報連相を徹底しています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N1" data-keywords="即戦力 そくせんりょく sokusenryoku tayyor kadr tez foyda">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">即戦力</div>
+                <div class="v-kana">そくせんりょく</div>
+                <div class="v-romaji">Sokusenryoku</div>
+              </div>
+              <span class="badge badge-n1">N1</span>
+            </div>
+            <div class="v-meaning">Darhol amalda natija bera oladigan tayyor mutaxassis / kadr.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「入社後は研修を迅速に吸収し、早期に現場の即戦力として貢献いたします。」</div>
+              <div class="v-ex-uz">Ishga kirgach o'quv dasturini tez o'zlashtirib, imkon qadar erta jamoaga tayyor kadr bo'lib hissa qo'shaman.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('そくせんりょく。入社後は研修を迅速に吸収し、早期に現場の即戦力として貢献いたします。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N1" data-keywords="阿吽の呼吸 あうんのこきゅう aun no kokyuu sozssiz tushunish">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">阿吽の呼吸</div>
+                <div class="v-kana">あうんのこきゅう</div>
+                <div class="v-romaji">A-un no Kokyū</div>
+              </div>
+              <span class="badge badge-n1">N1</span>
+            </div>
+            <div class="v-meaning">So'zsiz bir-birini tushunish, ichki uyg'unlik bilan hamkorlik qilish.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「最初は日本の阿吽の呼吸に戸惑うかもしれませんが、密な対話で克服します。」</div>
+              <div class="v-ex-uz">Boshida yapon jamoalaridagi so'zsiz tushunish odatiga o'rganish vaqt olishi mumkin, lekin doimiy muloqot bilan buni yengaman.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('あうんのこきゅう。最初は日本の阿吽の呼吸に戸惑うかもしれませんが、密な対話で克服します。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N1" data-keywords="念頭に置く ねんとうにおく nentou ni oku yodda tutmoq diqqat">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">念頭に置く</div>
+                <div class="v-kana">ねんとうにおく</div>
+                <div class="v-romaji">Nentō ni oku</div>
+              </div>
+              <span class="badge badge-n1">N1</span>
+            </div>
+            <div class="v-meaning">Doimo yodda tutmoq, e'tibor markazida saqlamoq.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「開発では常にエンドユーザーの使いやすさと保守性を念頭に置いて設計します。」</div>
+              <div class="v-ex-uz">Dasturlashda doimo foydalanuvchining qulayligi va tizimning kelgusida oson saqlanishini yodda tutaman.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('ねんとうにおく。開発では常にエンドユーザーの使いやすさと保守性を念頭に置いて設計します。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N1" data-keywords="齟齬 そご sogo nomuvofiqlik xatolik ziddiyat">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">齟齬</div>
+                <div class="v-kana">そご</div>
+                <div class="v-romaji">Sogo</div>
+              </div>
+              <span class="badge badge-n1">N1</span>
+            </div>
+            <div class="v-meaning">Tushunmovchilik, nomuvofiqlik, tafovut (Discrepancy / Mismatch).</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「仕様の齟齬を防ぐため、ドキュメントと言葉の両方で認識を合わせました。」</div>
+              <div class="v-ex-uz">Texnik talablarda nomuvofiqlik bo'lmasligi uchun ham hujjat, ham og'zaki tushuntirish orqali fikrlarni bir xil qildik.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('そご。仕様の齟齬を防ぐため、ドキュメントと言葉の両方で認識を合わせました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N1" data-keywords="網羅する もうらする moura suru toliq qamrab olmoq">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">網羅する</div>
+                <div class="v-kana">もうらする</div>
+                <div class="v-romaji">Mōra suru</div>
+              </div>
+              <span class="badge badge-n1">N1</span>
+            </div>
+            <div class="v-meaning">To'liq qamrab olmoq, barcha holatlarni o'z ichiga olmoq.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「網羅的なテストケースを作成し、予期せぬ不具合を未然に防ぎました。」</div>
+              <div class="v-ex-uz">Barcha holatlarni qamrab oluvchi testlar yozib, kutilmagan nosozliklarning oldini oldim.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('もうらする。網羅的なテストケースを作成し、予期せぬ不具合を未然に防ぎました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N1" data-keywords="培う つちかう tsuchikau shakllantirmoq rivojlantirmoq">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">培う</div>
+                <div class="v-kana">つちかう</div>
+                <div class="v-romaji">Tsuchikau</div>
+              </div>
+              <span class="badge badge-n1">N1</span>
+            </div>
+            <div class="v-meaning">Tirishqoqlik bilan shakllantirmoq, rivojlantirmoq (Cultivate).</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「動画編集と個人開発を通じて、細部にこだわる粘り強さを培いました。」</div>
+              <div class="v-ex-uz">Video montaj va shaxsiy loyihalar orqali detallarga e'tibor berish sabr-toqatini shakllantirdim.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('つちかう。動画編集と個人開発を通じて、細部にこだわる粘り強さを培いました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N1" data-keywords="具現化する ぐげんかする gugenka suru amalga oshirmoq gavdalantirmoq">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">具現化する</div>
+                <div class="v-kana">ぐげんかする</div>
+                <div class="v-romaji">Gugenka suru</div>
+              </div>
+              <span class="badge badge-n1">N1</span>
+            </div>
+            <div class="v-meaning">G'oya yoki rejalarni amalda moddiy mahsulotga (kodga) aylantirmoq.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「ビジネスの構想を高品質なコードとして具現化することに情熱を感じます。」</div>
+              <div class="v-ex-uz">Biznes g'oyalarini yuqori sifatli kod sifatida hayotga tatbiq etish menga katta zavq bag'ishlaydi.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('ぐげんかする。ビジネスの構想を高品質なコードとして具現化することに情熱を感じます。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N1" data-keywords="牽引する けんいんする kenin suru yetaklamoq oldinga boshlamoq">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">牽引する</div>
+                <div class="v-kana">けんいんする</div>
+                <div class="v-romaji">Ken'in suru</div>
+              </div>
+              <span class="badge badge-n1">N1</span>
+            </div>
+            <div class="v-meaning">Yetaklamoq, lokomotiv bo'lib oldinga boshlamoq.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「将来は技術力とマネジメント力で、開発チームを力強く牽引するリーダーになります。」</div>
+              <div class="v-ex-uz">Kelgusida texnik bilim va boshqaruv mahorati bilan jamoani oldinga boshlaydigan yetakchi bo'laman.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('けんいんする。将来は技術力とマネジメント力で、開発チームを力強く牽引するリーダーになります。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- N2 VOCABULARY -->
+        <!-- 課題 (かだい - Kadai) -->
+        <div class="vocab-card" data-vlevel="N2" data-keywords="課題 かだい kadai vazifa muammo masala challenge o'sish nuqtasi">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">課題</div>
+                <div class="v-kana">かだい</div>
+                <div class="v-romaji">Kadai</div>
+              </div>
+              <span class="v-badge vb-n2">JLPT N2 / Biznes IT</span>
+            </div>
+            <div class="v-mean-uz">
+              <strong>Ma'nosi:</strong> 1. Vazifa, topshiriq (task). 2. Yechilishi kerak bo'lgan konstruktiv masala, chaqiruv (challenge/issue). 3. O'z ustida ishlash jihati (growth area).
+            </div>
+            <div class="v-note">
+              💡 <strong>"問題" (Mondai) bilan farqi:</strong> "問題" — yuz bergan salbiy xatolik/nosozlik (bug, kutilmagan salbiy hodisa). "課題" esa maqsadga (理想・目標) erishish uchun oldinga qo'yilgan konstruktiv vazifa va yechim yo'li. Yapon suhbatdoshlari "kamchiligingiz nima?" deb emas, «あなたの現在の課題は何ですか？» deb so'raydi.
+            </div>
+            <div class="v-example">
+              <div class="v-ex-ja">「私の現在の技術的<strong>課題</strong>は、上流工程である要件定義と大規模システムアーキテクチャの設計力です。」</div>
+              <div class="v-ex-uz"><em>"Mening hozirgi texnik vazifam (o'rganishim kerak bo'lgan soham) — yuqori bosqich bo'lgan talablarni shakllantirish (要件定義) va katta tizimlar arxitekturasini loyihalash qobiliyatidir."</em></div>
+            </div>
+          </div>
+          <button class="v-speak-btn" onclick="speakText('かだい。私の現在の技術的課題は、上流工程である要件定義と大規模システムアーキテクチャの設計力です。')">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+            Tinglash
+          </button>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N2" data-keywords="志望動機 しぼうどうき shibou douki ishga topshirish sababi">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">志望動機</div>
+                <div class="v-kana">しぼうどうき</div>
+                <div class="v-romaji">Shibō Dōki</div>
+              </div>
+              <span class="badge badge-n2">N2</span>
+            </div>
+            <div class="v-meaning">Ishga yoki o'qishga topshirish maqsadi, ichki motivatsiya.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「御社を志望した動機は、挑戦を尊ぶ文化と大手案件での成長機会にあります。」</div>
+              <div class="v-ex-uz">Kompaniyangizni tanlaganim sababi — yangilikka intilish muhiti va yirik loyihalarda o'sish imkoniyatidir.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('しぼうどうき。御社を志望した動機は、挑戦を尊ぶ文化と大手案件での成長機会にあります。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N2" data-keywords="貢献する こうけんする kouken suru hissa qoshmoq foyda">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">貢献する</div>
+                <div class="v-kana">こうけんする</div>
+                <div class="v-romaji">Kōken suru</div>
+              </div>
+              <span class="badge badge-n2">N2</span>
+            </div>
+            <div class="v-meaning">Hissa qo'shmoq, jamoaga yoki kompaniyaga foyda keltirmoq.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「自身のフルスタック技術とN2の語学力を活かし、御社の事業拡大に貢献します。」</div>
+              <div class="v-ex-uz">Fullstack ko'nikmalarim va N2 darajadagi tilim bilan kompaniyangiz rivojiga hissa qo'shaman.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('こうけんする。自身のフルスタック技術とN2の語学力を活かし、御社の事業拡大に貢献します。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N2" data-keywords="効率化 こうりつか kouritsuka samaradorlik tezlik">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">効率化</div>
+                <div class="v-kana">こうりつか</div>
+                <div class="v-romaji">Kōritsuka</div>
+              </div>
+              <span class="badge badge-n2">N2</span>
+            </div>
+            <div class="v-meaning">Samaradorlikni oshirish, ortiqcha mehnatni qisqartirish.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「手作業で行われていた在庫集計を自動化し、作業時間の効率化を達成しました。」</div>
+              <div class="v-ex-uz">Qo'lda qilinayotgan ombor hisob-kitobini avtomatlashtirib, ish vaqti samaradorligini oshirdim.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('こうりつか。手作業で行われていた在庫集計を自動化し、作業時間の効率化を達成しました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N2" data-keywords="堅牢性 けんろうせい kenrousei mustahkamlik chidamlilik">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">堅牢性</div>
+                <div class="v-kana">けんろうせい</div>
+                <div class="v-romaji">Kenrōsei</div>
+              </div>
+              <span class="badge badge-n2">N2</span>
+            </div>
+            <div class="v-meaning">Tizimning mustahkamligi, buzilmasligi (Robustness).</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「日本の顧客が求める堅牢性の高いシステム設計を一から学びたいです。」</div>
+              <div class="v-ex-uz">Yapon mijozlari talab qiladigan o'ta mustahkam tizim loyihalashni boshidan mukammal o'rganmoqchiman.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('けんろうせい。日本の顧客が求める堅牢性の高いシステム設計を一から学びたいです。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N2" data-keywords="柔軟性 じゅうなんせい juunansei moslashuvchanlik">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">柔軟性</div>
+                <div class="v-kana">じゅうなんせい</div>
+                <div class="v-romaji">Jūnansei</div>
+              </div>
+              <span class="badge badge-n2">N2</span>
+            </div>
+            <div class="v-meaning">Vaziyatga tez moslasha olish xususiyati (Flexibility).</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「未経験のフレームワークにも柔軟性を持って取り組み、短期間で習得します。」</div>
+              <div class="v-ex-uz">Avval ishlatmagan freymvorklarga ham moslashuvchanlik bilan yondashib, tezda o'zlashtiraman.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('じゅうなんせい。未経験のフレームワークにも柔軟性を持って取り組み、短期間で習得します。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N2" data-keywords="妥協する だきょうする dakyou suru murosaga bormoq sifatni pasaytirmoq">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">妥協する</div>
+                <div class="v-kana">だきょうする</div>
+                <div class="v-romaji">Dakyō suru</div>
+              </div>
+              <span class="badge badge-n2">N2</span>
+            </div>
+            <div class="v-meaning">Murosaga bormoq, talabni yoki sifatni pasaytirmoq.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「コードのセキュリティと品質に関しては、妥協せずにテストを徹底します。」</div>
+              <div class="v-ex-uz">Kod xavfsizligi va sifati borasida aslo murosaga bormay, testlarni oxirigacha olib boraman.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('だきょうする。コードのセキュリティと品質に関しては、妥協せずにテストを徹底します。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N2" data-keywords="協調性 きょうちょうせい kyouchousei hamjihatlik jamoaviylik">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">協調性</div>
+                <div class="v-kana">きょうちょうせい</div>
+                <div class="v-romaji">Kyōchōsei</div>
+              </div>
+              <span class="badge badge-n2">N2</span>
+            </div>
+            <div class="v-meaning">Jamoa a'zolari bilan til topishib, hamjihat ishlash qobiliyati.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「チーム開発では協調性を第一に考え、お互いの意見を傾聴することを心がけています。」</div>
+              <div class="v-ex-uz">Jamoada hamjihatlikni birinchi o'ringa qo'yaman va bir-birimizning fikrimizni tinglashga odatlanganman.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('きょうちょうせい。チーム開発では協調性を第一に考え、お互いの意見を傾聴することを心がけています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N2" data-keywords="率先して そっせんして sossen shite tashabbus bilan birinchi">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">率先して</div>
+                <div class="v-kana">そっせんして</div>
+                <div class="v-romaji">Sossen shite</div>
+              </div>
+              <span class="badge badge-n2">N2</span>
+            </div>
+            <div class="v-meaning">Tashabbus ko'rsatib, boshqalardan oldin o'z ixtiyori bilan.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「未知のエラーが発生した際も、率先して原因究明と修正に取り組みました。」</div>
+              <div class="v-ex-uz">Noma'lum xatolik chiqqanda ham tashabbus ko'rsatib, uning sababini topish va tuzatishga kirishdim.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('そっせんして。未知のエラーが発生した際も、率先して原因究明と修正に取り組みました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N2" data-keywords="把握する はあくする haaku suru tushunmoq egallamoq">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">把握する</div>
+                <div class="v-kana">はあくする</div>
+                <div class="v-romaji">Haaku suru</div>
+              </div>
+              <span class="badge badge-n2">N2</span>
+            </div>
+            <div class="v-meaning">Vaziyat yoki talablarni to'liq tushunib, o'zlashtirib olmoq.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「顧客が求める真の要件を正確に把握することが、開発成功の鍵です。」</div>
+              <div class="v-ex-uz">Mijoz istayotgan asl talabni aniq tushunib olish muvaffaqiyatning asosiy kalitidir.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('はあくする。顧客が求める真の要件を正確に把握することが、開発成功の鍵です。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N2" data-keywords="改善する かいぜんする kaizen suru isloh yaxshilash">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">改善する</div>
+                <div class="v-kana">かいぜんする</div>
+                <div class="v-romaji">Kaizen suru</div>
+              </div>
+              <span class="badge badge-n2">N2</span>
+            </div>
+            <div class="v-meaning">Doimiy yaxshilab, nuqsonlarni bartaraf etib borish (Kaizen).</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「データベースクエリを改善し、APIのレスポンス時間を35%削減しました。」</div>
+              <div class="v-ex-uz">Ma'lumotlar bazasi so'rovlarini yaxshilab, API kechikishini 35% ga qisqartirdim.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('かいぜんする。データベースクエリを改善し、APIのレスポンス時間を35%削減しました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N2" data-keywords="克服する こくふくする kokufuku suru yengib otmoq">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">克服する</div>
+                <div class="v-kana">こくふくする</div>
+                <div class="v-romaji">Kokufuku suru</div>
+              </div>
+              <span class="badge badge-n2">N2</span>
+            </div>
+            <div class="v-meaning">Qiyinchilik yoki to'siqni iroda bilan yengib o'tmoq.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「異文化生活の課題も、積極的なコミュニケーションと前向きな姿勢で克服します。」</div>
+              <div class="v-ex-uz">Boshqa madaniyatdagi qiyinchiliklarni ham ochiq muloqot va ijobiy yondashuv bilan yengib o'taman.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('こくふくする。異文化生活の課題も、積極的なコミュニケーションと前向きな姿勢で克服します。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N2" data-keywords="向上心 こうじょうしん koujoushin osishga intilish">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">向上心</div>
+                <div class="v-kana">こうじょうしん</div>
+                <div class="v-romaji">Kōjōshin</div>
+              </div>
+              <span class="badge badge-n2">N2</span>
+            </div>
+            <div class="v-meaning">Doimo o'z ustida ishlab, yuqori cho'qqilarga intilish hissi.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「常に向上心を持ち、最新のクラウド技術やアーキテクチャの習得に励んでいます。」</div>
+              <div class="v-ex-uz">Doim o'sishga intilib, eng so'nggi bulut texnologiyalari va arxitektura bilimlarini o'rganaman.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('こうじょうしん。常に向上心を持ち、最新のクラウド技術やアーキテクチャの習得に励んでいます。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N2" data-keywords="意思疎通 いしそつう ishisottsuu bir birini tushunish muloqot">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">意思疎通</div>
+                <div class="v-kana">いしそつう</div>
+                <div class="v-romaji">Ishi-sottsū</div>
+              </div>
+              <span class="badge badge-n2">N2</span>
+            </div>
+            <div class="v-meaning">O'zaro fikrni aniq yetkazish va bir-birini tushunish.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「日本人メンバーと齟齬のない意思疎通を図るため、ビジネス敬語を磨いています。」</div>
+              <div class="v-ex-uz">Yapon hamkasblar bilan tushunmovchiliksiz muloqot qilish uchun biznes keigosini mukammallashtirmoqdaman.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('いしそつう。日本人メンバーと齟齬のない意思疎通を図るため、ビジネス敬語を磨いています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <!-- N3 & BIZNES / IT ATAMALAR -->
+        <div class="vocab-card" data-vlevel="N3" data-keywords="ものづくり monozukuri mahsulot yaratish falsafasi">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">ものづくり</div>
+                <div class="v-kana">ものづくり</div>
+                <div class="v-romaji">Monozukuri</div>
+              </div>
+              <span class="badge badge-n3">N3 / Madaniyat</span>
+            </div>
+            <div class="v-meaning">Mahsulotni yuksak did, mehr va mukammallik bilan yaratish san'ati.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「日本のものづくりの精神に深く共感し、長く使われる品質の高いWebを作りたいです。」</div>
+              <div class="v-ex-uz">Yaponiyaning monozukuri ruhiyatiga qoyil qolaman va uzoq yillar xizmat qiladigan sifatli saytlar yaratmoqchiman.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('ものづくり。日本のものづくりの精神に深く共感し、長く使われる品質の高いWebを作りたいです。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N3" data-keywords="要件定義 ようけんていぎ youken teigi talablarni belgilash">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">要件定義</div>
+                <div class="v-kana">ようけんていぎ</div>
+                <div class="v-romaji">Yōken Teigi</div>
+              </div>
+              <span class="badge badge-n3">IT / Yuqori Bosqich</span>
+            </div>
+            <div class="v-meaning">Tizim talablarini belgilash (Requirements Specification).</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「要件定義からDB設計、実装まで一人でフルスタック開発を行いました。」</div>
+              <div class="v-ex-uz">Talablarni belgilashdan tortib ma'lumotlar bazasi loyihalash va kod yozishgacha mustaqil qildim.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('ようけんていぎ。要件定義からDB設計、実装まで一人でフルスタック開発を行いました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N3" data-keywords="逆質問 ぎゃくしつもん gyaku-shitsumon nomzodning savoli">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">逆質問</div>
+                <div class="v-kana">ぎゃくしつもん</div>
+                <div class="v-romaji">Gyaku-shitsumon</div>
+              </div>
+              <span class="badge badge-n3">Suhbat</span>
+            </div>
+            <div class="v-meaning">Nomzodning intervyuyerga beradigan qayta savoli.</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「面接の最後に意欲を示すため、会社の研修制度について逆質問をしました。」</div>
+              <div class="v-ex-uz">Suhbat oxirida o'z ishtiyoqimni ko'rsatish maqsadida kompaniyaning o'quv dasturi haqida savol berdim.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('ぎゃくしつもん。面接の最後に意欲を示すため、会社の研修制度について逆質問をしました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N3" data-keywords="非同期処理 ひどうきしょり hidouki shori asinxron">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">非同期処理</div>
+                <div class="v-kana">ひどうきしょり</div>
+                <div class="v-romaji">Hidōki Shori</div>
+              </div>
+              <span class="badge badge-n3">IT Atamasi</span>
+            </div>
+            <div class="v-meaning">Asinxron qayta ishlash (Asynchronous processing).</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「CeleryとRedisを用いて重い通知処理を非同期処理にし、APIを高速化しました。」</div>
+              <div class="v-ex-uz">Celery va Redis yordamida og'ir xabarnomalarni asinxron fonga olib, API ni tezlashtirdim.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('ひどうきしょり。セレリーとレディスを用いて重い通知処理を非同期処理にし、エーピーアイを高速化しました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <div class="vocab-card" data-vlevel="N3" data-keywords="架け橋 かけはし kakehashi koprik aloqa">
+          <div>
+            <div class="v-header">
+              <div>
+                <div class="v-kanji">架け橋</div>
+                <div class="v-kana">かけはし</div>
+                <div class="v-romaji">Kakehashi</div>
+              </div>
+              <span class="badge badge-n3">Metafora</span>
+            </div>
+            <div class="v-meaning">Bog'lovchi ko'prik (madaniyatlar yoki ikki tomon o'rtasida).</div>
+            <div class="v-example">
+              <div class="v-ex-jp">「将来は日本本社とウズベキスタン拠点を結ぶ技術の架け橋になりたいです。」</div>
+              <div class="v-ex-uz">Kelgusida Tokio bosh ofisi va Toshkent filiali o'rtasida texnologik ko'prik bo'lishni xohlayman.</div>
+            </div>
+          </div>
+          <div class="v-action">
+            <button class="btn-icon" onclick="speakJp('かけはし。将来は日本本社とウズベキスタン拠点を結ぶ技術の架け橋になりたいです。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: EMERGENCY PHRASES -->
+    <section class="category-section" data-cat="emergency">
+      <div class="emergency-panel">
+        <h2 style="font-size: 18px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px;">
+          <span>🆘</span> Suhbatdagi Favqulodda Vaziyatlar (Sensei Audio Ko'rsatmalari)
+        </h2>
+        <p style="font-size: 13.5px; color: var(--text-sub); margin-top: 6px;">
+          <strong>Oltin qoida:</strong> Agar savolni tushunmay qolsangiz, aslo taxmin qilib yoki mavzudan chetga chiqib javob bermang! Yapon biznes madaniyatida tushunmaganini xushmuomalalik bilan qayta so'rash (kikikaesu) yuksak professionalizm belgisi hisoblanadi.
+        </p>
+
+        <div class="emergency-grid">
+          <div class="emergency-card">
+            <div class="em-scenario">Savolni eshitmay yoki tushunmay qolganda</div>
+            <div class="em-jp">申し訳ございません。もう一度おっしゃっていただけますでしょうか？</div>
+            <div class="em-romaji">Moushiwake gozaimasen. Mou ichido osshatte itadakemasu deshou ka?</div>
+            <div class="em-uz">Kechirasiz, yana bir bor qaytarib yubora olasizmi?</div>
+            <button class="btn-icon" style="margin-top:8px;" onclick="speakJp('申し訳ございません。もう一度おっしゃっていただけますでしょうか？')">🔊 Tinglash</button>
+          </div>
+
+          <div class="emergency-card">
+            <div class="em-scenario">O'ylab olish uchun 2-3 soniya pauza kerak bo'lganda</div>
+            <div class="em-jp">少々お時間をいただけますでしょうか。少し考えをまとめさせてください。</div>
+            <div class="em-romaji">Shoushou ojikan o itadakemasu deshou ka. Sukoshi kangae o matomesasete kudasai.</div>
+            <div class="em-uz">Biroz vaqt bera olasizmi? Fikrimni jamlab olay.</div>
+            <button class="btn-icon" style="margin-top:8px;" onclick="speakJp('少々お時間をいただけますでしょうか。少し考えをまとめさせてください。')">🔊 Tinglash</button>
+          </div>
+
+          <div class="emergency-card">
+            <div class="em-scenario">Savol ma'nosiga aniqlik kiritmoqchi bo'lganda</div>
+            <div class="em-jp">〜という理解でよろしいでしょうか？</div>
+            <div class="em-romaji">...to iu rikai de yoroshii deshou ka?</div>
+            <div class="em-uz">...deb tushunsam to'g'rimi?</div>
+            <button class="btn-icon" style="margin-top:8px;" onclick="speakJp('という理解でよろしいでしょうか？')">🔊 Tinglash</button>
+          </div>
+
+          <div class="emergency-card">
+            <div class="em-scenario">Javobni tugatganda (yakuniy chiroyli nuqta)</div>
+            <div class="em-jp">以上です。よろしくお願いいたします。</div>
+            <div class="em-romaji">Ijō desu. Yoroshiku onegai itashimasu.</div>
+            <div class="em-uz">Shulardan iborat. Katta rahmat.</div>
+            <button class="btn-icon" style="margin-top:8px;" onclick="speakJp('以上です。よろしくお願いいたします。')">🔊 Tinglash</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: JIKOSHOUKAI -->
+    <section class="category-section" data-cat="jikoshoukai">
+      <div class="section-title">
+        <span>🌟 1 Daqiqalik Mukammal Jikoshoukai</span>
+        <span class="count">Vaqt: ~55-65 soniya</span>
+      </div>
+
+      <div class="q-card danger" data-keywords="jikoshoukai ozingizni tanishtiring self introduction ism farhod jdu">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#00</span>
+              <span class="badge badge-danger">Kritik Muhim</span>
+              <span class="badge badge-cat">Jikoshoukai</span>
+            </div>
+            <div class="q-jp">自己紹介をお願いします。（1分程度）</div>
+            <div class="q-uz">O'zingizni tanishtirib bering (taxminan 1 daqiqa).</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`はじめまして。ファルホド・ソイロフと申します。ウズベキスタン出身です。現在、日本デジタル大学、JDUの情報技術専攻に在籍しており、2027年春に卒業予定です。専門はフルスタック開発で、React、Next.js、Node.js、Pythonを使い、薬局向けのEC在庫管理システムBionexstarや、Google Gemini AIを活用したレシート分割アプリなど、実際に使われるサービスを開発してきました。語学面ではJLPT N2を取得しており、現在はビジネス日本語と日本のビジネスマナーを継続して勉強しています。日本のものづくりの精神と、品質を大切にする開発文化に深く共感しており、将来は日本のお客様と直接やり取りできるエンジニアとして、御社で長く貢献したいと考えております。本日は貴重なお時間をいただき、誠にありがとうございます。どうぞよろしくお願いいたします。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">
+              <span>日本語 (Yaponcha)</span>
+              <span style="font-size: 11px; color: var(--text-muted);">Tezlik: Tinch va ravon</span>
+            </div>
+            <p class="jp-text">
+はじめまして。ファルホド・ソイロフと申します。ウズベキスタン出身です。
+現在、日本デジタル大学（JDU）の情報技術専攻に在籍しており、2027年春に卒業予定です。
+
+専門はフルスタック開発で、React、Next.js、Node.js、Python（FastAPI）を使い、薬局向けのEC・在庫管理システム「Bionexstar」や、Google Gemini AIを活用した「レシート分割アプリ」など、実際にユーザーに使われるサービスを開発してきました。
+
+語学面ではJLPT N2を取得しており、現在はビジネス日本語と日本のビジネスマナーを継続して勉強しています。
+
+日本の「ものづくり」の精神と、品質を大切にする開発文化に深く惹かれており、将来は日本のお客様と直接要件をすり合わせられる信頼されるエンジニアとして、御社に長く貢献したいと考えております。
+
+本日は貴重なお時間をいただき、誠にありがとうございます。どうぞよろしくお願いいたします。
+            </p>
+          </div>
+
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Assalomu alaykum. Ismim Farhod Soyilov. O'zbekistondanman.
+Hozirda Japan Digital University (JDU) Axborot Texnologiyalari yo'nalishida o'qiyman va 2027-yil bahorida bitiraman.
+
+Mutaxassisligim — full-stack dasturlash: React, Next.js, Node.js va Python (FastAPI) yordamida dorixona uchun e-commerce va ombor tizimi «Bionexstar» hamda Google Gemini AI bilan ishlovchi «AI chek taqsimlovchi» kabi amaliy loyihalar yaratganman.
+
+Til bo'yicha JLPT N2 darajasiga egaman, hozirda biznes yapon tili va ish odobini o'rganishda davom etmoqdaman.
+
+Yaponiyaning «monozukuri» ruhi va sifatga asoslangan ishlab chiqish madaniyati meni juda qiziqtiradi. Kelajakda yapon mijozlari bilan bevosita muloqot qilib, loyihalarni muvaffaqiyatli amalga oshiradigan ishonchli muhandis bo'lib, kompaniyangizda uzoq muddat hissa qo'shmoqchiman.
+
+Bugun vaqtingizni ajratganingiz uchun samimiy minnatdorchilik bildiraman. Hamkorligimiz xayrli bo'lishini tilayman.
+            </p>
+          </div>
+
+          <div class="meta-box">
+            <div class="tip-box">
+              <strong>💡 HR Tahlili & Sensei Tavsiyasi:</strong>
+              1 daqiqalik mezon: Ism → Universitet (JDU nomi to'liq aytilishi shart: "Nihon Dejitaru Daigaku") → Mutaxassislik & Texnik stack → Aniq loyihalar (Bionexstar, Gemini AI) → N2 sertifikati → Kompaniyaga intilish va monozukuri → Oxirida ta'zim va minnatdorchilik. Ovoz baland, ravon va samimiy bo'lishi kerak.
+            </div>
+            <div class="followup-box">
+              <strong>🔍 Ehtimoliy Follow-up savol:</strong>
+              <div class="f-q">Q: 大学（JDU）では具体的にどのようなカリキュラムを学んでいますか？ (JDU'da qanday dastur asosida o'qiysiz?)</div>
+              <div class="f-a">A: 日本の大学基準のITカリキュラムと、日本語教育を並行して学んでいます。ITではアルゴリズム、Webシステム開発、データベース設計を実践的に学んでいます。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: ENG XAVFLI 4 SAVOL -->
+    <section class="category-section" data-cat="danger">
+      <div class="section-title">
+        <span>⚠️ Eng Xavfli 4 Savol (Kritik Filtrlash Bosqichi)</span>
+        <span class="count">HR aynan shu savollarda nomzodning samimiyligi va barqarorligini tekshiradi</span>
+      </div>
+
+      <!-- Xavfli 1: Nega Yaponiya -->
+      <div class="q-card danger" data-keywords="nega yaponiya why japan naze nihon monozukuri sifat madaniyat">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#01</span>
+              <span class="badge badge-danger">Eng Xavfli ❶</span>
+              <span class="badge badge-cat">Yaponiya</span>
+            </div>
+            <div class="q-jp">なぜ日本で働きたいのですか？他の国（欧米など）ではない理由は？</div>
+            <div class="q-uz">Nega aynan Yaponiyada ishlamoqchisiz? Nega boshqa davlatlar (masalan, Yevropa yoki AQSH) emas?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`日本で働きたい理由は3つあります。1つ目は、日本のものづくりと品質への徹底的なこだわりに深く共感しているからです。欧米ではスピード重視のケースが多いですが、日本のシステム開発は細部のセキュリティや耐久性、ユーザーへの配慮を極めて大切にします。私もエンジニアとして、ただ動くだけでなく、長く信頼される高品質なシステムを作りたいと考えています。2つ目は、大学で日本のIT教育と日本語を学んできて、すでに日本文化への適応準備ができている点です。3つ目は、短期的な滞在ではなく、日本に定住し、長期的なキャリアを築きたいという強い意志があるからです。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+日本で働きたい理由は主に3点ございます。
+
+第1に、日本の「ものづくり」と品質への徹底的なこだわりに深く共感しているからです。欧米のITではスピード重視でリリース後に修正するアプローチも多いですが、日本のエンジニアリングは初期設計、セキュリティ、運用の堅牢性、そしてユーザーへの細やかな配慮を極めて大切にします。私自身、ただ動くコードではなく、長年安定して社会を支える「高品質なものづくり」を極めたいと考えています。
+
+第2に、私はJDUで3年間、日本のIT教育カリキュラムと日本語を並行して学んでまいりました。単なる憧れではなく、日本の文化や仕事の進め方（報連相など）を理解した上で目指しています。
+
+第3に、一時的な出稼ぎではなく、日本に根を下ろして10年、20年と長期的なキャリアを築きたいと考えているからです。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Yaponiyada ishlashni xohlashimning 3 ta asosiy sababi bor:
+
+1. Yaponiyaning «monozukuri» ruhi va sifatga bo'lgan o'ta qat'iy e'tiboriga qoyil qolaman. G'arbda tezlik ustuvor bo'lib, xatolarni keyin to'g'irlash odatiy hol, Yaponiyada esa boshidanoq tizim xavfsizligi, barqarorligi va foydalanuvchiga nisbatan yuksak e'tibor birinchi o'ringa qo'yiladi. Men ham nafaqat ishlaydigan, balki yillar davomida ishonch bilan xizmat qiladigan sifatli dastur yaratishni o'rganmoqchiman.
+
+2. Men JDUda 3 yil davomida aynan Yaponiya IT dasturi va yapon tilini o'rgandim. Bu shunchaki xomxayol emas, balki Yaponiyaning ish madaniyati (masalan, Hou-Ren-So)ni o'rganib qilingan ongli tanlovdir.
+
+3. Men Yaponiyaga qisqa muddatga ishlab pul topish uchun emas, balki doimiy yashab, 10-20 yillik uzoq professional karyera qurish niyatidaman.
+            </p>
+          </div>
+          <div class="meta-box">
+            <div class="tip-box">
+              <strong>💡 HR Nimani Tekshiradi:</strong>
+              "Maoshi yaxshi ekan" yoki "Anime yoqadi" degan nomzodlar darhol yiqiladi. HR nomzodning Yaponiyada uzoq yillar qolib ishlashiga, yapon ish uslubi (an'anaviy intizom, sifatga sadoqat)ga mos kelishiga ishonch hosil qilishi kerak.
+            </div>
+            <div class="followup-box">
+              <strong>🔍 Ehtimoliy Follow-up savol:</strong>
+              <div class="f-q">Q: 日本の労働環境や残業について、どう考えていますか？ (Yaponiyadagi ish soatlari va overtime haqida nima deb o'ylaysiz?)</div>
+              <div class="f-a">A: 成果を出すための努力は惜しみません。ただし、業務を効率化して残業を減らす工夫（自動化や事前のタスク整理）を自ら行い、チーム全体の生産性向上にも貢献したいです。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Xavfli 2: Nega CAL -->
+      <div class="q-card danger" data-keywords="nega cal why cal challenge and lead autsorsing toshkent akihabara">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#02</span>
+              <span class="badge badge-danger">Eng Xavfli ❷</span>
+              <span class="badge badge-cat">CAL Kompaniyasi</span>
+            </div>
+            <div class="q-jp">数あるIT企業の中で、なぜ弊社（株式会社CAL）なのですか？</div>
+            <div class="q-uz">Ko'plab IT kompaniyalari orasida nega aynan bizni (CAL Co., Ltd.) tanladingiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`御社を志望する最大の理由は、Challenge and Leadという理念のもと、パナソニックやNEC、NTTなど日本の最先端企業の大規模プロジェクトに携わり、多様な技術分野で急速に成長できる環境があるからです。御社は売上170億円、3300名以上の社員を擁し、外国籍エンジニアが約10%活躍しており、研修と育成の体制が非常に整っています。さらに、タシケントにも拠点があり、ウズベキスタン出身の私にとって非常に親しみと心強さを感じています。自社開発の単一サービスにとどまらず、多様な産業のDXに貢献できる御社でこそ、私のフルスタック技術と適応力を最も活かせると確信しております。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+御社を志望する理由は3点ございます。
+
+第1に、「Challenge And Lead（挑戦と先導）」という社名のとおり、挑戦を重んじる環境で、パナソニック、NEC、NTT、トヨタシステムズなど、日本を代表する大手クライアントの重要プロジェクトに参画できる点です。特定の1つのサービスに閉じず、多様な業界（製造・通信・金融・Web）の大規模システムに携わることで、エンジニアとして急速に技術の幅を広げられる点に強く惹かれました。
+
+第2に、従業員3,300名以上の規模でありながら、外国籍エンジニアが約10％在籍し、入社後の研修や教育、キャリア支援の体制が確立されている点です。外国籍社員が安心して技術と日本語を高め、リーダーへとステップアップできる実績があります。
+
+第3に、御社はウズベキスタンのタシケントにも拠点を展開されており、両国の架け橋となるビジョンに深く共感いたしました。私のフルスタック開発力と、日本語力を活かして、将来的に両拠点の連携にも貢献したいと考えております。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+CAL kompaniyasini tanlaganimning 3 ta sababi bor:
+
+1. «Challenge And Lead» shioriga mos ravishda, kompaniyangiz Panasonic, NEC, NTT, Toyota Systems kabi Yaponiyaning yetakchi gigantlari uchun murakkab tizimlar ishlab chiqadi. Bitta tor mahsulot bilan cheklanib qolmay, turli sohalar (ishlab chiqarish, aloqa, moliya) tizimlarida qatnashib, muhandis sifatida keng qamrovli o'sish imkoniyati bor.
+
+2. 3,300 dan ortiq xodimingiz bo'lishiga qaramay, 10% xorijiy muhandislar faol ishlamoqda hamda xodimlar uchun mustahkam o'quv va moslashuv (onboarding) dasturlari yo'lga qo'yilgan. Bu chet ellik muhandisning bemalol o'sib, loyiha rahbarigacha ko'tarilishiga imkon beradi.
+
+3. Kompaniyangizning Toshkentda ham vakolatxonasi mavjudligi menga katta ishonch bag'ishlaydi. Kelajakda Yaponiya va O'zbekiston ofislari o'rtasida mustahkam ko'prik bo'lib xizmat qilmoqchiman.
+            </p>
+          </div>
+          <div class="meta-box">
+            <div class="tip-box">
+              <strong>💡 Aniq raqamlar quroli:</strong>
+              1990-yil asos solingan, 17 mlrd yen yillik aylanma, 3,300+ xodim, 10% chet ellik, Tokio Akihabara bosh ofis, Toshkent filiali. Bu raqamlarni tilingizdan eshitgan HR sizning kompaniyani chindan ham jiddiy o'rganganingizga 100% tan beradi!
+            </div>
+            <div class="followup-box">
+              <strong>🔍 Ehtimoliy Follow-up savol:</strong>
+              <div class="f-q">Q: アウトソーシング（SES）では、希望しない勤務地や技術スタックになる可能性もありますが、大丈夫ですか？ (SES modelida siz kutmagan joy yoki texnologiya loyihasiga tushib qolsangiz, nima qilasiz?)</div>
+              <div class="f-a">A: 全く問題ございません。私は新しい技術を短期間でキャッチアップするのが得意です。未知の環境や技術こそ、自らを成長させる絶好のチャンスと捉えて前向きに取り組みます。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Xavfli 3: Nega IT -->
+      <div class="q-card danger" data-keywords="nega it why it dasturlash kod muammolarni hal qilish">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#03</span>
+              <span class="badge badge-danger">Eng Xavfli ❸</span>
+              <span class="badge badge-cat">IT Sohasiga Qiziqish</span>
+            </div>
+            <div class="q-jp">なぜIT業界・ソフトウェアエンジニアを選んだのですか？</div>
+            <div class="q-uz">Nega aynan IT sohasini va dasturchi muhandislik kasbini tanlagansiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`IT業界を選んだ理由は、自らの手でコードを書き、社会や人々の現実の課題を直接解決できる点に最も大きな情熱を感じるからです。高校時代から論理的な思考やものづくりが好きでした。大学に入り、実際に薬局の在庫管理システムやAIアプリを開発し、ユーザーが便利に使ってくれる姿を見たとき、ソフトウェアが社会に与える影響力の大きさを実感しました。また、技術が常に進化し、生涯を通じて学び続けられる点も、向上心の強い私の性格に合致しています。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+ITエンジニアを選んだ理由は、頭の中のアイデアや論理的な設計をコードによって具現化し、人の生活やビジネスの課題を直接解決できる点に最大の魅力を感じたからです。
+
+幼少期からロジカルなパズルや仕組み作りに興味がありました。大学でプログラミングを学び始め、最初に作ったWebアプリが画面で動き、誰かの役に立ったときの感動が原体験となっています。
+
+特に、薬局向けのシステムを一人で開発した際、手作業で何時間もかかっていた在庫管理がワンクリックで完了するようになったことで、「エンジニアの仕事は人の時間を生み出し、社会の効率を高める尊い仕事だ」と確信いたしました。技術が日進月歩で進化する点も、知的好奇心の強い私にとって常に前進し続けられる最高の領域です。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+IT sohasini tanlaganimning boisi — miyadagi mantiqiy g'oyani kod orqali real mahsulotga aylantirish va insonlar hamda biznesning real muammolarini yechish menga cheksiz zavq beradi.
+
+Yoshligimdan mantiqiy masalalar va mexanizmlarni o'rganishga qiziqardim. Universitetda kod yozishni boshlaganimda, yozgan dasturim ishlayotganini va kimgadir foyda keltirayotganini ko'rgan paytimdagi tuyg'u eng katta turtki bo'ldi.
+
+Ayniqsa, dorixona uchun tizim yaratganimda, xodimlar soatlab qo'lda bajaradigan ombor hisob-kitobini bitta tugma orqali soniyalarda bajaradigan qilib berdim. O'shanda dasturchilik — insonlarga vaqt hadya qiladigan va jamiyat samaradorligini oshiradigan juda olijanob kasb ekanligiga ishondim.
+            </p>
+          </div>
+          <div class="meta-box">
+            <div class="tip-box">
+              <strong>💡 HR Tahlili:</strong>
+              "Oyliklari yuqori bo'lgani uchun" degan so'z qat'iyan taqiqlanadi. Muammo yechish quvonchi (Problem Solving Joy) va insonlarga foyda keltirish istagi eng yaxshi taassurot qoldiradi.
+            </div>
+            <div class="followup-box">
+              <strong>🔍 Ehtimoliy Follow-up savol:</strong>
+              <div class="f-q">Q: 開発で行き詰まったとき、どのようにモチベーションを保ちますか？ (Dasturlashda kod ishlamay boshi berk ko'chaga kirganda qanday yo'l tutasiz?)</div>
+              <div class="f-a">A: 感情的にならず、問題を最小単位に分解（デバッグ）します。公式ドキュメントを読み直し、どうしても解決しない場合は先輩やチームに客観的な視点を求めて速やかに解決します。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Xavfli 4: Loyiha haqida batafsil -->
+      <div class="q-card danger" data-keywords="loyiha haqida project details bionexstar olma receipt splitter maydon">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#04</span>
+              <span class="badge badge-danger">Eng Xavfli ❹</span>
+              <span class="badge badge-cat">Loyiha Tafsilotlari</span>
+            </div>
+            <div class="q-jp">今まで開発したプロジェクトの中で、最も自信のあるものを詳しく教えてください。</div>
+            <div class="q-uz">Hozirgacha qilgan loyihalaringiz ichida eng faxrlanadiganingiz haqida batafsil aytib bering.</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`最も誇りに思っているのは、現在も稼働しているオンライン薬局プラットフォーム「Bionexstar」です。このシステムでは、医薬品の複雑なデータ構造と厳格な在庫管理を一人でフルスタック開発いたしました。React 19とTypeScript、Node.js、PostgreSQL、Prismaを採用し、JWT認証によるセキュアな管理者ダッシュボードを構築しました。技術的な課題としては、数千点の医薬品をリアルタイムに検索する際の遅延がありましたが、データベースのインデックス最適化と検索デバウンス処理の実装により、検索速度を約2.7倍向上させました。手作業による在庫のミスをなくし、実際のビジネスに大きく貢献できた点で強い達成感を感じています。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+最も自信があるのは、現在本番運用されている「Bionexstar」というオンライン薬局・在庫管理プラットフォームです。
+
+【課題】薬局業界では、数千点におよぶ医薬品のバリエーション、有効期限、価格改定をExcel等の手作業で管理しており、在庫の齟齬や確認に莫大な時間がかかっていました。
+【担当】私は一人で要件定義、DB設計からフルスタック実装までを一貫して担当しました。
+【技術環境】フロントエンドはReact 19とTypeScript、バックエンドはNode.jsとExpress、データベースにはPostgreSQLとPrisma ORMを採用しました。
+【工夫と成果】大量データ検索時のレスポンス改善のため、複合インデックスの設計とフロントエンドのDebounce処理を導入し、検索レスポンス速度を2.7倍向上させました。またJWT認証とロールベースの権限管理により、セキュアな在庫管理を実現しました。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Eng faxrlanadigan loyiham — hozirda real ishlayotgan «Bionexstar» onlayn dorixona va ombor tizimidir.
+
+- Muammo: Dorixonada minglab dori turlari, muddatlari va narxlari Excel kabi usullarda qo'lda boshqarilar, natijada omborda xatolar va ortiqcha vaqt yo'qotilardi.
+- Mening rolim: Tizim talablarini belgilash, ma'lumotlar bazasi arxitekturasini chizish va to'liq dasturlashni (Fullstack) yakka o'zim bajardim.
+- Texnologiyalar: React 19, TypeScript, Node.js, Express, PostgreSQL, Prisma ORM, Tailwind CSS.
+- Natija: Minglab dorilar orasidan qidiruvni tezlashtirish uchun bazada kompozit indekslar va frontendda debounce joriy qildim, qidiruv tezligi 2.7 barobarga oshdi. JWT autentifikatsiya orqali xavfsiz boshqaruv ta'minlandi.
+            </p>
+          </div>
+          <div class="meta-box">
+            <div class="tip-box">
+              <strong>💡 Sensei Ko'rsatmasi (STAR Metodi):</strong>
+              Loyihani tushuntirganda har doim 4 qadamga bo'ling:
+              1. <strong>Situation (Holat):</strong> Qanday biznes muammo bor edi?
+              2. <strong>Task (Vazifa):</strong> Sizning aniq vazifangiz nima edi?
+              3. <strong>Action (Amal):</strong> Qaysi texnologiya bilan qanday yechdingiz?
+              4. <strong>Result (Natija):</strong> Qanday aniq raqamli natijaga erishildi (2.7x tezlik, 35% latency tushishi, 1000+ foydalanuvchi)?
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- SECTION: BEHAVIORAL & SHAXSIYAT (KUCHLI/ZAIF TOMONLAR VA XARAKTER) -->
+    <section class="category-section" data-cat="behavioral">
+      <div class="section-title">
+        <span>🧠 Kuchli va Zaif Tomonlar & Shaxsiyat (Behavioral Savollar)</span>
+        <span class="count">HR nomzodning ruhiy yetukligi, halolligi va jamoaga mosligini aynan shu savollarda aniqlaydi</span>
+      </div>
+
+      <!-- B1: Kuchli va Zaif tomonlar -->
+      <div class="q-card danger" data-keywords="kuchli zaif tomonlar chousho tansho strengths weaknesses kamchilik yutuq">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#B1</span>
+              <span class="badge badge-danger">Eng Ko'p Tushadigan Savol</span>
+              <span class="badge badge-cat">Xarakter</span>
+            </div>
+            <div class="q-jp">ご自身の長所と短所（改善点）を具体的に教えてください。</div>
+            <div class="q-uz">O'zingizning kuchli va zaif (tuzatayotgan) tomonlaringizni aniq misol bilan aytib bering.</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('私の長所は、目標に向かって自律的に学び、最後までプロダクトとして形にする自走力と粘り強さです。薬局システムBionexstarやAIレシートアプリなど、未経験の技術があっても公式ドキュメントを自ら読み解き、一人で本番稼働まで完遂させました。一方、短所は、問題解決に熱中するあまり、細部のコードの美しさにこだわりすぎて時間をかけすぎてしまう傾向がある点です。この改善策として、現在は作業前にタスクごとのタイムボックスを明確に定め、タイマーを活用して全体スケジュールを厳守する習慣を徹底しております。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語 (Tavsiya etilgan eng kuchli javob)</div>
+            <p class="jp-text">
+【長所（強み）】
+私の最大の長所は、**「自律的な学習スピード（キャッチアップ力）」と「最後までやり抜く完遂力」**です。
+大学の講義を待つだけでなく、自ら課題を見つけて薬局向けEC・在庫管理システム「Bionexstar」や「AIレシート分割アプリ」などをゼロから本番運用まで作り切りました。未知のエラーや未経験のライブラリに直面しても、粘り強く公式ドキュメントを読み解き、自力で解決策を導き出すことができます。
+
+【短所（弱みと改善策）】
+一方、私の短所は、**「一つの技術的な課題に熱中しすぎて、細部の作り込みに時間を使いすぎてしまう点」**です。
+例えば、コードのリファクタリングやパフォーマンスの極限までの追求に没頭し、他のタスクとの時間配分のバランスを崩しかけたことがありました。
+この反省を活かし、現在は**作業開始前にTodoリストでタスクごとの制限時間（タイムボックス）と優先順位を明確に定め、タイマーを活用して全体スケジュールを厳守する**工夫を徹底しています。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Tushuntirish & Ma'nosi</div>
+            <p class="uz-text">
+<strong>Kuchli tomonim:</strong> O'z ustimda mustaqil ishlash, yangi texnologiyani tez o'zlashtirish va boshlagan ishni oxiriga yetkazish (完遂力). Bionexstar dorixona loyihasi va AI chek taqsimlovchi dasturni noldan to production darajasigacha yakka o'zim mustaqil olib chiqdim.
+<br><br>
+<strong>Zaif tomonim va tuzatish usuli:</strong> Biror texnik masalaga haddan ortiq berilib, kodni o'ta mukammal qilishga intilish natijasida vaqtni ko'p sarflab yuborish ehtimoli. Buni to'g'irlash uchun har kuni topshiriqlarga aniq vaqt chegarasi (Time-box / Pomodoro) qo'yib, umumiy reja va deadline'ga qat'iy amal qilishni odat qildim.
+            </p>
+          </div>
+          <div class="meta-box">
+            <div class="tip-box">
+              <strong>💡 Yapon HR Intervyusidagi Oltin Qoida:</strong>
+              1. <em>Zaif tomonni hech qachon shunchaki aytib to'xtamang!</em> Yapon kompaniyasi kamchiligingiz borligidan emas, uni qanday tuzatayotganingiz (改善策 / Kaizen harakati)dan qiziqadi.<br>
+              2. <em>Ishga bevosita ziyon yetkazadigan so'zlar qat'iyan taqiqlanadi:</em> "Kech qolaman", "Odamlar bilan chiqisholmayman", "Yolg'on gapiraman" deb aslo aytilmaydi.<br>
+              3. <em>Klişe so'zlar ham samarasiz:</em> "Men juda perfektsionistman" deyish o'rniga, yuqoridagi kabi "texnik detallarga ko'p vaqt berib yuborish va buni taymer/reja bilan nazorat qilish" deb tushuntirish eng professional ko'rinadi.
+            </div>
+            <div class="followup-box">
+              <strong>🔍 Ehtimoliy Follow-up savol:</strong>
+              <div class="f-q">Q: 自分一人で解決できない問題に直面したときはどうしますか？ (O'zingiz mustaqil yecholmaydigan qiyin muammoga duch kelsangiz nima qilasiz?)</div>
+              <div class="f-a">A: 「15分ルール」を設けています。15分間公式ドキュメントやログを調べても糸口が見えない場合は、手遅れにならないよう、現在の調査結果と仮説をまとめてすぐに先輩やチームに報連相（相談）します。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- B2: Zasetsu / Mag'lubiyat tajribasi -->
+      <div class="q-card danger" data-keywords="zasetsu maglubiyat xato eng katta xato failure muammo yechim">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#B2</span>
+              <span class="badge badge-danger">HR Sevimli Savoli</span>
+              <span class="badge badge-cat">Sinov Tajribasi</span>
+            </div>
+            <div class="q-jp">これまでに最も大きな挫折や失敗経験は何ですか？どう乗り越えましたか？</div>
+            <div class="q-uz">Hozirgacha duch kelgan eng katta xato yoki muvaffaqiyatsizligingiz nima? Uni qanday yenggansiz va nima xulosa chiqargansiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('最大の失敗経験は、薬局システムBionexstarの初期リリース時に、大量の医薬品データを投入した途端に検索機能が極端に重くなり、画面がフリーズしてしまったことです。ローカル環境では数十件のデータでしかテストしていなかったため、本番データの規模を見誤っていました。非常に焦りましたが、感情的にならず即座に原因を調査しました。SQLクエリの実行計画を分析し、インデックス不足と不要な再レンダリングが原因だと特定しました。そこでDBに複合インデックスを追加し、フロントにDebounce処理を実装して、検索速度を2.7倍に改善しました。この失敗から、開発初期から本番環境の負荷を想定したテストを行う重要性と、問題発生時に事実に基づいて冷静にデバッグする姿勢を学びました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語 (Aniq texnik voqea va yechim)</div>
+            <p class="jp-text">
+最大の失敗・挫折経験は、オンライン薬局システム「Bionexstar」の初期リリース時、数千点の医薬品データを入れた瞬間に検索クエリが極端に遅くなり、画面が一時フリーズしてしまったことです。
+
+ローカル環境では数十件のモックデータでテストして「問題なく動いている」と思い込んでいたため、本番データのスケールを見誤っていました。クライアントに迷惑をかけかねない状況に強いショックを受けました。
+
+しかし、落ち込んでいる暇はないと切り替え、直ちにプロファイリングを行いました。
+1. SQLクエリの実行計画（EXPLAIN ANALYZE）を確認し、インデックスが効いていないフルテーブルスキャンを発見しました。
+2. フロントエンドで文字入力ごとにAPIが連打されていたため、300msのDebounce処理を追加しました。
+3. 複合インデックスを設計して、検索速度を約2.7倍に向上させました。
+
+【学んだこと】
+「ローカルで動くこと」と「本番で安定すること」は全く別次元であると痛感しました。この経験以降、最初から大量データや負荷テストを想定して設計するプロ意識が身につきました。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Eng katta muvaffaqiyatsizlik — «Bionexstar» dorixona loyihasini ilk bor deploy qilganimda, minglab dorilar bazaga kiritilishi bilan qidiruv qotib qolgan. Lokal kompyuterda 20-30 ta ma'lumotda sinaganim sababli haqiqiy katta ma'lumotlar yuklamasini to'g'ri baholamagan edim.<br><br>
+Vahimaga tushmay, darhol analiz qildim: bazada kompozit indekslar qo'shdim, frontendda debounce o'rnatdim va tezlikni 2.7 barobarga oshirdim. Bu voqea menga har doim production sharoitidagi yuklamani oldindan sinash (Load testing) va xatolarga sovuqqonlik bilan yechim topish zarurligini o'rgatdi.
+            </p>
+          </div>
+          <div class="meta-box">
+            <div class="tip-box">
+              <strong>💡 HR Nimani Baholaydi?</strong>
+              Xatosiz inson yo'q. Yapon HR xatoni yashiradigan odamni emas, o'z xatosini mardlarcha tan olib, muammoni tahlil qila oladigan va kelajak uchun xulosa (Kyōkun / 教訓) chiqara oladigan mas'uliyatli muhandisni qidiradi.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- B3: Stressni boshqarish -->
+      <div class="q-card normal" data-keywords="stress bosim charchoq dam olish futbol montaj sport">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#B3</span>
+              <span class="badge badge-normal">Oddiy / Muhim</span>
+              <span class="badge badge-cat">Ruhiy Barqarorlik</span>
+            </div>
+            <div class="q-jp">仕事や学習でストレスやプレッシャーを感じた時、どう発散・管理していますか？</div>
+            <div class="q-uz">Ishda yoki o'qishda stress va ruhiy bosim bo'lganda, o'zingizni qanday tiklaysiz va boshqarasiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('ストレスの管理法として、主に3つの習慣を持っています。1つ目は、友人とミニサッカーをしたり散歩をして適度に身体を動かすことです。運動によって頭がリフレッシュされ、気分転換になります。2つ目は、DaVinci Resolveを使った動画編集などのクリエイティブな趣味に没頭することです。コードから一時的に離れて別のことに集中することで、脳の疲労が回復します。3つ目は、頭の中の悩みをノートに全て書き出し、自分でコントロールできる課題とできない課題を整理することです。これにより翌日は冷静に、クリアな思考で業務に集中することができます。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+主に3つの方法でストレスをセルフコントロールしております。
+
+第1に、**身体を動かすこと**です。週に一度は友人とミニサッカーをしたり、夕方にウォーキングをして汗を流すことで、デスクワーク特有の身体のこわばりをほぐしています。
+第2に、**動画編集というクリエイティブな没頭**です。DaVinci Resolveで映像のリズムを整える作業は、プログラミングとは違った右脳を使うため、良い気分転換になります。
+第3に、**「課題の言語化と客観視」**です。プレッシャーを感じたときは、何が原因かをノートに書き出し、「今自分ができること」に集中するよう気持ちを整理します。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Stressni 3 xil usul bilan samarali boshqaraman:
+1. Jismoniy harakat: Do'stlar bilan mini-futbol o'ynash va sayr qilish orqali tanani tetiklashtirish.
+2. Video montaj (DaVinci Resolve): Dasturlashdan boshqa ijodiy ishga chalg'ib, miyani yangilash.
+3. Muammolarni qog'ozga tushirish: Nima sababdan bosim bo'layotganini yozib olib, qo'limdan keladigan aniq vazifalarga e'tibor qaratish.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- B4: Atrofdagilar qanday ta'riflaydi -->
+      <div class="q-card normal" data-keywords="atrofdagilar baho dostlar jamoa siz haqingizda nima deydi">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#B4</span>
+              <span class="badge badge-normal">Oddiy</span>
+              <span class="badge badge-cat">Tashqi Baho</span>
+            </div>
+            <div class="q-jp">周囲の友人やチームメンバーから、どんな人だと言われることが多いですか？</div>
+            <div class="q-uz">Do'stlaringiz, kursdoshlaringiz yoki jamoa a'zolari sizni qanday inson deb ta'riflashadi?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('友人やチームメンバーからは、「有言実行で、最後まで責任を持ってやり抜く人」、そして「新しい技術をすぐキャッチアップして教えてくれる頼もしい人」と言われることが多いです。大学のグループ開発でも、誰も触ったことがないライブラリやAI APIがあれば、私が率先して仕様を読み込み、チーム全員が使えるようにセットアップしました。口先だけでなく行動で結果を示す姿勢を信頼してもらえていると感じております。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+周囲からは主に2つの点で評価されることが多いです。
+
+1つ目は、**「一度引き受けたことは最後までやり抜く責任感がある」**という点です。どんなに納期が厳しくても、途中で投げ出さずに品質を保って完成させるため、「安心して任せられる」と言われます。
+
+2つ目は、**「新しい技術を素早く学んでチームに共有してくれる行動力」**です。例えばAIのAPIや新しいUIフレームワークをチームで導入する際、私がまず率先してプロトタイプを作り、メンバーにノウハウを共有したことで感謝されました。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Atrofdagilar meni 2 ta jihatimni aytishadi:
+1. «Bergan va'dasining ustidan chiqadigan va ishni oxirigacha yetkazadigan mas'uliyatli inson».
+2. «Yangi texnologiyani birinchi bo'lib o'rganib, jamoaga o'rgatadigan faol inson».
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- B5: Qiyin xarakterli inson bilan ishlash -->
+      <div class="q-card warning" data-keywords="kelishmovchilik qiyin odam nizolashish conflict team disagreement">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#B5</span>
+              <span class="badge badge-warning">O'rta / Nozik</span>
+              <span class="badge badge-cat">Jamoaviy Hamkorlik</span>
+            </div>
+            <div class="q-jp">チームで意見が合わない人や、苦手なタイプの人とはどう接しますか？</div>
+            <div class="q-uz">Jamoada fikringiz to'g'ri kelmaydigan yoki xarakteri og'ir inson bilan qanday ishlaysiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('私は、感情と仕事を完全に切り離してプロフェッショナルとして接することを心がけています。まず、相手の意見を否定せず、なぜそのアプローチが良いと考えるのか、意図や技術的な根拠を最後まで傾聴します。そして、私自身の意見を述べる際も、個人的な感情ではなく「エンドユーザーの利便性」や「システムの保守性、納期」という客観的な共通の目標に照らし合わせて議論します。相手の長所を尊重し、目的志向で対話を重ねれば、どんなメンバーとも建設的な信頼関係を築けると信じています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+感情と業務を明確に分け、客観的なゴールを共有して対話することを徹底します。
+
+誰しも異なる考えや価値観を持っていますが、プロジェクトにおける共通のゴールは「高品質なシステムを納期通りに届け、顧客を喜ばせること」です。
+意見が対立した場合は、まず相手の提案の根拠を最後まで傾聴し、尊重します。その上で、「ユーザー体験」「保守性」「パフォーマンス」の3つの軸でどちらが優れているかを客観的に比較し、納得のいく合意を形成します。個人の好き嫌いではなく、リスペクトを持って接します。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Shaxsiy his-tuyg'uni ishdan butunlay ajrataman. Har bir insonning o'z qarashi bor, lekin jamoaning maqsadi bitta — sifatli tizimni o'z vaqtida topshirish. Fikrlar to'qnashganda avval hamkasbimni oxirigacha eshitaman (傾聴), keyin shaxsiyatga bormay "foydalanuvchi qulayligi" va "kod xavfsizligi" kabi obyektiv mezonlar bilan solishtirib kelishuvga erishamiz.
+            </p>
+          </div>
+        </div>
+      </div>
+
+          <!-- B6: Hozirgi asosiy vazifangiz (Kadai) va o'sish ustida ishlash -->
+      <div class="q-card danger" data-keywords="kadai 課題 vazifa muammo kamchilik kelajakdagi vazifa o'sish nuqtasi hozirgi vazifangiz o'rganish">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#B6</span>
+              <span class="badge badge-danger">Kritik Yapon Savoli</span>
+              <span class="badge badge-cat">O'z Ustida Ishlash (課題)</span>
+            </div>
+            <div class="q-jp">エンジニアとしての現在のあなたの「課題」は何ですか？またそれに対してどう取り組んでいますか？</div>
+            <div class="q-uz">Dasturchi sifatida hozirgi asosiy "vazifangiz" (o'sish nuqtangiz/kamchiligingiz) nima va buning ustida qanday ishlayapsiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('私の現在のエンジニアとしての課題は、システムの設計段階における要件定義力と、ビジネス視点でのアーキテクチャ設計です。これまでは技術的な実装力を中心に磨いてきましたが、クライアントの真の課題を解決するためには、上流工程の深い理解が不可欠だと感じています。この課題を克服するため、現在はJDUでの学習に加え、実務的な要件定義書の作成やオープンソースの大規模システム設計パターンを自ら研究しています。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+私の現在のエンジニアとしての<strong>課題</strong>は、システムの設計段階における<strong>要件定義力</strong>と、ビジネス視点での<strong>アーキテクチャ設計</strong>です。
+
+これまではコードを書く実装力やエラー解決を中心にスキルを磨いてまいりましたが、CALのように多様なクライアント企業のDXを支援するためには、技術だけでなく「顧客の業務課題を的確に捉え、上流工程から最適なシステムを提案する力」が不可欠であると痛感しております。
+この課題を克服するため、現在は日本デジタル大学（JDU）の授業や個人開発において、単にコードを書くだけでなく、事前の要件定義書やER図・シーケンス図の作成を徹底して行っております。また、現場で即戦力となれるよう、実際の現場で使われる設計パターンの研究にも自発的に取り組んでおります。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Mening dasturchi sifatidagi hozirgi asosiy vazifam (o'sish nuqtam) — tizimni loyihalash bosqichidagi <strong>talablarni aniqlash qobiliyati (要件定義)</strong> hamda biznes nuqtai nazaridan <strong>arxitekturani loyihalashdir</strong>.
+
+Shu paytgacha ko'proq kod yozish va xatolarni tuzatish ko'nikmalarimni charxlab keldim. Ammo CAL kabi turli mijozlarning raqamli transformatsiyasiga hissa qo'shish uchun faqat dasturlashning o'zi emas, balki "mijozning biznes vazifalarini to'g'ri anglab, yuqori bosqichdan boshlab eng maqbul tizimni taklif qila olish qobiliyati" shart ekanligini chuqur his qilyapman.
+Ushbu vazifani hal qilish uchun hozirda JDU ta'limida va shaxsiy loyihalarimda shunchaki kod yozmasdan, oldindan talablar hujjati, ER diagrammalari va ketma-ketlik chizmalarini puxta ishlab chiqishni odat qildim. Shuningdek, amaliyotda darhol tayyor kadr (sokusenryoku) bo'lish uchun sanoat darajasidagi arxitektura andozalarini mustaqil tadqiq qilyapman.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- SECTION: SITUATIONAL & SHINSA (NOZIK VA TUZOQ SAVOLLAR) -->
+    <section class="category-section" data-cat="situational">
+      <div class="section-title">
+        <span>📍 Nozik & Vaziyatli Savollar (HR Tuzoqlari va Sinovlar)</span>
+        <span class="count">Ish joyi, kutilmagan texnologiya, deadline kechikishi, birinchi tanlov va salomatlik</span>
+      </div>
+
+      <!-- S1: Qayerda ishlash, shahar tanlash -->
+      <div class="q-card warning" data-keywords="shahar joylashuv osaka tokyo nagoya fukuoka qayerda ishlash kinmuchi">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#S1</span>
+              <span class="badge badge-warning">Nozik Nuqta</span>
+              <span class="badge badge-cat">Joylashuv & Moslashuv</span>
+            </div>
+            <div class="q-jp">配属先や勤務地（東京以外、例えば大阪や名古屋、福岡など）について希望はありますか？地方配属になっても大丈夫ですか？</div>
+            <div class="q-uz">Ishlash joyi bo'yicha istagingiz bormi? Tokio bo'lmasdan boshqa shaharlarga (Osaka, Nagoya, Fukuoka) jo'natilsangiz rozi bo'lasizmi?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('勤務地については、全国どこへでも喜んで参ります。特定の地域にこだわりはなく、御社のプロジェクトで価値を発揮し、エンジニアとして最も成長できる場所で全力を尽くしたいと考えております。新しい土地や環境にも柔軟に適応できる自信がございます。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+勤務地につきましては、日本全国どこへでも喜んで配属に応じます。特定の都市にこだわりは一切ございません。
+
+私にとって最も重要なのは、「御社のクライアントに価値を提供し、エンジニアとして最も成長できる現場で全力を尽くすこと」です。東京はもちろん、大阪、名古屋、福岡など、どの拠点・現場であっても前向きに新しい環境に溶け込み、チームに貢献いたします。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Ishlash joyi bo'yicha Yaponiyaning istalgan shahriga (Tokio, Osaka, Nagoya, Fukuoka) borishga 100% tayyorman. Menga shahar emas, kompaniyaga foyda keltirish va muhandis sifatida o'sish muhim. Yangi muhitga juda tez moslashaman.
+            </p>
+          </div>
+          <div class="meta-box">
+            <div class="tip-box">
+              <strong>💡 HR Niyatini Bilish:</strong>
+              CAL butun Yaponiya bo'ylab filial va yirik korporativ mijozlarga ega. "Men faqat Tokioni xohlayman" degan nomzod kompaniya ehtiyojlariga moslashuvchan emas deb baholanadi. "Qayerda bo'lsa ham tayyorman" degan javob esa sizni darhol boshqa nomzodlardan ustun qo'yadi.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- S2: Kutilmagan texnologiya -->
+      <div class="q-card warning" data-keywords="kutilmagan texnologiya java c sharp legacy boshqa til stack">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#S2</span>
+              <span class="badge badge-warning">Moslashuvchanlik</span>
+              <span class="badge badge-cat">Texnologiya</span>
+            </div>
+            <div class="q-jp">あなたはReactやPythonが得意ですが、現場の都合でJavaやC#、あるいはレガシーなシステムを担当することになったらどうしますか？</div>
+            <div class="q-uz">Siz React va Python'ni bilasiz, lekin loyihada Java, C# yoki eski texnologiyalar bilan ishlash kerak deyilsa nima qilasiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('全く問題ございません、前向きに取り組ませていただきます。プログラミングの本質的な論理構造や設計思考は共通しているため、未知の言語であっても短期間でキャッチアップいたします。実際、御社をはじめとする大規模開発での需要を理解しているため、現在も自発的にJavaやSpring Bootの学習を進めております。どのような技術であっても、現場の課題解決に貢献することを最優先いたします。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+全く問題ございません。むしろ新たな技術領域を広げる絶好の機会と捉え、前向きに挑戦いたします。
+
+プログラミング言語やフレームワークは手段であり、本質は「ビジネスの課題を論理的に解決すること」だと考えております。私は新しい技術を短期間で習得することが得意ですし、実際、日本の大規模開発でJavaが主流であることを想定して、現在も自発的にJava（Spring Boot）の学習を進めております。どのような現場であっても即座に仕様をキャッチアップし、現場の戦力になります。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Mamnuniyat bilan qabul qilaman! Dasturlash tili bu vosita, asosiy maqsad esa biznes muammosini hal qilishdir. Fundamental mantiq barcha tillarda bir xil. Hatto hozirdanoq Java va Spring Boot'ni o'rganishni boshlaganman. Qanday texnologiya berilmasin, loyihaga tezda foyda keltirishni birinchi o'ringa qo'yaman.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- S3: Deadline kechikishi va Hou-Ren-So -->
+      <div class="q-card danger" data-keywords="deadline kechikish vaqt yetmay qolsa hourenso xatolik muammo">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#S3</span>
+              <span class="badge badge-danger">Eng Mashhur Tuzoq</span>
+              <span class="badge badge-cat">Hou-Ren-So (報連相)</span>
+            </div>
+            <div class="q-jp">納期の直前で、どうしても自分のタスクが予定通り終わらないと分かった場合、どう行動しますか？</div>
+            <div class="q-uz">Deadline'ga oz vaqt qolganda ish o'z vaqtida tugamasligini tushunib qolsangiz, nima qilasiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('遅延の可能性を認識した時点で、一人で抱え込まず、即座に上司やチームリーダーに報連相を行います。具体的には、どこまで完成しているか、何が原因で何時間の遅れが発生しそうか、そしてコア機能の先行リリースなどのリカバリー案を客観的事実に基づいて報告し、指示を仰ぎます。問題を隠さず早期に共有することが、プロジェクト全体の破綻を防ぐ最善策であると認識しております。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+遅延の可能性に気づいた瞬間に、**「決して一人で抱え込まず、即座に上司や先輩に報連相（相談）すること」**を徹底します。
+
+具体的には、以下の3点を整理して客観的に報告します：
+1. **進捗の現状:** どこまで完成しており、どこが未完成か
+2. **原因と遅延見込み:** 何がボトルネックで、あと何時間必要なのか
+3. **リカバリー案の提示:** 「必須のコア機能を先にリリースし、追加機能は後回しにする」「他のメンバーに一部タスクを分担していただく」などの現実的な選択肢
+
+ギリギリまで隠して最後に「できませんでした」となるのが最悪の事態です。早期共有こそがチームとクライアントを守る行動だと信じています。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Kechikish ehtimoli sezilishi bilanoq, o'sha zahotiyoq rahbarga va jamoaga erta hisobot (Hou-Ren-So) beraman. Nimasi tayyor, qayerida to'siq bo'ldi, qancha vaqt yetishmayapti va asosiy (core) funksiyalarni birinchi chiqarish rejasini aniq aytib maslahatlashaman. Oxirgi daqiqagacha yashirib keyin ulgurmadim deyish yapon kompaniyasida eng og'ir xatodir.
+            </p>
+          </div>
+          <div class="meta-box">
+            <div class="tip-box">
+              <strong>💡 Tuzoqdan Ehtiyot Bo'ling:</strong>
+              Agar "Men uxlamasdan tuni bilan ishlab bo'lsa ham ulguraman" desangiz, HR sizni yiqitadi! Chunki yapon madaniyatida bu "rejani buzish" va "jamoani xatardan ogohlantirmaslik" deb baholanadi. To'g'ri yo'l — darhol ochiq hisobot berishdir.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- S4: Boshqa kompaniyalar va 1-tanlov -->
+      <div class="q-card normal" data-keywords="birinchi tanlov boshqa kompaniyalar naitei taklif daiichi shibou">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#S4</span>
+              <span class="badge badge-normal">Samimiylik</span>
+              <span class="badge badge-cat">Kompaniya Sadoqati</span>
+            </div>
+            <div class="q-jp">現在、他社の選考も受けていますか？もし弊社から内定が出た場合、本当にご入社いただけますか？</div>
+            <div class="q-uz">Boshqa kompaniyalarga ham topshiryapsizmi? Agar biz ishga taklif (Naitei) bersak, aniq bizga kelasizmi?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('大学の就職活動として他社の説明会にも参加しておりますが、御社が私の第一志望でございます。御社のChallenge and Leadの理念、大手クライアントの大規模案件に挑戦できる環境、そして外国籍エンジニアへの手厚い育成体制に最も強く惹かれております。もし御社から内定をいただけた場合は、他社の選考をすべて辞退し、喜んで御社に入社いたします。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+大学の就職活動の一環として他社のお話も伺っておりますが、**「御社が私の第一志望（第1希望）」**でございます。
+
+御社の「Challenge And Lead」という理念、パナソニックやNTTなど日本の最先端企業の大規模案件で技術を磨ける点、そしてタシケント拠点とも連携できる可能性に最も強い魅力を感じております。
+
+もし本日、御社から内定をいただける機会に恵まれましたら、他社の選考は直ちにすべて辞退し、喜んで御社に入社することをここにお約束いたします。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+JDU orqali boshqa kompaniyalar tanishtiruvlarida ham qatnashyapman, lekin CAL mening BIRINCHI RAQAMLI TANLOVIMDIR (Dai-ichi shibou). Agar menga ishga kirish imkoni berilsa, boshqa barcha suhbatlarni to'xtatib, katta ishonch va xursandchilik bilan CAL'ga kirishimni va'da qilaman.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- S5: Sog'liq, ovqatlanish va mustaqil hayot -->
+      <div class="q-card normal" data-keywords="soglik salomatlik ovqat taom pishirish halol yapon taomlari jisoku">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#S5</span>
+              <span class="badge badge-normal">Oddiy</span>
+              <span class="badge badge-cat">Hayotiy Tayyorgarlik</span>
+            </div>
+            <div class="q-jp">健康状態はいかがですか？また、日本の生活や食事で制限や不安な点はありますか？</div>
+            <div class="q-uz">Sog'lig'ingiz qanday? Yaponiyada yashashda, taomlanishda biror muammo yoki cheklovlar bormi?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('健康状態は極めて良好で、これまで大きな病気や入院の経験もございません。体力を維持するため、定期的にミニサッカーなどの運動を行っています。また食事面でも制限はなく、自炊が得意ですので、栄養バランスを考えた自炊生活が可能です。日本の魚料理や和食も大好きですので、生活面での不安は一切ございません。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+健康状態は極めて良好です。これまで大きな病気や入院歴はなく、普段から週1回ミニサッカーをして体力を維持しています。
+
+食事や生活面での不安も全くございません。私は自炊が得意で、自ら食材を買ってバランスの良い食事を作ることができます。日本の魚料理や和食も美味しくいただけますし、文化や生活習慣の違いも楽しんで前向きに適応できる性格です。安心して業務に専念できます。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Sog'lig'im a'lo darajada, hech qachon kasalxonaga tushmaganman, har hafta sport bilan shug'ullanaman. Mustaqil ovqat pishirishni bilaman (自炊が得意), baliq va sabzavotli taomlarni yaxshi ko'raman. Turmushda hech qanday xavotir yo'q, bor e'tiborimni ishga qarata olaman.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- S6: Talabalik davrida eng berilib qilingan ish (Gakuchika) -->
+      <div class="q-card normal" data-keywords="gakuchika talabalik mehnati erishilgan natija faxr bionexstar kaiwa">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#S6</span>
+              <span class="badge badge-normal">Klassik HR Savoli</span>
+              <span class="badge badge-cat">Gakuchika (ガクチカ)</span>
+            </div>
+            <div class="q-jp">学生時代に学業以外も含めて、最も情熱を持って打ち込んだことは何ですか？（ガクチカ）</div>
+            <div class="q-uz">Talabalik davringizda darsdan tashqari eng qattiq berilib, faxrlanib bajargan ishingiz nima?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp('学業と並行して、実際のユーザーに使われるプロダクトを一から作り上げたことです。特に薬局システムBionexstarでは、一人で設計から本番運用まで完遂し、検索速度を2.7倍に改善しました。またKaiwa.liveというAIを活用した日本語学習アプリも自ら企画・開発しました。単に知識をインプットするだけでなく、エンジニアリングを通じて社会や人々の課題を解決することに最も熱中してまいりました。')">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+大学生活の中で最も情熱を注いだのは、**「実際の社会課題を解決する実用的なプロダクトを自分の手で作り切ること」**です。
+
+講義で理論を学ぶだけでなく、放課後や週末の時間を使って、地元薬局のための在庫管理システム「Bionexstar」を一人で設計から本番リリースまで完遂しました。また、AIを活用した日本語学習アプリ「Kaiwa.live」も開発しました。
+技術書を読むだけでなく、「動くソフトウェアにして人の役に立つ喜び」を体感したことが、学生時代に最も熱中し、エンジニアとしての基礎を築いた経験です。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Talabalikda eng berilib qilgan ishim — real jamiyat muammolarini hal qiluvchi amaliy dasturlar yaratish bo'ldi. Darslardan tashqari dorixona ombor tizimi Bionexstar'ni yakka o'zim oxirigacha yetkazdim hamda Kaiwa.live AI platformasini qildim. Nazariya bilan cheklanmay, real insonlarga foyda keltiradigan tizim yaratish menga eng katta quvonch berdi.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+<!-- SECTION: 5 TA ASOSIY LOYIHA VA 6 TA SAVOLLI TAHLIL -->
+    <section class="category-section" data-cat="projects">
+      <div class="section-title">
+        <span>🚀 5 Ta Loyiha — 6 Savolli Chuqur Tahlil</span>
+        <span class="count">Rezyumedagi loyihalar bo'yicha tayyor texnik javoblar</span>
+      </div>
+
+      <p style="color: var(--text-sub); font-size: 14px; margin-bottom: 20px;">
+        Siz so'ragan 6 ta asosiy tahlil savoli:
+        <code>1. Loyiha nima qiladi?</code> |
+        <code>2. Nega yaratdingiz?</code> |
+        <code>3. Qaysi texnologiyalar ishlatilgan?</code> |
+        <code>4. Siz nima qildingiz?</code> |
+        <code>5. Qanday muammo bo'lgan va qanday yechildi?</code> |
+        <code>6. Nima o'rgandingiz?</code>
+      </p>
+
+      <div class="project-grid">
+
+        <!-- PROJECT 1: BIONEXSTAR -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <div>
+              <div class="p-title">
+                <span>💊 1. オンライン薬局システム (Bionexstar)</span>
+                <a href="https://bionexstar.uz/" target="_blank" style="font-size:12px;color:var(--primary);text-decoration:none;">bionexstar.uz ↗</a>
+              </div>
+              <div class="p-stack">React 19, TypeScript, Node.js, Express, PostgreSQL, Prisma, Tailwind CSS</div>
+            </div>
+            <span class="p-role">Full-stack Muhandis (1 kishi)</span>
+          </div>
+          <div class="p-body">
+            <div class="six-questions">
+              <div class="sq-item">
+                <div class="sq-q">1. Loyiha nima qiladi? (システム概要)</div>
+                <div class="sq-jp">医薬品のカタログ閲覧、カート注文、そして薬局スタッフ向けの在庫・売上管理を一元化するB2B/B2C Webプラットフォームです。</div>
+                <div class="sq-uz">Dorilar katalogini ko'rish, savatga qo'shib buyurtma berish hamda dorixona xodimlari uchun ombor va tushumni boshqarish imkonini beruvchi B2B/B2C platforma.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">2. Nima uchun yaratdingiz? (開発の背景・目的)</div>
+                <div class="sq-jp">地元の薬局では紙やExcelで在庫を管理しており、品切れや有効期限切れの確認ミスが頻発していたため、デジタル化で業務効率を改善するために開発しました。</div>
+                <div class="sq-uz">Mahalliy dorixonalar dori qoldig'i va muddati o'tishini qog'oz yoki Excel'da yuritgani sababli xatoliklar ko'p bo'lardi, buni avtomatlashtirish uchun qildim.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">3. Qaysi texnologiyalar ishlatilgan va nega? (採用技術と選定理由)</div>
+                <div class="sq-jp">フロントはReact 19とTypeScriptで型安全性を確保。バックエンドはNode.js/Express、ORMにはPrismaとPostgreSQLを採用しました。Prismaにより複雑な医薬品リレーションを安全かつ高速に扱えるからです。</div>
+                <div class="sq-uz">Frontendda React 19 va TypeScript (tip xavfsizligi uchun), backendda Node.js/Express, ORM sifatida Prisma va PostgreSQL (murakkab relyatsion modellarni tez boshqarish uchun).</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">4. Siz nima qildingiz? (自身の役割と具体的な実装)</div>
+                <div class="sq-jp">要件定義、データベース設計（スキーマ正規化）、RESTful API実装、JWT認証による管理者権限、およびレスポンシブUI実装まで全工程を単独で完遂しました。</div>
+                <div class="sq-uz">Talablarni shakllantirish, ma'lumotlar bazasi sxemasini normallashtirish, RESTful API, JWT autentifikatsiya va to'liq moslashuvchan UI'ni yakka o'zim qildim.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">5. Qanday muammo bo'lgan va qanday hal qildingiz? (直面した課題と解決策)</div>
+                <div class="sq-jp">検索クエリが重く、数千件の検索で画面がカクつく課題がありました。フロント側で300msのDebounceを導入し、DB側で複合インデックス（name, category）を作成してクエリを最適化、検索速度を約2.7倍に改善しました。</div>
+                <div class="sq-uz">Minglab dorilarni qidirganda har bir harfda baza zo'riqib, qidiruv sekinlashgan. Frontendda 300ms Debounce qo'shdim, bazada kompozit indekslar yaratdim, natijada qidiruv 2.7 barobar tezlashdi.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">6. Nima o'rgandingiz? (学びと成長)</div>
+                <div class="sq-jp">実運用されるサービスの責任感と、データ整合性（トランザクション処理）の大切さ、そしてUIのレスポンス速度がユーザー満足度に直結することを学びました。</div>
+                <div class="sq-uz">Real ishlab turgan tizim mas'uliyati, tranzaksiyalar va ma'lumotlar yaxlitligi hamda tezkor javob foydalanuvchi qoniqishiga to'g'ridan-to'g'ri bog'liqligini o'rgandim.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: RECEIPT SPLITTER -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <div>
+              <div class="p-title">
+                <span>🧾 2. AIレシート分割アプリ (AI Receipt Splitter)</span>
+                <a href="https://github.com/Farhodoff/Receipt-Splitter" target="_blank" style="font-size:12px;color:var(--primary);text-decoration:none;">GitHub Repozitoriy ↗</a>
+              </div>
+              <div class="p-stack">React Native, Tamagui, Zustand, Google Gemini AI, Node.js, PostgreSQL</div>
+            </div>
+            <span class="p-role">Mobil Dasturchi (3 kishilik jamoa)</span>
+          </div>
+          <div class="p-body">
+            <div class="six-questions">
+              <div class="sq-item">
+                <div class="sq-q">1. Loyiha nima qiladi? (システム概要)</div>
+                <div class="sq-jp">レストランや買い物のレシートをカメラで撮影すると、Google Gemini AIが品目と金額を自動解析し、グループの割り勘計算と債務追跡を行うモバイルアプリです。</div>
+                <div class="sq-uz">Restoran yoki xarid cheki rasmga olinganda, Google Gemini AI har bir mahsulot va narxni avtomatik taniydi va do'stlar o'rtasida hisob-kitob qilib beradi.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">2. Nima uchun yaratdingiz? (開発の背景・目的)</div>
+                <div class="sq-jp">友人同士での食事後、誰が何を頼んだか手動で計算する手間をなくし、金銭トラブルを防ぐために作成しました。</div>
+                <div class="sq-uz">O'rtoqlar bilan ovqatlangan so'ng kim nima yegani va qancha to'lashi kerakligini qo'lda hisoblab o'tirish noqulayligini yo'qotish uchun yaratdik.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">3. Qaysi texnologiyalar ishlatilgan va nega? (採用技術と選定理由)</div>
+                <div class="sq-jp">クロスプラットフォーム対応のためReact Native、高速なUIのためにTamagui、状態管理に軽量なZustand、そして高精度な画像認識のためにGemini AIを採用しました。</div>
+                <div class="sq-uz">iOS va Android uchun React Native, zamonaviy UI uchun Tamagui, global holat boshqaruvi uchun yengil Zustand va chek matnini aniq o'qish uchun Google Gemini AI.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">4. Siz nima qildingiz? (自身の役割と具体的な実装)</div>
+                <div class="sq-jp">3名チームの中で、Gemini AI APIとの連携パイプライン、レシートデータの構造化パース処理、およびZustandによる割り勘ロジックの状態管理を担当しました。</div>
+                <div class="sq-uz">3 kishilik jamoada Gemini AI bilan integratsiya qilish, olingan chek ma'lumotlarini to'g'ri JSON formatga o'tkazish va Zustand yordamida hisoblash mantiqini yozdim.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">5. Qanday muammo bo'lgan va qanday hal qildingiz? (直面した課題と解決策)</div>
+                <div class="sq-jp">レシートの光の反射や傾きでAIの認識ミスが発生しました。プロンプトエンジニアリングでJSONスキーマを厳格に指定し、信頼度が低い場合はユーザーが画面上で1タップで修正できるUIを用意して解決しました。</div>
+                <div class="sq-uz">Chek yorug'lik tushishi yoki g'ijimlangan bo'lsa AI ba'zan xato o'qidi. Structured JSON chiqishini qat'iy belgilovchi promp yozdik va foydalanuvchi ekranda osongina bitta bosishda tuzatishi uchun qulay UI yaratdik.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">6. Nima o'rgandingiz? (学びと成長)</div>
+                <div class="sq-jp">LLM・AIモデルの実用的な統合手法と、モバイルにおける状態管理の設計、そしてチームでのAPI仕様のすり合わせ（コミュニケーション）を深く学びました。</div>
+                <div class="sq-uz">Sun'iy intellekt (LLM) modellarini amaliy ilovaga ulash, mobil arxitekturada state management va jamoa a'zolari bilan API formatlarini kelishish tajribasini orttirdim.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: OLMA MARKET -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <div>
+              <div class="p-title">
+                <span>🍎 3. Olma Market システム (Olma Market Platform)</span>
+                <a href="https://github.com/Farhodoff/market-platform" target="_blank" style="font-size:12px;color:var(--primary);text-decoration:none;">GitHub Repozitoriy ↗</a>
+              </div>
+              <div class="p-stack">FastAPI, Python, PostgreSQL, Redis, Celery, RabbitMQ</div>
+            </div>
+            <span class="p-role">Backend Muhandis (4 kishilik jamoa)</span>
+          </div>
+          <div class="p-body">
+            <div class="six-questions">
+              <div class="sq-item">
+                <div class="sq-q">1. Loyiha nima qiladi? (システム概要)</div>
+                <div class="sq-jp">高トラフィックに耐えうるEコマースのバックエンドプラットフォームで、商品カタログ、注文処理、非同期レポーティングを提供します。</div>
+                <div class="sq-uz">Yuqori yuklamalarga chidamli elektron tijorat backend platformasi: tovarlar katalogi, buyurtmalarni qayta ishlash va asinxron hisobotlar.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">2. Nima uchun yaratdingiz? (開発の背景・目的)</div>
+                <div class="sq-jp">セール時などアクセス集中時でもAPIがダウンせず、高速に応答できる堅牢なバックエンドアーキテクチャを構築するために開発しました。</div>
+                <div class="sq-uz">Aksiya va bayram kunlari ko'p sonli xaridorlar kirganda ham qotmaydigan, tez javob beruvchi ishonchli backend tizim qurish uchun yaratdik.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">3. Qaysi texnologiyalar ishlatilgan va nega? (採用技術と選定理由)</div>
+                <div class="sq-jp">非同期処理と高スループットを実現するFastAPI、キャッシュにRedis、重い集計や通知処理をバックグラウンドに回すためにCeleryとRabbitMQを採用しました。</div>
+                <div class="sq-uz">Asinxron yuqori tezlik uchun FastAPI (Python), ma'lumotlarni keshga saqlash uchun Redis, vaqt oluvchi og'ir ishlarni orqa fonga surish uchun Celery va RabbitMQ.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">4. Siz nima qildingiz? (自身の役割と具体的な実装)</div>
+                <div class="sq-jp">4名チームでバックエンドを担当。Redisキャッシュ戦略の実装、CeleryによるPDF領収書発行と通知の非同期タスクキュー構築、DBクエリチューニングを担当しました。</div>
+                <div class="sq-uz">Backend muhandis sifatida Redis kesh strategiyasini qurdim, Celery orqali og'ir chek va hisobotlarni asinxron generatsiya qilishni sozladim, bazadagi so'rovlarni optimallashtirdim.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">5. Qanday muammo bo'lgan va qanday hal qildingiz? (直面した課題と解決策)</div>
+                <div class="sq-jp">大量の注文リクエスト集中時にデータベースへの負荷が高まり、APIのレスポンスが著しく低下しました。Redisキャッシュによるホットデータの読み出し分離とCelery非同期処理により、APIレスポンス時間を約35%削減しました。</div>
+                <div class="sq-uz">Ko'p buyurtma tushganda baza yuklamasi oshib ketib API javob berishi kechikardi. Tez-tez so'raladigan tovarlarni Redis keshiga oldik, og'ir yozish amallarini asinxron navbatga qo'ydik, natijada kechikish (latency) 35% ga kamaydi.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">6. Nima o'rgandingiz? (学びと成長)</div>
+                <div class="sq-jp">分散システムにおけるキャッシュの整合性問題や、メッセージキューを用いた疎結合なマイクロサービス設計の基礎を深く体得しました。</div>
+                <div class="sq-uz">Taqsimlangan tizimlarda keshning eskirishi (invalidation) masalalari, navbatlar orqali mikroservislar o'rtasida mustaqil bog'liqlik qurishni chuqur o'rgandim.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: MAYDONUZ -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <div>
+              <div class="p-title">
+                <span>⚽ 4. ブッキングプラットフォーム (Maydonuz.uz)</span>
+                <a href="https://maydonuz.netlify.app/" target="_blank" style="font-size:12px;color:var(--primary);text-decoration:none;">maydonuz.netlify.app ↗</a>
+              </div>
+              <div class="p-stack">Next.js, React SSR, WebSockets, Radix UI, Tailwind CSS</div>
+            </div>
+            <span class="p-role">Frontend Muhandis (5 kishilik jamoa)</span>
+          </div>
+          <div class="p-body">
+            <div class="six-questions">
+              <div class="sq-item">
+                <div class="sq-q">1. Loyiha nima qiladi? (システム概要)</div>
+                <div class="sq-jp">タシケント市内のミニサッカー場を検索し、リアルタイムに空きスロットを確認してオンライン予約ができるWebプラットフォームです。</div>
+                <div class="sq-uz">Toshkent shahridagi mini-futbol maydonlarini xaritadan qidirish, bo'sh vaqtlarni real vaqt rejimida ko'rib bron qilish platformasi.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">2. Nima uchun yaratdingiz? (開発の背景・目的)</div>
+                <div class="sq-jp">スポーツ愛好者が電話で空き状況を何度も確認する手間を解消し、会場オーナーの予約重複（ダブルブッキング）を防止するために開発しました。</div>
+                <div class="sq-uz">Futbol ixlosmandlari har safar maydonga qo'ng'iroq qilib bo'sh vaqt surishtirishini va stadion egalarining bir vaqtga ikki kishini yozib qo'yish muammosini yo'qotish uchun yaratdik.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">3. Qaysi texnologiyalar ishlatilgan va nega? (採用技術と選定理由)</div>
+                <div class="sq-jp">初期表示速度とSEO最適化のためにNext.jsのSSRを採用し、予約状況の即時反映のためにWebSocketを使用しました。またRadix UIでアクセシビリティの高いUIを構築しました。</div>
+                <div class="sq-uz">Qidiruv tizimlarida (Google) chiqishi va sahifa tez ochilishi uchun Next.js SSR, bo'sh joylarni bir zumda yangilab ko'rsatish uchun WebSockets va qulay komponentlar uchun Radix UI.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">4. Siz nima qildingiz? (自身の役割と具体的な実装)</div>
+                <div class="sq-jp">フロントエンドリードとして、インタラクティブなスケジュールカレンダーUI、WebSocketによるリアルタイム予約ステータス更新、およびフィルタリング検索ロジックを実装しました。</div>
+                <div class="sq-uz">Frontendda qulay kalendar tanlash interfeysini, WebSocket orqali kimdir band qilgan vaqtni boshqa foydalanuvchilarga darhol qizil qilib ko'rsatish mantiqini yozdim.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">5. Qanday muammo bo'lgan va qanday hal qildingiz? (直面した課題と解決策)</div>
+                <div class="sq-jp">同時に複数のユーザーが同じ時間枠をクリックした際の競合問題がありました。楽観的ロック（Optimistic UI）とサーバー側の即時バリデーションを組み合わせ、二重予約を完全に防ぎました。</div>
+                <div class="sq-uz">Bir vaqtning o'zida bir nechta foydalanuvchi bitta soatni bosganda to'qnashuv bo'lardi. Frontendda tezkor vizual ko'rsatish va backendda qat'iy tekshiruv (lock) o'rnatib, ikkita bir xil bronni bartaraf qildik.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">6. Nima o'rgandingiz? (学びと成長)</div>
+                <div class="sq-jp">リアルタイム通信（双方向WebSockets）の実装ノウハウと、複数人開発におけるGitワークフロー（PR、ブランチ運用）の重要性を学びました。</div>
+                <div class="sq-uz">Ikki tomonlama real-vaqt muloqoti (WebSockets) hamda 5 kishilik jamoada Git branching va Pull Request madaniyatini amalda mukammal o'rgandim.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 5: KAIWA.LIVE -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <div>
+              <div class="p-title">
+                <span>🇯🇵 5. フラッグシップ: Kaiwa.live</span>
+                <span style="font-size:12px;color:var(--primary);">Shaxsiy Flagship Loyiha</span>
+              </div>
+              <div class="p-stack">Next.js, TypeScript, AI Audio Streaming, Tailwind CSS, PostgreSQL</div>
+            </div>
+            <span class="p-role">Yaratuvchi & Muhandis</span>
+          </div>
+          <div class="p-body">
+            <div class="six-questions">
+              <div class="sq-item">
+                <div class="sq-q">1. Loyiha nima qiladi? (システム概要)</div>
+                <div class="sq-jp">JLPT N5〜N1を目指す学習者のためのAI対話型日本語スピーキング・リスニング練習Webプラットフォームです。</div>
+                <div class="sq-uz">JLPT N5 dan N1 gacha bo'lgan yapon tili o'rganuvchilari uchun AI bilan ovozli muloqot va nutqni tahlil qilish platformasi.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">2. Nima uchun yaratdingiz? (開発の背景・目的)</div>
+                <div class="sq-jp">ウズベキスタンでは日本語の会話相手を見つけるのが難しいため、AI技術を活用して24時間いつでも実践的な会話練習ができる環境を提供したかったからです。</div>
+                <div class="sq-uz">O'zbekistonda doimiy yapon tilida so'zlashuvchi odam topish qiyin bo'lgani sababli, har qanday talaba istalgan paytda sun'iy intellekt bilan bemalol gaplashishi uchun qildim.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">3. Qaysi texnologiyalar ishlatilgan va nega? (採用技術と選定理由)</div>
+                <div class="sq-jp">低遅延な音声ストリーミング処理、TypeScriptによる厳格な型管理、そしてセキュアなレート制限（Rate Limiting）とCI/CDパイプラインを実装しました。</div>
+                <div class="sq-uz">Kam kechikishli audio oqimi, TypeScript, xavfsizlik uchun Rate Limiting hamda ishlab chiqarish standartidagi to'liq CI/CD quvurlari.</div>
+              </div>
+
+              <div class="sq-item">
+                <div class="sq-q">4. HR suhbatida aytish foydasi</div>
+                <div class="sq-jp">「自ら日本語学習の課題を見つけ、エンジニアリング力で解決した」というストーリーは、自主性と技術への情熱を証明する最大の武器になります。</div>
+                <div class="sq-uz">Ushbu loyiha sizning muammoni shaxsan ko'rib, uni zamonaviy IT yechim bilan hal qilganingizni va yapon tiliga qanchalik jiddiy intilganingizni ko'rsatuvchi eng kuchli quroldir.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: SHAXSIY VA OILA -->
+    <section class="category-section" data-cat="self">
+      <div class="section-title">
+        <span>👤 Shaxsiy va Oila (Background, JDU, Family)</span>
+        <span class="count">Hayotiy va qadriyatlarga oid savollar</span>
+      </div>
+
+      <!-- Oila haqida -->
+      <div class="q-card normal" data-keywords="oila oilangiz family ota ona navoiy">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#05</span>
+              <span class="badge badge-warning">Muhim Nuqta</span>
+              <span class="badge badge-cat">Oila</span>
+            </div>
+            <div class="q-jp">ご家族について簡単に教えてください。日本就職には賛成されていますか？</div>
+            <div class="q-uz">Oilangiz haqida qisqacha aytib bering. Yaponiyaga ishlashga ketishingizga rozi va qo'llab-quvvatlashadimi?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`家族についてお話しします。私の家族は両親と兄弟がおります。両親は私の自主性を常に尊重してくれており、私が日本デジタル大学に入学した当初から、将来日本でエンジニアとして挑戦することを心から応援してくれています。日本で働くことについても家族全員が完全に賛成しており、遠く離れていても安心して仕事に集中できる環境を整えてくれています。家族の応援があるからこそ、責任感を持って日本で長く頑張る決意ができております。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+私の家族は両親と兄弟がおります。父も母も私の決断や学習を常に温かく応援してくれています。
+
+私が日本デジタル大学に進学し、JLPT N2を取得して日本就職を目指していることについても、両親は100％賛成し、誇りに思って全面的にバックアップしてくれています。
+
+「日本で多くのことを学び、立派なエンジニアになりなさい」と背中を押してくれているため、渡航後もホームシックなどの心配なく、責任を持って長期的に業務に集中できます。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Oilamda ota-onam va aka-ukalarim bor. Ota-onam doimo mening mustaqil fikrlarimni va o'qishimni qo'llab-quvvatlaydilar.
+
+Men Japan Digital University'ga kirganimdan va JLPT N2 olganimdan buyon Yaponiyada ishlash niyatim borligidan xabardorlar va buni 100% qo'llab-quvvatlashadi. Ota-onam: "Yaponiyada yaxshi bilim olib, o'z sohangning kuchli muhandisi bo'l", deb doim menga dalda berishadi, shu bois Yaponiyada uzoq muddat ishlashimga oilaviy hech qanday to'siq yo'q.
+            </p>
+          </div>
+          <div class="meta-box">
+            <div class="tip-box">
+              <strong>💡 Nega HR oilani so'raydi?</strong>
+              Yapon kompaniyalari chet eldan nomzod olganda eng qo'rqadigan narsa — 6 oy o'tmasdan "ota-onam qayt dedi" deb vataniga qaytib ketishi. Shu sababli ota-onangizning roziligi va to'liq qo'llab-quvvatlashi borligini qat'iy aytish HR'ni butunlay xotirjam qiladi.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hozir qayerda o'qiysiz -->
+      <div class="q-card normal" data-keywords="oqish jdu universitet qayerda oqiysiz">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#06</span>
+              <span class="badge badge-normal">Oddiy</span>
+              <span class="badge badge-cat">Ta'lim</span>
+            </div>
+            <div class="q-jp">現在通われている大学と専攻について教えてください。</div>
+            <div class="q-uz">Hozir qaysi universitetda va qaysi mutaxassislikda o'qiysiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`現在、ウズベキスタンにある日本デジタル大学（Japan Digital University、通称JDU）の情報技術専攻に在籍しております。2022年10月に入学し、2027年春に卒業予定です。大学ではプログラミングの基礎からWebアプリケーション開発、データベース設計を体系的に学びつつ、日本語の集中教育を受けております。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+現在、ウズベキスタンにある日本デジタル大学（通称JDU）の情報技術学科に在籍しております。2022年10月に入学し、2027年春に学士号を取得して卒業予定です。
+
+大学では、IT技術（アルゴリズム、Web開発、オブジェクト指向プログラミング、DB設計）と、ビジネスレベルの日本語を並行して学んでおります。理論だけでなく、実務に近い実践的な開発プロジェクトにも注力しています。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Hozirda O'zbekistondagi Japan Digital University (JDU) Axborot Texnologiyalari fakultetida o'qiyman. 2022-yil oktabrda kirganman va 2027-yil bahorida bakalavr diplomini olib bitiraman. Universitetda dasturlash, algoritm, ma'lumotlar bazasi va biznes yapon tilini parallel o'rganyapmiz.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hobbi va Qiziqishlar -->
+      <div class="q-card normal" data-keywords="hobbi qiziqish davinci trading montaj">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#07</span>
+              <span class="badge badge-normal">Oddiy</span>
+              <span class="badge badge-cat">Shaxsiyat</span>
+            </div>
+            <div class="q-jp">趣味や特技、休日の過ごし方を教えてください。</div>
+            <div class="q-uz">Qiziqishlaringiz, kuchli ko'nikmangiz va dam olish kunlarida nima bilan shug'ullanishingizni aytib bering.</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`趣味は動画編集と金融市場のデータ分析です。動画編集ではDaVinci Resolveを使い、1フレーム単位で映像や音声のタイミングを揃えることで、細部への集中力と粘り強さが養われました。また、週末は新しいオープンソースの技術を試したり、個人プロジェクトのコードを書くことが多いです。特技は、新しいフレームワークやライブラリを短期間で習得し、実際の動くアプリケーションとして形にできることです。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+趣味は動画編集と金融市場のデータ分析です。
+動画編集ではDaVinci Resolveを使い、1フレーム単位までタイミングや色調を調整する作業が好きで、これにより「細かい点まで妥協しない丁寧さ」が身につきました。
+
+休日は技術記事を読んだり、新しいツールを試して個人開発を行っています。特技は、未知の技術でもドキュメントを素早く読み解き、数日で実用的なコードに落とし込めるキャッチアップ力です。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Qiziqishlarim — video montaj va moliya bozorlarini tahlil qilish. DaVinci Resolve bilan mayda kadrlargacha e'tibor berib ishlash menga detallarga nisbatan sabot va sinchkovlik odatini o'rgatdi. Dam olish kunlari esa yangi texnologiyalarni o'rganib, kod yozaman. Kuchli tomonim — yangi texnologiyalarni tez o'rganib, bir necha kunda amaliyotga qo'llay olishim.
+            </p>
+          </div>
+          <div class="meta-box">
+            <div class="tip-box">
+              <strong>💡 Sensei Qoidasi:</strong>
+              Hobbingizni har doim ishga foydali ko'nikmaga bog'lang: Montaj → detallarga e'tibor va sabr; Bozor tahlili → mantiqiy fikrlash va tahlil.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kuchli va Kuchsiz tomonlar -->
+      <div class="q-card normal" data-keywords="kuchli zaif chousho tansho strengths weaknesses">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#08</span>
+              <span class="badge badge-normal">Oddiy</span>
+              <span class="badge badge-cat">Shaxsiyat</span>
+            </div>
+            <div class="q-jp">ご自身の長所と短所（改善点）を教えてください。</div>
+            <div class="q-uz">O'zingizning kuchli va kuchsiz (yaxshilayotgan) tomonlaringizni aytib bering.</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`私の長所は、目標に向かって自律的に学び、迅速に成果物として形にする行動力です。大学の講義を待つだけでなく、自ら薬局システムやAIアプリを開発し切ったことがその証明です。一方、短所は、一つの課題に夢中になりすぎて、時間を忘れて細部まで作り込みすぎてしまう点です。この反省から、現在はタスクごとに事前に作業時間と優先順位を明確に定め、タイマーを活用して全体スケジュールを厳守する工夫を行っております。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+【長所】自ら課題を見つけて自律的に解決する「行動力」と「学習スピード」です。必要な技術があれば誰かに指示されずとも自発的に学び、実際に動くプロダクトまで作り切ることができます。
+
+【短所】何かに没頭すると、細部にこだわりすぎて時間をかけすぎてしまう傾向がある点です。
+この点を改善するため、現在は作業を始める前に「今日の目標と所要時間」をTodoリストに定義し、定期的に進捗を客観的に見直すよう意識してスケジュール管理を徹底しています。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Kuchli tomonim — muammoga duch kelganda mustaqil o'rganib, tezda natija chiqarish qobiliyatim.
+
+Zaif tomonim — ba'zan biror detalga haddan ortiq berilib, vaqtni ko'p sarflab yuborishim mumkin. Buni to'g'irlash uchun har kuni topshiriqlarga qat'iy vaqt va ustuvorlik chegarasini qo'yib, reja asosida ishlashni odat qildim.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: IT & TEXNOLOGIYALAR -->
+    <section class="category-section" data-cat="it">
+      <div class="section-title">
+        <span>💻 IT & Texnik Ko'nikmalar</span>
+        <span class="count">Dasturlash tillari, arxitektura va hozirgi o'rganishlar</span>
+      </div>
+
+      <!-- Biladigan dasturlash tillari -->
+      <div class="q-card warning" data-keywords="dasturlash tillari texnologiyalar stack typescript python fastapi react nodejs java">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#09</span>
+              <span class="badge badge-warning">O'rta</span>
+              <span class="badge badge-cat">Texnologiyalar</span>
+            </div>
+            <div class="q-jp">得意なプログラミング言語や技術スタックについて教えてください。</div>
+            <div class="q-uz">Eng yaxshi biladigan dasturlash tillaringiz va texnologiyalaringiz haqida gapirib bering.</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`最も得意としているのはTypeScriptとJavaScript、そしてPythonです。フロントエンドではReactやNext.jsを用い、型安全で保守性の高いコンポーネント設計ができます。バックエンドではPythonのFastAPIやNode.js（Express）を使い、RESTful APIの構築を行ってきました。データベースはPostgreSQLとPrisma ORMを主に使用し、キャッシュや非同期処理にはRedisとCeleryの経験があります。また、日本のエンタープライズ開発で広く使われているJavaやSpring Bootの学習も積極的に進めております。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+最も得意な言語はTypeScriptとPython、そしてJavaScriptです。
+
+【フロントエンド】React、Next.jsを用いて、SSRによるパフォーマンス最適化やTailwind CSSでのモダンUI構築が可能です。
+【バックエンド】FastAPIやNode.js（Express）によるスケーラブルなREST APIの設計、JWTによる認証認可の実装ができます。
+【データベース・インフラ】PostgreSQL、Prisma ORM、Redisキャッシュ、Dockerの基本操作を実プロジェクトで扱ってきました。
+
+また、御社をはじめとする日本の大規模開発でJavaやC#のニーズが高いことを認識しており、現在はJava（Spring Boot）の学習にも注力しております。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Eng yaxshi biladigan tillarim — TypeScript, Python va JavaScript.
+- Frontend: React, Next.js (SSR tezkor yuklanish), Tailwind CSS.
+- Backend: FastAPI, Node.js (Express) orqali xavfsiz REST API'lar va JWT autentifikatsiya.
+- Ma'lumotlar bazasi: PostgreSQL, Prisma, kesh uchun Redis va Docker asoslari.
+Shuningdek, Yaponiyadagi yirik loyihalarda Java keng qo'llanilishini inobatga olib, hozirda Java (Spring Boot) backend asoslarini ham faol o'rganyapman.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hozir nimalarni o'rganyapsiz -->
+      <div class="q-card normal" data-keywords="hozir nima organmoqdasiz learning java spring boot clean code system design">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#10</span>
+              <span class="badge badge-normal">Oddiy</span>
+              <span class="badge badge-cat">Rivojlanish</span>
+            </div>
+            <div class="q-jp">現在、自主的にどんな技術や知識を勉強していますか？</div>
+            <div class="q-uz">Hozirda o'z ustingizda ishlab, qaysi texnologiyalarni o'rganyapsiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`現在は主に3つの領域を深めています。1つ目は、日本の大手企業で標準的に使われているJavaとSpring Bootです。2つ目は、Educativeなどを活用したモダンなシステムデザインとクリーンアーキテクチャ、マイクロサービスの概念です。3つ目は、チーム開発を円滑にするための日本のビジネスマナーとIT用語を含むビジネス日本語です。入社後すぐに現場で活躍できるよう、技術と語学の両輪で準備を進めています。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+現在は3つの分野に重点を置いて学習しております。
+
+1. **JavaとSpring Boot:** 日本の大手エンタープライズ案件で即戦力となるため、オブジェクト指向設計とSpring Bootによる堅牢なバックエンド開発を実践しています。
+2. **システムデザインとClean Code (FSD):** 単に動くコードではなく、保守性が高く拡張しやすいFeature-Sliced Designやマイクロサービスアーキテクチャの原則を学んでいます。
+3. **ビジネス日本語:** 技術仕様書を読解し、朝会や要件定義で的確に意思疎通するための専門用語や敬語表現を強化しています。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Hozirda 3 yo'nalish ustida ishlayapman:
+1. Java va Spring Boot: Yaponiyaning yirik tizimlarida tez kirishib ketish uchun.
+2. System Design va Clean Code (FSD): Loyihalar kengayganda buzilmaydigan, toza va professional arxitektura qurish.
+3. Biznes yapon tili: Texnik hujjatlarni erkin o'qish, mitinglarda aniq hisobot berish (Hou-Ren-So) va professional muloqot qilish.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jamoada ishlash tajribasi -->
+      <div class="q-card warning" data-keywords="jamoa teamwork git hourenso guruh kelishmovchilik">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#11</span>
+              <span class="badge badge-warning">O'rta</span>
+              <span class="badge badge-cat">Teamwork</span>
+            </div>
+            <div class="q-jp">チーム開発の経験はありますか？意見が対立した時はどう対応しましたか？</div>
+            <div class="q-uz">Jamoada ishlash tajribangiz bormi? Fikrlar to'qnashganda qanday yechim topasiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`はい、大学や実務プロジェクトでチーム開発の経験があります。例えばブッキングアプリでは5名チームで、GitHubを用いたPull Requestベースの開発を行い、コードレビューを通じて品質を高めました。意見が分かれた際は、感情的にならず「ユーザーにとってどちらが有益か」「保守性が高いのはどちらか」という客観的な基準で話し合いました。また、迷った時は小さなプロトタイプを作って比較し、データに基づいて納得のいく合意を形成しました。チームでは「報連相（報告・連絡・相談）」を最も大切にしています。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+はい、チーム開発の経験がございます。例えば「Maydonuz」では5名、「AIレシートアプリ」では3名のチームでGitHubを用いて開発を進めました。
+
+意見が対立した際は、自分の考えを押し通すのではなく、まず相手の意図や技術的根拠を最後まで傾聴します。その上で、「ユーザー体験」や「保守性・納期」という共通のゴールに照らし合わせて議論します。
+
+それでも判断が分かれる場合は、簡単なモック（プロトタイプ）を作成してベンチマークを測定し、事実とデータに基づいてチーム全員が納得できる決定を下すよう努めました。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Ha, jamoada ishlash tajribam bor (Maydonuz'da 5 kishi, AI Receipt Splitter'da 3 kishi bo'lib Git/GitHub orqali ishladik). Fikrlar farq qilganda shaxsiyatga bormay, avvalo sherigimning dalillarini oxirigacha eshitaman. Keyin "foydalanuvchiga qaysi biri qulayroq" va "xavfsizroq" degan mezon bilan tahlil qilamiz. Zarur bo'lsa kichik sinov kodi (prototip) yozib, natijaga qarab hammamiz bir fikrga kelamiz.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: YAPONIYA VA MOSLASHUV -->
+    <section class="category-section" data-cat="japan">
+      <div class="section-title">
+        <span>🇯🇵 Yaponiya & Madaniy Moslashuv</span>
+        <span class="count">Hayotiy qiyinchiliklar, stress va uzoq muddat yashash</span>
+      </div>
+
+      <!-- Yapon tilini o'rganish sababi -->
+      <div class="q-card normal" data-keywords="yapon tili nega nihongo jlpt jdu">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#12</span>
+              <span class="badge badge-normal">Oddiy</span>
+              <span class="badge badge-cat">Til & Motivatsiya</span>
+            </div>
+            <div class="q-jp">なぜ日本語を勉強しようと思ったのですか？</div>
+            <div class="q-uz">Nega aynan yapon tilini o'rganishni boshladingiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`最初のきっかけは、日本とウズベキスタンの合同教育であるJDUに入学したことでした。しかし勉強を進めるうちに、日本のものづくりの哲学や、時間と約束を重んじる文化に深い感銘を受けました。また、日本の優れたIT技術と社会基盤を支えるエンジニアになりたいという強い目標が生まれました。その目標に向けて努力を重ね、JLPT N2を取得しました。日本語は私にとって単なる言語ではなく、日本の文化や人々と深く繋がるための大切な架け橋です。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+原点は、日本とウズベキスタンの未来を繋ぐJDU（日本デジタル大学）との出会いでした。
+
+日本語を学ぶ中で、相手を思いやる敬語表現や、「改善（カイゼン）」、細部まで丁寧に仕上げる職人気質の精神に強く共感しました。
+「世界最高峰の品質を誇る日本のIT現場で、現地の言葉でチームと議論しながら価値あるシステムを作りたい」という明確な夢ができ、独学と大学の授業で毎日努力し、JLPT N2を取得いたしました。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Dastlabki turtki JDU (Japan Digital University)ga o'qishga kirganim bo'ldi. Yapon tilini o'rgangach, undagi o'zaro hurmat, "kaizen" (doimiy yaxshilanish) falsafasi va mayda detallargacha puxta yondashish madaniyati meni maftun etdi. Yaponiyaning yuqori darajadagi IT muhitida mahalliy mutaxassislar bilan bevosita muloqot qilib tizimlar yaratish oliy maqsadimga aylandi va tirishqoqlik bilan N2 darajasiga erishdim.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Yaponiyadagi qiyinchiliklar va moslashuv -->
+      <div class="q-card warning" data-keywords="qiyinchilik moslashuv adaptation stress madaniyat farqi taom">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#13</span>
+              <span class="badge badge-warning">O'rta</span>
+              <span class="badge badge-cat">Moslashuvchanlik</span>
+            </div>
+            <div class="q-jp">日本で生活する上で、どんな困難があると考えますか？それにどう対処しますか？</div>
+            <div class="q-uz">Yaponiyada yashashda qanday qiyinchiliklar bo'lishi mumkin deb o'ylaysiz va ularga qanday moslashasiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`最も大きな課題は、言葉のニュアンスの違いと生活習慣・ビジネスマナーの違いだと認識しています。仕事では言われたことの意図を正確に理解する「空気を読む」文化や敬語の使い方に最初は戸惑うかもしれません。しかし、私はすでにJLPT N2を取得し、JDUで日本のビジネスマナーやルールを体系的に学んでいます。また、分からないことがあれば決して自己判断せず、すぐに上司や先輩に報連相（相談）することを徹底します。私生活でもオープンマインドで日本の生活に溶け込み、困難を前向きに乗り越えていく覚悟ができております。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+主に2つの困難を想定しております。
+
+1つ目は、**職場のコミュニケーションとビジネスマナー**です。日本の職場には「阿吽の呼吸」や細やかな敬語表現があり、慣れるまでは注意が必要です。これに対しては、憶測で動かず「報連相（相談・確認）」を密に行い、分からないことは素直に質問して早期にキャッチアップします。
+2つ目は、**生活環境や食文化の違い**です。私は環境適応力が高く、自炊も得意です。またJDUの先輩方が日本で生活しており、具体的なアドバイスを受けているため、生活面での不安も克服できると確信しております。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Ikki xil qiyinchilikni hisobga olganman:
+1. Ishdagi keigo va muloqot odobi: O'zboshimchalik bilan taxmin qilmasdan, "Hou-Ren-So" (doimiy hisobot va maslahat) tamoyiliga qat'iy amal qilaman va tushunmagan narsamni darhol so'rab o'rganaman.
+2. Turmush tarzi va taomlar: Moslashuvchanligim yuqori, mustaqil ovqat pishira olaman. Universitetdagi hozir Yaponiyada yashayotgan katta talabalar (senpai)dan ham barcha maslahatlarni olib, ruhiy jihatdan to'liq tayyorgarlik ko'rganman.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Uzoq muddat yashash -->
+      <div class="q-card warning" data-keywords="uzoq muddat yashash long term 10 yil yaponiyada qolish">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#14</span>
+              <span class="badge badge-warning">O'rta</span>
+              <span class="badge badge-cat">Barqarorlik</span>
+            </div>
+            <div class="q-jp">日本で長期的に働く覚悟はありますか？何年くらい滞在する予定ですか？</div>
+            <div class="q-uz">Yaponiyada uzoq muddat yashab ishlashga tayyormisiz? Taxminan necha yil qolishni rejalashtiryapsiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`はい、一時的な滞在ではなく、10年以上の長期にわたって日本で生活し、キャリアを築きたいと強く決意しております。まずは御社でエンジニアとして技術を磨き、信頼されるプロジェクトリーダーになりたいです。さらにJLPT N1の取得も目指します。日本社会に深く貢献し、将来的には日本とウズベキスタンの架け橋となるリーダーとして、御社で長く成長していきたいと考えております。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+はい、強く覚悟しております。2〜3年で帰国するつもりは全くなく、10年以上、腰を据えて日本でキャリアを築く計画です。
+
+まずは御社で開発経験を積み、現場の信頼を獲得してチームリーダーを目指します。長期的には、日本社会にしっかりと税金や技術で貢献し、永住権の取得も視野に入れて、長く安定して活躍したいと考えております。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Ha, qat'iy qaror qilganman. 2-3 yilda qaytish emas, 10 yildan ortiq muddatga Yaponiyada ildiz otib, jiddiy karyera qurishni niyat qilganman. Kompaniyada tajriba to'plab, jamoa yetakchisi bo'lish va uzoq yillar barqaror ishlash bosh maqsadimdir.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: CAL KOMPANIYASI -->
+    <section class="category-section" data-cat="cal">
+      <div class="section-title">
+        <span>🏢 CAL Kompaniyasi Haqida Bilimlar</span>
+        <span class="count">Kompaniya faktlari va qanday foyda keltirishingiz</span>
+      </div>
+
+      <!-- Kompaniya haqida nima bilasiz -->
+      <div class="q-card warning" data-keywords="cal nima bilasiz kompaniya facts 1990 akihabara 170 okuyen 3300">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#15</span>
+              <span class="badge badge-warning">O'rta</span>
+              <span class="badge badge-cat">CAL Faktlari</span>
+            </div>
+            <div class="q-jp">弊社の事業内容や特徴について、何をご存知ですか？</div>
+            <div class="q-uz">Kompaniyamizning faoliyati va o'ziga xos jihatlari haqida nimalarni bilasiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`御社は1990年に設立され、Challenge and Leadを社名に掲げる総合エンジニアリング企業です。年間売上高は約170億円、従業員数は3300名を超え、東京の秋葉原に本社を置き、全国主要都市およびウズベキスタンのタシケントにも海外拠点を展開されています。ITシステム開発、組込・制御ソフトウェア、機械・電気設計など幅広い領域で、パナソニックやNEC、NTT、トヨタグループなど日本を代表する大手企業のプロジェクトを手掛けられています。また、社員の約10%が外国籍で、多様性を大切にし、充実した研修体制で若手を育成されている点が非常に魅力的です。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+御社について以下の点を深く理解しております。
+
+- **社名と理念:** 「Challenge And Lead（挑戦と先導）」を掲げ、1990年に設立された総合IT・エンジニアリング企業です。
+- **規模と業績:** 年間売上は約170億円、従業員数は3,300名以上に達し、非常に堅実かつ成長性の高い企業です。
+- **事業と顧客:** Webシステム、オープン系システム、組込系ソフトウェア開発など多岐にわたり、パナソニック、NEC、NTT、トヨタシステムズなど日本屈指の大手企業と強固なパートナーシップを結ばれています。
+- **グローバル体制:** 東京・秋葉原の本社をはじめ国内主要拠点に加え、私の母国であるタシケントにも拠点を構え、約10％の外国籍エンジニアが活躍できるインクルーシブな育成環境が整っています。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Kompaniyangiz haqida quyidagi asosiy faktlarni bilaman:
+- 1990-yilda tashkil topgan, nomi "Challenge And Lead" (Sinov va Yetakchilik) falsafasidan olingan.
+- Yillik aylanmasi qariyb 17 milliard yen, xodimlar soni 3,300 nafardan oshiq.
+- Web-tizimlar, infratuzilma va mikrodasturiy ta'minot bo'yicha Panasonic, NEC, NTT, Toyota Systems kabi Yaponiyaning ulkan brendlari bilan ishlaydi.
+- Bosh ofisi Tokioning Akihabara shahrida, shuningdek Toshkentda ham xalqaro vakolatxonasi mavjud. Xodimlarning qariyb 10% ini chet ellik muhandislar tashkil qiladi.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kompaniyaga qanday hissa qo'shasiz -->
+      <div class="q-card warning" data-keywords="hissa foyda qanday yordam value contribution">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#16</span>
+              <span class="badge badge-warning">O'rta</span>
+              <span class="badge badge-cat">Foyda Keltirish</span>
+            </div>
+            <div class="q-jp">あなたが弊社に入社した場合、どのような貢献ができますか？</div>
+            <div class="q-uz">Kompaniyamizga ishga qabul qilinsangiz, qanday foyda va hissa qo'sha olasiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`3つの点で大きく貢献できます。第1に、フロントからバックエンド、DBまで一貫して構築してきたフルスタックの開発力により、少人数のアジャイル開発でも早期に実務で戦力になれる点です。第2に、新しい技術を自主的かつ迅速に吸収する力です。現場で新しいフレームワークや言語が必要になっても、短期間で習得して開発を前進させます。第3に、JLPT N2の日本語力と文化理解により、日本人エンジニアやクライアントとスムーズに意思疎通ができる点です。将来的には、タシケント拠点と日本本社を技術でつなぐブリッジエンジニアとしても貢献したいと考えております。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+主に以下の3つの強みで貢献できます。
+
+1. **自走できるフルスタック開発力:** 要件定義からUI、API、データベースまで一貫して一人で構築してきた経験があるため、配属後の研修を迅速に吸収し、短期間でプロジェクトの戦力として機能します。
+2. **高速な技術習得力:** プロジェクトごとに異なる技術スタック（Java, C#, Go, クラウド環境）が求められても、高い自律性で素早くキャッチアップします。
+3. **円滑なチームコミュニケーション:** N2レベルの日本語力と「報連相」の徹底により、チームの進捗遅延や認識ズレを防ぎ、将来的にはグローバルチームの連携を促進します。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Kompaniyaga 3 ta yo'nalishda hissa qo'shaman:
+1. Mustaqil Fullstack ko'nikma: Loyihani boshidan oxirigacha mustaqil qurgan tajribam borligi sababli, loyihalarga tezda real foyda keltira boshlayman.
+2. Yangi texnologiyalarni chaqqon o'zlashtirish: Agar yangi loyihada boshqa til (masalan, Java yoki C#) kerak bo'lsa, uni tezda o'rganib olaman.
+3. Aniqlik va kommunikatsiya: N2 yapon tilim va jamoaviy intizom orqali yapon muhandislari bilan tushunmovchiliksiz ishlayman.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: KARYERA VA KELAJAK -->
+    <section class="category-section" data-cat="career">
+      <div class="section-title">
+        <span>🎯 Karyera & 5 Yillik Reja</span>
+        <span class="count">Kelajakdagi maqsad va nima uchun siz</span>
+      </div>
+
+      <!-- 5 yildan keyin -->
+      <div class="q-card warning" data-keywords="5 yil 5 yildan keyin kelajak career plan leader">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#17</span>
+              <span class="badge badge-warning">O'rta</span>
+              <span class="badge badge-cat">Karyera Rejasi</span>
+            </div>
+            <div class="q-jp">入社後、5年後にどのようなエンジニアになっていたいですか？</div>
+            <div class="q-uz">Ishga kirgach, 5 yildan keyin o'zingizni qanday muhandis sifatida ko'rasiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`入社後1年から2年は、御社の開発標準や日本のビジネスマナーを徹底して吸収し、与えられたタスクを高い品質とスピードで完遂する信頼性の高いエンジニアを目指します。3年後には、基本設計や要件定義から携わり、若手や後輩のサポートも行えるサブリーダーを目指します。そして5年後には、お客様と直接仕様を詰められる技術力と日本語力を備えたプロジェクトリーダーとして、大規模な案件を成功に導きたいです。技術面だけでなく、人間的にも御社に欠かせない存在になることが私の目標です。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+5年後の明確なロードマップを描いております。
+
+- **1〜2年目（基礎と定着）:** 与えられた開発業務で最高品質のアウトプットを出し、現場の開発ルールやビジネス日本語、チームワークを完璧に体得します。
+- **3〜4年目（主軸エンジニア）:** 要件定義や基本設計の上流工程に関わり、後輩のコードレビューや指導も担当できる中核エンジニアになります。
+- **5年目（プロジェクトリーダー）:** クライアントとの折衝を日本語で直接行い、多国籍なメンバーを率いてプロジェクトを成功させるリーダーになります。またJLPT N1も取得し、御社の成長を牽引したいです。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+5 yillik aniq bosqichli rejam:
+- 1-2 yil: Kompaniyaning ishlab chiqish tartibini chuqur o'rganib, berilgan vazifalarni xatosiz va yuqori sifat bilan topshirish.
+- 3-4 yil: Tizim arxitekturasi va loyihalash bosqichlariga kirishib, yangi kelgan yosh xodimlarga ustozlik (mentorlik) qilish.
+- 5 yil: Yapon mijozlari bilan to'g'ridan-to'g'ri yapon tilida talablarni kelishib, jamoani boshqaradigan ishonchli loyiha yetakchisi (Team Lead) bo'lish.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nima uchun aynan sizni olishimiz kerak -->
+      <div class="q-card normal" data-keywords="nega siz why hire you afzallik ustunlik">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#18</span>
+              <span class="badge badge-normal">Oddiy</span>
+              <span class="badge badge-cat">Yakuniy Isbot</span>
+            </div>
+            <div class="q-jp">最後に、私たちがあなたを採用すべき理由は何ですか？</div>
+            <div class="q-uz">Nima uchun aynan sizni ishga qabul qilishimiz kerak deb hisoblaysiz?</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`私を採用していただくべき理由は、情熱と実務的な開発実績、そして適応力の3つが揃っているからです。私は単に大学で学んだだけでなく、薬局の運用システムやAIアプリなど、実際に動くサービスを自らの手でゼロから完成させた実績があります。また、レスポンス速度を35%改善するなど、数字で結果を出すことにこだわってきました。さらに、JLPT N2に裏打ちされた日本語への努力と、御社のChallenge and Leadの精神に共鳴し、長期的に貢献する覚悟があります。御社に採用していただければ、決して後悔させない活躍をお約束いたします。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語</div>
+            <p class="jp-text">
+3つの明確な理由がございます。
+
+1. **実働するプロダクトを作り切った「完遂力」:** 薬局システムをはじめ、一人で設計から本番運用まで完遂した実践経験があります。
+2. **定量的な成果へのこだわり:** API応答時間を35%改善したように、ただ動くだけでなくパフォーマンスと品質を追求できます。
+3. **日本で長く生きる覚悟と誠実さ:** N2の日本語力と家族の応援を背に、御社のカルチャーを心から尊重し、長期にわたって全力で貢献し続けることをお約束できるからです。
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+3 ta asosiy sabab:
+1. Loyihani boshidan oxirigacha olib borib, ishga tushira olish amaliy tajribasi.
+2. API tezligini 35% oshirish kabi natijadorlikka qaratilgan muhandislik qarashlari.
+3. Yapon tiliga va yapon madaniyatiga yuksak hurmat bilan, kompaniyada uzoq yillar barqaror xizmat qilishga bo'lgan samimiy va'dam.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: GYAKU SHITSUMON -->
+    <section class="category-section" data-cat="gyaku">
+      <div class="section-title">
+        <span>❓ 逆質問 (Gyaku-shitsumon — HR'ga Beradigan Savollaringiz)</span>
+        <span class="count">Suhbat oxirida 2-3 ta professional savol berish shart!</span>
+      </div>
+
+      <div class="q-card normal" data-keywords="gyaku shitsumon hrga savol onboarding trening savollaringiz bormi">
+        <div class="q-header">
+          <div class="q-title-group">
+            <div class="q-badge-row">
+              <span class="q-index">#19</span>
+              <span class="badge badge-normal">Tavsiya</span>
+              <span class="badge badge-cat">Gyaku-shitsumon</span>
+            </div>
+            <div class="q-jp">何か質問はありますか？（逆質問の模範例）</div>
+            <div class="q-uz">Bizga biror savolingiz bormi? (Suhbat oxirida so'raladigan eng kuchli savollar)</div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon" onclick="copyCardText(this)">📋 Nusxa</button>
+            <button class="btn-icon" onclick="speakJp(`はい、3点質問をさせていただいてもよろしいでしょうか。1つ目は、入社後の研修内容についてです。外国籍の新入社員向けには、技術やビジネスマナーに関して具体的にどのようなカリキュラムが用意されているのでしょうか。2つ目は、配属についてです。最初のプロジェクトは個人のスキルや希望がどのように考慮されるのでしょうか。3つ目は、入社までにさらに勉強しておくべき技術や日本語の分野があれば、ぜひアドバイスをいただきたいです。`)">🔊 Tinglash</button>
+          </div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealCard(this)">👁 Javobni ko'rish</button>
+
+        <div class="answer-body">
+          <div class="jp-block">
+            <div class="jp-label">日本語 (3 Ta Kuchli Savol)</div>
+            <p class="jp-text">
+はい、ぜひ3点お伺いしたく存じます。
+
+1. **研修制度について:**
+「入社後の新入社員研修では、外国籍エンジニア向けに技術研修やビジネス日本語のフォローアップはどのように実施されているでしょうか？」
+
+2. **配属とキャリアについて:**
+「配属先のプロジェクトが決定する際、本人の得意分野や希望する技術領域はどのようにヒアリング・考慮されるのでしょうか？」
+
+3. **入社前の準備について（意欲のアピール）:**
+「もし内定をいただけた場合、入社日までの期間で特に重点的に勉強しておくべき技術スタックや知識があれば、ぜひアドバイスをいただけますでしょうか？」
+            </p>
+          </div>
+          <div class="uz-block">
+            <div class="uz-label">O'zbekcha Ma'nosi</div>
+            <p class="uz-text">
+Ha, albatta 3 ta savolim bor edi:
+1. "Ishga qabul qilingandan keyingi treningda xorijiy xodimlar uchun texnik va biznes yapon tili bo'yicha qanday amaliy darslar tashkil etiladi?"
+2. "Birinchi loyiha taqsimlanayotganda nomzodning kuchli tomonlari va qiziqishlari qanday inobatga olinadi?"
+3. "Kompaniyangizga qabul qilinsam, ish boshlanguniga qadar yana qaysi texnologiyalar yoki bilimlarni chuqurroq o'rganib kelishimni tavsiya qilasiz?" (Bu savol HR'da juda kuchli ishtiyoq taassurotini qoldiradi).
+            </p>
+          </div>
+          <div class="meta-box">
+            <div class="tip-box">
+              <strong>💡 Oltin qoida:</strong>
+              "Savolim yo'q" (Arimasen) deb hech qachon aytmang! Bu qiziqish yo'qligini anglatadi. Yuqoridagi 3-savol sizning o'rganishga qanchalik chanqoq ekanligingizni ko'rsatib, suhbatni eng yuqori notada yakunlaydi!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <button class="btn-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Tepaga chiqish">↑</button>
+
+  <div class="toast" id="toastMsg">Matn nusxalandi!</div>
+
+  <script>
+    function speakJp(text) {
+      if (!('speechSynthesis' in window)) {
+        showToast("Brauzeringiz ovozli o'qishni qo'llab-quvvatlamaydi.");
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const cleanText = text.replace(/<[^>]*>/g, '').replace(/[\n\r]+/g, ' ');
+
+      const utter = new SpeechSynthesisUtterance(cleanText);
+      utter.lang = 'ja-JP';
+      utter.rate = 0.95;
+      utter.pitch = 1.0;
+
+      const voices = window.speechSynthesis.getVoices();
+      const jpVoice = voices.find(v => v.lang.startsWith('ja') || v.lang.includes('JP'));
+      if (jpVoice) utter.voice = jpVoice;
+
+      window.speechSynthesis.speak(utter);
+      showToast("🔊 Yaponcha nutq o'qilmoqda...");
+    }
+
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = () => { window.speechSynthesis.getVoices(); };
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastMsg');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => { toast.classList.remove('show'); }, 2500);
+    }
+
+    function copyCardText(btn) {
+      const card = btn.closest('.q-card');
+      const jpText = card.querySelector('.jp-text')?.innerText || '';
+      const uzText = card.querySelector('.uz-text')?.innerText || '';
+      const full = `【日本語】\n${jpText}\n\n【O'zbekcha】\n${uzText}`;
+
+      navigator.clipboard.writeText(full).then(() => {
+        showToast("✅ Javob nusxalandi!");
+      }).catch(() => {
+        showToast("Nusxalashda xatolik yuz berdi");
+      });
+    }
+
+    function revealCard(btn) {
+      const card = btn.closest('.q-card');
+      const body = card.querySelector('.answer-body');
+      if (body) {
+        body.style.display = 'block';
+        btn.style.display = 'none';
+      }
+    }
+
+    function filterCategory(cat, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const sections = document.querySelectorAll('.category-section');
+      sections.forEach(sec => {
+        if (cat === 'all' || sec.getAttribute('data-cat') === cat) {
+          sec.style.display = 'block';
+        } else {
+          sec.style.display = 'none';
+        }
+      });
+    }
+
+    function filterVocabLevel(level, btn) {
+      document.querySelectorAll('.vocab-filter-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.vocab-card');
+      cards.forEach(card => {
+        const vlevel = card.getAttribute('data-vlevel');
+        if (level === 'all' || vlevel === level) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function setLangView(mode) {
+      document.getElementById('btnLangAll').classList.toggle('active', mode === 'all');
+      document.getElementById('btnLangJp').classList.toggle('active', mode === 'jp');
+      document.getElementById('btnLangUz').classList.toggle('active', mode === 'uz');
+
+      const jpBlocks = document.querySelectorAll('.jp-block, .sq-jp');
+      const uzBlocks = document.querySelectorAll('.uz-block, .sq-uz');
+
+      if (mode === 'all') {
+        jpBlocks.forEach(el => el.style.display = 'block');
+        uzBlocks.forEach(el => el.style.display = 'block');
+      } else if (mode === 'jp') {
+        jpBlocks.forEach(el => el.style.display = 'block');
+        uzBlocks.forEach(el => el.style.display = 'none');
+      } else if (mode === 'uz') {
+        jpBlocks.forEach(el => el.style.display = 'none');
+        uzBlocks.forEach(el => el.style.display = 'block');
+      }
+    }
+
+    let recallActive = false;
+    function toggleRecallMode() {
+      recallActive = !recallActive;
+      document.body.classList.toggle('recall-mode', recallActive);
+      document.getElementById('btnRecall').classList.toggle('active', recallActive);
+
+      if (!recallActive) {
+        document.querySelectorAll('.answer-body').forEach(b => b.style.display = '');
+        document.querySelectorAll('.reveal-btn').forEach(b => b.style.display = 'none');
+        showToast("Yodlash rejimi o'chirildi");
+      } else {
+        document.querySelectorAll('.reveal-btn').forEach(b => b.style.display = 'inline-flex');
+        showToast("🧠 Yodlash rejimi yoqildi! Javoblar yashirildi.");
+      }
+    }
+
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+      const q = e.target.value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.q-card, .project-card, .vocab-card');
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        const kw = card.getAttribute('data-keywords') || '';
+        if (text.includes(q) || kw.includes(q)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (q.length > 0) {
+        document.querySelectorAll('.category-section').forEach(s => s.style.display = 'block');
+      }
+    });
+  </script>
+</body>
+</html>
